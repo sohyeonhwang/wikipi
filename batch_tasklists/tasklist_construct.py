@@ -20,15 +20,14 @@ regex_lists_dir = wikipi_repo_path / 'regex' / 'regex-lists'
 # local raw_data directory ath
 dumps_dir = wikipi_repo_path.parent / 'raw_data' / 'wmf_20190901'
 editions = ['en','fr','ja','es']
-
-
+#editions = ['en']
+"""
 ## GENERATE BABY TASK LIST FOR TEST BATCHING
 print("------------------------------------------------------------------------")
 print("Now making the baby tasklist for testing the batch job set-up.")
 print("------------------------------------------------------------------------")
 
 babytasklist = open("./output/babytasklist",'w',encoding='utf-8')
-#first line is a special case
 
 for edition in editions:
 	print("Generating from {} language edition".format(edition))
@@ -83,17 +82,20 @@ for edition in editions:
 		count += 1
 	print("{} task lines written.".format(count))
 babytasklist.close()
-
-
+"""
+"""
 ## GENERATE REGEX GIANT TASK LIST
 print("------------------------------------------------------------------------")
 print("Now making the giant regex tasklist.")
 print("------------------------------------------------------------------------")
 
 # create the output file. 'w' for overwrite, 'a' for just append
-tasklist_giant = open("./output/tasklist_giant_regexes",'w',encoding='utf-8')
+# tasklist_giant = open("./output/tasklist_giant_regexes",'w',encoding='utf-8')
 
 for edition in editions:
+	output_filename = "./output/tasklist_giant_regexes_{}".format(edition)
+	tasklist_giant = open(output_filename, 'w',encoding='utf-8')
+
 	# retrieve the relevant regexes
 	regex_file = "{}_giant-regex.txt".format(edition)
 	regex_file_path = giant_regex_dir / regex_file
@@ -114,24 +116,20 @@ for edition in editions:
 		tasklist_giant.write(taskline)
 		count += 1
 	print("{} task lines written.".format(count))
-tasklist_giant.close()
-
+	tasklist_giant.close()
+#tasklist_giant.close()
+"""
 
 ## GENERATE REGEX WIDE TASK LIST
 print("------------------------------------------------------------------------")
 print("Now making the wide tasklist.")
 print("------------------------------------------------------------------------")
 
-tasklist_wide = open("./output/tasklist_wide",'w',encoding='utf-8')
-#globbies = list(regex_lists_dir.glob('*allregex_list.tsv'))
-#regex_lists_paths = []
-#for g in globbies:
-#	regex_lists_paths.append(g)
-#	print(g)
-
-#print(regex_lists_paths)
-
+#tasklist_wide = open("./output/tasklist_wide",'w',encoding='utf-8')
 for edition in editions:
+	output_filename = "./output/tasklist_wide_{}".format(edition)
+	tasklist_wide = open(output_filename, 'w',encoding='utf-8')
+
 	regexes = []
 	regex_label_pairs = {}
 
@@ -147,7 +145,10 @@ for edition in editions:
 			i += 1
 			#print(label)
 			regex = row[2]
+			#print(regex)
+			#print(regex[:-1] + '\\b)')
 			regex_label_pairs[label] = regex
+			#print("  ")
 
 	print("Formatted {} regex-label pairs for {} language edition.".format(len(regex_label_pairs),edition))
 	labels = sorted([*regex_label_pairs])
