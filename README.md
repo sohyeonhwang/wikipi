@@ -1,4 +1,4 @@
-# pol-inv-wiki
+# wikipedia policy invocation
 supporting code for wiki policy invocation project:
 - policies and guidelines lists (+code to extract)
 - regular expressions
