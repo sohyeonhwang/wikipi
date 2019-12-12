@@ -28,17 +28,42 @@ print("Now making the baby tasklist for testing the batch job set-up.")
 print("------------------------------------------------------------------------")
 
 babytasklist = open("./output/babytasklist",'w',encoding='utf-8')
+#first line is a special case
+
 for edition in editions:
 	print("Generating from {} language edition".format(edition))
-	regex_label_pairs = {'EN_ALL_NPOV':'(?:\bW(?:P:(?:(?:S(?:UB(?:STANTIAT|JECTIV)|TRUCTUR)|FALSEBALANC|(?:UN)?DU)E|N(?:P(?:OV(?:(?:VIE|HO)W|FACT)?|V)|EUTRAL)|A(?:(?:CHIEVE N|TTRIBUTE)POV|ESTHETIC)|P(?:OV(?:NAMING)?|ROPORTION|SCI)|B(?:ALA(?:NCED?|SP)|ESTSOURCES)|W(?:IKIVOICE|EIGHT)|(?:IMPARTI|GEV)AL|(?:YES|RN)POV|TINFOILHAT|VALID|MNA)|ikipedia:Neutral point of view))'}
+	regex_label_pairs = {}
 
 	# giant regex
 	regex_file = "{}_giant-regex.txt".format(edition)
 	regex_file_path = giant_regex_dir / regex_file
 	f = open(regex_file_path.as_posix(),'r')
 	giant_regex = [f.read()]
-	regex_label_pairs['ALLPOLICY'] = giant_regex[0]
-	labels = [*regex_label_pairs]
+	#labels = [*regex_label_pairs]
+
+	# find the file with the list of regexes
+	regex_list_file = "en_allregex_list.tsv"
+	regex_file_path = regex_lists_dir / regex_list_file
+
+	with open(regex_file_path.as_posix()) as allregex_tsv:
+		reader = csv.reader(allregex_tsv, delimiter='\t')
+		i = 1
+		for row in reader:
+			label = "{}_{}".format(i,str(row[0]).upper().replace(" ", "_"))
+			#print(label)
+			if (label == "1_NEUTRAL_POINT_OF_VIEW" or label == "2_NO_ORIGINAL_RESEARCH" or label == "3_VERIFIABILITY"):
+				i += 1
+				#print(label)
+				regex = row[2]
+				regex_label_pairs[label] = regex
+	print("Formatted some regex-label pairs for {} language edition.".format(len(regex_label_pairs),edition))
+	labels = sorted([*regex_label_pairs])
+	print(labels)
+	wide_line = "python3 ./mwdumptools/wikiq ./input/{} -o ./output "
+	for label in labels:
+		regex = regex_label_pairs[label]
+		wide_line += "-RP '{}' -RPl '{}' ".format(regex,label)
+	wide_line = wide_line[:-1] + "\n"
 
 	# retrieve the relevant dump files
 	input_path = dumps_dir / "{}wiki".format(edition)
@@ -46,12 +71,16 @@ for edition in editions:
 
 	# write the task lines to the file
 	count = 0
+
 	for input in input_files[:2]:
-		for label in labels:
-			regex = regex_label_pairs[label]
-			taskline = "python3 ./mwdumptools/wikiq {} -o ./output -RP '{}' -RPl {}\n".format(input,regex,label)
-			babytasklist.write(taskline)
+		if count == 0:
+			wideline_file = wide_line.format(input)
+			print(wideline_file)
+			babytasklist.write(wideline_file)
 			count += 1
+		taskline = "python3 ./mwdumptools/wikiq ./input/{} -o ./output -RP '{}' -RPl {}\n".format(input,giant_regex[0],'ALLPOLICY')
+		babytasklist.write(taskline)
+		count += 1
 	print("{} task lines written.".format(count))
 babytasklist.close()
 
@@ -81,7 +110,7 @@ for edition in editions:
 	print("Writing {} task lines.".format(len(input_files)))
 	count = 0
 	for input in input_files:
-		taskline = "python3 ./mwdumptools/wikiq {} -o ./output -RP '{}' -RPl {}\n".format(input,giant_regex[0],label)
+		taskline = "python3 ./mwdumptools/wikiq ./input/{} -o ./output -RP '{}' -RPl {}\n".format(input,giant_regex[0],label)
 		tasklist_giant.write(taskline)
 		count += 1
 	print("{} task lines written.".format(count))
@@ -141,7 +170,7 @@ for edition in editions:
 	count = 0
 	for input in input_files:
 		for regex in regexes:
-			taskline = "python3 ./mwdumptools/wikiq {} -o ./output {}\n".format(input,regex)
+			taskline = "python3 ./mwdumptools/wikiq ./input/{} -o ./output {}\n".format(input,regex)
 			tasklist_wide.write(taskline)
 			count += 1
 	print("{} task lines written.".format(count))
