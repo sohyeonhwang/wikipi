@@ -192,16 +192,17 @@ Unclear how to construct: https://de.wikipedia.org/wiki/Wikipedia:Richtlinien
 
 ###CHECK HYAK OUTPUTS
 ...
+basic flow to remember: login. run tmux. run any machine. run parallel
 
 ###MISC NOTES:
-generating figures...
-- only care about article and user namespaces... use Spark: https://wiki.communitydata.science/CommunityData:Hyak_Spark
-	- by namespace (+ comment vs revision)
+generating figures... use Spark: https://wiki.communitydata.science/CommunityData:Hyak_Spark
+- only care about article and user namespaces... 
+	- by namespace (+ comment vs revision), so there are 4 namespaces
 
-- only care about the revisions that have the regexes found
+- only care about the revisions that the regexes _have_ found
 - we want to know the _difference_ (+how many policy invocations since the last one???) +X policy invocations with the regex matches
 
-- by date, sum the +X each day, plot over time
+- linked scores: by date, sum the +X each day, plot over time
 	- just number
 	- keeping the actually policy in mind
 - policy invocations / # active users 
