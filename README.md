@@ -3,7 +3,7 @@ This repo contains the code/information and files used to process/parse wiki dum
 - batch_jobs/wikipi
 	- input 
 	- output
-	- task_list --> linked to output from wikipi_repo/output
+	- task_list --> linked to output from wikipi_repo/batch_tasklists/output
 - wikipi
 	- wikipi_repo
 		- ...
