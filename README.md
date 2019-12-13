@@ -94,6 +94,7 @@ Cross-checked results with shortcuts list: https://es.wikipedia.org/wiki/Ayuda:L
 
 Added Manual of Style Links manually into the shortcuts_get_es.py code, based on cross-check:
 * https://es.wikipedia.org/wiki/Categor%C3%ADa:Wikipedia:Manual_de_estilo
+* See file for all.
 
 ----
 **FRENCH**<br />
@@ -140,14 +141,11 @@ There are some bugs in the code still:
 **language edition specific notes**
 
 _Extra ^ symbol before :_ <br />
-*SPANISH*<br />
-* Error in regex for Usuario:Userbox/Documentación de userboxes in guidelines --> (?^:^\b...<br />
-... is corrected.
+**SPANISH**<br />
+Error in regex for Usuario:Userbox/Documentación de userboxes in guidelines --> (?^:^\b...<br />
+... is corrected. This needs to be corrected in each generation of eswiki shortcuts.
 
-This needs to be corrected in each generation of eswiki shortcuts.
-
-*JAPANESE* <br />
-**NOTE** <br />
+**JAPANESE** <br />
 Regex errors:<br />
 <code>プロジェクト:フィクション/登場人物と設定の記述	NA	(?^:^\b     --> "Project: description of fiction / characters and setting"</code><br />
 <code>プロジェクト:キリスト教/キリスト教の記事名と用語表記のガイドライン	NA	(?^:^\b     --> "Project: Christian / Christian article title and terminology guidelines"</code><br />
