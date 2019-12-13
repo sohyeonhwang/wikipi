@@ -1,5 +1,19 @@
 # Policy Invocation on Wikipedia
-This repo contains the code and files used to process/parse wiki dump files and extract policy invocations on hyak as well as useful notes on the data grappling process. Everything should be executable via hyak, though code development/writing was primarily done on my local machine, tested, and then pushed.
+This repo contains the code/information and files used to process/parse wiki dump files and extract policy invocations on hyak. Everything should be executable via hyak, though code development/writing was primarily done on my local machine, tested, and then pushed. This assumes that the working environemnt and file directory set-up is what I have.
+
+In Hyak: <b />
+<code>
+	- batch_jobs
+		- wikipi
+			- input 
+			- output
+			- task_list --> linked to output from wikipi_repo/output
+	- wikipi
+		- wikipi_repo
+			- ...
+			- batch_tasklists 
+				- output
+</code>
 
 ## Contents
 * Raw data information (wmf20190901)
