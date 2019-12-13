@@ -44,7 +44,7 @@ run: <code>python3 shortcuts_get_en.py</code>
 * WP:5P needs to be manually fixed for each run of shortcuts_get_en. It should be:
 <code>[https://en.wikipedia.org/wiki/Wikipedia:Five_pillars]	Wikipedia:Five Pillars	['Wikipedia:Five Pillars','WP:5P','WP:PILLARS','w.wiki/5']</code>
 
-**SPANSIH**<br />
+**SPANISH**<br />
 run: <code>python3 shortcuts_get_es.py</code>
 
 **FRENCH**<br />
@@ -57,7 +57,7 @@ run: <code>python3 shortcuts_get_ja.py</code>
 * In jawiki, [WP:IGNORE ALL RULES](https://ja.wikipedia.org/wiki/Wikipedia:%E3%83%AB%E3%83%BC%E3%83%AB%E3%81%99%E3%81%B9%E3%81%A6%E3%82%92%E7%84%A1%E8%A6%96%E3%81%97%E3%81%AA%E3%81%95%E3%81%84) is a proposal, therefore not included in the list. All other five pillar policies (as seen in enwiki) were captured.
 
 
-**Notes about the shortcuts_get_oo.py codes**<br />
+### Notes about the shortcuts_get ... py codes
 
 **ENGLISH**<br />
 List constructed from:
@@ -170,6 +170,7 @@ Test runs with the giant_regex indicate that the construction of it is a little 
 * interlanguage link information - will be extracted from tabular outputs from wikiq
 
 ------
+<code>
 ##TODO
 
 ###GERMAN <br />
@@ -198,4 +199,4 @@ generating figures...
 - interlanguage link info: for each policy page, look at the revisions and find when the ILL was linked
 
 - might need to correct the regexes (es and ja)
-
+</code>
