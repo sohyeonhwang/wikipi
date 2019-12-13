@@ -173,7 +173,8 @@ Test runs with the giant_regex indicate that the construction of it is a little 
 
 ------
 ##TODO
-###GERMAN
+
+###GERMAN <br />
 Unclear how to construct: https://de.wikipedia.org/wiki/Wikipedia:Richtlinien
 
 ###INTERLANGUAGE LINK INFORMATION
