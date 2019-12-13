@@ -7,9 +7,9 @@ This repo contains the code and files used to process/parse wiki dump files and 
 * regex to constructing regexes from list of shortcuts
 * batch_tasklists to create tasklists parsing dump files on hyak
 * other data
-  * #TODO interlanguage links
   * active editor counts over time (from wikistats)
-* TODO
+  * #TODO interlanguage links
+* #TODO...
   * interlanguage-link data
 
 -----------------------------------
@@ -172,30 +172,31 @@ Test runs with the giant_regex indicate that the construction of it is a little 
 * interlanguage link information - will be extracted from tabular outputs from wikiq
 
 ------
-## TODO
-### GERMAN
+##TODO
+###GERMAN
 Unclear how to construct: https://de.wikipedia.org/wiki/Wikipedia:Richtlinien
 
-### INTERLANGUAGE LINK INFORMATION
+###INTERLANGUAGE LINK INFORMATION
 1. get a list of every single rule page in this set
 2. go to every link and check the ILL against the other pages;
 3. generate the ILL matrix (dictionary?) - maybe in JSON?
-    
-### CHECK HYAK OUTPUTS
+
+###CHECK HYAK OUTPUTS
 ...
 
-### MISC NOTES:
+###MISC NOTES:
 generating figures...
-- only care about article and user namespaces...
+- only care about article and user namespaces... use Spark: https://wiki.communitydata.science/CommunityData:Hyak_Spark
 	- by namespace (+ comment vs revision)
 
 - only care about the revisions that have the regexes found
 - we want to know the _difference_ (+how many policy invocations since the last one???) +X policy invocations with the regex matches
+
 - by date, sum the +X each day, plot over time
 	- just number
 	- keeping the actually policy in mind
-
 - policy invocations / # active users 
+- interlanguage link info: for each policy page, look at the revisions and find when the ILL was linked
 
-interlanguage link info: for each policy page, look at the revisions and find when the ILL was linked
+- might need to correct the regexes (es and ja)
 
