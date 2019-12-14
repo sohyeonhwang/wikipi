@@ -1,5 +1,19 @@
 # Policy Invocation on Wikipedia
-This repo contains the code/information and files used to process/parse wiki dump files and extract policy invocations on hyak. Everything should be executable via hyak, though code development/writing was primarily done on my local machine, tested, and then pushed. This assumes that the working environemnt and file directory set-up is what I have (in hyak):
+This repo contains the code/information and files used to process/parse wiki dump files and extract policy invocations on hyak. Everything should be accessible and executable via hyak (running the the task list _must_ be done on hyak), though code development/writing was primarily done on my local machine, tested, and then pushed. 
+
+## Contents
+* Raw data information (wmf20190901)
+* shortcuts_get to get the list of policies and their shortcuts
+* regex to construct regexes from list of shortcuts
+* batch_tasklists to create tasklists parsing dump files on hyak
+* other data
+  * active editor counts over time (from wikistats)
+  * #TODO interlanguage links
+* #TODO...
+  * interlanguage-link data
+
+-----------------------------------
+This README document assumes that the working environemnt and file directory set-up is what I have (in hyak):
 - batch_jobs/wikipi
 	- input 
 	- output
@@ -9,18 +23,6 @@ This repo contains the code/information and files used to process/parse wiki dum
 		- ...
 		- batch_tasklists 
 			- output
-
-## Contents
-* Raw data information (wmf20190901)
-* shortcuts_get to get the list of policies and their shortcuts
-* regex to constructing regexes from list of shortcuts
-* batch_tasklists to create tasklists parsing dump files on hyak
-* other data
-  * active editor counts over time (from wikistats)
-  * #TODO interlanguage links
-* #TODO...
-  * interlanguage-link data
-
 -----------------------------------
 ## Raw data
 As the complete WMF dumps on the CDSC group repo didn't have pages-meta-history files for every language, I manually got the dump files from Wikimedia. Info about how to download [here](https://meta.wikimedia.org/wiki/Data_dumps/Download_tools).
