@@ -19,8 +19,8 @@ regex_lists_dir = wikipi_repo_path / 'regex' / 'regex-lists'
 
 # local raw_data directory ath
 dumps_dir = wikipi_repo_path.parent / 'raw_data' / 'wmf_20190901'
-editions = ['en','fr','ja','es']
-#editions = ['en']
+#editions = ['en','fr','ja','es']
+editions = ['fr']
 """
 ## GENERATE BABY TASK LIST FOR TEST BATCHING
 print("------------------------------------------------------------------------")
@@ -125,6 +125,7 @@ print("------------------------------------------------------------------------"
 print("Now making the wide tasklist.")
 print("------------------------------------------------------------------------")
 
+tasklist_wide_all = open("./output/tasklist_wide_all", 'w',encoding='utf-8')
 #tasklist_wide = open("./output/tasklist_wide",'w',encoding='utf-8')
 for edition in editions:
 	output_filename = "./output/tasklist_wide_{}".format(edition)
@@ -173,6 +174,8 @@ for edition in editions:
 		for regex in regexes:
 			taskline = "python3 ./mwdumptools/wikiq ./input/{} -o ./output {}\n".format(input,regex)
 			tasklist_wide.write(taskline)
+			tasklist_wide_all.write(taskline)
 			count += 1
 	print("{} task lines written.".format(count))
-tasklist_wide.close()
+	tasklist_wide.close()
+tasklist_wide_all.close()
