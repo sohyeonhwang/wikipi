@@ -57,7 +57,7 @@ for edition in editions:
 	wide_regex = ""
 	for label in labels:
 		regex = regex_label_pairs[label]
-		wide_regex += "-RP '{}' -RPl {} ".format(regex,label)
+		wide_regex += '-RP "{}" -RPl "{}" '.format(regex,label)
 	wide_regex = wide_regex[:-1]
 	regexes.append(wide_regex)
 
