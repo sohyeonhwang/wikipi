@@ -2,7 +2,7 @@
 This repo contains the code/information and files used to process/parse wiki dump files and extract policy invocations on hyak. Everything should be accessible and executable via hyak (running the the task list _must_ be done on hyak), though code development/writing was primarily done on my local machine, tested, and then pushed. 
 
 ## Contents
-* [Raw data information (wmf20190901)](https://github.com/sohyeonhwang/wikipi_repo#raw_data)
+* [Raw data information (wmf20190901)](https://github.com/sohyeonhwang/wikipi_repo#raw-data)
 * [shortcuts_get to get the list of policies and their shortcuts](https://github.com/sohyeonhwang/wikipi_repo#shortcuts_get-lists-of-policies-guidelines-5-pillars-and-their-shortcuts)
   * shortcuts_get - how to run and notes on input/outputs
   * [plus wp:title](https://github.com/sohyeonhwang/wikipi_repo#shortcuts-plus-wptitle)
