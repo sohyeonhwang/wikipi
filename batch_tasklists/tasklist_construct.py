@@ -20,7 +20,7 @@ regex_lists_dir = wikipi_repo_path / 'regex' / 'regex-lists'
 # local raw_data directory ath
 dumps_dir = wikipi_repo_path.parent / 'raw_data' / 'wmf_20190901'
 #editions = ['en','fr','ja','es']
-editions = ['fr']
+editions = ['ja','en']
 """
 ## GENERATE BABY TASK LIST FOR TEST BATCHING
 print("------------------------------------------------------------------------")
@@ -158,7 +158,7 @@ for edition in editions:
 	wide_regex = ""
 	for label in labels:
 		regex = regex_label_pairs[label]
-		wide_regex += "-RP '{}' -RPl {} ".format(regex,label)
+		wide_regex += '-RP "{}" -RPl "{}" '.format(regex,label)
 	wide_regex = wide_regex[:-1]
 	regexes.append(wide_regex)
 
