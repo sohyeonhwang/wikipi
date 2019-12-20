@@ -4,10 +4,11 @@ This repo contains the code/information and files used to process/parse wiki dum
 ## Contents
 * [Raw data information (wmf20190901)](https://github.com/sohyeonhwang/wikipi_repo#raw_data)
 * [shortcuts_get to get the list of policies and their shortcuts](https://github.com/sohyeonhwang/wikipi_repo#shortcuts_get-lists-of-policies-guidelines-5-pillars-and-their-shortcuts)
-  * [shortcuts_get]
+  * shortcuts_get - how to run and notes on input/outputs
   * [plus wp:title](https://github.com/sohyeonhwang/wikipi_repo#shortcuts-plus-wptitle)
 * [regex to construct regexes from list of shortcuts](https://github.com/sohyeonhwang/wikipi_repo#regex-generating-regular-expressions-from-list-of-shortcuts)
 * [batch_tasklists to create tasklists parsing dump files on hyak](https://github.com/sohyeonhwang/wikipi_repo#batch_tasklists-task-list-construction-for-running-wikiq-on-hyak)
+* [running wikiq on hyak to get the tabular policy invocation data](https://github.com/sohyeonhwang/wikipi_repo#running-wikiq-on-hyak)
 * [other data](https://github.com/sohyeonhwang/wikipi_repo#other-data-for-generating-figures)
   * active editor counts over time (from wikistats)
   * #TODO interlanguage links
@@ -208,10 +209,17 @@ Test runs with the giant_regex indicate that the construction of it is a little 
 ## Running wikiq on hyak
 Note that local version of wikiq is modified on line 133 to include the re.IGNORECASE flag.
 
-English: <code>...</code><br/>
 Japanese: <code>parallel < tasklist_wide_ja</code><br/>
 French: <code>parallel < tasklist_wideplus_fr </code><br/>
 Spanish: <code>parallel < tasklist_wideplus_es</code>
+
+English has too many tasks for it to run on one node. Since batch parallel isn't working well for me, I create four tasklists of English and run them on their own any_machine.
+
+English: 
+* <code>parallel < tasklist_wideplus_en1</code>
+* <code>parallel < tasklist_wideplus_en2</code>
+* <code>parallel < tasklist_wideplus_en3</code>
+* <code>parallel < tasklist_wideplus_en4</code>
 
 ## other data for generating figures
 * **active editors** (5 or more edits in the given month): from https://stats.wikimedia.org/
