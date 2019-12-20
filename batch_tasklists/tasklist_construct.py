@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-#script for creating the ILL matrix
-
 import re
 import csv
 from pathlib import Path
