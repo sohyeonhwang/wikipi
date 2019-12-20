@@ -5,8 +5,8 @@ This repo contains the code/information and files used to process/parse wiki dum
 * [Raw data information (wmf20190901)](https://github.com/sohyeonhwang/wikipi_repo#raw_data)
 * [shortcuts_get to get the list of policies and their shortcuts](https://github.com/sohyeonhwang/wikipi_repo#shortcuts_get-lists-of-policies-guidelines-5-pillars-and-their-shortcuts)
   * [shortcuts_get]
-  * [plus wp:title]
-* [regex to construct regexes from list of shortcuts](https://github.com/sohyeonhwang/wikipi_repo#regex-generating-regular-expressions-from-lists-of-shortcuts)
+  * [plus wp:title](https://github.com/sohyeonhwang/wikipi_repo#shortcuts-plus-wptitle)
+* [regex to construct regexes from list of shortcuts](https://github.com/sohyeonhwang/wikipi_repo#regex-generating-regular-expressions-from-list-of-shortcuts)
 * [batch_tasklists to create tasklists parsing dump files on hyak](https://github.com/sohyeonhwang/wikipi_repo#batch_tasklists-task-list-construction-for-running-wikiq-on-hyak)
 * [other data](https://github.com/sohyeonhwang/wikipi_repo#other-data-for-generating-figures)
   * active editor counts over time (from wikistats)
@@ -46,12 +46,14 @@ I only extract the .7z zipped files (not .bmz) because they are faster and the 7
 ## shortcuts_get: lists of policies, guidelines, 5 pillars and their shortcuts
 This repo contains code that gets a list of all the policies/guidelines for each language edition and gets all the shortcuts (e.g. WP:OR) used in policy invocation. This is in *shortcuts_get* directory.
 
+Since this has all been run, technically this no longer needs to be repeated to extract the data. Information is mostly notes about the procedure/exceptions. However, in the case of redoing it:
+
 The general process:
 1. get a list of all the policies, guidelines, and 5 pillar pages for each language edition
 2. retrieve all the shortcuts from each rule pages
 3. cross-check the list of rules and their shortcuts with other pages on the language edition (namely: category lists, 'shortcuts' list)
 
-* * * UPDATE: now also need to run additional for a new case. See [shortcuts plus wptitle](https://github.com/sohyeonhwang/wikipi_repo#shortcuts-plus-wptitle)
+* * * UPDATE: now also need to run additional for a new case of shortcuts. See [shortcuts plus wptitle](https://github.com/sohyeonhwang/wikipi_repo#shortcuts-plus-wptitle)
 
 ### Running shortcuts_get
 **ENGLISH**<br />
@@ -179,13 +181,21 @@ Regex errors:<br />
 ... have been corrected but should be corrected with each generation of regex.
 
 ### regex plus wptitle
-This only applies for enwiki, eswiki, and frwiki. Note that this means that the giant regex for those language editions have also changed. The new output can be found in <code>../regex/allregex_plus</code>. This output was created with <code>regex_plus_generator.pl</code>. Then task lists for the three language editions were generated again.
+This only applies for enwiki, eswiki, and frwiki. Note that this means that the giant regex for those language editions have also changed. The new output can be found in <code>../regex/allregex_plus</code>. This output was created with <code>regex_plus_generator.pl</code>. Then task lists for the three language editions were generated again. 
+
+New giant regexes for enwiki, eswiki, and frwiki are saved in: <code>../giant-regexes/LANG_all_plus_giant.txt</code>
+
+As in the previous regex generation:
+* The perl regex scripts generates regexes that starts with: <code>(?^:</code>. The ^ causes an error in Python, which is what is used in other data extraction. The regex should end with '\b)'. The former has been corrected, the latter has been integrated into the code generation so it doesn't need to be manualyl added.
+* UNSURE IF THIS IS TRUE: In the giant regexes, the ':' is placed in a way that causes error, same as '?' at the end. Placement of ':' needs to be fixed and '?' needs to be deleted. 
+* The giant regex should end with '\b)'. This is currently done but must be manually added if the giant regex is generated again.
+
 
 ## batch_tasklists: task list construction for running wikiq on hyak
 Now that we have (1) the raw data and (2) the regexes, we can use [wikiq](https://wiki.communitydata.science/Wikiq) to parse the dump files and generate tabular datasets from the dumpfiles. I helped build extended functionality onto the tool (pattern matching) to do this. I had to correct some bugs. These are not merged to master yet, just on regex_scanner branch of wikiq's git. That's the version I have on my file set-up in hyak for this project.
 
 A modification on wikiq that's in the local version for this project is adding the <code>re.I</code> flag in the <code>re.compile</code>:<br/>
-<code>#: </code>
+<code>133:         self.pattern = re.compile(pattern,re.IGNORECASE)</code>
 
 To run this, I would want to run a task lsit in parallel on hyak on <code>any_machine</code>.
 
@@ -195,6 +205,13 @@ The basic construction would look like: <br />
 **giant_regex (giant) vs. many regexes (wide):**
 Test runs with the giant_regex indicate that the construction of it is a little buggy, but the size of it makes it very inscrutable to identify the problem. As a result, instead, for searching for all policies, I create "wide" taskslists, basically the basic construction with regex-label pairs for every single policy/guidelines of that language edition. This avoids the issue that comes with giant_regex's bugginess downside is that this take a very long time to run the jobs (so far).
 
+## Running wikiq on hyak
+Note that local version of wikiq is modified on line 133 to include the re.IGNORECASE flag.
+
+English: <code>...</code><br/>
+Japanese: <code>parallel < tasklist_wide_ja</code><br/>
+French: <code>parallel < tasklist_wideplus_fr </code><br/>
+Spanish: <code>parallel < tasklist_wideplus_es</code>
 
 ## other data for generating figures
 * **active editors** (5 or more edits in the given month): from https://stats.wikimedia.org/
