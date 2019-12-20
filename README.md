@@ -2,14 +2,16 @@
 This repo contains the code/information and files used to process/parse wiki dump files and extract policy invocations on hyak. Everything should be accessible and executable via hyak (running the the task list _must_ be done on hyak), though code development/writing was primarily done on my local machine, tested, and then pushed. 
 
 ## Contents
-* Raw data information (wmf20190901)
-* shortcuts_get to get the list of policies and their shortcuts
-* regex to construct regexes from list of shortcuts
-* batch_tasklists to create tasklists parsing dump files on hyak
-* other data
+* [Raw data information (wmf20190901)](https://github.com/sohyeonhwang/wikipi_repo#raw_data)
+* [shortcuts_get to get the list of policies and their shortcuts](https://github.com/sohyeonhwang/wikipi_repo#shortcuts_get-lists-of-policies-guidelines-5-pillars-and-their-shortcuts)
+  * [shortcuts_get]
+  * [plus wp:title]
+* [regex to construct regexes from list of shortcuts](https://github.com/sohyeonhwang/wikipi_repo#regex-generating-regular-expressions-from-lists-of-shortcuts)
+* [batch_tasklists to create tasklists parsing dump files on hyak](https://github.com/sohyeonhwang/wikipi_repo#batch_tasklists-task-list-construction-for-running-wikiq-on-hyak)
+* [other data](https://github.com/sohyeonhwang/wikipi_repo#other-data-for-generating-figures)
   * active editor counts over time (from wikistats)
   * #TODO interlanguage links
-* #TODO...
+* [#TODO](https://github.com/sohyeonhwang/wikipi_repo#TODO)...
   * interlanguage-link data
 
 -----------------------------------
@@ -49,6 +51,8 @@ The general process:
 2. retrieve all the shortcuts from each rule pages
 3. cross-check the list of rules and their shortcuts with other pages on the language edition (namely: category lists, 'shortcuts' list)
 
+* * * UPDATE: now also need to run additional for a new case. See [shortcuts plus wptitle](https://github.com/sohyeonhwang/wikipi_repo#shortcuts-plus-wptitle)
+
 ### Running shortcuts_get
 **ENGLISH**<br />
 run: <code>python3 shortcuts_get_en.py</code>
@@ -67,8 +71,7 @@ run: <code>python3 shortcuts_get_ja.py</code>
 <code>NA	https://ja.wikipedia.org/wiki/Wikipedia:%E4%BA%94%E6%9C%AC%E3%81%AE%E6%9F%B1	Wikipedia:五本の柱	['Wikipedia:五本の柱', 'WP:5', 'WP:5P']</code>
 * In jawiki, [WP:IGNORE ALL RULES](https://ja.wikipedia.org/wiki/Wikipedia:%E3%83%AB%E3%83%BC%E3%83%AB%E3%81%99%E3%81%B9%E3%81%A6%E3%82%92%E7%84%A1%E8%A6%96%E3%81%97%E3%81%AA%E3%81%95%E3%81%84) is a proposal, therefore not included in the list. All other five pillar policies (as seen in enwiki) were captured.
 
-
-### Notes about the shortcuts_get ... py codes
+#### Notes about the shortcuts_get inputs and outputs
 
 **ENGLISH**<br />
 List constructed from:
@@ -139,6 +142,19 @@ Added in aggregated file with manual includeion in shortcuts_get_ja.py code:
 * https://ja.wikipedia.org/wiki/Wikipedia:%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E4%BD%9C%E6%88%90%E8%80%85
 * https://ja.wikipedia.org/wiki/Wikipedia:IP%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E9%81%A9%E7%94%A8%E9%99%A4%E5%A4%96
 
+### shortcuts plus wptitle
+For enwiki, eswiki, and frwiki, we also need to add the case of WP:TITLE, wherein the title is the title of the page. This is a redirect that works but isn't included in the shortcuts. This case was caught later. In order to avoid manually correcting the exceptions noted in shortcuts_get output notes, we just go through the shortcuts_get output for each language edition and add the WP:TITLE case to the list of shortcuts. This is done with <code>../shortcuts_get/shortcuts_plus_wptitle.py</code>
+
+Outputs go in the outputs folder as: <code><lang>_all_plus.tsv</code>
+
+Simply <code>nano shortcuts_plus_wptitle.py</code> to check that the language edition for input/output files is correct, and run <code>python3 shortcuts_plus_wptitle.py</code>.
+
+This also means we now need to re-generate the regular expressions for enwiki,eswiki,and frwiki. See [regex plus wptitle](https://github.com/sohyeonhwang/wikipi_repo#regex-plus-wptitle)
+
+**language edition specific notes**<br/>
+**ENGLISH**<br />
+* WP:5P needs to be manually fixed for each run of shortcuts_get_en. It should be:
+<code>[https://en.wikipedia.org/wiki/Wikipedia:Five_pillars]	Wikipedia:Five Pillars	['Wikipedia:Five Pillars','WP:5P','WP:PILLARS','w.wiki/5','WP:Five Pillars']</code>
 
 ## regex: generating regular expressions from list of shortcuts
 Run <code>regex_generator.pl</code> in regex, which goes through the lists of shortcuts and creates regexes with [Regex::Assemble](https://metacpan.org/pod/Regexp::Assemble).
@@ -162,8 +178,14 @@ Regex errors:<br />
 <code>プロジェクト:キリスト教/キリスト教の記事名と用語表記のガイドライン	NA	(?^:^\b     --> "Project: Christian / Christian article title and terminology guidelines"</code><br />
 ... have been corrected but should be corrected with each generation of regex.
 
+### regex plus wptitle
+This only applies for enwiki, eswiki, and frwiki. Note that this means that the giant regex for those language editions have also changed. The new output can be found in <code>../regex/allregex_plus</code>. This output was created with <code>regex_plus_generator.pl</code>. Then task lists for the three language editions were generated again.
+
 ## batch_tasklists: task list construction for running wikiq on hyak
 Now that we have (1) the raw data and (2) the regexes, we can use [wikiq](https://wiki.communitydata.science/Wikiq) to parse the dump files and generate tabular datasets from the dumpfiles. I helped build extended functionality onto the tool (pattern matching) to do this. I had to correct some bugs. These are not merged to master yet, just on regex_scanner branch of wikiq's git. That's the version I have on my file set-up in hyak for this project.
+
+A modification on wikiq that's in the local version for this project is adding the <code>re.I</code> flag in the <code>re.compile</code>:<br/>
+<code>#: </code>
 
 To run this, I would want to run a task lsit in parallel on hyak on <code>any_machine</code>.
 
@@ -181,8 +203,8 @@ Test runs with the giant_regex indicate that the construction of it is a little 
 * interlanguage link information - will be extracted from tabular outputs from wikiq
 
 ------
+## TODO
 <code>
-##TODO
 
 ###GERMAN <br />
 Unclear how to construct: https://de.wikipedia.org/wiki/Wikipedia:Richtlinien
