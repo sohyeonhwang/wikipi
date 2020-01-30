@@ -1,0 +1,111 @@
+ENWIKI_1
+Processing file: ./input/enwiki-20190901-pages-meta-history10.xml-p2495347p2528236.7z
+Done: 1483179 revisions and 20334 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history10.xml-p3039789p3046511.7z
+Done: 233197 revisions and 3754 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history12.xml-p4270718p4331046.7z
+Done: 1504658 revisions and 37389 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history12.xml-p4444653p4506308.7z
+Done: 1502989 revisions and 37124 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history22.xml-p25579896p25684513.7z
+Done: 1483445 revisions and 86799 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history25.xml-p37097956p37315895.7z
+Done: 1499990 revisions and 182339 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history11.xml-p3227018p3251801.7z
+Done: 817203 revisions and 14138 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history18.xml-p16077059p16120542.7z
+Done: 388768 revisions and 32470 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history26.xml-p39683309p39893890.7z
+Done: 1499294 revisions and 177855 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history17.xml-p13355131p13475504.7z
+Done: 1499308 revisions and 78750 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history26.xml-p41120949p41326337.7z
+Done: 1498099 revisions and 172333 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history24.xml-p32977398p33162591.7z
+Done: 1500417 revisions and 151389 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history20.xml-p19166248p19281822.7z
+Done: 1500236 revisions and 90589 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history5.xml-p366635p374866.7z
+Done: 1154299 revisions and 5501 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history15.xml-p9328360p9437869.7z
+Done: 1501903 revisions and 68441 pages.
+
+ENWIKI_2
+Processing file: ./input/enwiki-20190901-pages-meta-history1.xml-p10p1042.7z
+Done: 723092 revisions and 409 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history5.xml-p360423p366634.7z
+Done: 1020108 revisions and 4337 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history21.xml-p22056140p22198859.7z
+Done: 1500159 revisions and 115089 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history9.xml-p1849439p1877236.7z
+Done: 1501507 revisions and 16588 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history24.xml-p31477521p31608283.7z
+Done: 1499673 revisions and 103823 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history24.xml-p30706273p30860902.7z
+Done: 1504811 revisions and 125945 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history2.xml-p38504p39988.7z
+Done: 783056 revisions and 1200 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history12.xml-p3926863p3986754.7z
+Done: 1500996 revisions and 36728 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history7.xml-p1215129p1235544.7z
+Done: 1500466 revisions and 12984 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history3.xml-p98449p102299.7z
+Done: 1042130 revisions and 3069 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history25.xml-p34817947p35015275.7z
+Done: 1500586 revisions and 163258 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history1.xml-p15199p15861.7z
+Done: 665324 revisions and 498 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history6.xml-p650093p665597.7z
+Done: 1510313 revisions and 9738 pages.
+
+ENWIKI_3
+Processing file: ./input/enwiki-20190901-pages-meta-history19.xml-p17128690p17265590.7z
+Done: 1500369 revisions and 99512 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history21.xml-p21222158p21350591.7z
+Done: 1500046 revisions and 100074 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history17.xml-p13475505p13606357.7z
+Done: 1499295 revisions and 86745 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history25.xml-p37942648p38067202.7z
+Done: 970423 revisions and 104840 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history14.xml-p7195303p7289118.7z
+Done: 1500418 revisions and 59052 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history8.xml-p1324665p1350126.7z
+Done: 1499870 revisions and 16394 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history14.xml-p6941153p7023006.7z
+Done: 1498945 revisions and 49463 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history5.xml-p550664p564686.7z
+Done: 1421182 revisions and 9285 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history1.xml-p26808p27306.7z
+Done: 552572 revisions and 383 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history7.xml-p1081174p1103130.7z
+Done: 1507232 revisions and 14101 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history27.xml-p55194460p55537693.7z
+Done: 1499475 revisions and 312406 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history12.xml-p4793667p4867448.7z
+Done: 1499875 revisions and 42753 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history1.xml-p14510p15198.7z
+Done: 684434 revisions and 507 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history27.xml-p43005838p43215049.7z
+Done: 1497714 revisions and 174490 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history6.xml-p565314p575319.7z
+Done: 1125141 revisions and 6488 pages.
+
+ENWIKI_4
+Processing file: ./input/enwiki-20190901-pages-meta-history22.xml-p25114943p25254371.7z
+Done: 1499891 revisions and 108840 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history5.xml-p564687p564766.7z
+Done: 423974 revisions and 55 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history4.xml-p205066p210590.7z
+Done: 1195384 revisions and 3921 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history9.xml-p1981675p2013560.7z
+Done: 1501300 revisions and 19785 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history4.xml-p252320p261179.7z
+Done: 1421014 revisions and 6751 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history23.xml-p29321968p29504931.7z
+Done: 1499524 revisions and 152518 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history4.xml-p241256p247799.7z
+Done: 1280293 revisions and 4263 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history18.xml-p13693074p13784345.7z
+Done: 1034008 revisions and 59943 pages.
+Processing file: ./input/enwiki-20190901-pages-meta-history8.xml-p1530874p1562887.7z
+Done: 1496823 revisions and 16256 pages.
