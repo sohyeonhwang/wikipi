@@ -24,10 +24,10 @@ print("------------------------------------------------------------------------"
 print("Now making the wide tasklist.")
 print("------------------------------------------------------------------------")
 
-tasklist_wide_all = open("./output/tasklist_wide_all", 'w',encoding='utf-8')
+tasklist_wide_all = open("./output/tasklist_wideplus_all", 'w',encoding='utf-8')
 #tasklist_wide = open("./output/tasklist_wide",'w',encoding='utf-8')
 for edition in editions:
-	output_filename = "./output/tasklist_wide_plus_{}".format(edition)
+	output_filename = "./output/tasklist_wideplus_{}".format(edition)
 	tasklist_wide = open(output_filename, 'w',encoding='utf-8')
 
 	regexes = []
