@@ -17,6 +17,15 @@ columns_file_path = wd / 'frwiki_columns'
 samples_folder = wd.parent.parent / 'wikiq_runs' / 'output_samples'
 print(samples_folder.as_posix())
 
+samples = ["eswiki_sample.tsv"]
+
+for s in samples:
+	s_path = samples_folder / s
+	with open(s_path.as_posix()) as tsv:
+		reader = csv.reader(tsv, delimiter='\t')
+		for row in reader:
+		
+
 '''
 n = 0
 with open(columns_file_path.as_posix()) as tsv:
