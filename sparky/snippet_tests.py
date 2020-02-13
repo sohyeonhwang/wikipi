@@ -21,6 +21,7 @@ samples = ["eswiki_sample.tsv"]
 
 for s in samples:
 	s_path = samples_folder / s
+	print(s_path.as_posix())
 	with open(s_path.as_posix()) as tsv:
 		reader = csv.reader(tsv, delimiter='\t')
 		for row in reader:
