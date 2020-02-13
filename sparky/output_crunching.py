@@ -1,7 +1,5 @@
 import sys
-# add pyspark to your python path e.g.
-sys.path.append("/home/sohw/sparkstuff/spark/python/pyspark")
-sys.path.append("/home/sohw/sparkstuff/spark/python/")
+
 from pyspark import SparkConf
 from pyspark.sql import SparkSession, SQLContext
 from pyspark.sql import Window
