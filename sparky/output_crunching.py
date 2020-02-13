@@ -100,6 +100,6 @@ if __name__ == "__main__":
     # now we want to get make a column that combines all the regex results
     # first we create a variable that's all the columns to coalesce
 
-    for c in df.columns:
-        if c[0].isdigit():
-            print(c)
+    #for c in df.columns:
+    #    if c[0].isdigit():
+    #        print(c)
