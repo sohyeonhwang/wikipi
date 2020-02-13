@@ -10,6 +10,8 @@ import glob
 import csv
 from pathlib import Path
 import os
+from itertools import chain
+
 #from wikiq_util import PERSISTENCE_RADIUS
 #read a table
 
@@ -103,3 +105,11 @@ if __name__ == "__main__":
     for c in df.columns:
         if c[0].isdigit():
             print(c)
+
+    test = f.struct([c for c in df.columns if (c[0].isdigit())]).alias("regexes")
+    #nameCol = struct([name for name in df.columns if ("metric" in name)]).alias("metric")
+    df2 = df.select("revid", test)
+    df2.collect()
+
+    #regexes = f.create_map(list(chain(*((f.lit(c), f.col(c)) for c in df.columns if c[0].isdigit())))).alias("regexes")
+
