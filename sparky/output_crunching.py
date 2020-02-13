@@ -10,7 +10,7 @@ import glob
 import csv
 from pathlib import Path
 import os
-from wikiq_util import PERSISTENCE_RADIUS
+#from wikiq_util import PERSISTENCE_RADIUS
 #read a table
 
 def parse_args():
@@ -34,10 +34,13 @@ if __name__ == "__main__":
 
     # load up the input files
     files = glob.glob(args.input_file)
-    files = [path.abspath(p) for p in files]
+    files = [os.path.abspath(p) for p in files]
 
     read_collapse = args.schema_opt in ["collapse", "persistence+collapse"]
     read_persistence = args.schema_opt in ["persistence", "persistence+collapse"]
+
+    struct = types.StructType().add("anon",types.StringType(),True)
+    struct = struct.add("articleid",types.LongType(),True)
 
     if read_collapse is True:
         struct = struct.add("collapsed_revs", types.IntegerType(), True)
