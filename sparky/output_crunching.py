@@ -13,6 +13,8 @@ import os
 #from wikiq_util import PERSISTENCE_RADIUS
 #read a table
 
+print('TEST 1 - import modules -----------------------------------------------')
+
 def parse_args():
 
     parser = argparse.ArgumentParser(description='Create a dataset of edits by user.')
@@ -35,11 +37,14 @@ if __name__ == "__main__":
     # load up the input files
     files = glob.glob(args.input_file)
     files = [os.path.abspath(p) for p in files]
+    print('TEST 2 - files loaded -----------------------------------------------')
 
     read_collapse = args.schema_opt in ["collapse", "persistence+collapse"]
     read_persistence = args.schema_opt in ["persistence", "persistence+collapse"]
 
     struct = types.StructType().add("anon",types.StringType(),True)
+    print('TEST 3 - started schema -----------------------------------------------')
+
     struct = struct.add("articleid",types.LongType(),True)
 
     if read_collapse is True:
