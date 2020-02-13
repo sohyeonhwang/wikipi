@@ -24,7 +24,7 @@ for s in samples:
 	with open(s_path.as_posix()) as tsv:
 		reader = csv.reader(tsv, delimiter='\t')
 		for row in reader:
-		
+            
 
 '''
 n = 0
