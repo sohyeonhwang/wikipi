@@ -37,8 +37,6 @@ if __name__ == "__main__":
                     mode="PERMISSIVE")
     
     wiki_2_df = wiki_2_df.repartition(args.num_partitions)
-    wiki_2_df.replace('None',None)
-
     #wiki_2_df.show()
     #wiki_2_df.describe().show()
 
@@ -57,8 +55,7 @@ if __name__ == "__main__":
     struct = struct.add("text_chars", types.LongType(), True)
     struct = struct.add("title",types.StringType(), True)
 
-
-    # meteadata columns
+    # metadata columns
     metaColumns = struct.fieldNames()
     meta_df = wiki_2_df.select(*metaColumns)
     #meta_df.show()
@@ -66,18 +63,16 @@ if __name__ == "__main__":
     # regex columns
     regexDFColumns = [c for c in wiki_2_df.columns if c[0].isdigit()]
     regexDFColumns.append("revid")
-    regex_df = wiki_2_df.select(*regexDFColumns)
+    regexDFColumns.append("date_time")
+    regex_df = wiki_2_df.na.replace('None',None).select(*regexDFColumns)
     #regex_df.show(vertical=True)
     #print(regexDFColumns)
 
-    print("COMBINING regex COLUMNS")
-    def columnCombine(row):
-        onlyRegexCols = [c for c in wiki_2_df.columns if c[0].isdigit()]
-        for c in onlyRegexCols:
-            if (onlyRegexCols[c] != None) or (onlyRegexCols[c]!='null'):
-                print(row[c])
+    # combine the regex columns into one column, if not None/null
+    onlyRegexCols = [c for c in regex_df.columns if c[0].isdigit()]
+    regexes_revid_df = regex_df.select(regex_df.revid, regex_df.date_time,f.concat_ws(', ',*onlyRegexCols).alias("REGEXES"))
+    regexes_revid_df.show()
 
-    def test(row):
-        row.revid
+    # finding the 'WP' and 'Wikipedia' regex errors -- basically a result that does not have :
 
-    regex_df.foreach(test)
+    #
