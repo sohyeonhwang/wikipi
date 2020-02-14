@@ -71,8 +71,11 @@ if __name__ == "__main__":
     # combine the regex columns into one column, if not None/null
     onlyRegexCols = [c for c in regex_df.columns if c[0].isdigit()]
     regexes_revid_df = regex_df.select(regex_df.revid, regex_df.date_time,f.concat_ws(', ',*onlyRegexCols).alias("REGEXES"))
-    regexes_revid_df.show()
+    #regexes_revid_df.show()
 
-    # finding the 'WP' and 'Wikipedia' regex errors -- basically a result that does not have :
+    regex_diff_df = regex_df.groupby('articleid')
+    regex_diff_df.show()
 
-    #
+    # finding the 'WP' and 'Wikipedia' regex errors -- basically a result that does not have ':'
+
+    # for each row, if there is no ':' in the column result 
