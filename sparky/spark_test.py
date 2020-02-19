@@ -58,24 +58,29 @@ if __name__ == "__main__":
     # metadata columns
     metaColumns = struct.fieldNames()
     meta_df = wiki_2_df.select(*metaColumns)
-    #meta_df.show()
+    #meta_df.orderBy("articleid").show()
 
     # regex columns
     regexDFColumns = [c for c in wiki_2_df.columns if c[0].isdigit()]
     regexDFColumns.append("revid")
     regexDFColumns.append("date_time")
+    regexDFColumns.append("articleid")
     regex_df = wiki_2_df.na.replace('None',None).select(*regexDFColumns)
     #regex_df.show(vertical=True)
     #print(regexDFColumns)
 
     # combine the regex columns into one column, if not None/null
+    # this has: revid, article_id, date/time, regexes
     onlyRegexCols = [c for c in regex_df.columns if c[0].isdigit()]
-    regexes_revid_df = regex_df.select(regex_df.revid, regex_df.date_time,f.concat_ws(', ',*onlyRegexCols).alias("REGEXES"))
-    #regexes_revid_df.show()
+    regexes_revid_df = regex_df.select(regex_df.revid,regex_df.articleid, regex_df.date_time,f.concat_ws(', ',*onlyRegexCols).alias("REGEXES"))
+    #regexes_revid_df.show(vertical=True, truncate=False)
 
-    regex_diff_df = regex_df.groupby('articleid')
-    regex_diff_df.show()
+    regex_diff_df = regex_df.orderBy("articleid")
+    #regex_diff_df.show()
 
     # finding the 'WP' and 'Wikipedia' regex errors -- basically a result that does not have ':'
-
+    def ff(revision):
+        print(revision)
+    
+    regex_df.foreach(ff)
     # for each row, if there is no ':' in the column result 
