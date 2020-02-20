@@ -83,19 +83,25 @@ if __name__ == "__main__":
 
     # finding the 'WP' and 'Wikipedia' regex errors -- basically a result that does not have ':'
     def ff(revision):
+        problemRegexes = {}
         for c in onlyRegexCols:
             # if there is a regex that's been found for a policy...
             if (revision[c] is not None):
-                print(revision[c])
+                # print(revision[c])
+
                 # the conditions wherein we know that there is a WP or Wikipedia somewhere
                 if (":" not in revision[c]):
-                    print("PROBLEM: {}".format(revision[c]))
+                    problemRegexes.add(c)
+                    print("PROBLEM WITH {}: {}".format(c, revision[c]))
                 elif (re.search(r"(WP|Wikipedia)$",revision[c]) is not None):
-                    print("PROBLEM: {}".format(revision[c]))
+                    problemRegexes.add(c)
+                    print("PROBLEM WITH {}: {}".format(c, revision[c]))
                 elif ("WP," in revision[c]) or ("Wikipedia," in revision[c]):
-                    print("PROBLEM: {}".format(revision[c]))
+                    problemRegexes.add(c)
+                    print("PROBLEM WITH {}: {}".format(c, revision[c]))
             else:
                 continue
+        print(problemRegexes)
     
     regex_df.foreach(ff)
-    # for each row, if there is no ':' in the column result 
+
