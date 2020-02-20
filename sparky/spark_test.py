@@ -7,6 +7,7 @@ from pyspark.sql import types
 import argparse
 import glob
 import csv
+import re
 from pathlib import Path
 import os
 
@@ -85,7 +86,12 @@ if __name__ == "__main__":
         for c in onlyRegexCols:
             if (revision[c] is not None):
                 print(revision[c])
-                if ":" not in revision[c]:
+                # the conditions wherein we know that there is a WP or Wikipedia somewhere
+                if (":" not in revision[c]):
+                    print(revision[c])
+                elif (re.search(r"(WP|Wikipedia)$",revision[c]) is not None):
+                    print(revision[c])
+                elif ("WP," in revision[c]) or ("Wikipedia," in revision[c]):
                     print(revision[c])
             else:
                 continue
