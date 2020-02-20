@@ -84,15 +84,16 @@ if __name__ == "__main__":
     # finding the 'WP' and 'Wikipedia' regex errors -- basically a result that does not have ':'
     def ff(revision):
         for c in onlyRegexCols:
+            # if there is a regex that's been found for policy...
             if (revision[c] is not None):
                 print(revision[c])
                 # the conditions wherein we know that there is a WP or Wikipedia somewhere
                 if (":" not in revision[c]):
-                    print(revision[c])
+                    print("PROBLEM: {}".format(revision[c]))
                 elif (re.search(r"(WP|Wikipedia)$",revision[c]) is not None):
-                    print(revision[c])
+                    print("PROBLEM: {}".format(revision[c]))
                 elif ("WP," in revision[c]) or ("Wikipedia," in revision[c]):
-                    print(revision[c])
+                    print("PROBLEM: {}".format(revision[c]))
             else:
                 continue
     
