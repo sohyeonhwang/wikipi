@@ -80,7 +80,6 @@ if __name__ == "__main__":
     #    print(c)
     #    print(type(c))
 
-
     # finding the 'WP' and 'Wikipedia' regex errors -- basically a result that does not have ':'
     def ff(revision):
         for c in onlyRegexCols:
