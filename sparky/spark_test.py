@@ -81,7 +81,7 @@ if __name__ == "__main__":
     # finding the 'WP' and 'Wikipedia' regex errors -- basically a result that does not have ':'
     def ff(revision):
         for c in regex_df.columns:
-            if revision[c] != None:
+            if revision[c] is None:
                 print(revision[c])
     
     regex_df.foreach(ff)
