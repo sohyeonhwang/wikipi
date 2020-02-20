@@ -26,8 +26,6 @@ if __name__ == "__main__":
     files = glob.glob(args.input_file)
     files = [os.path.abspath(p) for p in files]
 
-    print("We are now sparking {}".format(files[0]))
-
     reader = spark.read
 
     wiki_2_df = reader.csv(files,
@@ -78,11 +76,20 @@ if __name__ == "__main__":
     regex_diff_df = regex_df.orderBy("articleid")
     #regex_diff_df.show()
 
+    #for c in onlyRegexCols:
+    #    print(c)
+    #    print(type(c))
+
+
     # finding the 'WP' and 'Wikipedia' regex errors -- basically a result that does not have ':'
     def ff(revision):
-        for c in regex_df.columns:
-            if revision[c] != None:
+        for c in onlyRegexCols:
+            if (revision[c] is not None):
                 print(revision[c])
+                if ":" not in revision[c]:
+                    print(revision[c])
+            else:
+                continue
     
     regex_df.foreach(ff)
     # for each row, if there is no ':' in the column result 
