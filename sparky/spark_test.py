@@ -84,7 +84,7 @@ if __name__ == "__main__":
     # finding the 'WP' and 'Wikipedia' regex errors -- basically a result that does not have ':'
     def ff(revision):
         for c in onlyRegexCols:
-            # if there is a regex that's been found for policy...
+            # if there is a regex that's been found for a policy...
             if (revision[c] is not None):
                 print(revision[c])
                 # the conditions wherein we know that there is a WP or Wikipedia somewhere
