@@ -72,7 +72,7 @@ if __name__ == "__main__":
     # this has: revid, article_id, date/time, regexes
     onlyRegexCols = [c for c in regex_df.columns if c[0].isdigit()]
     regexes_revid_df = regex_df.select(regex_df.revid,regex_df.articleid, regex_df.date_time,f.concat_ws(', ',*onlyRegexCols).alias("REGEXES"))
-    #regexes_revid_df.show(vertical=True, truncate=False)
+    # regexes_revid_df.show(vertical=True)
 
     regex_diff_df = regex_df.orderBy("articleid")
     #regex_diff_df.show()
@@ -81,9 +81,12 @@ if __name__ == "__main__":
     #    print(c)
     #    print(type(c))
 
-    # finding the 'WP' and 'Wikipedia' regex errors -- basically a result that does not have ':'
+
+    errors = []
+
+    # finding the 'WP' and 'Wikipedia' regex errors
     def ff(revision):
-        problemRegexes = {}
+        # print(" ")
         for c in onlyRegexCols:
             # if there is a regex that's been found for a policy...
             if (revision[c] is not None):
@@ -91,17 +94,20 @@ if __name__ == "__main__":
 
                 # the conditions wherein we know that there is a WP or Wikipedia somewhere
                 if (":" not in revision[c]):
-                    problemRegexes.add(c)
-                    print("PROBLEM WITH {}: {}".format(c, revision[c]))
+                    errors.append(c)
+                    #print("PROBLEM WITH {}: {}".format(c, revision[c]))
                 elif (re.search(r"(WP|Wikipedia)$",revision[c]) is not None):
-                    problemRegexes.add(c)
-                    print("PROBLEM WITH {}: {}".format(c, revision[c]))
+                    errors.append(c)
+                    #print("PROBLEM WITH {}: {}".format(c, revision[c]))
                 elif ("WP," in revision[c]) or ("Wikipedia," in revision[c]):
-                    problemRegexes.add(c)
-                    print("PROBLEM WITH {}: {}".format(c, revision[c]))
+                    errors.append(c)
+                    #print("PROBLEM WITH {}: {}".format(c, revision[c]))
             else:
                 continue
-        print(problemRegexes)
+        print("\n")
+        setOfErrors = set(errors)
+        print(setOfErrors)
     
     regex_df.foreach(ff)
-
+    
+    
