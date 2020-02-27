@@ -16,7 +16,7 @@ Wikipedia:Creación de artículos con bot	NA	(?:\bW(?:ikipedia:Creación de art�
 Wikipedia:Creadores de cuentas	NA	(?:\bWikipedia:Creadores de cuentas\b)
 Wikipedia:Criterios para el borrado rápido	NA	(?:\bW(?:ikipedia:Criterios para el borrado rápido|P:C?BR)\b)
 Wikipedia:Cuenta de propósito particular	NA	(?:\bW(?:ikipedia:Cuenta de propósito particular|P:CPP)\b)
-Wikipedia:Derechos de autor	NA	(?:\bW(?:ikipedia:Derechos de autor|P(?::(?:D[AR]|CR))?)\b)
+Wikipedia:Derechos de autor	NA	(?:\bW(?:ikipedia:Derechos de autor|P:(?:(?:D[AR]|CR))?)\b)
 Wikipedia:Enlaces externos	NA	(?:\bW(?:ikipedia:Enlaces externos|P:E[EX])\b)
 Wikipedia:Esta página está protegida	NA	(?:\bWikipedia:Esta página está protegida\b)
 Wikipedia:Etiqueta	NA	(?:\bW(?:ikipedia:Etiqueta|P:E(?:TIQUETA)?)\b)

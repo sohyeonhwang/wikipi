@@ -70,7 +70,7 @@ Wikipédia:Harcèlement	NA	(?:\bW(?:P:(?:Wikitraque|OUTING|NON)|ikipédia:Harcè
 Projet:Hockey sur glace/Conventions/Notoriété	NA	(?:\bWP:hockey\b)
 Wikipédia:Importance disproportionnée	NA	(?:\bW(?:ikipédia:Importance disproportionnée|P:PROP(?:ORTION)?)\b)
 Wikipédia:Internationalisation	NA	(?:\bW(?:ikipédia:Internationalisation|P:GI)\b)
-Wikipédia:Jouer avec les principes, règles et recommandations de Wikipédia	NA	(?:\bW(?:ikipédia(?::Jouer avec les principes)?|P:(?:JOUER|GAME))\b)
+Wikipédia:Jouer avec les principes, règles et recommandations de Wikipédia	NA	(?:\bW(?:ikipédia:(?:Jouer avec les principes)?|P:(?:JOUER|GAME))\b)
 Wikipédia:Liens externes	NA	(?:\bW(?:ikipédia:Liens externes|P:(?:L(?:IENS|E)|BLOG))\b)
 Wikipédia:Liens internes	NA	(?:\bW(?:P:(?:B(?:ARREVERTICALE|V)|[PR]?LI)|ikipédia:Liens internes)\b)
 Wikipédia:Limitez l'usage de la couleur dans les articles	NA	(?:\bW(?:ikipédia:Limitez l'usage de la couleur dans les articles|P:COU(?:LEUR)?)\b)

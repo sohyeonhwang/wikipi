@@ -75,13 +75,13 @@ if __name__ == "__main__":
     # regexes_revid_df.show(vertical=True)
 
     regex_diff_df = regex_df.orderBy("articleid")
-    #regex_diff_df.show()
+    regex_diff_df.show()
 
     #for c in onlyRegexCols:
     #    print(c)
     #    print(type(c))
 
-
+"""
     errors = []
 
     # finding the 'WP' and 'Wikipedia' regex errors
@@ -111,3 +111,4 @@ if __name__ == "__main__":
     regex_df.foreach(ff)
     
     
+"""
