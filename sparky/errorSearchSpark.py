@@ -75,7 +75,7 @@ if __name__ == "__main__":
     # this has: revid, article_id, date/time, regexes
     onlyRegexCols = [c for c in regex_df.columns if c[0].isdigit()]
     regexes_revid_df = regex_df.select(regex_df.revid,regex_df.articleid, regex_df.date_time,f.concat_ws(', ',*onlyRegexCols).alias("REGEXES"))
-    # regexes_revid_df.show(vertical=True)
+    regexes_revid_df.show(vertical=True)
 
     regex_diff_df = regex_df.orderBy("articleid")
     #regex_diff_df.show()
@@ -84,6 +84,7 @@ if __name__ == "__main__":
     #    print(c)
     #    print(type(c))
 
+    """
     # set up to detect errors
     errors = []
     output_filename = "errorSearchOutput_{}".format(files[0][54:])
@@ -129,5 +130,6 @@ if __name__ == "__main__":
         print(setOfErrors, file=f)
     
     regex_df.foreach(ff)
-    
+    """    
     print("RUNNING TIME: {}".format(time.time() - start_time))
+
