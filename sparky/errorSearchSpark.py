@@ -123,7 +123,7 @@ if __name__ == "__main__":
     if not os.path.exists(args.output_dir):
         os.mkdir(args.output_dir)
     if args.output_format == "csv" or args.output_format == "tsv":
-        #monthly_joined_df.write.csv(outputPath.as_posix(), sep='\t', mode='overwrite',header=True,timestampFormat="yyyy-MM-dd HH:mm:ss")
+        monthly_joined_df.write.csv(outputPath.as_posix(), sep='\t', mode='overwrite',header=True,timestampFormat="yyyy-MM-dd HH:mm:ss")
 
 
 
