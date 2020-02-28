@@ -13,10 +13,12 @@ from pathlib import Path
 import os
 import time 
 
+
 def parse_args():
     parser = argparse.ArgumentParser(description='Create a dataset.')
     parser.add_argument('-i', '--input-file', help='Tsv file of wiki edits. Supports wildcards ', required=True, type=str)
-    parser.add_argument('-o', '--output-dir', help='Output directory', default='./output', type=str)
+    parser.add_argument('-o', '--output-dir', help='Output directory', default='./crunchingOutput', type=str)
+    parser.add_argument('--output-format', help = "[csv, parquet] format to output",type=str)
     parser.add_argument('--num-partitions', help = "number of partitions to output",type=int, default=1)
     args = parser.parse_args()
     return(args)
@@ -74,16 +76,70 @@ if __name__ == "__main__":
     # combine the regex columns into one column, if not None/null
     # this has: revid, article_id, date/time, regexes
     onlyRegexCols = [c for c in regex_df.columns if c[0].isdigit()]
-    regexes_revid_df = regex_df.select(regex_df.revid,regex_df.articleid, regex_df.date_time,f.concat_ws(', ',*onlyRegexCols).alias("REGEXES"))
-    regexes_revid_df.show(vertical=True)
+    regexes_revid_df = regex_df.select(regex_df.revid,regex_df.articleid, regex_df.date_time,f.concat_ws(', ',*onlyRegexCols).alias("regexes"))
+    # regexes_revid_df.show(vertical=True)
 
-    #TODO CRUNCHING FOR CUMULATIVE GRAPH
+
+    #CRUNCHING FOR CUMULATIVE GRAPH - core revisions / total revisions
     # group by time --> month
-    regexes_revid_df.select(f.month(regex_df.date_time).alias('month')).collect()
+    # regexes_revid_df.select(regex_df.revid,f.month(regex_df.date_time).alias('month'),f.year(regex_df.date_time).alias('year'),f.concat_ws(', ',*onlyRegexCols).alias('regexes')).show(vertical=True)
+    #print(regexes_revid_df.columns)
+
+    #CORE COLUMNS
+    #ENGLISH:
+    #SPANISH:	53_WIKIPEDIA:PUNTO_DE_VISTA_NEUTRAL, 69_WIKIPEDIA:WIKIPEDIA_NO_ES_UNA_FUENTE_PRIMARIA, 64_WIKIPEDIA:VERIFICABILIDAD
+    #FRENCH: 	26_WIKIPÉDIA:NEUTRALITÉ_DE_POINT_DE_VUE, 19_WIKIPÉDIA:TRAVAUX_INÉDITS, 21_WIKIPÉDIA:VÉRIFIABILITÉ
+    #GERMAN:
+    #JAPANESE:	14_WIKIPEDIA:中立的な観点,16_WIKIPEDIA:独自研究は載せない, 15_WIKIPEDIA:検証可能性
+    coreDFColumns = []
+    if "53_WIKIPEDIA:PUNTO_DE_VISTA_NEUTRAL" in onlyRegexCols:
+        coreDFColumn = [c for c in onlyRegexCols if (c[:2]==str(53) or c[:2]==str(69) or c[:2]==str(64))]
+    elif "26_WIKIPÉDIA:NEUTRALITÉ_DE_POINT_DE_VUE" in onlyRegexCols:
+        coreDFColumn = [c for c in onlyRegexCols if (c[:2]==str(26) or c[:2]==str(19) or c[:2]==str(21))]
+    else:
+        coreDFColumn = [c for c in onlyRegexCols if (c[:2]==str(14) or c[:2]==str(15) or c[:2]==str(16))]
+
+    #print(coreDFColumn)
+
+    monthly_regex_df = regex_df.select(regex_df.revid, f.concat_ws('_',f.year(regex_df.date_time),f.month(regex_df.date_time)).alias('year_month'),f.concat_ws(', ',*coreDFColumn).alias('core_regex'))
+    monthly_regex_df = monthly_regex_df.na.replace('',None)
+    #monthly_regex_df.show()
+    monthly_regex_df = monthly_regex_df.select(*monthly_regex_df,f.when(monthly_regex_df.core_regex.isNotNull(),1).otherwise(0).alias('core_policy_invoked'))
+
+    #monthly_regex_df.show()
+
+    monthly_core_count_df = monthly_regex_df.groupBy('year_month').sum('core_policy_invoked')
+    monthly_revn_count_df = monthly_regex_df.groupBy('year_month').count()
+
+    monthly_joined_df = monthly_revn_count_df.join(monthly_core_count_df, on=['year_month'],how='left')
+
+    # MONTHLY CUMULATIVE COUNTS
+    monthly_joined_df.orderBy(monthly_joined_df.year_month).show()
+    
+
+    outputFilename = "CUMUL_COUNTS_MONTHLY_{}.tsv".format(files[0])
+    outputPath = Path(os.getcwd()) / outputFilename
+
+    if not os.path.exists(args.output_dir):
+        os.mkdir(args.output_dir)
+    if args.output_format == "csv" or args.output_format == "tsv":
+        #monthly_joined_df.write.csv(outputPath.as_posix(), sep='\t', mode='overwrite',header=True,timestampFormat="yyyy-MM-dd HH:mm:ss")
+
+
+
 
     #TODO NEW DATAFRAME regex_diff_df that gets the regex diff for revid and revid_prior
-    regex_diff_df = regex_df.orderBy("articleid")
-    #regex_diff_df.show()
+    #regex_diff_df = regexes_revid_df.select(*regexes_revid_df.columns)
+    #regex_diff_df = regexes_revid_df.na.replace('',None)
+    #the_window = Window.partitionBy("articleid").orderBy("date_time")
+    #regex_diff_df = regex_diff_df.withColumn("previous_regexes", f.lag(regex_diff_df.regexes).over(the_window))
+    #regex_diff_df = regex_diff_df.withColumn("regexes_len", f.when(regex_diff_df.regexes.isNotNull(), f.length(regex_diff_df.regexes)).otherwise(0))
+    #regex_diff_df = regex_diff_df.withColumn("prev_regexes_len", f.when(regex_diff_df.previous_regexes.isNotNull(), f.length(regex_diff_df.previous_regexes)).otherwise(0))
+    #regex_diff_df = regex_diff_df.withColumn("regexes_new", f.when(regex_diff_df.regexes.contains(regex_diff_df.previous_regexes) ,1).otherwise(0))
+
+    #... f.when( f.length(regex_diff_df.regexes) > f.length(regex_diff_df.previous_regexes),1 ).otherwise(0))
+
+    #regex_diff_df.filter(regex_diff_df.regexes_len > 0).show()
 
 
     # CHECKING REGEX COLUMNS --- USUALLY LEAVE THIS LOOP COMMENTED OUT
