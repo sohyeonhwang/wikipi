@@ -77,14 +77,23 @@ if __name__ == "__main__":
     regexes_revid_df = regex_df.select(regex_df.revid,regex_df.articleid, regex_df.date_time,f.concat_ws(', ',*onlyRegexCols).alias("REGEXES"))
     regexes_revid_df.show(vertical=True)
 
+    #TODO CRUNCHING FOR CUMULATIVE GRAPH
+    # group by time --> month
+    regexes_revid_df.select(f.month(regex_df.date_time).alias('month')).collect()
+
+    #TODO NEW DATAFRAME regex_diff_df that gets the regex diff for revid and revid_prior
     regex_diff_df = regex_df.orderBy("articleid")
     #regex_diff_df.show()
 
+
+    # CHECKING REGEX COLUMNS --- USUALLY LEAVE THIS LOOP COMMENTED OUT
     #for c in onlyRegexCols:
     #    print(c)
     #    print(type(c))
 
+
     """
+    #ERROR DETECTION
     # set up to detect errors
     errors = []
     output_filename = "errorSearchOutput_{}".format(files[0][54:])
