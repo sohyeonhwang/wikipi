@@ -17,7 +17,7 @@ import time
 def parse_args():
     parser = argparse.ArgumentParser(description='Create a dataset.')
     parser.add_argument('-i', '--input-file', help='Tsv file of wiki edits. Supports wildcards ', required=True, type=str)
-    parser.add_argument('-o', '--output-dir', help='Output directory', default='./crunchingOutput', type=str)
+    parser.add_argument('-o', '--output-dir', help='Output directory', default='./CUMUL_MONTHLY_COUNTS', type=str)
     parser.add_argument('--output-format', help = "[csv, parquet] format to output",type=str)
     parser.add_argument('--num-partitions', help = "number of partitions to output",type=int, default=1)
     args = parser.parse_args()
@@ -114,18 +114,15 @@ if __name__ == "__main__":
     monthly_joined_df = monthly_revn_count_df.join(monthly_core_count_df, on=['year_month'],how='left')
 
     # MONTHLY CUMULATIVE COUNTS
-    monthly_joined_df.orderBy(monthly_joined_df.year_month).show()
+    #monthly_joined_df.orderBy(monthly_joined_df.year_month).show()
     
-
-    outputFilename = "CUMUL_COUNTS_MONTHLY_{}.tsv".format(files[0])
-    outputPath = Path(os.getcwd()) / outputFilename
+    #print(files[0][55:])
+    #infilename = files[0][55:]
 
     if not os.path.exists(args.output_dir):
         os.mkdir(args.output_dir)
     if args.output_format == "csv" or args.output_format == "tsv":
-        monthly_joined_df.write.csv(outputPath.as_posix(), sep='\t', mode='overwrite',header=True,timestampFormat="yyyy-MM-dd HH:mm:ss")
-
-
+        monthly_joined_df.coalesce(1).write.csv(args.output_dir, sep='\t', mode='append',header=True)
 
 
     #TODO NEW DATAFRAME regex_diff_df that gets the regex diff for revid and revid_prior
