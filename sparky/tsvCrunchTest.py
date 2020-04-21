@@ -17,6 +17,8 @@ columns_file_path = wd / 'frwiki_columns'
 samples_folder = wd.parent.parent / 'wikiq_runs' / 'output_samples'
 print(samples_folder.as_posix())
 
+#glob.glob to get a list of files
+
 samples = ["eswiki_sample.tsv"]
 
 for s in samples:

@@ -1,3 +1,0 @@
-python errorSearchSpark.py -i ../../wikiq_runs/output/frwiki-20190901-pages-meta-history6-p10355269p10704889.tsv --output-format 'tsv' -o ./CUMUL_MONTHLY_COUNTS/tests
-python errorSearchSpark.py -i ../../wikiq_runs/output/eswiki-20190901-pages-meta-history4-p3232727p3544462.tsv --output-format 'tsv' -o ./CUMUL_MONTHLY_COUNTS/tests
-python errorSearchSpark.py -i ../../wikiq_runs/output/jawiki-20190901-pages-meta-history3-p396461p442831.tsv --output-format 'tsv' -o ./CUMUL_MONTHLY_COUNTS/tests
