@@ -103,10 +103,7 @@ if __name__ == "__main__":
 
     monthly_regex_df = regex_df.select(regex_df.revid, f.concat_ws('_',f.year(regex_df.date_time),f.month(regex_df.date_time)).alias('year_month'),f.concat_ws(', ',*coreDFColumn).alias('core_regex'))
     monthly_regex_df = monthly_regex_df.na.replace('',None)
-    #monthly_regex_df.show()
     monthly_regex_df = monthly_regex_df.select(*monthly_regex_df,f.when(monthly_regex_df.core_regex.isNotNull(),1).otherwise(0).alias('core_policy_invoked'))
-
-    #monthly_regex_df.show()
 
     monthly_core_count_df = monthly_regex_df.groupBy('year_month').sum('core_policy_invoked')
     monthly_revn_count_df = monthly_regex_df.groupBy('year_month').count()
@@ -144,54 +141,5 @@ if __name__ == "__main__":
     #    print(c)
     #    print(type(c))
 
-
-    """
-    #ERROR DETECTION
-    # set up to detect errors
-    errors = []
-    output_filename = "errorSearchOutput_{}".format(files[0][54:])
-    print(files[0][54:])
-    output_path = Path(os.getcwd()) / "errorSearchOutput" / output_filename
-    print(output_path)
-    with open(output_path, 'a') as temp:
-        print("\n\n\n====================================================================================",file=temp)
-        print("OUTPUTTING THE FOLLOWING ON {}".format(datetime.now()),file=temp)
-        print("====================================================================================",file=temp)
-
-    # finding the 'WP' and 'Wikipedia' regex errors
-    def ff(revision):
-        # print(" ")
-        for c in onlyRegexCols:
-            # if there is a regex that's been found for a policy...
-            if (revision[c] is not None):
-                # print(revision[c])
-
-                # the conditions wherein we know that there is a WP or Wikipedia somewhere
-                if (":" not in revision[c]):
-                    errors.append(c)
-                    #print("PROBLEM WITH {}: {}".format(c, revision[c]))
-                elif (re.search(r"(WP|Wikipedia|Wikipédia)$",revision[c]) is not None):
-                    errors.append(c)
-                    #print("PROBLEM WITH {}: {}".format(c, revision[c]))
-                elif ("WP," in revision[c]) or ("Wikipedia," in revision[c]) or ("Wikipédia," in revision[c]):
-                    errors.append(c)
-                    #print("PROBLEM WITH {}: {}".format(c, revision[c]))
-
-                # special cases for policies that don't start with WP/Wikipedia
-                if (re.search(r"^\d+_(AIDE|PROJET|UTILISATEUR|USUARIA|USUARIO)",c) is not None):
-                    if (re.search(r"(Aide|Projet|Utilisateur|Usuaria|Usuario)$",revision[c]) is not None):
-                        errors.append(c)
-                    elif ("Aide," in revision[c]) or ("Projet," in revision[c]) or ("Utilisateur," in revision[c]) or ("Usuaria," in revision[c]) or ("Usuario," in revision[c]):
-                        errors.append(c)
-
-            else:
-                continue
-        f = open(output_path, 'a')
-        print("\n", file=f)
-        setOfErrors = set(errors)
-        print(setOfErrors, file=f)
-    
-    regex_df.foreach(ff)
-    """    
     print("RUNNING TIME: {}".format(time.time() - start_time))
 
