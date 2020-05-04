@@ -132,21 +132,23 @@ if __name__ == "__main__":
 
     sample = ['eswiki_baby.tsv']
 
-    monthly_dfs = []
+    monthly_pd_dfs = []
 
     for f in sample:
         print(f)
         regex_df = df_regex_make(f)
+        regex_df.show(vertical=True)
         # make it monthly
-        print(type(regex_df))
-
+        cumul_monthly = df_cumulMonthly_make(regex_df)
+        print(type(cumul_monthly))
+        cumul_monthly.show(vertical=True)
 
         print("\n\n======================================================================================================\n\n")
 
-        #monthly_dfs.append(cumulMonthly)
-        #cumulMonthlyPandas = cumulMonthly.toPandas()
-        #print(type(cumulMonthlyPandas))
-        #cumulMonthlyPandas.head()
+        monthly_pd_dfs.append(cumul_monthly)
+        #cumul_monthly_pd = cumul_monthly.toPandas()
+        #print(type(cumul_monthly_pd))
+        #cumul_monthly_pd.head()
 
 
 
