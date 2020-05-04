@@ -130,9 +130,18 @@ def combine_dfs(mdf_list):
         # rename columns in df2
         df2 = df2.withColumnRenamed("count","count2")
         df2 = df2.withColumnRenamed("sum(core_policy_invoked)","sum(core_policy_invoked)2")
-        combined_df = combined_df.join(df2, 'year_month', 'full_outer').select('*').fillna(0,subset=["sum(core_policy_invoked)","sum(core_policy_invoked)2"])
-        
-        combined_df = combined_df.withColumn()
+
+        # join and fillna as 0
+        combined_df = combined_df.join(df2, 'year_month', 'full_outer').select('*').fillna(0,subset=["sum(core_policy_invoked)","sum(core_policy_invoked)2","count","count2"])
+
+        # sum the appropriate columns
+        combined_df = combined_df.withColumn('total_core_policy_invoked',sum(combined_df[col] for col in ["sum(core_policy_invoked)","sum(core_policy_invoked)2"]))
+        combined_df = combined_df.withColumn('total_rev_count',sum(combined_df[col] for col in ["count","count2"]))
+
+        # need to reset combined_df to count and sum(core_policy_invoked) column names
+        combined_df = combined_df.select('year_month','total_core_policy_invoked'.alias('sum(core_policy_invoked)'), 'total_rev_count'.alias('count'))
+
+    #combined_df = combined_df.select('year_month','total_core_policy_invoked', 'total_rev_count')
     return combined_df
 
 if __name__ == "__main__":
