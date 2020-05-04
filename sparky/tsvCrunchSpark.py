@@ -9,7 +9,7 @@ import argparse
 import glob, os, re
 import csv
 from pathlib import Path
-from datetime import date
+from datetime import datetime
 import time
 
 start_time = time.time()
@@ -119,12 +119,14 @@ def combine_dfs(mdf_list):
 
     # since 0 is the starter, don't want to double count. from the next one, we iterate over and add
     for i in range(1,len(mdf_list)):
+        print(i, len(mdf_list))
+
         df2 = mdf_list[i]
         # rename columns in df2
         df2 = df2.withColumnRenamed("count","count2")
         df2 = df2.withColumnRenamed("sum(core_policy_invoked)","sum(core_policy_invoked)2")
-        print("THE DF TO ADD TO CURRENT STARTER")
-        df2.show(n=5,vertical=True)
+        #print("THE DF TO ADD TO CURRENT STARTER")
+        #df2.show(n=5,vertical=True)
 
         # join and fillna as 0
         combined_df = combined_df.join(df2, 'year_month', 'full_outer').select('*').fillna(0,subset=["sum(core_policy_invoked)","sum(core_policy_invoked)2","count","count2"])
@@ -133,14 +135,14 @@ def combine_dfs(mdf_list):
         combined_df = combined_df.withColumn('total_core_policy_invoked',sum(combined_df[col] for col in ["sum(core_policy_invoked)","sum(core_policy_invoked)2"]))
         combined_df = combined_df.withColumn('total_rev_count',sum(combined_df[col] for col in ["count","count2"]))
 
-        print("JOINED AND SUMMED STARTER AND DF2")
-        combined_df.show(n=5,vertical=True)
+        #print("JOINED AND SUMMED STARTER AND DF2")
+        #combined_df.show(n=5,vertical=True)
 
         # need to reset combined_df to count and sum(core_policy_invoked) column names
         combined_df = combined_df.select(combined_df.year_month,combined_df.total_core_policy_invoked.alias('sum(core_policy_invoked)'), combined_df.total_rev_count.alias('count'))
 
-        print("NEW STARTER")
-        combined_df.show(n=5,vertical=True)
+        #print("NEW STARTER")
+        #combined_df.show(n=5,vertical=True)
 
     # new column names for the returned df
     combined_df = combined_df.withColumnRenamed("count","total_rev_count")
@@ -217,6 +219,8 @@ if __name__ == "__main__":
     # convert the monthly master df to pandas df to tsv
     monthly_master_pdf = cumul_monthly.toPandas()
 
-    out_filepath = "{}/{}{}.tsv".format(args.output_dir,args.output_filename,date.today())
-    monthly_master_pdf.to_csv(args.output_dir,index=False,sep='\t')
+    out_filepath = "{}/{}{}.tsv".format(args.output_dir,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
+    print(out_filepath)
+
+    monthly_master_pdf.to_csv(out_filepath,index=False,sep='\t')
 
