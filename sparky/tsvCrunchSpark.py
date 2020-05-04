@@ -127,7 +127,8 @@ def combine_dfs(mdf_list):
     combined_df = mdf_list[0]
     for i in range(0,len(mdf_list)):
         df2 = mdf_list[i]
-        combined_df = combined_df.join(df2, 'year_month', 'full_outer').select('year_month').fillna(0,subset=["sum(core_policy_invoked)","count"])
+        combined_df = combined_df.join(df2, 'year_month', 'full_outer').select('*').fillna(0,subset=["sum(core_policy_invoked)","count"])
+        combined_df = combined_df.withColumn()
     return combined_df
 
 if __name__ == "__main__":
