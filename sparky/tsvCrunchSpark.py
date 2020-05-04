@@ -134,14 +134,14 @@ if __name__ == "__main__":
 
     monthly_pd_dfs = []
 
-    for f in sample:
-        print(f)
-        regex_df = df_regex_make(f)
-        regex_df.show(vertical=True)
+    for tsv_f in sample:
+        print(tsv_f)
+        regex_df = df_regex_make(tsv_f)
+        regex_df.show(n=10,vertical=True)
         # make it monthly
         cumul_monthly = df_cumulMonthly_make(regex_df)
         print(type(cumul_monthly))
-        cumul_monthly.show(vertical=True)
+        cumul_monthly.show(n=10,vertical=True)
 
         print("\n\n======================================================================================================\n\n")
 
