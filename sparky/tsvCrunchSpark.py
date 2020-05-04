@@ -19,7 +19,7 @@ def parse_args():
     args = parser.parse_args()
     return(args)
 
-def df_diff(input_df):
+def df_diff_get(input_df):
     # input_df should be regex_df in df_structurize
     regex_diff_df = input_df.orderBy("articleid")
 
@@ -113,16 +113,26 @@ def df_monthly_make(regex_df):
     monthly_regex_df = monthly_regex_df.na.replace('',None)
     monthly_regex_df = monthly_regex_df.select(*monthly_regex_df,f.when(monthly_regex_df.core_regex.isNotNull(),1).otherwise(0).alias('core_policy_invoked'))
 
+    # counts the number of revisions with core policy invocation in year_month
     monthly_core_count_df = monthly_regex_df.groupBy('year_month').sum('core_policy_invoked')
+    # counts the number of revisions in year_month
     monthly_revn_count_df = monthly_regex_df.groupBy('year_month').count()
 
     monthly_joined_df = monthly_revn_count_df.join(monthly_core_count_df, on=['year_month'],how='left')
 
     return monthly_joined_df
 
+def combine_dfs(mdf_list):
+    # starter df
+    combined_df = mdf_list[0]
+    for i in range(0,len(mdf_list)):
+        df2 = mdf_list[i]
+        combined_df.join(df2, 'year_month', 'full_outer').select('year_month',).fillna(0,subset=["sum(core_policy_invoked)","count"])
+    return combined_df
+
 if __name__ == "__main__":
     args = parse_args()
-    conf = SparkConf().setAppName("Wiki Regex Spark to monthly")
+    conf = SparkConf().setAppName("wiki regex spark processing")
     spark = SparkSession.builder.getOrCreate()
     reader = spark.read
 
@@ -130,24 +140,30 @@ if __name__ == "__main__":
     files = [os.path.abspath(p) for p in files]
     print(files)
 
-    sample = ['eswiki_baby.tsv']
+    sample = ['eswiki_baby.tsv','eswiki_baby.tsv']
 
-    monthly_pd_dfs = []
+    monthly_dfs = []
 
     for tsv_f in sample:
         print(tsv_f)
         regex_df = df_regex_make(tsv_f)
         # make it monthly
         monthly_df = df_monthly_make(regex_df)
-        monthly_df.show(n=10,vertical=True)
+        #monthly_df.show(n=10,vertical=True)
 
         print("\n\n======================================================================================================\n\n")
 
-        #monthly_pd_dfs.append(monthly_df)
-        monthly_pd = monthly_df.toPandas()
-        print(type(monthly_pd))
-        monthly_pd.head()
+        monthly_dfs.append(monthly_df)
 
+        # I was going to convert to pandas dataframe, but there doesn't seem to be much point here
+        #monthly_pd = monthly_df.toPandas()
+        #print(type(monthly_pd))
+        #monthly_pd.head()
 
+    # take the list of monthly dfs and make the cumulative master df
+    cumulMonthly = combine_dfs(monthly_dfs)
+    cumulMonthly.show(n=10,vertical=True)
+
+    # df to pandas df to tsv
 
 
