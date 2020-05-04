@@ -226,4 +226,4 @@ if __name__ == "__main__":
     print(out_filepath)
 
     monthly_master_pdf.to_csv(out_filepath,index=False,sep='\t')
-
+    spark.stop()
