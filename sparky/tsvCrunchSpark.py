@@ -148,6 +148,9 @@ def combine_dfs(mdf_list):
     combined_df = combined_df.withColumnRenamed("count","total_rev_count")
     combined_df = combined_df.withColumnRenamed("sum(core_policy_invoked)","total_core_policy_invoked")
 
+    # sort by the date
+    combined_df = combined_df.orderBy("year_month")
+
     return combined_df
 
 def df_diff_get(input_df):
