@@ -118,6 +118,9 @@ def sparkit(wikiqtsv):
     # structure the df to get the def with columns of metadata and regexes
     meta_df, regex_df = df_structurize(tsv2df,struct)
 
+    print(type(regex_df))
+    regex_df.show()
+
     cumul_month = cumulMonthly(regex_df)
     #cumul_month.orderBy(cumul_month.year_month).show()
 
