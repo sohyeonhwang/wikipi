@@ -125,8 +125,6 @@ def df_monthly_make(regex_df):
 def combine_dfs(mdf_list):
     # starter df
     combined_df = mdf_list[0]
-    print("The starter DF")
-    combined_df.show(n=10,vertical=True)
     # since 0 is the starter, don't want to double count. from the next one, we iterate over and add
     for i in range(1,len(mdf_list)):
         df2 = mdf_list[i]
@@ -156,9 +154,11 @@ if __name__ == "__main__":
     spark = SparkSession.builder.getOrCreate()
     reader = spark.read
 
+    print(args.input)
+
     files = glob.glob(args.input)
     files = [os.path.abspath(p) for p in files]
-    #print(files)
+    print(files)
 
     sample = ['eswiki_baby.tsv','eswiki_baby.tsv','eswiki_baby.tsv']
 
@@ -169,7 +169,7 @@ if __name__ == "__main__":
         regex_df = df_regex_make(tsv_f)
         # make it monthly
         monthly_df = df_monthly_make(regex_df)
-        monthly_df.show(n=10,vertical=True)
+        #monthly_df.show(n=5,vertical=True)
 
         print("\n======================================================================================================\n")
 
