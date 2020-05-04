@@ -210,10 +210,10 @@ if __name__ == "__main__":
     cumul_monthly.show(n=10,vertical=True)
     print("--- %s seconds ---" % (time.time() - start_time))
 
-"""
+
     # convert the monthly master df to pandas df to tsv
     monthly_master_pdf = cumul_monthly.toPandas()
 
     out_filepath = "{}/{}{}.tsv".format(args.output_dir,args.output_filename,date.today())
     monthly_master_pdf.to_csv(args.output_dir,index=False,sep='\t')
-"""
+
