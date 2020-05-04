@@ -127,7 +127,7 @@ def combine_dfs(mdf_list):
     combined_df = mdf_list[0]
     for i in range(0,len(mdf_list)):
         df2 = mdf_list[i]
-        combined_df.join(df2, 'year_month', 'full_outer').select('year_month',).fillna(0,subset=["sum(core_policy_invoked)","count"])
+        combined_df = combined_df.join(df2, 'year_month', 'full_outer').select('year_month').fillna(0,subset=["sum(core_policy_invoked)","count"])
     return combined_df
 
 if __name__ == "__main__":
@@ -138,20 +138,20 @@ if __name__ == "__main__":
 
     files = glob.glob(args.input)
     files = [os.path.abspath(p) for p in files]
-    print(files)
+    #print(files)
 
     sample = ['eswiki_baby.tsv','eswiki_baby.tsv']
 
     monthly_dfs = []
 
     for tsv_f in sample:
-        print(tsv_f)
+        print("Looking at: {}".format(tsv_f))
         regex_df = df_regex_make(tsv_f)
         # make it monthly
         monthly_df = df_monthly_make(regex_df)
-        #monthly_df.show(n=10,vertical=True)
+        monthly_df.show(n=10,vertical=True)
 
-        print("\n\n======================================================================================================\n\n")
+        print("\n======================================================================================================\n")
 
         monthly_dfs.append(monthly_df)
 
@@ -159,6 +159,8 @@ if __name__ == "__main__":
         #monthly_pd = monthly_df.toPandas()
         #print(type(monthly_pd))
         #monthly_pd.head()
+
+    print(monthly_dfs)
 
     # take the list of monthly dfs and make the cumulative master df
     cumulMonthly = combine_dfs(monthly_dfs)
