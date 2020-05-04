@@ -175,6 +175,9 @@ if __name__ == "__main__":
     print(args.input)
     print(args.lang)
 
+    if not os.path.isdir(args.output_dir):
+        os.mkdir(args.output_dir)
+
     directory = "{}/{}wiki/*.tsv".format(args.input,args.lang)
     print(directory)
 
