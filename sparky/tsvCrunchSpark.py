@@ -154,17 +154,22 @@ if __name__ == "__main__":
     spark = SparkSession.builder.getOrCreate()
     reader = spark.read
 
+    #/gscratch/comdata/users/sohw/wikipi/wikiq_runs/output_samples/tsvSampleInputs
     print(args.input)
+    print(args.lang)
 
-    files = glob.glob(args.input)
+    directory = "{}/{}wiki/".format(args.input,args.lang)
+    print(directory)
+
+    files = glob.glob(directory)
     files = [os.path.abspath(p) for p in files]
     print(files)
-
+"""
     sample = ['eswiki_baby.tsv','eswiki_baby.tsv','eswiki_baby.tsv']
 
     monthly_dfs = []
 
-    for tsv_f in sample:
+    for tsv_f in files:
         print("Looking at: {}".format(tsv_f))
         regex_df = df_regex_make(tsv_f)
         # make it monthly
@@ -189,3 +194,4 @@ if __name__ == "__main__":
     # df to pandas df to tsv
 
 
+"""
