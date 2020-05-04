@@ -105,7 +105,7 @@ def findCoreColumns(onlyRegexCols):
 
     return coreDFColumn
 
-def df_cumulMonthly_make(regex_df):
+def df_monthly_make(regex_df):
     onlyRegexCols = [c for c in regex_df.columns if c[0].isdigit()]
     coreDFColumn = findCoreColumns(onlyRegexCols)
 
@@ -137,18 +137,16 @@ if __name__ == "__main__":
     for tsv_f in sample:
         print(tsv_f)
         regex_df = df_regex_make(tsv_f)
-        regex_df.show(n=10,vertical=True)
         # make it monthly
-        cumul_monthly = df_cumulMonthly_make(regex_df)
-        print(type(cumul_monthly))
-        cumul_monthly.show(n=10,vertical=True)
+        monthly_df = df_monthly_make(regex_df)
+        monthly_df.show(n=10,vertical=True)
 
         print("\n\n======================================================================================================\n\n")
 
-        monthly_pd_dfs.append(cumul_monthly)
-        #cumul_monthly_pd = cumul_monthly.toPandas()
-        #print(type(cumul_monthly_pd))
-        #cumul_monthly_pd.head()
+        #monthly_pd_dfs.append(monthly_df)
+        monthly_pd = monthly_df.toPandas()
+        print(type(monthly_pd))
+        monthly_pd.head()
 
 
 
