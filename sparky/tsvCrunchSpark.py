@@ -19,28 +19,6 @@ def parse_args():
     args = parser.parse_args()
     return(args)
 
-def df_structurize(input_df, struct):
-    # metadata columns
-    metaColumns = struct.fieldNames()
-    meta_df = input_df.select(*metaColumns)
-    #meta_df.orderBy("articleid").show()
-
-    # dataframe of the regex columns
-    regexDFColumns = [c for c in input_df.columns if c[0].isdigit()]
-    regexDFColumns.append("revid")
-    regexDFColumns.append("date_time")
-    regexDFColumns.append("articleid")
-    regex_df = input_df.na.replace('None',None).select(*regexDFColumns)
-    #regex_df.show(vertical=True)
-
-    # combine the regex columns into one column, if not None/null
-    # this has: revid, article_id, date/time, regexes
-    #onlyRegexCols = [c for c in regex_df.columns if c[0].isdigit()]
-    #regexes_revid_df = regex_df.select(regex_df.revid,regex_df.articleid, regex_df.date_time,f.concat_ws(', ',*onlyRegexCols).alias("REGEXES"))
-    #regexes_revid_df.show(vertical=True)
-
-    return meta_df, regex_df
-
 def coreColumns(onlyRegexCols):
     #CORE COLUMNS
     #ENGLISH:
@@ -77,7 +55,40 @@ def df_diff(input_df):
     # input_df should be regex_df in df_structurize
     regex_diff_df = input_df.orderBy("articleid")
 
+    # 
+    # year_month, {'ABC':0,'XYZ':3, ...} <-- a dictionary of counts
+
+    # make an ordered list of year_month
+
+    # iterate through the list and compare the dictionaries, get the diff
+
+    # get the difference (diff_df) by month for each article
+
+    # return a regex_diff_df that has the article_id, year_month, 
+
     return regex_diff_df.show()
+
+def df_structurize(input_df, struct):
+    # metadata columns
+    metaColumns = struct.fieldNames()
+    meta_df = input_df.select(*metaColumns)
+    #meta_df.orderBy("articleid").show()
+
+    # dataframe of the regex columns
+    regexDFColumns = [c for c in input_df.columns if c[0].isdigit()]
+    regexDFColumns.append("revid")
+    regexDFColumns.append("date_time")
+    regexDFColumns.append("articleid")
+    regex_df = input_df.na.replace('None',None).select(*regexDFColumns)
+    #regex_df.show(vertical=True)
+
+    # combine the regex columns into one column, if not None/null
+    # this has: revid, article_id, date/time, regexes
+    #onlyRegexCols = [c for c in regex_df.columns if c[0].isdigit()]
+    #regexes_revid_df = regex_df.select(regex_df.revid,regex_df.articleid, regex_df.date_time,f.concat_ws(', ',*onlyRegexCols).alias("REGEXES"))
+    #regexes_revid_df.show(vertical=True)
+
+    return meta_df, regex_df
 
 def sparkit(wikiqtsv):
     # make wikiq tsv into a dataframe
@@ -105,7 +116,7 @@ def sparkit(wikiqtsv):
     struct = struct.add("title",types.StringType(), True)
 
     # structure the df to get the def with columns of metadata and regexes
-    meta_df, regex_df = df_structurize(wikiqtsv,struct)
+    meta_df, regex_df = df_structurize(tsv2df,struct)
 
     cumul_month = cumulMonthly(regex_df)
     #cumul_month.orderBy(cumul_month.year_month).show()
@@ -138,7 +149,7 @@ if __name__ == "__main__":
         cumulMonthlyPandas = cumulMonthly.toPandas()
         print(type(cumulMonthlyPandas))
         cumulMonthlyPandas.head()
-        
+
 
 
 
