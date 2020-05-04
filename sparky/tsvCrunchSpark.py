@@ -158,7 +158,7 @@ if __name__ == "__main__":
     print(args.input)
     print(args.lang)
 
-    directory = "{}/{}wiki/".format(args.input,args.lang)
+    directory = "{}/{}wiki/*.tsv".format(args.input,args.lang)
     print(directory)
 
     files = glob.glob(directory)
