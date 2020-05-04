@@ -127,7 +127,11 @@ def combine_dfs(mdf_list):
     combined_df = mdf_list[0]
     for i in range(0,len(mdf_list)):
         df2 = mdf_list[i]
-        combined_df = combined_df.join(df2, 'year_month', 'full_outer').select('*').fillna(0,subset=["sum(core_policy_invoked)","count"])
+        # rename columns in df2
+        df2 = df2.withColumnRenamed("count","count2")
+        df2 = df2.withColumnRenamed("sum(core_policy_invoked)","sum(core_policy_invoked)2")
+        combined_df = combined_df.join(df2, 'year_month', 'full_outer').select('*').fillna(0,subset=["sum(core_policy_invoked)","sum(core_policy_invoked)2"])
+        
         combined_df = combined_df.withColumn()
     return combined_df
 
@@ -161,7 +165,7 @@ if __name__ == "__main__":
         #print(type(monthly_pd))
         #monthly_pd.head()
 
-    print(monthly_dfs)
+    #print(monthly_dfs)
 
     # take the list of monthly dfs and make the cumulative master df
     cumulMonthly = combine_dfs(monthly_dfs)
