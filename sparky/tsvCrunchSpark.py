@@ -127,32 +127,27 @@ def combine_dfs(mdf_list):
     combined_df = mdf_list[0]
     print("The starter DF")
     combined_df.show(n=10,vertical=True)
+    # since 0 is the starter, don't want to double count. from the next one, we iterate over and add
     for i in range(1,len(mdf_list)):
         df2 = mdf_list[i]
         # rename columns in df2
         df2 = df2.withColumnRenamed("count","count2")
         df2 = df2.withColumnRenamed("sum(core_policy_invoked)","sum(core_policy_invoked)2")
-        print("df2 to be joined")
-        df2.show(n=10,vertical=True)
 
         # join and fillna as 0
         combined_df = combined_df.join(df2, 'year_month', 'full_outer').select('*').fillna(0,subset=["sum(core_policy_invoked)","sum(core_policy_invoked)2","count","count2"])
-        print("the joined df")
-        combined_df.show(n=10,vertical=True)
 
         # sum the appropriate columns
         combined_df = combined_df.withColumn('total_core_policy_invoked',sum(combined_df[col] for col in ["sum(core_policy_invoked)","sum(core_policy_invoked)2"]))
         combined_df = combined_df.withColumn('total_rev_count',sum(combined_df[col] for col in ["count","count2"]))
 
-        print("the joined df, summed")
-        combined_df.show(n=10,vertical=True)
-
         # need to reset combined_df to count and sum(core_policy_invoked) column names
         combined_df = combined_df.select(combined_df.year_month,combined_df.total_core_policy_invoked.alias('sum(core_policy_invoked)'), combined_df.total_rev_count.alias('count'))
-        print("the new starter df")
-        combined_df.show(n=10,vertical=True)
 
-    #combined_df = combined_df.select('year_month','total_core_policy_invoked', 'total_rev_count')
+    # new column names for the returned df
+    combined_df = combined_df.withColumnRenamed("count","total_rev_count")
+    combined_df = combined_df.withColumnRenamed("sum(core_policy_invoked)","total_core_policy_invoked")
+
     return combined_df
 
 if __name__ == "__main__":
@@ -165,7 +160,7 @@ if __name__ == "__main__":
     files = [os.path.abspath(p) for p in files]
     #print(files)
 
-    sample = ['eswiki_baby.tsv','eswiki_baby.tsv']
+    sample = ['eswiki_baby.tsv','eswiki_baby.tsv','eswiki_baby.tsv']
 
     monthly_dfs = []
 
@@ -189,7 +184,7 @@ if __name__ == "__main__":
 
     # take the list of monthly dfs and make the cumulative master df
     cumulMonthly = combine_dfs(monthly_dfs)
-    #cumulMonthly.show(n=10,vertical=True)
+    cumulMonthly.show(n=10,vertical=True)
 
     # df to pandas df to tsv
 
