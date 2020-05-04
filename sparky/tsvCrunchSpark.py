@@ -139,7 +139,7 @@ def combine_dfs(mdf_list):
         combined_df = combined_df.withColumn('total_rev_count',sum(combined_df[col] for col in ["count","count2"]))
 
         # need to reset combined_df to count and sum(core_policy_invoked) column names
-        combined_df = combined_df.select('year_month','total_core_policy_invoked'.alias('sum(core_policy_invoked)'), 'total_rev_count'.alias('count'))
+        combined_df = combined_df.select(combined_df.year_month,combined_df.total_core_policy_invoked.alias('sum(core_policy_invoked)'), combined_df.total_rev_count.alias('count'))
 
     #combined_df = combined_df.select('year_month','total_core_policy_invoked', 'total_rev_count')
     return combined_df
