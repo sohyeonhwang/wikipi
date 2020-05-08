@@ -191,20 +191,20 @@ if __name__ == "__main__":
     #master_regex_one_df.orderBy(master_regex_one_df.articleid.asc()).show(n=3,vertical=True)
     master_regex_one_df = master_regex_one_df.orderBy('articleid')
 
-    print("First we sort the master_regex_one_df by articleid,timestamp and add prev_rev_regex")
+    print("First we sort the master_regex_one_df by articleid,timestamp and add regexes_prev")
     my_window = Window.partitionBy('articleid').orderBy('date_time')
     master_regex_one_df = master_regex_one_df.withColumn('regexes_prev', f.lag(master_regex_one_df.regexes).over(my_window))
     master_regex_one_df = master_regex_one_df.withColumn('core_prev', f.lag(master_regex_one_df.core_regexes).over(my_window))
 
     ## diff_bool, diff_core_bool keep track of # of revisions that have a new regex
-    master_regex_one_df = master_regex_one_df.withColumn("regexes_diff_bool", f.when(master_regex_one_df.regexes == master_regex_one_df.prev_rev_regex, 0).otherwise(1))
-    master_regex_one_df = master_regex_one_df.withColumn("core_diff_bool", f.when(master_regex_one_df.core_regexes == master_regex_one_df.prev_rev_core, 0).otherwise(1))
+    master_regex_one_df = master_regex_one_df.withColumn("regexes_diff_bool", f.when(master_regex_one_df.regexes == master_regex_one_df.regexes_prev, 0).otherwise(1))
+    master_regex_one_df = master_regex_one_df.withColumn("core_diff_bool", f.when(master_regex_one_df.core_regexes == master_regex_one_df.core_prev, 0).otherwise(1))
 
     '''
     ##TODO diff_regex diff_core keep track of the actual additions (string)
-    # current = regexes, prev = prev_rev_regex
-    diff_regex, diff_regex_count = diff_find(master_regex_one_df.regexes,master_regex_one_df.prev_rev_regex)
-    diff_core, diff_core_count = diff_find(master_regex_one_df.core_regexes,master_regex_one_df.prev_rev_core)
+    # current = regexes, prev = regexes_prev
+    diff_regex, diff_regex_count = diff_find(master_regex_one_df.regexes,master_regex_one_df.regexes_prev)
+    diff_core, diff_core_count = diff_find(master_regex_one_df.core_regexes,master_regex_one_df.core_prev)
 
     master_regex_one_df = master_regex_one_df.withColumn('regexes_diff',f.when(f.isnull(diff_regex), None).otherwise(diff_regex))
     master_regex_one_df = master_regex_one_df.withColumn('core_diff', f.when(f.isnull(diff_core), None).otherwise(diff_core))
