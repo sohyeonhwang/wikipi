@@ -181,9 +181,6 @@ if __name__ == "__main__":
     master_regex_one_df = master_regex_one_df.repartition(args.num_partitions)
     # print(master_regex_one_df.rdd.getNumPartitions())
 
-    print("Loaded the big dataframe. See preview below\n")
-    master_regex_one_df.show(n=3,vertical=True)
-
     #print("Columns of the processed dataframe:\n")
     #for c in master_regex_one_df.columns:
     #    print("\t{}".format(c))    
@@ -191,13 +188,13 @@ if __name__ == "__main__":
     print("--- %s seconds ---" % (time.time() - start_time))
 
     #master_regex_one_df.orderBy('articleid').show(n=3,vertical=True)
-    master_regex_one_df.orderBy(master_regex_one_df.articleid.asc()).show(n=3,vertical=True)
+    #master_regex_one_df.orderBy(master_regex_one_df.articleid.asc()).show(n=3,vertical=True)
     master_regex_one_df = master_regex_one_df.orderBy('articleid')
 
     print("First we sort the master_regex_one_df by articleid,timestamp and add prev_rev_regex")
-    my_window = Window.partitionBy('articleid','YYYY-MM').orderBy('date_time')
+    my_window = Window.partitionBy('articleid').orderBy('date_time')
     master_regex_one_df = master_regex_one_df.withColumn('prev_rev_regex', f.lag(master_regex_one_df.regexes).over(my_window))
-    master_regex_one_df.show(n=3,vertical=True)
+    master_regex_one_df.orderBy('articleid','YYYY-MM','date_time').show(n=30,vertical=True)
 
     print("Now we're ready to partition and process the data.")
 
@@ -205,7 +202,7 @@ if __name__ == "__main__":
     rp_df = master_regex_one_df.repartition("articleid","YYYY-MM")
     print(rp_df.rdd.getNumPartitions())
 
-    #rp_df = rp_df.withColumn('diff', f.when(f.isnull(diff), 0).otherwise(diff))
+    rp_df = rp_df.withColumn("diff_bool", f.when(rp_df.regexes == rp_df.prev_rev_regex, 0).otherwise(1))
 
     out_filepath = "{}/{}{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
     print("Find the output here: {}".format(out_filepath))
