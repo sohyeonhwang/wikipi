@@ -193,12 +193,12 @@ if __name__ == "__main__":
 
     print("First we sort the master_regex_one_df by articleid,timestamp and add prev_rev_regex")
     my_window = Window.partitionBy('articleid').orderBy('date_time')
-    master_regex_one_df = master_regex_one_df.withColumn('prev_rev_regex', f.lag(master_regex_one_df.regexes).over(my_window))
-    master_regex_one_df = master_regex_one_df.withColumn('prev_rev_core', f.lag(master_regex_one_df.core_regexes).over(my_window))
+    master_regex_one_df = master_regex_one_df.withColumn('regexes_prev', f.lag(master_regex_one_df.regexes).over(my_window))
+    master_regex_one_df = master_regex_one_df.withColumn('core_prev', f.lag(master_regex_one_df.core_regexes).over(my_window))
 
     ## diff_bool, diff_core_bool keep track of # of revisions that have a new regex
-    master_regex_one_df = master_regex_one_df.withColumn("diff_bool", f.when(master_regex_one_df.regexes == master_regex_one_df.prev_rev_regex, 0).otherwise(1))
-    master_regex_one_df = master_regex_one_df.withColumn("diff_core_bool", f.when(master_regex_one_df.core_regexes == master_regex_one_df.prev_rev_core, 0).otherwise(1))
+    master_regex_one_df = master_regex_one_df.withColumn("regexes_diff_bool", f.when(master_regex_one_df.regexes == master_regex_one_df.prev_rev_regex, 0).otherwise(1))
+    master_regex_one_df = master_regex_one_df.withColumn("core_diff_bool", f.when(master_regex_one_df.core_regexes == master_regex_one_df.prev_rev_core, 0).otherwise(1))
 
     '''
     ##TODO diff_regex diff_core keep track of the actual additions (string)
@@ -206,12 +206,12 @@ if __name__ == "__main__":
     diff_regex, diff_regex_count = diff_find(master_regex_one_df.regexes,master_regex_one_df.prev_rev_regex)
     diff_core, diff_core_count = diff_find(master_regex_one_df.core_regexes,master_regex_one_df.prev_rev_core)
 
-    master_regex_one_df = master_regex_one_df.withColumn('diff_regex',f.when(f.isnull(diff_regex), None).otherwise(diff_regex))
-    master_regex_one_df = master_regex_one_df.withColumn('diff_core', f.when(f.isnull(diff_core), None).otherwise(diff_core))
+    master_regex_one_df = master_regex_one_df.withColumn('regexes_diff',f.when(f.isnull(diff_regex), None).otherwise(diff_regex))
+    master_regex_one_df = master_regex_one_df.withColumn('core_diff', f.when(f.isnull(diff_core), None).otherwise(diff_core))
 
     ##TODO diff_regex_count diff_core_count counts the number of new policy invocations
-    master_regex_one_df = master_regex_one_df.withColumn('diff_regex_count')
-    master_regex_one_df = master_regex_one_df.withColumn('diff_core_count')
+    master_regex_one_df = master_regex_one_df.withColumn('regexes_diff_count')
+    master_regex_one_df = master_regex_one_df.withColumn('core_diff_count')
     '''
 
     master_regex_one_df.orderBy('articleid','YYYY-MM','date_time').show(n=100)
