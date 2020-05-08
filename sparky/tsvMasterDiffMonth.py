@@ -105,6 +105,10 @@ def df_regex_make(wikiqtsv):
     return regex_one_df
 
 def diff_find(current,prev):
+    '''
+    # current = regexes, prev = regexes_prev
+    diff_regex, diff_regex_count = diff_find(master_regex_one_df.regexes,master_regex_one_df.regexes_prev)
+    '''
     # we want to write a function that will find the difference between new rev and old rev
     # there are 3 possibilities
         # no difference
@@ -196,32 +200,32 @@ if __name__ == "__main__":
     master_regex_one_df = master_regex_one_df.withColumn('regexes_prev', f.lag(master_regex_one_df.regexes).over(my_window))
     master_regex_one_df = master_regex_one_df.withColumn('core_prev', f.lag(master_regex_one_df.core_regexes).over(my_window))
 
-    #master_regex_one_df = master_regex_one_df.na.replace('',None)
-    #master_regex_one_df = master_regex_one_df.na.replace('null',None)
-
-    #test
-    #master_regex_one_df = master_regex_one_df.na.replace(None,'POOP')
+    #master_regex_one_df = master_regex_one_df.na.replace('{{EMPTYBABY}}',None)
     master_regex_one_df = master_regex_one_df.na.fill('{{EMPTYBABY}}')
 
     ## diff_bool, diff_core_bool keep track of # of revisions that have a new regex
     master_regex_one_df = master_regex_one_df.withColumn("regexes_diff_bool", f.when(master_regex_one_df.regexes == master_regex_one_df.regexes_prev, 0).otherwise(1))
     master_regex_one_df = master_regex_one_df.withColumn("core_diff_bool", f.when(master_regex_one_df.core_regexes == master_regex_one_df.core_prev, 0).otherwise(1))
 
-    '''
-    ##TODO diff_regex diff_core keep track of the actual additions (string)
+    ## diff_regex diff_core keep track of the actual additions (string)
     # current = regexes, prev = regexes_prev
     diff_regex, diff_regex_count = diff_find(master_regex_one_df.regexes,master_regex_one_df.regexes_prev)
     diff_core, diff_core_count = diff_find(master_regex_one_df.core_regexes,master_regex_one_df.core_prev)
 
-    master_regex_one_df = master_regex_one_df.withColumn('regexes_diff',f.when(f.isnull(diff_regex), None).otherwise(diff_regex))
-    master_regex_one_df = master_regex_one_df.withColumn('core_diff', f.when(f.isnull(diff_core), None).otherwise(diff_core))
+    master_regex_one_df = master_regex_one_df.withColumn('regexes_diff',f.when(f.isnull(diff_regex), '{{EMPTYBABY}}').otherwise(diff_regex))
+    master_regex_one_df = master_regex_one_df.withColumn('core_diff', f.when(f.isnull(diff_core), '{{EMPTYBABY}}').otherwise(diff_core))
 
-    ##TODO diff_regex_count diff_core_count counts the number of new policy invocations
+    '''
+    ##TODO diff_regex_count diff_core_count counts the number of new policy invocations from core/regexes_diff
     master_regex_one_df = master_regex_one_df.withColumn('regexes_diff_count')
     master_regex_one_df = master_regex_one_df.withColumn('core_diff_count')
     '''
 
     master_regex_one_df.orderBy('articleid','YYYY-MM','date_time').show(n=100)
+
+    print("\n\n\n")
+
+    master_regex_one_df.select(master_regex_one_df.articleid,master_regex_one_df.YYYY-MM,master_regex_one_df.date_time,master_regex_one_df.regexes,master_regex_one_df.regexes_prev).orderBy('articleid','YYYY-MM','date_time').show(n=100)
 
     print("Partitions right now: {}".format(master_regex_one_df.rdd.getNumPartitions()))
 
