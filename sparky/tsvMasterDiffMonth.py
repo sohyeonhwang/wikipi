@@ -196,6 +196,12 @@ if __name__ == "__main__":
     master_regex_one_df = master_regex_one_df.withColumn('regexes_prev', f.lag(master_regex_one_df.regexes).over(my_window))
     master_regex_one_df = master_regex_one_df.withColumn('core_prev', f.lag(master_regex_one_df.core_regexes).over(my_window))
 
+    #master_regex_one_df = master_regex_one_df.na.replace('',None)
+    #master_regex_one_df = master_regex_one_df.na.replace('null',None)
+
+    #test
+    #master_regex_one_df = master_regex_one_df.na.replace(None,'POOP')
+
     ## diff_bool, diff_core_bool keep track of # of revisions that have a new regex
     master_regex_one_df = master_regex_one_df.withColumn("regexes_diff_bool", f.when(master_regex_one_df.regexes == master_regex_one_df.regexes_prev, 0).otherwise(1))
     master_regex_one_df = master_regex_one_df.withColumn("core_diff_bool", f.when(master_regex_one_df.core_regexes == master_regex_one_df.core_prev, 0).otherwise(1))
