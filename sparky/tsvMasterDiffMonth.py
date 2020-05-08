@@ -203,13 +203,10 @@ if __name__ == "__main__":
 
     print("Now we're ready to partition and process the data.")
 
+    #rp_df = master_regex_one_df.repartition("articleid","YYYY-MM")
+    #print(rp_df.rdd.getNumPartitions())
 
-    # GETTING THE REGEX DIFFS
-    print("Time to process the diffs now, I guess...")
-    rp_df = master_regex_one_df.repartition("articleid","YYYY-MM")
-    print(rp_df.rdd.getNumPartitions())
-
-    rp_df.sortWithinPartitions('date_time').show(n=3,vertical=True)
+    #rp_df.sortWithinPartitions('date_time').show(n=3,vertical=True)
 
     # 1 TODO repartition the data... repartition(1) to partitionBy(articleid, YYYY-MM)
     # each partition is an articleid for a given YYYY-MM
@@ -217,10 +214,18 @@ if __name__ == "__main__":
     # forEachPartition --> get the first and last regexes ... + core
     # this creates a directory of folders
 
-    # we now read from the partitioned data articleid, YYYY-MM
+    out_filepath = "{}/{}{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
 
-    # 1 TODO ALTERNATIVE we do df.repatition to get a new df that's partitioned by articleid, YYYY-MM
+    print("Find the output here:")
+    print(out_filepath)
 
+    master_regex_one_df.write.partitionBy("articleid","YYYY-MM").mode("overwrite").csv(out_filepath,sep='\t',header=True)
+
+    # We now read from the partitioned data articleid, YYYY-MM
+    partitioned_df = spark.read.option("basePath","{}/".format(out_filepath)).csv("{}/articleid=*/YYYY-MM=*".format(out_filepath))
+    print(partitioned_df.rdd.getNumPartitions())
+
+    print("Time to process the diffs now, I guess...")
 
     print("\n\n---Ending Spark Session and Context ---\n\n")
     spark.stop()
