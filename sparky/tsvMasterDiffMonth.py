@@ -19,7 +19,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Create a dataset.')
     parser.add_argument('-i', '--input', help='Path for directory of wikiq tsv outputs', required=True, type=str)
     parser.add_argument('--lang', help='Specify which language edition', default='es',type=str)
-    parser.add_argument('-o', '--output-dir', help='Output directory', default='./tsvCrunchOutput', type=str)
+    parser.add_argument('-o', '--output-directory', help='Output directory', default='./tsvCrunchOutput', type=str)
     parser.add_argument('-ofn', '--output-filename', help='filename for the output file of tsv', default='testCrunch', type=str)
     parser.add_argument('--num-partitions', help = "number of partitions to output",type=int, default=1)
     args = parser.parse_args()
@@ -50,6 +50,11 @@ def df_structurize(input_df, struct):
     regexDFColumns.append("revid")
     regexDFColumns.append("date_time")
     regexDFColumns.append("articleid")
+    regexDFColumns.append("namespace")
+    regexDFColumns.append("anon")
+    regexDFColumns.append("deleted")
+    regexDFColumns.append("revert")
+    regexDFColumns.append("reverteds")
     regex_df = input_df.na.replace('None',None).select(*regexDFColumns)
     #regex_df.show(n=5, vertical=True)
 
@@ -76,7 +81,7 @@ def df_regex_make(wikiqtsv):
                         header=True,
                         mode="PERMISSIVE",
                         quote="")
-    tsv2df = tsv2df.repartition(args.num_partitions)
+    #tsv2df = tsv2df.repartition(args.num_partitions)
 
     # basic structure
     struct = types.StructType().add("anon",types.StringType(),True)
@@ -137,12 +142,12 @@ if __name__ == "__main__":
 
     # checking args and retrieving inputs
     print("INPUT:\t{}".format(args.input))
-    print("LANG ED:\t{}".format(args.lang))
+    print(" LANG:\t{}".format(args.lang))
     print("O_DIR:\t{}".format(args.output_directory))
-    print("O_FN:\t{}".format(args.output_filename))
+    print(" O_FN:\t{}".format(args.output_filename))
 
-    if not os.path.isdir(args.output_dir):
-        os.mkdir(args.output_dir)
+    if not os.path.isdir(args.output_directory):
+        os.mkdir(args.output_directory)
 
     # e.g. /gscratch/comdata/users/sohw/wikipi/wikiq_runs/output_samples/tsvSampleInputs
     directory = "{}/{}wiki/*".format(args.input,args.lang)
@@ -150,7 +155,7 @@ if __name__ == "__main__":
 
     files = glob.glob(directory)
 
-    print(files)
+    # print(files)
     files_l = [os.path.abspath(p) for p in files]
     print("Number of tsvs to process: {}\n".format(len(files_l)))
 
@@ -163,23 +168,22 @@ if __name__ == "__main__":
     #we can just put the path in, no need to use files_l in a for-loop
     #TODO just glob it or just path is fine?
     master_regex_one_df = df_regex_make(glob.glob(directory))
-    master_regex_one_df_b = df_regex_make(directory)
-    df_1 = df_regex_make(files_l[0])
+    #master_regex_one_df_b = df_regex_make(directory)
+    #df_1 = df_regex_make(files_l[0])
 
     #TODO compare just one file and regex make of directory
     # df.count()--> rows and df.describe().show() --> some stats
-    print('Checking that the df from path/* is indeed different from one file input...')
-    print("glob/*:{}\npath/*:{}\none_file{}".format(master_regex_one_df.count(),master_regex_one_df_b.count(),df_1.count()))
-    print(master_regex_one_df.describe().show())
-    print(master_regex_one_df_b.describe().show())
-    print(df_1.describe().show())
+    #print('Checking that the df from path/* is indeed different from one file input...')
+    #print("glob/*:{}\npath/*:{}\none_file{}".format(master_regex_one_df.count(),master_regex_one_df_b.count(),df_1.count()))
+    #print(master_regex_one_df.describe().show())
+    #print(master_regex_one_df_b.describe().show())
+    #print(df_1.describe().show())
 
-    print("\n\n---Ending Spark Session and Context ---\n\n")
-    spark.stop()
-'''
     #TODO check number of partitions -- should be 1
     print('Checking number of partitions - should be 1 b/c df.repartition(1) in df_regex_make')
     print(master_regex_one_df.rdd.getNumPartitions())
+    master_regex_one_df = master_regex_one_df.repartition(args.num_partitions)
+    # print(master_regex_one_df.rdd.getNumPartitions())
 
     print("Loaded the big dataframe. See preview below\n")
     master_regex_one_df.show(n=3,vertical=True)
@@ -188,17 +192,22 @@ if __name__ == "__main__":
     # we should now have a disgustingly large dataframe of all the TSVS
     # output that to do other things in a different script aka the groupBy article, month Squish
 
-    print("Columns of the processed dataframe:\n")
-    for c in master_regex_one_df.columns:
-        print("\t{}".format(c))    
+    #print("Columns of the processed dataframe:\n")
+    #for c in master_regex_one_df.columns:
+    #    print("\t{}".format(c))    
 
-    print("Check for any null articleid.\n")
-    master_regex_one_df.orderBy('articleid').show(n=3,vertical=True)
-
+    #print("Check for any null articleid.\n")
+    #master_regex_one_df.orderBy('articleid').show(n=3,vertical=True)
+    #master_regex_one_df.orderBy(master_regex_one_df.articleid.desc()).show(n=3,vertical=True)
+    #testdf = master_regex_one_df.select(master_regex_one_df.year_month, f.when(master_regex_one_df.articleid == None).otherwise(0)).show()
+    #testdf.orderBy('articleid').show(n=3,vertical=True)
+    #testdf.orderBy(testdf.articleid.desc()).show(n=3,vertical=True)
 
     print("Now we're ready to partition and process the data.")
 
-
+    print("\n\n---Ending Spark Session and Context ---\n\n")
+    spark.stop()
+'''
 
     # GETTING THE REGEX DIFFS
 
@@ -292,4 +301,8 @@ if __name__ == "__main__":
 
     print("\n\n---Ending Spark Session and Context ---\n\n")
     spark.stop()
+<<<<<<< HEAD
     '''
+=======
+    '''
+>>>>>>> 61a55e3e3aa6d8d292482ceeea94391238fb9a09
