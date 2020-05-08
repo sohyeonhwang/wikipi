@@ -201,6 +201,7 @@ if __name__ == "__main__":
 
     #test
     #master_regex_one_df = master_regex_one_df.na.replace(None,'POOP')
+    master_regex_one_df = master_regex_one_df.na.fill('{{EMPTYBABY}}')
 
     ## diff_bool, diff_core_bool keep track of # of revisions that have a new regex
     master_regex_one_df = master_regex_one_df.withColumn("regexes_diff_bool", f.when(master_regex_one_df.regexes == master_regex_one_df.regexes_prev, 0).otherwise(1))
