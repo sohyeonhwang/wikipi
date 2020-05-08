@@ -194,7 +194,7 @@ if __name__ == "__main__":
     print("First we sort the master_regex_one_df by articleid,timestamp and add prev_rev_regex")
     my_window = Window.partitionBy('articleid').orderBy('date_time')
     master_regex_one_df = master_regex_one_df.withColumn('prev_rev_regex', f.lag(master_regex_one_df.regexes).over(my_window))
-    master_regex_one_df.orderBy('articleid','YYYY-MM','date_time').show(n=30,vertical=True)
+    master_regex_one_df.orderBy('articleid','YYYY-MM','date_time').show(n=30)
 
     print("Now we're ready to partition and process the data.")
 
