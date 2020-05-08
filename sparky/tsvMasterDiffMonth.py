@@ -194,15 +194,35 @@ if __name__ == "__main__":
     print("First we sort the master_regex_one_df by articleid,timestamp and add prev_rev_regex")
     my_window = Window.partitionBy('articleid').orderBy('date_time')
     master_regex_one_df = master_regex_one_df.withColumn('prev_rev_regex', f.lag(master_regex_one_df.regexes).over(my_window))
-    master_regex_one_df.orderBy('articleid','YYYY-MM','date_time').show(n=30)
+    master_regex_one_df = master_regex_one_df.withColumn('prev_rev_core', f.lag(master_regex_one_df.core_regexes).over(my_window))
 
-    print("Now we're ready to partition and process the data.")
+    ## diff_bool, diff_core_bool keep track of # of revisions that have a new regex
+    master_regex_one_df = master_regex_one_df.withColumn("diff_bool", f.when(master_regex_one_df.regexes == master_regex_one_df.prev_rev_regex, 0).otherwise(1))
+    master_regex_one_df = master_regex_one_df.withColumn("diff_core_bool", f.when(master_regex_one_df.core_regexes == master_regex_one_df.prev_rev_core, 0).otherwise(1))
+
+    '''
+    ##TODO diff_regex diff_core keep track of the actual additions (string)
+    # current = regexes, prev = prev_rev_regex
+    diff_regex, diff_regex_count = diff_find(master_regex_one_df.regexes,master_regex_one_df.prev_rev_regex)
+    diff_core, diff_core_count = diff_find(master_regex_one_df.core_regexes,master_regex_one_df.prev_rev_core)
+
+    master_regex_one_df = master_regex_one_df.withColumn('diff_regex',f.when(f.isnull(diff_regex), None).otherwise(diff_regex))
+    master_regex_one_df = master_regex_one_df.withColumn('diff_core', f.when(f.isnull(diff_core), None).otherwise(diff_core))
+
+    ##TODO diff_regex_count diff_core_count counts the number of new policy invocations
+    master_regex_one_df = master_regex_one_df.withColumn('diff_regex_count')
+    master_regex_one_df = master_regex_one_df.withColumn('diff_core_count')
+    '''
+
+    master_regex_one_df.orderBy('articleid','YYYY-MM','date_time').show(n=100)
+
+    print("Partitions right now: {}".format(master_regex_one_df.rdd.getNumPartitions()))
+
+    print("Now we're ready to process the data.")
 
     print("Repartitioning articleid,YYYY-MM:")
-    rp_df = master_regex_one_df.repartition("articleid","YYYY-MM")
-    print(rp_df.rdd.getNumPartitions())
-
-    rp_df = rp_df.withColumn("diff_bool", f.when(rp_df.regexes == rp_df.prev_rev_regex, 0).otherwise(1))
+    #rp_df = master_regex_one_df.repartition("articleid","YYYY-MM")
+    #print(rp_df.rdd.getNumPartitions())
 
     out_filepath = "{}/{}{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
     print("Find the output here: {}".format(out_filepath))
@@ -219,18 +239,6 @@ if __name__ == "__main__":
     print("\n\n---Ending Spark Session and Context ---\n\n")
     spark.stop()
 '''
-    # 2.1 TODO BY REVISION DIFF
-    #master_regex_one_df = master_regex_one_df.orderBy('articleid')
-    my_window = Window.partitionBy('articleid','YYYY-MM').orderBy('date_time')
-    master_regex_one_df = master_regex_one_df.withColumn('prev_rev_regex', f.lag(master_regex_one_df.regexes).over(my_window))
-
-    # current = regexes, prev = prev_rev_regex
-    diff = diff_find(master_regex_one_df.regexes,master_regex_one_df.prev_rev_regex)
-    master_regex_one_df = master_regex_one_df.withColumn('diff',f.when(f.isnull(diff), 0).otherwise(diff))
-
-    # TODO for the diff col, want the actual diff or count? we can make the diff_find do both
-
-
     # now have articleid, namespace, YYYY-MM, date_time, regexes, prev_rev_regex, diff
     # 2.2 - monthly smoosh, monthly_df
         # want in monthly_df:
@@ -241,8 +249,6 @@ if __name__ == "__main__":
         # A. cumulatively cat diff, core_diff (# of policy invocations may be different from # rev with core_diff)
         # B. end - start
     #
-
-
 
     # 2.2 TODO ALTERNATIVE BY MONTH DIFF
     # from the partitioned data
