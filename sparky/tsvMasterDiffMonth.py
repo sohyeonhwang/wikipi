@@ -62,7 +62,7 @@ def df_structurize(input_df, struct):
     # this has: revid, article_id, date/time, regexes, core_regexes, regex_bool, core_bool
     onlyRegexCols = [c for c in regex_df.columns if c[0].isdigit()]
     coreDFColumn = findCoreColumns(onlyRegexCols)
-    regex_one_df = regex_df.select(regex_df.articleid, regex_df.namespace, regex_df.anon, regex_df.deleted, regex_df.revert, regex_df.reverteds, regex_df.revid, regex_df.date_time, f.concat_ws('_',f.year(regex_df.date_time),f.month(regex_df.date_time)).alias('year_month'),f.concat_ws('| ',*onlyRegexCols).alias('regexes'), f.concat_ws('| ',*coreDFColumn).alias('core_regexes'))
+    regex_one_df = regex_df.select(regex_df.articleid, regex_df.namespace, regex_df.anon, regex_df.deleted, regex_df.revert, regex_df.reverteds, regex_df.revid, regex_df.date_time, f.concat_ws('_',f.year(regex_df.date_time),f.month(regex_df.date_time)).alias('YYYY-MM'),f.concat_ws('| ',*onlyRegexCols).alias('regexes'), f.concat_ws('| ',*coreDFColumn).alias('core_regexes'))
 
     # make sure the empty ones are None/null
     regex_one_df = regex_one_df.na.replace('',None)
@@ -166,20 +166,18 @@ if __name__ == "__main__":
     print("Started the Spark session...\n")
 
     #we can just put the path in, no need to use files_l in a for-loop
-    #TODO just glob it or just path is fine?
+    #just glob it
     master_regex_one_df = df_regex_make(glob.glob(directory))
-    #master_regex_one_df_b = df_regex_make(directory)
     #df_1 = df_regex_make(files_l[0])
 
-    #TODO compare just one file and regex make of directory
+    # compared just one file and regex make of directory
     # df.count()--> rows and df.describe().show() --> some stats
     #print('Checking that the df from path/* is indeed different from one file input...')
-    #print("glob/*:{}\npath/*:{}\none_file{}".format(master_regex_one_df.count(),master_regex_one_df_b.count(),df_1.count()))
+    #print("glob/*:{}\none_file:{}".format(master_regex_one_df.count(),df_1.count()))
     #print(master_regex_one_df.describe().show())
-    #print(master_regex_one_df_b.describe().show())
     #print(df_1.describe().show())
 
-    #TODO check number of partitions -- should be 1
+    # Check number of partitions -- should be 1
     print('Checking number of partitions - should be 1 b/c df.repartition(1) in df_regex_make')
     print(master_regex_one_df.rdd.getNumPartitions())
     master_regex_one_df = master_regex_one_df.repartition(args.num_partitions)
@@ -198,38 +196,42 @@ if __name__ == "__main__":
 
     #print("Check for any null articleid.\n")
     #master_regex_one_df.orderBy('articleid').show(n=3,vertical=True)
-    #master_regex_one_df.orderBy(master_regex_one_df.articleid.desc()).show(n=3,vertical=True)
-    #testdf = master_regex_one_df.select(master_regex_one_df.year_month, f.when(master_regex_one_df.articleid == None).otherwise(0)).show()
+    master_regex_one_df.orderBy(master_regex_one_df.articleid.asc()).show(n=3,vertical=True)
+    #testdf = master_regex_one_df.select(master_regex_one_df.YYYY-MM, f.when(master_regex_one_df.articleid == None).otherwise(0)).show()
     #testdf.orderBy('articleid').show(n=3,vertical=True)
     #testdf.orderBy(testdf.articleid.desc()).show(n=3,vertical=True)
 
     print("Now we're ready to partition and process the data.")
 
-    print("\n\n---Ending Spark Session and Context ---\n\n")
-    spark.stop()
-'''
 
     # GETTING THE REGEX DIFFS
+    print("Time to process the diffs now, I guess...")
+    rp_df = master_regex_one_df.repartition("articleid","YYYY-MM")
+    print(rp_df.rdd.getNumPartitions())
 
-    # 1 TODO repartition the data... repartition(1) to partitionBy(articleid, year_month)
-    # each partition is an articleid for a given year_month
+    rp_df.sortWithinPartitions('date_time').show(n=3,vertical=True)
+
+    # 1 TODO repartition the data... repartition(1) to partitionBy(articleid, YYYY-MM)
+    # each partition is an articleid for a given YYYY-MM
     # sortWithinPartitions(date_time) where date_time is a timestamp 
     # forEachPartition --> get the first and last regexes ... + core
     # this creates a directory of folders
 
-    # we now read from the partitioned data articleid, year_month
+    # we now read from the partitioned data articleid, YYYY-MM
 
-    # 1 TODO ALTERNATIVE we do df.repatition to get a new df that's partitioned by articleid, year_month
+    # 1 TODO ALTERNATIVE we do df.repatition to get a new df that's partitioned by articleid, YYYY-MM
 
 
-
+    print("\n\n---Ending Spark Session and Context ---\n\n")
+    spark.stop()
+'''
 
     # from however it is partitioned, get the diffs
     # 2.1 TODO BY REVISION DIFF
     # we can also technically use this to smoosh / aggregate to the monthly-level later
 
     #master_regex_one_df = master_regex_one_df.orderBy('articleid')
-    my_window = Window.partitionBy('articleid','year_month').orderBy('date_time')
+    my_window = Window.partitionBy('articleid','YYYY-MM').orderBy('date_time')
     master_regex_one_df = master_regex_one_df.withColumn('prev_rev_regex', f.lag(master_regex_one_df.regexes).over(my_window))
 
     # TODO we want to write a function that will find the difference between new rev and old rev
@@ -239,10 +241,10 @@ if __name__ == "__main__":
     master_regex_one_df = master_regex_one_df.withColumn('diff',f.when(f.isnull(diff), 0).otherwise(diff))
     # TODO for the diff col, want the actual diff or count? we can make the diff_find do both
 
-    # now have articleid, namespace, year_month, date_time, regexes, prev_rev_regex, diff
+    # now have articleid, namespace, YYYY-MM, date_time, regexes, prev_rev_regex, diff
     # 2.2 - monthly smoosh, monthly_df
         # want in monthly_df:
-        # year_month, namespace, regexes_start, regexes_end, not_count_diff(next_month_start-month_start)
+        # YYYY-MM, namespace, regexes_start, regexes_end, not_count_diff(next_month_start-month_start)
         # core_regexes_start, core_regexes_end, not_count_diff(next_month_start - month_start)
         # count(revisions), count(revs_with_diff), count(revs_with_core_diff)
     # forEachPartition:
@@ -257,8 +259,8 @@ if __name__ == "__main__":
     # get first and last of each month for each article
     # so each articleid will have two rows for every month, that means 24/year, which means ~410 per article...
 
-    # new_df --> articleID, year_month, namespace, regex_start, regex_end, core_start, core_end
-    # one row per articleID + year_month combo
+    # new_df --> articleID, YYYY-MM, namespace, regex_start, regex_end, core_start, core_end
+    # one row per articleID + YYYY-MM combo
     # in new_df: calculate the diff for each articleid, month (new column diff)
     # diff is a COUNT. for YYYYMM would be YYYYMM+1(regex_start) - YYYYMM(regex_start)
     # first month starts at 0; last month is regex_end - regex_start
@@ -266,16 +268,16 @@ if __name__ == "__main__":
     print("\nGenerate new column of diff, core_diff")
 
     # smoosh into year/month (no more articleid)
-    # and then we add up all the diffs (groupBy -->year_month, namespace. so year_month, diff)
-    # so a df that is: one row per year_month + namespace combo.
-    # smooth into just year_month, diff info (ignore namespace) in R
+    # and then we add up all the diffs (groupBy -->YYYY-MM, namespace. so YYYY-MM, diff)
+    # so a df that is: one row per YYYY-MM + namespace combo.
+    # smooth into just YYYY-MM, diff info (ignore namespace) in R
 
 
 
 
     # 3 TODO F1. needs the by-rev
-    # year_month, namespace, regex_diff, core_diff, refex_diff_count, core_diff_count
-    # from the partitionBy(articleid, year_month) situation, we want to get:
+    # YYYY-MM, namespace, regex_diff, core_diff, refex_diff_count, core_diff_count
+    # from the partitionBy(articleid, YYYY-MM) situation, we want to get:
     # the count of revisions
     # the count of revisions with policy invocation (there is a diff adding), or core policy invocation
     # per month 
@@ -285,7 +287,7 @@ if __name__ == "__main__":
     # count revisions with core policy invocation
     # count revisions
 
-    # 4 TODO F4. year_month, namespace, regex_diff (not count)
+    # 4 TODO F4. YYYY-MM, namespace, regex_diff (not count)
     # we want to have the new policy invocations in a given month, so export that or use the exported file from F1
     # going to have to write a separate script that goes through the regex_diff of a month and checks ILL status
 
@@ -301,8 +303,4 @@ if __name__ == "__main__":
 
     print("\n\n---Ending Spark Session and Context ---\n\n")
     spark.stop()
-<<<<<<< HEAD
     '''
-=======
-    '''
->>>>>>> 61a55e3e3aa6d8d292482ceeea94391238fb9a09
