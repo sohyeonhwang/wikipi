@@ -166,12 +166,10 @@ if __name__ == "__main__":
     print("Started the Spark session...\n")
 
     #we can just put the path in, no need to use files_l in a for-loop
-    #just glob it
+    #just glob it (different from just one: df_1 = df_regex_make(files_l[0]))
     master_regex_one_df = df_regex_make(glob.glob(directory))
-    #df_1 = df_regex_make(files_l[0])
 
-    # compared just one file and regex make of directory
-    # df.count()--> rows and df.describe().show() --> some stats
+    # Compared just one file and regex make of directory
     #print('Checking that the df from path/* is indeed different from one file input...')
     #print("glob/*:{}\none_file:{}".format(master_regex_one_df.count(),df_1.count()))
     #print(master_regex_one_df.describe().show())
@@ -186,65 +184,55 @@ if __name__ == "__main__":
     print("Loaded the big dataframe. See preview below\n")
     master_regex_one_df.show(n=3,vertical=True)
 
-    print("--- %s seconds ---" % (time.time() - start_time))
-    # we should now have a disgustingly large dataframe of all the TSVS
-    # output that to do other things in a different script aka the groupBy article, month Squish
-
     #print("Columns of the processed dataframe:\n")
     #for c in master_regex_one_df.columns:
     #    print("\t{}".format(c))    
 
-    #print("Check for any null articleid.\n")
+    print("--- %s seconds ---" % (time.time() - start_time))
+
     #master_regex_one_df.orderBy('articleid').show(n=3,vertical=True)
     master_regex_one_df.orderBy(master_regex_one_df.articleid.asc()).show(n=3,vertical=True)
-    #testdf = master_regex_one_df.select(master_regex_one_df.YYYY-MM, f.when(master_regex_one_df.articleid == None).otherwise(0)).show()
-    #testdf.orderBy('articleid').show(n=3,vertical=True)
-    #testdf.orderBy(testdf.articleid.desc()).show(n=3,vertical=True)
+    master_regex_one_df = master_regex_one_df.orderBy('articleid')
+
+    print("First we sort the master_regex_one_df by articleid,timestamp and add prev_rev_regex")
+    my_window = Window.partitionBy('articleid','YYYY-MM').orderBy('date_time')
+    master_regex_one_df = master_regex_one_df.withColumn('prev_rev_regex', f.lag(master_regex_one_df.regexes).over(my_window))
+    master_regex_one_df.show(n=3,vertical=True)
 
     print("Now we're ready to partition and process the data.")
 
-    #rp_df = master_regex_one_df.repartition("articleid","YYYY-MM")
-    #print(rp_df.rdd.getNumPartitions())
+    print("Repartitioning articleid,YYYY-MM:")
+    rp_df = master_regex_one_df.repartition("articleid","YYYY-MM")
+    print(rp_df.rdd.getNumPartitions())
 
-    #rp_df.sortWithinPartitions('date_time').show(n=3,vertical=True)
-
-    # 1 TODO repartition the data... repartition(1) to partitionBy(articleid, YYYY-MM)
-    # each partition is an articleid for a given YYYY-MM
-    # sortWithinPartitions(date_time) where date_time is a timestamp 
-    # forEachPartition --> get the first and last regexes ... + core
-    # this creates a directory of folders
+    #rp_df = rp_df.withColumn('diff', f.when(f.isnull(diff), 0).otherwise(diff))
 
     out_filepath = "{}/{}{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
+    print("Find the output here: {}".format(out_filepath))
 
-    print("Find the output here:")
-    print(out_filepath)
-
+    '''
     master_regex_one_df.write.partitionBy("articleid","YYYY-MM").mode("overwrite").csv(out_filepath,sep='\t',header=True)
 
     # We now read from the partitioned data articleid, YYYY-MM
     partitioned_df = spark.read.option("basePath","{}/".format(out_filepath)).csv("{}/articleid=*/YYYY-MM=*".format(out_filepath))
     print(partitioned_df.rdd.getNumPartitions())
+    '''
 
     print("Time to process the diffs now, I guess...")
-
     print("\n\n---Ending Spark Session and Context ---\n\n")
     spark.stop()
 '''
-
-    # from however it is partitioned, get the diffs
     # 2.1 TODO BY REVISION DIFF
-    # we can also technically use this to smoosh / aggregate to the monthly-level later
-
     #master_regex_one_df = master_regex_one_df.orderBy('articleid')
     my_window = Window.partitionBy('articleid','YYYY-MM').orderBy('date_time')
     master_regex_one_df = master_regex_one_df.withColumn('prev_rev_regex', f.lag(master_regex_one_df.regexes).over(my_window))
 
-    # TODO we want to write a function that will find the difference between new rev and old rev
     # current = regexes, prev = prev_rev_regex
     diff = diff_find(master_regex_one_df.regexes,master_regex_one_df.prev_rev_regex)
-
     master_regex_one_df = master_regex_one_df.withColumn('diff',f.when(f.isnull(diff), 0).otherwise(diff))
+
     # TODO for the diff col, want the actual diff or count? we can make the diff_find do both
+
 
     # now have articleid, namespace, YYYY-MM, date_time, regexes, prev_rev_regex, diff
     # 2.2 - monthly smoosh, monthly_df
