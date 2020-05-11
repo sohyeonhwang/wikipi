@@ -8,7 +8,6 @@ from pyspark.sql import Window
 import pyspark.sql.functions as f
 from pyspark.sql.functions import lit
 from pyspark.sql import types
-import pandas as pd
 import argparse
 import glob, os, re
 import csv
@@ -110,191 +109,6 @@ def df_regex_make(wikiqtsv):
 
     return regex_one_df
 
-def tokenize_prep(regex_string):
-    # we want to make Wikipedia:Droit de l'auteur --> Wikipedia_Droit_de_l'auteur
-    regex_string = regex_string.replace(':','')
-    regex_string_l = regex_string.split(', ')
-    temp_l = []
-    for s in regex_string_l:
-        s = s.strip().replace(' ','_')
-        temp_l.append(s)
-    new_string = new_string = ', '.join(temp_l).strip()
-    return new_string
-
-def reverse_tokenize_prep(regex_string):
-    # we want to make Wikipedia:Droit de l'auteur --> Wikipedia_Droit_de_l'auteur
-    regex_string = regex_string.replace('WP','WP:')
-    regex_string = regex_string.replace('Wikipedia','Wikipedia:')
-    regex_string = regex_string.replace('Wikipédia','Wikipédia:')
-    regex_string_l = regex_string.split(', ')
-    temp_l = []
-    for s in regex_string_l:
-        s = s.strip().replace('_',' ')
-        temp_l.append(s)
-    new_string = new_string = ', '.join(temp_l).strip()
-    return new_string
-
-def compare_rev_regexes(current, prev, revision_diff_bool):
-    diff_count = 0
-    # we want to write a function that will find the difference between new rev and old rev
-
-    # NO CHANGE
-    # our revision diff bool did not detect a change in current vs previous versions of regex capture
-    ## regexes_diff_bool, core_diff_bool keep track of # of revisions that have a new regex / 0 for no new regex, 1 for diff
-    if revision_diff_bool == 0:
-        diffs = '{{EMPTYBABY}}' 
-        diff_count = 0
-
-    # THERE WAS SOME CHANGE
-    else:
-        diffs = []
-
-        # we want to make Wikipedia:Droit de l'auteur --> Wikipedia_Droit_de_lauteur
-        # returned string looks like: WikipediaDroit_de_lauteur, WPNPOV, WPNPOV, ...
-        current = tokenize_prep(current)
-        prev = tokenize_prep(prev)
-
-        # deltas 
-        current_t = text_split.tokenize(current)
-        prev_t = text_split.tokenize(prev)
-        operations = segment_matcher.diff(prev_t,current_t)
-
-        # structures to keep track of delta-changes
-        op_names = []
-        op_names_noequal = []
-        op_changes = []
-        op_changes_noequal = []
-
-        # for each delta change in this revision
-        for op in operations:
-            # e.g. insert:  p="" c = "WPNPOV, WPNPOV" 
-            c = "".join(current_t[op.b1:op.b2]).strip()
-            p = "".join(prev_t[op.a1:op.a2]).strip()
-            #no interest in empties, the equal [] --> [] case
-
-            if p == "," and c == ",":
-                continue
-
-            # not empty but need to deal with commas while leaving internal commas in
-            if len(c)>1:
-                if c[0] ==",":
-                    c = c[1:].strip()
-                if c[-1]==",":
-                    c = c[:-1].strip()
-            if len(p)>1:
-                if p[0] ==",":
-                    p = p[1:].strip()
-                if p[-1]==",":
-                    p = p[:-1].strip()
-
-            op_changes.append(c)
-            op_names.append(op.name)
-            if op.name != "equal":
-                # if what gets appended is '', we know that a delete has occurred
-                op_changes_noequal.append(c)
-                op_names_noequal.append(op.name)
-        
-        print("Number of delta operations: {}".format(len(op_names)))
-        
-        # now we are processing cases of diff going through the operations
-        # there is just one insert OR delete somewhere
-        if len(op_names_noequal) == 1 and op_names_noequal[0] == "insert":
-            diffs.append(op_changes_noequal[0])
-
-        elif len(op_names_noequal) == 1 and op_names_noequal[0] == "delete":
-            diffs = diffs
-        
-        # there are just multiple inserts (no deletes)
-        elif "delete" not in op_names_noequal and "insert" in op_names_noequal:
-            for change in op_changes_noequal:
-                diffs.append(change)
-        
-        # there are just a bunch of deletes (no inserts); continue on 
-        elif "insert" not in op_names_noequal and "delete" in op_names_noequal:
-            diffs = diffs
-
-        # something more complicated is afoot: inserts AND deletes
-        else:
-            #comaparing the regexes in current and prev as collections
-            intersection = collections.Counter(prev.split(", ")) & collections.Counter(current.split(", "))
-            union = collections.Counter(prev.split(", ")) | collections.Counter(current.split(", "))
-            opn_counts = collections.Counter(op_names_noequal)
-
-            new_in_current = collections.Counter(current.split(", ")) - collections.Counter(prev.split(", "))
-            
-            # prev and current are completely different - this involves multiple deletes AND inserts
-            # if 'equal' is not in op_names
-            if "equal" not in op_names and (intersection == collections.Counter()):
-                for new in current.split(", "):
-                    diffs.append(new)
-
-            # prev and current have the same contents, but different order; we assume page has been re-arranged and there is nothing to add
-            # there is the possibility that the same stuff that got deleted gets added as a new thing, but this seems a little unlikely within one edit and we have to make a design choice here
-            elif intersection == union:
-                diffs = diffs 
-
-            # there is some overlap in content of policy invocations of prev and current revisions
-            # we must figure out the meaningful differences
-            else:
-                # op_names are the names of each delta op, in order e.g. ['insert','delete','equal']
-                # op_names_noequal are only the inserts/deletes e.g. ['insert', 'delete']
-                # op_changes are the CURRENT strings for the given segment delta, in order of op_names e.g. ['WPNPOV','','WikipediaRun, Wikipedia Run']
-                # opn_counts tell us how many of each operation exist in the delta
-                # new_in_current is a collection of the regexes that are new in current (not in prev)
-
-                # one insert, one or multiple deletes
-                # we only care about the inserts
-                if opn_counts["insert"] == 1 and opn_counts["delete"] >= 1:
-                    temp = [op_changes[i] for i in range(0,len(op_names)) if op_names == "insert"]
-                    for t in  temp:
-                        diffs.append(t)
-
-                # multiple inserts, one or multiple delete
-                # we only care about the inserts that didn't exist before
-                # we need to make sure that the insert isn't simply something that existed before
-                elif opn_counts["insert"] > 1 and opn_counts["delete"] >= 1:
-                    #temp = [op_changes[i] for i in range(0,len(op_names)) if op_names == "insert"]
-                    #for t in  temp:
-                    #    diffs.append(t)
-
-                    temp = []
-                    for item in new_in_current:
-                        for x in range(0,item[1]):
-                            temp.append(item[0])
-                    diffs = diffs + temp
-
-                # cases that I can't think of; just add what exists in the new, but not the old
-                else:
-                    temp = []
-                    for item in new_in_current:
-                        for x in range(0,item[1]):
-                            temp.append(item[0])
-                    diffs = diffs + temp
-
-    # make the diff list into a string
-    # calculate the counts of the diff now
-    diff_string = reverse_tokenize_prep(", ".join(diffs))
-    diff_count = len(diff_string.split(", "))
-    return diff_string, diff_count
-
-def diff_find(row):
-    r_current = row.regexes.replace('{{EMPTYBABY}}','')
-    r_prev = row.regexes_prev.replace('{{EMPTYBABY}}','')
-    # revision has a difference in regex from last revision of article
-    r_bool = row.regexes_diff_bool
-
-    c_current = row.core_regexes.replace('{{EMPTYBABY}}','')
-    c_prev = row.core_prev.replace('{{EMPTYBABY}}','')
-    c_bool = row.core_diff_bool
-
-    r_diff, r_diff_count = compare_rev_regexes(r_current,r_prev,r_bool)
-    c_diff, c_diff_count = compare_rev_regexes(c_current,c_prev,c_bool)
-
-    row.regexes_diff = r_diff
-    row.core_diff = c_diff
-    row.regexes_diff_count = r_diff_count
-    row.core_diff_count = c_diff_count
-
 if __name__ == "__main__":
     args = parse_args()
 
@@ -325,17 +139,12 @@ if __name__ == "__main__":
 
     # we can just put the path in, no need to use files_l in a for-loop
     master_regex_one_df = df_regex_make(glob.glob(directory))
+    print(master_regex_one_df.count())
 
     # Check number of partitions -- should be 1
-    print('Checking number of partitions - should be 1 b/c df.repartition(1)')
-    master_regex_one_df = master_regex_one_df.repartition(args.num_partitions)
+    print('Checking number of partitions:')
     print(master_regex_one_df.rdd.getNumPartitions())
-    # print(master_regex_one_df.rdd.getNumPartitions())
 
-    print("--- %s seconds ---" % (time.time() - start_time))
-
-    #master_regex_one_df.orderBy('articleid').show(n=3,vertical=True)
-    #master_regex_one_df.orderBy(master_regex_one_df.articleid.asc()).show(n=3,vertical=True)
     master_regex_one_df = master_regex_one_df.orderBy('articleid')
 
     print("First we sort the master_regex_one_df by articleid,timestamp and add regexes_prev")
