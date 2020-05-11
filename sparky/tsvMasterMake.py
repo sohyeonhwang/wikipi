@@ -72,7 +72,7 @@ def df_structurize(input_df, struct):
 
     test_df = regex_df.select("*")
     for col_name in onlyRegexCols:
-        test_df = test_df.withColumn(col_name, f.regexp_replace(col_name, r'(Wikipedia|WP|Wikipédia)([^:])', lit(col_name)))
+        test_df = test_df.withColumn(col_name, f.regexp_replace(col_name, r'(WP|wp|Wikipedia|wikipedia|WIKIPEDIA|Wikipédia|wikipédia|WIKIPÉDIA)([^:])', lit(col_name)))
 
     print("TESTING REPLACE")
     test_df.show(n=40)
