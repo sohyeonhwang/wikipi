@@ -46,7 +46,7 @@ def findCoreColumns(onlyRegexCols):
 
 def replace_wp_wikipedia(col_name,temp):
     regexp = "(WP|wp|Wikipedia|wikipedia|WIKIPEDIA|Wikipédia|wikipédia|WIKIPÉDIA)([^:])"
-    return regexp_replace(col_name, regexp, temp)
+    return f.regexp_replace(col_name, regexp, temp)
 
 def multi_replace_wps(col_names):
     def inner(df):
