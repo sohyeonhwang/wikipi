@@ -1,5 +1,5 @@
 import sys
-sys.path.append("/usr/lusers/sohw/.conda/envs/wikipi_env")
+sys.path.insert(0,"/usr/lusers/sohw/.conda/envs/wikipi_env/lib/python3.7/site-packages")
 print(sys.path)
 
 from pyspark import SparkConf
