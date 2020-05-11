@@ -362,13 +362,35 @@ if __name__ == "__main__":
     master_regex_one_df.withColumn('regexes_diff_count', lit(0).cast(types.LongType()))
     master_regex_one_df.withColumn('core_diff_count', lit(0).cast(types.LongType()))
 
-    out_filepath = "{}/{}{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
-    master_regex_one_df.coalesce(1).write.csv(out_filepath,sep='\t',mode='append',header=True)
-    
-    print("Find the output here: {}".format(out_filepath))
+    # Now that we have, by-revision:
+    # articleid, namespace, YYYY_MM, date_time, regexes, regexes_prev, core_regex, core_prev
+    ## regexes_diff_bool, core_diff_bool 
+        # keep track of # of revision; that have a new regex / 0 for no new regex, 1 for diff
+        ## we can sum this for the # of revisions with difference in regex / total number of revisions
+
+    monthly_df = master_regex_one_df.repartition("YYYY_MM","namespace")
+    monthly_df = monthly_df.groupBy("YYYY_MM","namespace").agg(f.count("*").alias("num_revs"), f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff"))
+    monthly_df.orderBy('YYYY_MM').show(n=100)
+
+    out_filepath_master = "{}/{}_master_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
+    #master_regex_one_df.coalesce(1).write.csv(out_filepath_master,sep='\t',mode='append',header=True)
+
+    out_filepath_monthly = "{}/{}_monthly_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
+    #monthly_df.coalesce(1).write.csv(out_filepath_monthly,sep='\t',mode='append',header=True)
+
+    # TODO IN THE NEXT SCRIPT
+    ## regexes_diff, core_diff 
+        # keep track of the actual additions (string)
+    ## regexes_diff_count, core_diff_count
+        # count the number of new policy invocations from core/regexes_diff (per revision)
+
+
+    print("Find the output here: \nmaster:{}\nmonthly{}".format(out_filepath_master, out_filepath_monthly))
 
     print("\n\n---Ending Spark Session and Context ---\n\n")
     spark.stop()
+
+    # Input that to calculate diffs
     '''
     master_regex_one_df.foreach(diff_find)
     # we now have the diffs for each; we know this is BY ARTICLE because of the window thing we did earlier...
