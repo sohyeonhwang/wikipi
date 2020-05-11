@@ -137,7 +137,7 @@ if __name__ == "__main__":
 
     # we can just put the path in, no need to use files_l in a for-loop
     master_regex_one_df = df_regex_make(glob.glob(directory))
-    print(master_regex_one_df.count())
+    print("master_regex_one_df.count() --> {}".format(master_regex_one_df.count()))
 
     # Check number of partitions -- should be 1
     print('Checking number of partitions:')
@@ -173,7 +173,7 @@ if __name__ == "__main__":
         ## we can sum this for the # of revisions with difference in regex / total number of revisions
 
     # make the smaller version to be outputted
-    master_regex_one_df.repartition(80)
+    master_regex_one_df = master_regex_one_df.repartition(80)
     mid_time1 = time.time()
     print("Number of partitions of master_regex_one_df: {}".format(master_regex_one_df.rdd.getNumPartitions()))
     master_shrunken_df = master_regex_one_df.where('regexes_diff_bool == 1 or core_diff_bool == 1')
@@ -183,9 +183,9 @@ if __name__ == "__main__":
     print('these two should be these same, the summing of regexes_diff_bool and core_diff_bool:')
     # TEST - these two should be the same (if not 0):
     print("master:")
-    master_regex_one_df.groupBy("YYYY_MM").agg(f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff")).orderBy(master_regex_one_df.YYYY_MM).show(n=20)
+    master_regex_one_df.groupBy("YYYY_MM").agg(f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff")).orderBy(master_regex_one_df.YYYY_MM).show(n=30)
     print("filtered:")
-    master_shrunken_df.groupBy("YYYY_MM").agg(f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff")).orderBy(master_shrunken_df.YYYY_MM).show(n=20)
+    master_shrunken_df.groupBy("YYYY_MM").agg(f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff")).orderBy(master_shrunken_df.YYYY_MM).show(n=30)
 
     print('\n\n\n')
 
@@ -200,7 +200,7 @@ if __name__ == "__main__":
     # MASTER - FILTERED ROWS
     master_shrunken_df = master_shrunken_df.repartition(100)
     master_shrunken_df.orderBy(master_shrunken_df.articleid.asc_nulls_first(), master_shrunken_df.YYYY_MM, master_regex_one_df.date_time).show(n=50)
-    print(master_shrunken_df.count())
+    print("master_shrunken_df.count() --> {}".format(master_shrunken_df.count()))
 
     out_filepath_master_filtered = "{}/{}_master_filtered_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
     master_shrunken_df.coalesce(1).write.csv(out_filepath_master_filtered,sep='\t',mode='append',header=True)
