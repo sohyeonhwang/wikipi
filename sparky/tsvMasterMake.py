@@ -45,15 +45,17 @@ def findCoreColumns(onlyRegexCols):
     return coreDFColumn
 
 def replace_wp_wikipedia(col_name,temp):
-    regexp = "(WP|wp|Wikipedia|wikipedia|WIKIPEDIA|Wikipédia|wikipédia|WIKIPÉDIA)($|([^:\s]))"
+    regexp = r"(WP|wp|Wikipedia|wikipedia|WIKIPEDIA|Wikipédia|wikipédia|WIKIPÉDIA)($|([^:\s]))"
     return f.regexp_replace(col_name, regexp, temp)
 
 def multi_replace_wps(col_names):
+    # Adapted from
+    # https://medium.com/@mrpowers/performing-operations-on-multiple-columns-in-a-pyspark-dataframe-36e97896c378
     def inner(df):
         for col_name in col_names:
             print(col_name)
             temp = col_name
-            df = df.withColumn(col_name,replace_wp_wikipedia(col_name,temp))
+            df = df.withColumn( col_name , f.when(col_name).isNotNull(replace_wp_wikipedia(col_name,temp)) )
         return df
     return inner
 
@@ -78,10 +80,7 @@ def df_structurize(input_df, struct):
     onlyRegexCols = [c for c in regex_df.columns if c[0].isdigit()]
     coreDFColumn = findCoreColumns(onlyRegexCols)
 
-    #test_df = regex_df.select("*")
     replaced_df = multi_replace_wps(onlyRegexCols)(regex_df)
-
-    #print("TESTING REPLACE:")
 
     #test_df.select(regex_df.revid, regex_df.date_time, f.concat_ws('_',f.year(regex_df.date_time),f.month(regex_df.date_time)).alias('YYYY_MM'),f.concat_ws(', ',*onlyRegexCols).alias('regexes'), f.concat_ws(', ',*coreDFColumn).alias('core_regexes')).show(n=50, truncate=200)
 
@@ -90,7 +89,10 @@ def df_structurize(input_df, struct):
 
     regex_one_df = replaced_df.select(regex_df.articleid, regex_df.namespace, regex_df.anon, regex_df.deleted, regex_df.revert, regex_df.reverteds, regex_df.revid, regex_df.date_time, f.concat_ws('_',f.year(regex_df.date_time),f.month(regex_df.date_time)).alias('YYYY_MM'),f.concat_ws(', ',*onlyRegexCols).alias('regexes'), f.concat_ws(', ',*coreDFColumn).alias('core_regexes'))
 
-    # make sure the empty ones are None/null
+    # if you don't want to use the replaced version, use this:
+    # regex_one_df = regex_df.select(regex_df.articleid, regex_df.namespace, regex_df.anon, regex_df.deleted, regex_df.revert, regex_df.reverteds, regex_df.revid, regex_df.date_time, f.concat_ws('_',f.year(regex_df.date_time),f.month(regex_df.date_time)).alias('YYYY_MM'),f.concat_ws(', ',*onlyRegexCols).alias('regexes'), f.concat_ws(', ',*coreDFColumn).alias('core_regexes'))
+
+    # make again sure the empty ones are None/null
     regex_one_df = regex_one_df.na.replace('',None)
 
     ## regex_bool and core_bool help us keep track of which revisions end in text that have PI 

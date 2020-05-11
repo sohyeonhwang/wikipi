@@ -220,10 +220,15 @@ def diff_find(row):
     row['regexes_diff_count'] = r_diff_count
     row['core_diff_count'] = c_diff_count
 
-def parallelize_dataframe(df, func, n_cores=4):
+def pd_apply_diff_find(df):
+    df = df.apply(diff_find,axis=1)
+    return df
+
+def parallelize_dataframe(df, func, n_cores=30):
     '''
-    From: https://towardsdatascience.com/make-your-own-super-pandas-using-multiproc-1c04f41944a1
+    Adapted from: https://towardsdatascience.com/make-your-own-super-pandas-using-multiproc-1c04f41944a1
     '''
+    print("Using {} cores, applying {} to {}".format(n_cores, func, df))
     df_split = np.array_split(df, n_cores)
     pool = Pool(n_cores)
     df = pd.concat(pool.map(func, df_split))
@@ -256,18 +261,14 @@ if __name__ == "__main__":
     cores = cpu_count()
     print("There are {} cores; should be 28".format(cores))
 
-    #pd_df.apply(diff_find,axis=1)
     
     # TODO function should take in pd_df, do the apply(diff_find) and return the result
-    #processed_df = parallelize_dataframe(pd_df, func, n_cores=4)
+    #processed_df = parallelize_dataframe(pd_df, pd_apply_diff_find, n_cores=4)
 
     # TODO CHECK THE STATUS OF / Get rid of the {{EMPTYBABY}}
+    #processed_df.head(30)
     # PYSPARK: master_regex_one_df = master_regex_one_df.na.fill('{{EMPTYBABY}}')
 
-    ## regexes_diff_bool, core_diff_bool keep track of # of revisions that have a new regex / 0 for no new regex, 1 for diff
-    ## we can sum this for the # of revisions with difference in regex / total number of revisions
-    ## regexes_diff, core_diff keep track of the actual additions (string)
-    ## regexes_diff_count, core_diff_count count the number of new policy invocations from core/regexes_diff (per revision)
 
     # Now that we have, by-revision:
     # articleid, namespace, YYYY_MM, date_time, regexes, regexes_prev, core_regex, core_prev
@@ -285,7 +286,7 @@ if __name__ == "__main__":
     # TODO concatenate all of the strings of regexes_diff and core_diff that are not empty --> regexes_diff_monthly, core_diff_monthly
     # TODO sum up the regexes_diff_count, core_diff_count --> regexes_diff_count_monthly, core_diff_count_monthly
         # this is the number of new policy invocations in that month
-    # f.count(*) --> num_revs ... this can be found in the tsvMasterMakeOutput (monthly_namespace, monthly)
+    # f.count(*) --> num_revs --> this can be found in the tsvMasterMakeOutput (monthly_namespace, monthly)
 
     # PYSPARK: rp_df = rp_df.groupBy("YYYY_MM","namespace").agg( f.count("*").alias("num_revs"), f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff"), f.sum("regexes_diff_count").alias("regexes_diff_count_monthly"), f.sum("core_diff_count").alias("core_diff_count_monthly"), f.concat_ws(", ", f.collect_list(rp_df.regexes_diff)).alias("regexes_diff_monthly"),  f.concat_ws(", ", f.collect_list(rp_df.core_diff)).alias("core_diff_monthly"))
     # PYSPARK TODO concat_ws for regexes/core_diff_monthly CONDITIONAL --> WHEN NOT EMPTY
