@@ -236,3 +236,4 @@ if __name__ == "__main__":
         # keep track of the actual additions (string)
     ## regexes_diff_count, core_diff_count
         # count the number of new policy invocations from core/regexes_diff (per revision)
+    '''
