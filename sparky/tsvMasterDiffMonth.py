@@ -1,5 +1,6 @@
 import sys
 sys.path.append("/usr/lusers/sohw/.conda/envs/wikipi_env")
+print(sys.path)
 
 from pyspark import SparkConf
 from pyspark.sql import SparkSession, SQLContext
