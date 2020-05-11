@@ -163,15 +163,14 @@ if __name__ == "__main__":
     master_regex_one_df = master_regex_one_df.withColumn("regexes_diff_bool", f.when(master_regex_one_df.regexes == master_regex_one_df.regexes_prev, 0).otherwise(1))
     master_regex_one_df = master_regex_one_df.withColumn("core_diff_bool", f.when(master_regex_one_df.core_regexes == master_regex_one_df.core_prev, 0).otherwise(1))
 
-
-
-
-
     # initialize the columns we want to fill with diff and diff_counts
     master_regex_one_df.withColumn('regexes_diff', lit('{{EMPTYBABY}}').cast(types.StringType()))
     master_regex_one_df.withColumn('core_diff', lit('{{EMPTYBABY}}').cast(types.StringType()))
     master_regex_one_df.withColumn('regexes_diff_count', lit(0).cast(types.LongType()))
     master_regex_one_df.withColumn('core_diff_count', lit(0).cast(types.LongType()))
+
+    master_shrunken_df = master_regex_one_df.filter(master_regex_one_df.regexes_diff_bool == 1 & master_regex_one_df.core_diff_bool == 1)
+    master_shrunken_df.orderBy(master_shrunken_df.articleid, master_shrunken_df.YYYY_MM.desc()).show(n=50)
 
     # Now that we have, by-revision:
     # articleid, namespace, YYYY_MM, date_time, regexes, regexes_prev, core_regex, core_prev
