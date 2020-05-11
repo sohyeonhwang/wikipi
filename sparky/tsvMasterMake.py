@@ -183,7 +183,7 @@ if __name__ == "__main__":
     out_filepath_master = "{}/{}_master_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
     #master_regex_one_df.coalesce(1).write.csv(out_filepath_master,sep='\t',mode='append',header=True)
 
-    master_regex_one_df.orderBy(mn_df.YYYY_MM.desc()).show(n=50)
+    master_regex_one_df.orderBy(master_regex_one_df.YYYY_MM.desc()).show(n=50)
 
     # shrunken master
     out_filepath_master_culled = "{}/{}_master_culled_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
