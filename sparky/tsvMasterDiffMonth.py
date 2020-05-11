@@ -354,6 +354,8 @@ if __name__ == "__main__":
     master_regex_one_df = master_regex_one_df.withColumn("regexes_diff_bool", f.when(master_regex_one_df.regexes == master_regex_one_df.regexes_prev, 0).otherwise(1))
     master_regex_one_df = master_regex_one_df.withColumn("core_diff_bool", f.when(master_regex_one_df.core_regexes == master_regex_one_df.core_prev, 0).otherwise(1))
 
+    master_regex_one_df.orderBy('articleid','YYYY_MM','date_time').show(n=100)
+
     # initialize the columns we want to fill with diff and diff_counts
     master_regex_one_df.withColumn('regexes_diff', lit('{{EMPTYBABY}}').cast(types.StringType()))
     master_regex_one_df.withColumn('core_diff', lit('{{EMPTYBABY}}').cast(types.StringType()))
