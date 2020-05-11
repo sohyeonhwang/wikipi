@@ -1,15 +1,7 @@
 import sys
-sys.path.insert(0,"/usr/lusers/sohw/.conda/envs/wikipi_env/lib/python3.7/site-packages")
-print(sys.path)
-
-from pyspark import SparkConf
-from pyspark.sql import SparkSession, SQLContext
-from pyspark.sql import Window
-import pyspark.sql.functions as f
-from pyspark.sql.functions import lit
-from pyspark.sql import types
 import pandas as pd
 import argparse
+import numpy as np
 import glob, os, re
 import csv
 from pathlib import Path
@@ -17,16 +9,16 @@ from datetime import datetime
 import time
 import collections 
 from deltas import segment_matcher, text_split
+from multiprocessing import Pool, cpu_count
 
 start_time = time.time()
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Create a dataset.')
-    parser.add_argument('-i', '--input', help='Path for directory of wikiq tsv outputs', required=True, type=str)
+    parser.add_argument('-i', '--input', help='Filtered master_regex.tsv to input', required=True, type=str)
     parser.add_argument('--lang', help='Specify which language edition', default='es',type=str)
     parser.add_argument('-o', '--output-directory', help='Output directory', default='./tsvCrunchOutput', type=str)
     parser.add_argument('-ofn', '--output-filename', help='filename for the output file of tsv', default='testCrunch', type=str)
-    parser.add_argument('--num-partitions', help = "number of partitions to output",type=int, default=1)
     args = parser.parse_args()
     return(args)
 
@@ -295,8 +287,22 @@ def diff_find(row):
     row.regexes_diff_count = r_diff_count
     row.core_diff_count = c_diff_count
 
+def parallelize_dataframe(df, func, n_cores=4):
+    '''
+    From: https://towardsdatascience.com/make-your-own-super-pandas-using-multiproc-1c04f41944a1
+    '''
+    df_split = np.array_split(df, n_cores)
+    pool = Pool(n_cores)
+    df = pd.concat(pool.map(func, df_split))
+    pool.close()
+    pool.join()
+    return df
+
 if __name__ == "__main__":
     args = parse_args()
+
+    if not os.path.isdir(args.output_directory):
+        os.mkdir(args.output_directory)
 
     # checking args and retrieving inputs
     print("INPUT:\t{}".format(args.input))
@@ -304,82 +310,43 @@ if __name__ == "__main__":
     print("O_DIR:\t{}".format(args.output_directory))
     print(" O_FN:\t{}".format(args.output_filename))
 
-    if not os.path.isdir(args.output_directory):
-        os.mkdir(args.output_directory)
+    input_path = glob.glob(args.input)
 
-    # e.g. /gscratch/comdata/users/sohw/wikipi/wikiq_runs/output_samples/tsvSampleInputs
-    directory = "{}/{}wiki/*".format(args.input,args.lang)
-    print("INPUT PATH:{}".format(directory))
+    for i in input_path:
+        print(i)
 
-    files = glob.glob(directory)
+    file_path = input_path[i]
 
-    # print(files)
-    files_l = [os.path.abspath(p) for p in files]
-    print("Number of tsvs to process: {}\n".format(len(files_l)))
+    pd_df = pd.read_csv(file_path, sep="\t",header=0)
+    print(pd_df.columns)
 
-    # start the spark session and context
-    conf = SparkConf().setAppName("wiki regex spark processing")
-    spark = SparkSession.builder.getOrCreate()
-    reader = spark.read
-    print("Started the Spark session...\n")
+    cores = cpu_count()
+    print("There are {} core".format(cores))
 
-    # we can just put the path in, no need to use files_l in a for-loop
-    master_regex_one_df = df_regex_make(glob.glob(directory))
+    #pd_df.apply(diff_find,axis=1)
+    
+    #TODO function should take in pd_df, do the apply(diff_find) and return the result
+    #processed_df = parallelize_dataframe(pd_df, func, n_cores=4)
 
-    # Check number of partitions -- should be 1
-    print('Checking number of partitions - should be 1 b/c df.repartition(1)')
-    master_regex_one_df = master_regex_one_df.repartition(args.num_partitions)
-    print(master_regex_one_df.rdd.getNumPartitions())
-    # print(master_regex_one_df.rdd.getNumPartitions())
+    
 
-    print("--- %s seconds ---" % (time.time() - start_time))
-
-    #master_regex_one_df.orderBy('articleid').show(n=3,vertical=True)
-    #master_regex_one_df.orderBy(master_regex_one_df.articleid.asc()).show(n=3,vertical=True)
-    master_regex_one_df = master_regex_one_df.orderBy('articleid')
-
-    print("First we sort the master_regex_one_df by articleid,timestamp and add regexes_prev")
-    my_window = Window.partitionBy('articleid').orderBy('date_time')
-    master_regex_one_df = master_regex_one_df.withColumn('regexes_prev', f.lag(master_regex_one_df.regexes).over(my_window))
-    master_regex_one_df = master_regex_one_df.withColumn('core_prev', f.lag(master_regex_one_df.core_regexes).over(my_window))
-
-    #master_regex_one_df = master_regex_one_df.na.replace('{{EMPTYBABY}}',None)
-    master_regex_one_df = master_regex_one_df.na.fill('{{EMPTYBABY}}')
+    #master_regex_one_df = master_regex_one_df.na.fill('{{EMPTYBABY}}')
 
     ## regexes_diff_bool, core_diff_bool keep track of # of revisions that have a new regex / 0 for no new regex, 1 for diff
     ## we can sum this for the # of revisions with difference in regex / total number of revisions
     ## regexes_diff, core_diff keep track of the actual additions (string)
     ## regexes_diff_count, core_diff_count count the number of new policy invocations from core/regexes_diff (per revision)
 
-    master_regex_one_df = master_regex_one_df.withColumn("regexes_diff_bool", f.when(master_regex_one_df.regexes == master_regex_one_df.regexes_prev, 0).otherwise(1))
-    master_regex_one_df = master_regex_one_df.withColumn("core_diff_bool", f.when(master_regex_one_df.core_regexes == master_regex_one_df.core_prev, 0).otherwise(1))
-
-    master_regex_one_df.orderBy('articleid','YYYY_MM','date_time').show(n=100)
-
-    # initialize the columns we want to fill with diff and diff_counts
-    master_regex_one_df.withColumn('regexes_diff', lit('{{EMPTYBABY}}').cast(types.StringType()))
-    master_regex_one_df.withColumn('core_diff', lit('{{EMPTYBABY}}').cast(types.StringType()))
-    master_regex_one_df.withColumn('regexes_diff_count', lit(0).cast(types.LongType()))
-    master_regex_one_df.withColumn('core_diff_count', lit(0).cast(types.LongType()))
-
     out_filepath = "{}/{}{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
-    master_regex_one_df.coalesce(1).write.csv(out_filepath,sep='\t',mode='append',header=True)
-    
     print("Find the output here: {}".format(out_filepath))
 
-    print("\n\n---Ending Spark Session and Context ---\n\n")
-    spark.stop()
+    #TODO OUTPUT FILE
+    #master_regex_one_df.coalesce(1).write.csv(out_filepath,sep='\t',mode='append',header=True)
+    
+    
+
     '''
-    master_regex_one_df.foreach(diff_find)
-    # we now have the diffs for each; we know this is BY ARTICLE because of the window thing we did earlier...
 
-    #master_regex_one_df.orderBy('articleid','YYYY_MM','date_time').show(n=100)
-
-    print("\n\n\n")
-
-    master_regex_one_df.select(master_regex_one_df.articleid,master_regex_one_df.YYYY_MM,master_regex_one_df.date_time,master_regex_one_df.regexes,master_regex_one_df.regexes_prev,master_regex_one_df.regexes_diff,master_regex_one_df.regexes_diff_count).orderBy('articleid','YYYY_MM','date_time').show(n=100)
-
-    print("Partitions right now: {}".format(master_regex_one_df.rdd.getNumPartitions()))
 
     print("Now we're ready to process the data (MONTHLY SMOOSH)")
 

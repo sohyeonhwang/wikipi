@@ -145,7 +145,6 @@ if __name__ == "__main__":
 
     master_regex_one_df = master_regex_one_df.orderBy('articleid')
 
-    print("First we sort the master_regex_one_df by articleid,timestamp and add regexes_prev")
     my_window = Window.partitionBy('articleid').orderBy('date_time')
     master_regex_one_df = master_regex_one_df.withColumn('regexes_prev', f.lag(master_regex_one_df.regexes).over(my_window))
     master_regex_one_df = master_regex_one_df.withColumn('core_prev', f.lag(master_regex_one_df.core_regexes).over(my_window))
@@ -174,16 +173,37 @@ if __name__ == "__main__":
         ## we can sum this for the # of revisions with difference in regex / total number of revisions
 
     # make the smaller version to be outputted
+    #master_regex_one_df.repartition(100)
+    mid_time1 = time.time()
+    print("Number of partitions of master_regex_one_df: {}".format(master_regex_one_df.rdd.getNumPartitions()))
     master_shrunken_df = master_regex_one_df.where('regexes_diff_bool == 1 or core_diff_bool == 1')
 
+    print("--- %s seconds ---" % (time.time() - mid_time1))
 
+    master_regex_one_df.repartition(100)
+    mid_time2 = time.time()
+    print("Number of partitions of master_regex_one_df: {}".format(master_regex_one_df.rdd.getNumPartitions()))
+    master_shrunken_df = master_regex_one_df.where('regexes_diff_bool == 1 or core_diff_bool == 1')
+
+    print("--- %s seconds ---" % (time.time() - mid_time2))
+
+    master_regex_one_df.repartition(80)
+    mid_time3 = time.time()
+    print("Number of partitions of master_regex_one_df: {}".format(master_regex_one_df.rdd.getNumPartitions()))
+    master_shrunken_df = master_regex_one_df.where('regexes_diff_bool == 1 or core_diff_bool == 1')
+
+    print("--- %s seconds ---" % (time.time() - mid_time3))
+
+    '''
     # MASTER 
+    #TODO See if we can export the master_regex_one_df file actually
     master_regex_one_df.orderBy(master_regex_one_df.articleid.asc_nulls_first(), master_regex_one_df.YYYY_MM, master_regex_one_df.date_time).show(n=50)
     
     out_filepath_master = "{}/{}_master_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
     #master_regex_one_df.coalesce(1).write.csv(out_filepath_master,sep='\t',mode='append',header=True)
 
     # MASTER - FILTERED ROWS
+    master_shrunken_df = master_shrunken_df.repartition(100)
     master_shrunken_df.orderBy(master_shrunken_df.articleid.asc_nulls_first(), master_shrunken_df.YYYY_MM, master_regex_one_df.date_time).show(n=50)
     print(master_shrunken_df.count())
 

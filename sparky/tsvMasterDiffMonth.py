@@ -362,15 +362,13 @@ if __name__ == "__main__":
     master_regex_one_df.withColumn('regexes_diff_count', lit(0).cast(types.LongType()))
     master_regex_one_df.withColumn('core_diff_count', lit(0).cast(types.LongType()))
 
+    master_regex_one_df.foreach(diff_find)
+
     out_filepath = "{}/{}{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
     master_regex_one_df.coalesce(1).write.csv(out_filepath,sep='\t',mode='append',header=True)
     
     print("Find the output here: {}".format(out_filepath))
-
-    print("\n\n---Ending Spark Session and Context ---\n\n")
-    spark.stop()
-    '''
-    master_regex_one_df.foreach(diff_find)
+    
     # we now have the diffs for each; we know this is BY ARTICLE because of the window thing we did earlier...
 
     #master_regex_one_df.orderBy('articleid','YYYY_MM','date_time').show(n=100)
