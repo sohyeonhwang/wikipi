@@ -355,7 +355,7 @@ if __name__ == "__main__":
     master_regex_one_df.withColumn('core_diff', lit('{{EMPTYBABY}}').cast(types.StringType()))
     master_regex_one_df.withColumn('regexes_diff_count', lit(0).cast(types.LongType()))
     master_regex_one_df.withColumn('core_diff_count', lit(0).cast(types.LongType()))
-    master_regex_one_df.forEach(diff_find)
+    master_regex_one_df.foreach(diff_find)
 
     #master_regex_one_df.orderBy('articleid','YYYY_MM','date_time').show(n=100)
 
