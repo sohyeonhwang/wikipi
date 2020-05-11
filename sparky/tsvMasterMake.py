@@ -44,6 +44,11 @@ def findCoreColumns(onlyRegexCols):
 
     return coreDFColumn
 
+def replace_wp_wikipedia(col_name):
+    df.col_name
+
+    return 
+
 def df_structurize(input_df, struct):
     #metaColumns = struct.fieldNames()
 
@@ -64,6 +69,14 @@ def df_structurize(input_df, struct):
     # this has: revid, article_id, date/time, regexes, core_regexes, regex_bool, core_bool
     onlyRegexCols = [c for c in regex_df.columns if c[0].isdigit()]
     coreDFColumn = findCoreColumns(onlyRegexCols)
+
+    test_df = regex_df.select("*")
+    for col_name in onlyRegexCols:
+        test_df = test_df.withColumn(col_name, f.regexp_replace(col_name, r'(Wikipedia|WP|Wikipédia)([^:])', lit(col_name)))
+
+    print("TESTING REPLACE")
+    test_df.show(n=40)
+
     regex_one_df = regex_df.select(regex_df.articleid, regex_df.namespace, regex_df.anon, regex_df.deleted, regex_df.revert, regex_df.reverteds, regex_df.revid, regex_df.date_time, f.concat_ws('_',f.year(regex_df.date_time),f.month(regex_df.date_time)).alias('YYYY_MM'),f.concat_ws(', ',*onlyRegexCols).alias('regexes'), f.concat_ws(', ',*coreDFColumn).alias('core_regexes'))
 
     # make sure the empty ones are None/null
@@ -189,34 +202,38 @@ if __name__ == "__main__":
 
     print('\n\n\n')
 
-    '''
+
     # MASTER 
     #TODO See if we can export the master_regex_one_df file actually
-    master_regex_one_df.orderBy(master_regex_one_df.articleid.asc_nulls_first(), master_regex_one_df.YYYY_MM, master_regex_one_df.date_time).show(n=50)
+    print("Preview master_regex_one_df: ")
+    master_regex_one_df.orderBy(master_regex_one_df.articleid.asc_nulls_first(), master_regex_one_df.YYYY_MM, master_regex_one_df.date_time).show(n=10)
     
     out_filepath_master = "{}/{}_master_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
     #master_regex_one_df.coalesce(1).write.csv(out_filepath_master,sep='\t',mode='append',header=True)
 
     # MASTER - FILTERED ROWS
+    print("Preview FILTERED (ROWS) master_regex_one_df: ")
     master_shrunken_df = master_shrunken_df.repartition(100)
-    master_shrunken_df.orderBy(master_shrunken_df.articleid.asc_nulls_first(), master_shrunken_df.YYYY_MM, master_regex_one_df.date_time).show(n=50)
+    master_shrunken_df.orderBy(master_shrunken_df.articleid.asc_nulls_first(), master_shrunken_df.YYYY_MM, master_regex_one_df.date_time).show(n=10)
     print("master_shrunken_df.count() --> {}".format(master_shrunken_df.count()))
 
     out_filepath_master_filtered = "{}/{}_master_filtered_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
     master_shrunken_df.coalesce(1).write.csv(out_filepath_master_filtered,sep='\t',mode='append',header=True)
 
     # MONTHLY + NAMESPACE
+    print("Preview monthly + namespace df: ")
     mn_df = master_regex_one_df.repartition("YYYY_MM","namespace")
     mn_df = mn_df.groupBy("YYYY_MM","namespace").agg(f.count("*").alias("num_revs"), f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff")).orderBy(mn_df.YYYY_MM)
-    mn_df.orderBy(mn_df.YYYY_MM.desc()).show(n=50)
+    mn_df.orderBy(mn_df.YYYY_MM.desc()).show(n=10)
 
     out_filepath_monthly_namespace = "{}/{}_monthly-namespace_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
     mn_df.coalesce(1).write.csv(out_filepath_monthly_namespace,sep='\t',mode='append',header=True) 
 
     # MONTHLY
+    print("Preview monthly df: ")
     m_df = master_regex_one_df.repartition("YYYY_MM")
     m_df = m_df.groupBy("YYYY_MM").agg(f.count("*").alias("num_revs"), f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff")).orderBy(m_df.YYYY_MM)
-    m_df.orderBy(m_df.YYYY_MM.desc()).show(n=50)
+    m_df.orderBy(m_df.YYYY_MM.desc()).show(n=10)
 
     out_filepath_monthly = "{}/{}_monthly_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
     m_df.coalesce(1).write.csv(out_filepath_monthly,sep='\t',mode='append',header=True)
@@ -231,4 +248,3 @@ if __name__ == "__main__":
         # keep track of the actual additions (string)
     ## regexes_diff_count, core_diff_count
         # count the number of new policy invocations from core/regexes_diff (per revision)
-    '''
