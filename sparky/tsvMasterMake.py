@@ -395,7 +395,7 @@ if __name__ == "__main__":
         # count the number of new policy invocations from core/regexes_diff (per revision)
 
 
-    print("Find the output here: \nmaster:{}\nmonthly{}".format(out_filepath_master, out_filepath_monthly))
+    print("Find the output here: \nmaster:{}\nmonthly:{}\nmonthly_namespace:{}".format(out_filepath_master, out_filepath_monthly,out_filepath_monthly_namespace))
 
     print("\n\n---Ending Spark Session and Context ---\n\n")
     spark.stop()
