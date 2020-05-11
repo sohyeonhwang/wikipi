@@ -401,7 +401,7 @@ if __name__ == "__main__":
     ## regexes_diff_count, core_diff_count
         # count the number of new policy invocations from core/regexes_diff (per revision)
     
-    # Smooth into months
+    # Smoosh into months
     print("Repartitioning articleid,YYYY_MM:")
     rp_df = master_regex_one_df.repartition("YYYY_MM","namespace")
     # groupBy YYYY_MM ...

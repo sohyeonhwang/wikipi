@@ -39,69 +39,6 @@ def findCoreColumns(onlyRegexCols):
 
     return coreDFColumn
 
-def df_structurize(input_df, struct):
-    #metaColumns = struct.fieldNames()
-
-    # new dataframe of the regex columns
-    regexDFColumns = [c for c in input_df.columns if c[0].isdigit()]
-    regexDFColumns.append("revid")
-    regexDFColumns.append("date_time")
-    regexDFColumns.append("articleid")
-    regexDFColumns.append("namespace")
-    regexDFColumns.append("anon")
-    regexDFColumns.append("deleted")
-    regexDFColumns.append("revert")
-    regexDFColumns.append("reverteds")
-    regex_df = input_df.na.replace('None',None).select(*regexDFColumns)
-    #regex_df.show(n=5, vertical=True)
-
-    # combine the regex columns into one column, if not None/null
-    # this has: revid, article_id, date/time, regexes, core_regexes, regex_bool, core_bool
-    onlyRegexCols = [c for c in regex_df.columns if c[0].isdigit()]
-    coreDFColumn = findCoreColumns(onlyRegexCols)
-    regex_one_df = regex_df.select(regex_df.articleid, regex_df.namespace, regex_df.anon, regex_df.deleted, regex_df.revert, regex_df.reverteds, regex_df.revid, regex_df.date_time, f.concat_ws('_',f.year(regex_df.date_time),f.month(regex_df.date_time)).alias('YYYY_MM'),f.concat_ws(', ',*onlyRegexCols).alias('regexes'), f.concat_ws(', ',*coreDFColumn).alias('core_regexes'))
-
-    # make sure the empty ones are None/null
-    regex_one_df = regex_one_df.na.replace('',None)
-
-    ## regex_bool and core_bool help us keep track of which revisions end in text that have PI 
-    # regex_one_df = regex_one_df.select(*regex_one_df, f.when(regex_one_df.regexes.isNotNull(),1).otherwise(0).alias('regex_bool'), f.when(regex_one_df.core_regexes.isNotNull(),1).otherwise(0).alias('core_bool'))
-
-    #regex_one_df.show(n=5, vertical=True)
-
-    return regex_one_df
-
-def df_regex_make(wikiqtsv):
-    # make wikiq tsv into a dataframe
-    tsv2df = reader.csv(wikiqtsv,
-                        sep="\t",
-                        inferSchema=False,
-                        header=True,
-                        mode="PERMISSIVE",
-                        quote="")
-    #tsv2df = tsv2df.repartition(args.num_partitions)
-
-    # basic structure
-    struct = types.StructType().add("anon",types.StringType(),True)
-    struct = struct.add("articleid",types.LongType(),True)
-    struct = struct.add("date_time",types.TimestampType(), True)
-    struct = struct.add("deleted",types.BooleanType(), True)
-    struct = struct.add("editor",types.StringType(),True)
-    struct = struct.add("editor_id",types.LongType(), True)
-    struct = struct.add("minor", types.BooleanType(), True)
-    struct = struct.add("namespace", types.LongType(), True)
-    struct = struct.add("revert", types.BooleanType(), True)
-    struct = struct.add("reverteds", types.StringType(), True)
-    struct = struct.add("revid", types.LongType(), True)
-    struct = struct.add("sha1", types.StringType(), True)
-    struct = struct.add("text_chars", types.LongType(), True)
-    struct = struct.add("title",types.StringType(), True)
-
-    # structure the df to get the def with columns of metadata and regexes
-    regex_one_df = df_structurize(tsv2df,struct)
-
-    return regex_one_df
-
 def tokenize_prep(regex_string):
     # we want to make Wikipedia:Droit de l'auteur --> Wikipedia_Droit_de_l'auteur
     regex_string = regex_string.replace(':','')
@@ -114,7 +51,7 @@ def tokenize_prep(regex_string):
     return new_string
 
 def reverse_tokenize_prep(regex_string):
-    # we want to make Wikipedia:Droit de l'auteur --> Wikipedia_Droit_de_l'auteur
+    # we want to make Wikipedia_Droit_de_l'auteur --> Wikipedia:Droit de l'auteur
     regex_string = regex_string.replace('WP','WP:')
     regex_string = regex_string.replace('Wikipedia','Wikipedia:')
     regex_string = regex_string.replace('Wikipédia','Wikipédia:')
@@ -131,8 +68,6 @@ def compare_rev_regexes(current, prev, revision_diff_bool):
     # we want to write a function that will find the difference between new rev and old rev
 
     # NO CHANGE
-    # our revision diff bool did not detect a change in current vs previous versions of regex capture
-    ## regexes_diff_bool, core_diff_bool keep track of # of revisions that have a new regex / 0 for no new regex, 1 for diff
     if revision_diff_bool == 0:
         diffs = '{{EMPTYBABY}}' 
         diff_count = 0
@@ -141,8 +76,6 @@ def compare_rev_regexes(current, prev, revision_diff_bool):
     else:
         diffs = []
 
-        # we want to make Wikipedia:Droit de l'auteur --> Wikipedia_Droit_de_lauteur
-        # returned string looks like: WikipediaDroit_de_lauteur, WPNPOV, WPNPOV, ...
         current = tokenize_prep(current)
         prev = tokenize_prep(prev)
 
@@ -270,22 +203,22 @@ def compare_rev_regexes(current, prev, revision_diff_bool):
     return diff_string, diff_count
 
 def diff_find(row):
-    r_current = row.regexes.replace('{{EMPTYBABY}}','')
-    r_prev = row.regexes_prev.replace('{{EMPTYBABY}}','')
+    r_current = row['regexes'].replace('{{EMPTYBABY}}','')
+    r_prev = row['regexes_prev'].replace('{{EMPTYBABY}}','')
     # revision has a difference in regex from last revision of article
-    r_bool = row.regexes_diff_bool
+    r_bool = row['regexes_diff_bool']
 
-    c_current = row.core_regexes.replace('{{EMPTYBABY}}','')
-    c_prev = row.core_prev.replace('{{EMPTYBABY}}','')
-    c_bool = row.core_diff_bool
+    c_current = row['core_regexes'].replace('{{EMPTYBABY}}','')
+    c_prev = row['core_prev'].replace('{{EMPTYBABY}}','')
+    c_bool = row['core_diff_bool']
 
     r_diff, r_diff_count = compare_rev_regexes(r_current,r_prev,r_bool)
     c_diff, c_diff_count = compare_rev_regexes(c_current,c_prev,c_bool)
 
-    row.regexes_diff = r_diff
-    row.core_diff = c_diff
-    row.regexes_diff_count = r_diff_count
-    row.core_diff_count = c_diff_count
+    row['regexes_diff'] = r_diff
+    row['core_diff'] = c_diff
+    row['regexes_diff_count'] = r_diff_count
+    row['core_diff_count'] = c_diff_count
 
 def parallelize_dataframe(df, func, n_cores=4):
     '''
@@ -321,44 +254,20 @@ if __name__ == "__main__":
     print(pd_df.columns)
 
     cores = cpu_count()
-    print("There are {} core".format(cores))
+    print("There are {} cores; should be 28".format(cores))
 
     #pd_df.apply(diff_find,axis=1)
     
-    #TODO function should take in pd_df, do the apply(diff_find) and return the result
+    # TODO function should take in pd_df, do the apply(diff_find) and return the result
     #processed_df = parallelize_dataframe(pd_df, func, n_cores=4)
 
-    
-
-    #master_regex_one_df = master_regex_one_df.na.fill('{{EMPTYBABY}}')
+    # TODO CHECK THE STATUS OF / Get rid of the {{EMPTYBABY}}
+    # PYSPARK: master_regex_one_df = master_regex_one_df.na.fill('{{EMPTYBABY}}')
 
     ## regexes_diff_bool, core_diff_bool keep track of # of revisions that have a new regex / 0 for no new regex, 1 for diff
     ## we can sum this for the # of revisions with difference in regex / total number of revisions
     ## regexes_diff, core_diff keep track of the actual additions (string)
     ## regexes_diff_count, core_diff_count count the number of new policy invocations from core/regexes_diff (per revision)
-
-    out_filepath = "{}/{}{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
-    print("Find the output here: {}".format(out_filepath))
-
-    #TODO OUTPUT FILE
-    #master_regex_one_df.coalesce(1).write.csv(out_filepath,sep='\t',mode='append',header=True)
-    
-    
-
-    '''
-
-
-    print("Now we're ready to process the data (MONTHLY SMOOSH)")
-
-    #print("Repartitioning articleid,YYYY_MM:")
-    #rp_df = master_regex_one_df.repartition("articleid","YYYY_MM")
-    #print(rp_df.rdd.getNumPartitions())
-
-    print("Time to process into monthly now, I guess...")
-    print("\n\n---Ending Spark Session and Context ---\n\n")
-
-    print("--- %s seconds ---" % (time.time() - start_time))
-    spark.stop()
 
     # Now that we have, by-revision:
     # articleid, namespace, YYYY_MM, date_time, regexes, regexes_prev, core_regex, core_prev
@@ -366,36 +275,27 @@ if __name__ == "__main__":
         # keep track of # of revision; that have a new regex / 0 for no new regex, 1 for diff
         ## we can sum this for the # of revisions with difference in regex / total number of revisions
     ## regexes_diff, core_diff 
-        # keep track of the actual additions (string)
+        # keep track of the actual additions per revision (string)
     ## regexes_diff_count, core_diff_count
         # count the number of new policy invocations from core/regexes_diff (per revision)
-    
-    # Smooth into months
-    print("Repartitioning articleid,YYYY_MM:")
-    rp_df = master_regex_one_df.repartition("YYYY_MM","namespace")
-    # groupBy YYYY_MM ...
-    # sum up the regexes_diff_bool --> num_revs_with_regex_diff, core_diff_bool --> num_revs_with_core_diff
-    # concatenate all of the strings of regexes_diff and core_diff that are not empty --> regexes_diff_monthly, core_diff_monthly
-    # sum up the regexes_diff_count, core_diff_count --> regexes_diff_count_monthly, core_diff_count_monthly
+
+    #TODO Let's make the MONTHLY SMOOTH files
+    # TODO groupBy YYYY_MM ...
+    # TODO sum up the regexes_diff_bool --> num_revs_with_regex_diff, core_diff_bool --> num_revs_with_core_diff
+    # TODO concatenate all of the strings of regexes_diff and core_diff that are not empty --> regexes_diff_monthly, core_diff_monthly
+    # TODO sum up the regexes_diff_count, core_diff_count --> regexes_diff_count_monthly, core_diff_count_monthly
         # this is the number of new policy invocations in that month
-    # f.count(*) --? num_revs
+    # f.count(*) --> num_revs ... this can be found in the tsvMasterMakeOutput (monthly_namespace, monthly)
 
-    rp_df = rp_df.groupBy("YYYY_MM","namespace").agg( f.count("*").alias("num_revs"), f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff"), f.sum("regexes_diff_count").alias("regexes_diff_count_monthly"), f.sum("core_diff_count").alias("core_diff_count_monthly"), f.concat_ws(", ", f.collect_list(rp_df.regexes_diff)).alias("regexes_diff_monthly"),  f.concat_ws(", ", f.collect_list(rp_df.core_diff)).alias("core_diff_monthly"))
-
-    #TODO concat_ws for regexes/core_diff_monthly CONDITIONAL --> WHEN NOT EMPTY
-    #TODO {{EMPTYBABY}} CONSISTENCY
+    # PYSPARK: rp_df = rp_df.groupBy("YYYY_MM","namespace").agg( f.count("*").alias("num_revs"), f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff"), f.sum("regexes_diff_count").alias("regexes_diff_count_monthly"), f.sum("core_diff_count").alias("core_diff_count_monthly"), f.concat_ws(", ", f.collect_list(rp_df.regexes_diff)).alias("regexes_diff_monthly"),  f.concat_ws(", ", f.collect_list(rp_df.core_diff)).alias("core_diff_monthly"))
+    # PYSPARK TODO concat_ws for regexes/core_diff_monthly CONDITIONAL --> WHEN NOT EMPTY
 
 
-    rp_df = rp_df
-
-
-    #TODO FIGURE OUT WHAT FILES ARE TO BE OUTPUTTED. will probably have multiple dfs
+    # TODO CHECK THE STATUS OF / Get rid of the {{EMPTYBABY}}
 
     out_filepath = "{}/{}{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
-    rp_df.coalesce(1).write.csv(out_filepath,sep='\t',mode='append',header=True)
-    
     print("Find the output here: {}".format(out_filepath))
 
-    print("\n\n---Ending Spark Session and Context ---\n\n")
-    spark.stop()
-    '''
+    #TODO OUTPUT FILE BUT PANDAS
+    #processed_df.to_csv(out_file_path, sep='\t',header=True)
+    
