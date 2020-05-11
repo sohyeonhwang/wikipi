@@ -3,6 +3,7 @@ from pyspark import SparkConf
 from pyspark.sql import SparkSession, SQLContext
 from pyspark.sql import Window
 import pyspark.sql.functions as f
+from pyspark.sql.functions import lit
 from pyspark.sql import types
 import pandas as pd
 import argparse
@@ -12,6 +13,7 @@ from pathlib import Path
 from datetime import datetime
 import time
 import collections 
+from deltas import segment_matcher, text_split
 
 start_time = time.time()
 
@@ -62,12 +64,13 @@ def df_structurize(input_df, struct):
     # this has: revid, article_id, date/time, regexes, core_regexes, regex_bool, core_bool
     onlyRegexCols = [c for c in regex_df.columns if c[0].isdigit()]
     coreDFColumn = findCoreColumns(onlyRegexCols)
-    regex_one_df = regex_df.select(regex_df.articleid, regex_df.namespace, regex_df.anon, regex_df.deleted, regex_df.revert, regex_df.reverteds, regex_df.revid, regex_df.date_time, f.concat_ws('_',f.year(regex_df.date_time),f.month(regex_df.date_time)).alias('YYYY-MM'),f.concat_ws('| ',*onlyRegexCols).alias('regexes'), f.concat_ws('| ',*coreDFColumn).alias('core_regexes'))
+    regex_one_df = regex_df.select(regex_df.articleid, regex_df.namespace, regex_df.anon, regex_df.deleted, regex_df.revert, regex_df.reverteds, regex_df.revid, regex_df.date_time, f.concat_ws('_',f.year(regex_df.date_time),f.month(regex_df.date_time)).alias('YYYY_MM'),f.concat_ws(', ',*onlyRegexCols).alias('regexes'), f.concat_ws(', ',*coreDFColumn).alias('core_regexes'))
 
     # make sure the empty ones are None/null
     regex_one_df = regex_one_df.na.replace('',None)
 
-    regex_one_df = regex_one_df.select(*regex_one_df, f.when(regex_one_df.regexes.isNotNull(),1).otherwise(0).alias('regex_bool'), f.when(regex_one_df.core_regexes.isNotNull(),1).otherwise(0).alias('core_bool'))
+    ## regex_bool and core_bool help us keep track of which revisions end in text that have PI 
+    # regex_one_df = regex_one_df.select(*regex_one_df, f.when(regex_one_df.regexes.isNotNull(),1).otherwise(0).alias('regex_bool'), f.when(regex_one_df.core_regexes.isNotNull(),1).otherwise(0).alias('core_bool'))
 
     #regex_one_df.show(n=5, vertical=True)
 
@@ -104,42 +107,190 @@ def df_regex_make(wikiqtsv):
 
     return regex_one_df
 
-def diff_find(current,prev):
-    '''
-    # current = regexes, prev = regexes_prev
-    diff_regex, diff_regex_count = diff_find(master_regex_one_df.regexes,master_regex_one_df.regexes_prev)
-    '''
+def tokenize_prep(regex_string):
+    # we want to make Wikipedia:Droit de l'auteur --> Wikipedia_Droit_de_l'auteur
+    regex_string = regex_string.replace(':','')
+    regex_string_l = regex_string.split(', ')
+    temp_l = []
+    for s in regex_string_l:
+        s = s.strip().replace(' ','_')
+        temp_l.append(s)
+    new_string = new_string = ', '.join(temp_l).strip()
+    return new_string
+
+def reverse_tokenize_prep(regex_string):
+    # we want to make Wikipedia:Droit de l'auteur --> Wikipedia_Droit_de_l'auteur
+    regex_string = regex_string.replace('WP','WP:')
+    regex_string = regex_string.replace('Wikipedia','Wikipedia:')
+    regex_string = regex_string.replace('Wikipédia','Wikipédia:')
+    regex_string_l = regex_string.split(', ')
+    temp_l = []
+    for s in regex_string_l:
+        s = s.strip().replace('_',' ')
+        temp_l.append(s)
+    new_string = new_string = ', '.join(temp_l).strip()
+    return new_string
+
+def compare_rev_regexes(current, prev, revision_diff_bool):
+    diff_count = 0
     # we want to write a function that will find the difference between new rev and old rev
-    # there are 3 possibilities
-        # no difference
-        # new has MORE REGEXES than old
-        # new has FEWER REGEXES than old
-        # the third case is the most complicated; this usually means the page has been edited s.t. content has been removed, removing the regex
-            # e.g. a revert
-            # in the case of FEWER REGEXES, we want to check variables: revert and reverteds
 
-    current_list = current.split("| ")
-    prev_list = prev.split("| ")
+    # NO CHANGE
+    # our revision diff bool did not detect a change in current vs previous versions of regex capture
+    ## regexes_diff_bool, core_diff_bool keep track of # of revisions that have a new regex / 0 for no new regex, 1 for diff
+    if revision_diff_bool == 0:
+        diffs = '{{EMPTYBABY}}' 
+        diff_count = 0
 
-    # the lists are the same -- our simplest case and i suspect what will be the case most of the time
-    if current_list == prev_list:
-        diff = None
-    
-    # something is different about the lists...
+    # THERE WAS SOME CHANGE
     else:
-        #num_current = len(current_list)
-        #num_prev = len(prev_list)
-        current_c = collections.Counter(current_list)
-        prev_c = collections.Counter(prev_list)
+        diffs = []
 
-        #TODO deltas 
-        diff = current_c + prev_c
+        # we want to make Wikipedia:Droit de l'auteur --> Wikipedia_Droit_de_lauteur
+        # returned string looks like: WikipediaDroit_de_lauteur, WPNPOV, WPNPOV, ...
+        current = tokenize_prep(current)
+        prev = tokenize_prep(prev)
 
-        # we throw away the starting equal
+        # deltas 
+        current_t = text_split.tokenize(current)
+        prev_t = text_split.tokenize(prev)
+        operations = segment_matcher.diff(prev_t,current_t)
 
-        # logic for assuming what is new
+        # structures to keep track of delta-changes
+        op_names = []
+        op_names_noequal = []
+        op_changes = []
+        op_changes_noequal = []
 
-    return diff
+        # for each delta change in this revision
+        for op in operations:
+            # e.g. insert:  p="" c = "WPNPOV, WPNPOV" 
+            c = "".join(current_t[op.b1:op.b2]).strip()
+            p = "".join(prev_t[op.a1:op.a2]).strip()
+            #no interest in empties, the equal [] --> [] case
+
+            if p == "," and c == ",":
+                continue
+
+            # not empty but need to deal with commas while leaving internal commas in
+            if len(c)>1:
+                if c[0] ==",":
+                    c = c[1:].strip()
+                if c[-1]==",":
+                    c = c[:-1].strip()
+            if len(p)>1:
+                if p[0] ==",":
+                    p = p[1:].strip()
+                if p[-1]==",":
+                    p = p[:-1].strip()
+
+            op_changes.append(c)
+            op_names.append(op.name)
+            if op.name != "equal":
+                # if what gets appended is '', we know that a delete has occurred
+                op_changes_noequal.append(c)
+                op_names_noequal.append(op.name)
+        
+        print("Number of delta operations: {}".format(len(op_names)))
+        
+        # now we are processing cases of diff going through the operations
+        # there is just one insert OR delete somewhere
+        if len(op_names_noequal) == 1 and op_names_noequal[0] == "insert":
+            diffs.append(op_changes_noequal[0])
+
+        elif len(op_names_noequal) == 1 and op_names_noequal[0] == "delete":
+            diffs = diffs
+        
+        # there are just multiple inserts (no deletes)
+        elif "delete" not in op_names_noequal and "insert" in op_names_noequal:
+            for change in op_changes_noequal:
+                diffs.append(change)
+        
+        # there are just a bunch of deletes (no inserts); continue on 
+        elif "insert" not in op_names_noequal and "delete" in op_names_noequal:
+            diffs = diffs
+
+        # something more complicated is afoot: inserts AND deletes
+        else:
+            #comaparing the regexes in current and prev as collections
+            intersection = collections.Counter(prev.split(", ")) & collections.Counter(current.split(", "))
+            union = collections.Counter(prev.split(", ")) | collections.Counter(current.split(", "))
+            opn_counts = collections.Counter(op_names_noequal)
+
+            new_in_current = collections.Counter(current.split(", ")) - collections.Counter(prev.split(", "))
+            
+            # prev and current are completely different - this involves multiple deletes AND inserts
+            # if 'equal' is not in op_names
+            if "equal" not in op_names and (intersection == collections.Counter()):
+                for new in current.split(", "):
+                    diffs.append(new)
+
+            # prev and current have the same contents, but different order; we assume page has been re-arranged and there is nothing to add
+            # there is the possibility that the same stuff that got deleted gets added as a new thing, but this seems a little unlikely within one edit and we have to make a design choice here
+            elif intersection == union:
+                diffs = diffs 
+
+            # there is some overlap in content of policy invocations of prev and current revisions
+            # we must figure out the meaningful differences
+            else:
+                # op_names are the names of each delta op, in order e.g. ['insert','delete','equal']
+                # op_names_noequal are only the inserts/deletes e.g. ['insert', 'delete']
+                # op_changes are the CURRENT strings for the given segment delta, in order of op_names e.g. ['WPNPOV','','WikipediaRun, Wikipedia Run']
+                # opn_counts tell us how many of each operation exist in the delta
+                # new_in_current is a collection of the regexes that are new in current (not in prev)
+
+                # one insert, one or multiple deletes
+                # we only care about the inserts
+                if opn_counts["insert"] == 1 and opn_counts["delete"] >= 1:
+                    temp = [op_changes[i] for i in range(0,len(op_names)) if op_names == "insert"]
+                    for t in  temp:
+                        diffs.append(t)
+
+                # multiple inserts, one or multiple delete
+                # we only care about the inserts that didn't exist before
+                # we need to make sure that the insert isn't simply something that existed before
+                elif opn_counts["insert"] > 1 and opn_counts["delete"] >= 1:
+                    #temp = [op_changes[i] for i in range(0,len(op_names)) if op_names == "insert"]
+                    #for t in  temp:
+                    #    diffs.append(t)
+
+                    temp = []
+                    for item in new_in_current:
+                        for x in range(0,item[1]):
+                            temp.append(item[0])
+                    diffs = diffs + temp
+
+                # cases that I can't think of; just add what exists in the new, but not the old
+                else:
+                    temp = []
+                    for item in new_in_current:
+                        for x in range(0,item[1]):
+                            temp.append(item[0])
+                    diffs = diffs + temp
+
+    # make the diff list into a string
+    # calculate the counts of the diff now
+    diff_string = reverse_tokenize_prep(", ".join(diffs))
+    diff_count = len(diff_string.split(", "))
+    return diff_string, diff_count
+
+def diff_find(row):
+    r_current = row.regexes.replace('{{EMPTYBABY}}','')
+    r_prev = row.regexes_prev.replace('{{EMPTYBABY}}','')
+    # revision has a difference in regex from last revision of article
+    r_bool = row.regexes_diff_bool
+
+    c_current = row.core_regexes.replace('{{EMPTYBABY}}','')
+    c_prev = row.core_prev.replace('{{EMPTYBABY}}','')
+    c_bool = row.core_diff_bool
+
+    r_diff, r_diff_count = compare_rev_regexes(r_current,r_prev,r_bool)
+    c_diff, c_diff_count = compare_rev_regexes(c_current,c_prev,c_bool)
+
+    row.regexes_diff = r_diff
+    row.core_diff = c_diff
+    row.regexes_diff_count = r_diff_count
+    row.core_diff_count = c_diff_count
 
 if __name__ == "__main__":
     args = parse_args()
@@ -169,25 +320,14 @@ if __name__ == "__main__":
     reader = spark.read
     print("Started the Spark session...\n")
 
-    #we can just put the path in, no need to use files_l in a for-loop
-    #just glob it (different from just one: df_1 = df_regex_make(files_l[0]))
+    # we can just put the path in, no need to use files_l in a for-loop
     master_regex_one_df = df_regex_make(glob.glob(directory))
-
-    # Compared just one file and regex make of directory
-    #print('Checking that the df from path/* is indeed different from one file input...')
-    #print("glob/*:{}\none_file:{}".format(master_regex_one_df.count(),df_1.count()))
-    #print(master_regex_one_df.describe().show())
-    #print(df_1.describe().show())
 
     # Check number of partitions -- should be 1
     print('Checking number of partitions - should be 1 b/c df.repartition(1) in df_regex_make')
     print(master_regex_one_df.rdd.getNumPartitions())
     master_regex_one_df = master_regex_one_df.repartition(args.num_partitions)
     # print(master_regex_one_df.rdd.getNumPartitions())
-
-    #print("Columns of the processed dataframe:\n")
-    #for c in master_regex_one_df.columns:
-    #    print("\t{}".format(c))    
 
     print("--- %s seconds ---" % (time.time() - start_time))
 
@@ -203,57 +343,69 @@ if __name__ == "__main__":
     #master_regex_one_df = master_regex_one_df.na.replace('{{EMPTYBABY}}',None)
     master_regex_one_df = master_regex_one_df.na.fill('{{EMPTYBABY}}')
 
-    ## diff_bool, diff_core_bool keep track of # of revisions that have a new regex
+    ## regexes_diff_bool, core_diff_bool keep track of # of revisions that have a new regex / 0 for no new regex, 1 for diff
+    ## we can sum this for the # of revisions with difference in regex / total number of revisions
+    ## regexes_diff, core_diff keep track of the actual additions (string)
+    ## regexes_diff_count, core_diff_count count the number of new policy invocations from core/regexes_diff (per revision)
+
     master_regex_one_df = master_regex_one_df.withColumn("regexes_diff_bool", f.when(master_regex_one_df.regexes == master_regex_one_df.regexes_prev, 0).otherwise(1))
     master_regex_one_df = master_regex_one_df.withColumn("core_diff_bool", f.when(master_regex_one_df.core_regexes == master_regex_one_df.core_prev, 0).otherwise(1))
 
-    ## diff_regex diff_core keep track of the actual additions (string)
-    # current = regexes, prev = regexes_prev
-    diff_regex, diff_regex_count = diff_find(master_regex_one_df.regexes,master_regex_one_df.regexes_prev)
-    diff_core, diff_core_count = diff_find(master_regex_one_df.core_regexes,master_regex_one_df.core_prev)
+    master_regex_one_df.withColumn('regexes_diff', lit('{{EMPTYBABY}}')).cast(types.StringType())
+    master_regex_one_df.withColumn('core_diff', lit('{{EMPTYBABY}}')).cast(types.StringType())
+    master_regex_one_df.withColumn('regexes_diff_count', lit(0)).cast(types.LongType())
+    master_regex_one_df.withColumn('core_diff_count', lit(0)).cast(types.LongType())
+    master_regex_one_df.forEach(diff_find)
 
-    master_regex_one_df = master_regex_one_df.withColumn('regexes_diff',f.when(f.isnull(diff_regex), '{{EMPTYBABY}}').otherwise(diff_regex))
-    master_regex_one_df = master_regex_one_df.withColumn('core_diff', f.when(f.isnull(diff_core), '{{EMPTYBABY}}').otherwise(diff_core))
-
-    '''
-    ##TODO diff_regex_count diff_core_count counts the number of new policy invocations from core/regexes_diff
-    master_regex_one_df = master_regex_one_df.withColumn('regexes_diff_count')
-    master_regex_one_df = master_regex_one_df.withColumn('core_diff_count')
-    '''
-
-    master_regex_one_df.orderBy('articleid','YYYY-MM','date_time').show(n=100)
+    #master_regex_one_df.orderBy('articleid','YYYY_MM','date_time').show(n=100)
 
     print("\n\n\n")
 
-    master_regex_one_df.select(master_regex_one_df.articleid,master_regex_one_df.YYYY-MM,master_regex_one_df.date_time,master_regex_one_df.regexes,master_regex_one_df.regexes_prev).orderBy('articleid','YYYY-MM','date_time').show(n=100)
+    master_regex_one_df.select(master_regex_one_df.articleid,master_regex_one_df.YYYY_MM,master_regex_one_df.date_time,master_regex_one_df.regexes,master_regex_one_df.regexes_prev,master_regex_one_df.regexes_diff,master_regex_one_df.regexes_diff_count).orderBy('articleid','YYYY_MM','date_time').show(n=100)
 
     print("Partitions right now: {}".format(master_regex_one_df.rdd.getNumPartitions()))
 
-    print("Now we're ready to process the data.")
+    print("Now we're ready to process the data (MONTHLY SMOOSH)")
 
-    print("Repartitioning articleid,YYYY-MM:")
-    #rp_df = master_regex_one_df.repartition("articleid","YYYY-MM")
+    #print("Repartitioning articleid,YYYY_MM:")
+    #rp_df = master_regex_one_df.repartition("articleid","YYYY_MM")
     #print(rp_df.rdd.getNumPartitions())
 
-    out_filepath = "{}/{}{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
-    print("Find the output here: {}".format(out_filepath))
-
-    '''
-    master_regex_one_df.write.partitionBy("articleid","YYYY-MM").mode("overwrite").csv(out_filepath,sep='\t',header=True)
-
-    # We now read from the partitioned data articleid, YYYY-MM
-    partitioned_df = spark.read.option("basePath","{}/".format(out_filepath)).csv("{}/articleid=*/YYYY-MM=*".format(out_filepath))
-    print(partitioned_df.rdd.getNumPartitions())
-    '''
-
-    print("Time to process the diffs now, I guess...")
+    print("Time to process into monthly now, I guess...")
     print("\n\n---Ending Spark Session and Context ---\n\n")
+
+    print("--- %s seconds ---" % (time.time() - start_time))
     spark.stop()
-'''
-    # now have articleid, namespace, YYYY-MM, date_time, regexes, prev_rev_regex, diff
+
+    # Now that we have, by-revision:
+    # articleid, namespace, YYYY_MM, date_time, regexes, regexes_prev, core_regex, core_prev
+    ## regexes_diff_bool, core_diff_bool 
+        # keep track of # of revisions that have a new regex / 0 for no new regex, 1 for diff
+        ## we can sum this for the # of revisions with difference in regex / total number of revisions
+    ## regexes_diff, core_diff 
+        # keep track of the actual additions (string)
+    ## regexes_diff_count, core_diff_count
+        # count the number of new policy invocations from core/regexes_diff (per revision)
+
+    # Smooth into months
+    #print("Repartitioning articleid,YYYY_MM:")
+    #rp_df = master_regex_one_df.repartition("YYYY_MM","namespace")
+    # groupBy YYYY_MM ...
+    # sum up the regexes_diff_bool as num_revs_with_regex_diff, core_diff_bool as num_revs_with_core_diff
+    # concatenate all of the strings of regexes_diff and core_diff that are not empty; regexes_diff_monthly, core_diff_monthly
+    # sum up the regexes_diff_count, core_diff_count; regexes_diff_count_monthly, core_diff_count_monthly
+        # this is the number of new policy invocations in that month
+
+
+    # 
+
+
+    
+    '''
+    # now have articleid, namespace, YYYY_MM, date_time, regexes, prev_rev_regex, diff
     # 2.2 - monthly smoosh, monthly_df
         # want in monthly_df:
-        # YYYY-MM, namespace, regexes_start, regexes_end, not_count_diff(next_month_start-month_start)
+        # YYYY_MM, namespace, regexes_start, regexes_end, not_count_diff(next_month_start-month_start)
         # core_regexes_start, core_regexes_end, not_count_diff(next_month_start - month_start)
         # count(revisions), count(revs_with_diff), count(revs_with_core_diff)
     # forEachPartition:
@@ -266,8 +418,8 @@ if __name__ == "__main__":
     # get first and last of each month for each article
     # so each articleid will have two rows for every month, that means 24/year, which means ~410 per article...
 
-    # new_df --> articleID, YYYY-MM, namespace, regex_start, regex_end, core_start, core_end
-    # one row per articleID + YYYY-MM combo
+    # new_df --> articleID, YYYY_MM, namespace, regex_start, regex_end, core_start, core_end
+    # one row per articleID + YYYY_MM combo
     # in new_df: calculate the diff for each articleid, month (new column diff)
     # diff is a COUNT. for YYYYMM would be YYYYMM+1(regex_start) - YYYYMM(regex_start)
     # first month starts at 0; last month is regex_end - regex_start
@@ -275,16 +427,16 @@ if __name__ == "__main__":
     print("\nGenerate new column of diff, core_diff")
 
     # smoosh into year/month (no more articleid)
-    # and then we add up all the diffs (groupBy -->YYYY-MM, namespace. so YYYY-MM, diff)
-    # so a df that is: one row per YYYY-MM + namespace combo.
-    # smooth into just YYYY-MM, diff info (ignore namespace) in R
+    # and then we add up all the diffs (groupBy -->YYYY_MM, namespace. so YYYY_MM, diff)
+    # so a df that is: one row per YYYY_MM + namespace combo.
+    # smooth into just YYYY_MM, diff info (ignore namespace) in R
 
 
 
 
     # 3 TODO F1. needs the by-rev
-    # YYYY-MM, namespace, regex_diff, core_diff, refex_diff_count, core_diff_count
-    # from the partitionBy(articleid, YYYY-MM) situation, we want to get:
+    # YYYY_MM, namespace, regex_diff, core_diff, refex_diff_count, core_diff_count
+    # from the partitionBy(articleid, YYYY_MM) situation, we want to get:
     # the count of revisions
     # the count of revisions with policy invocation (there is a diff adding), or core policy invocation
     # per month 
@@ -294,7 +446,7 @@ if __name__ == "__main__":
     # count revisions with core policy invocation
     # count revisions
 
-    # 4 TODO F4. YYYY-MM, namespace, regex_diff (not count)
+    # 4 TODO F4. YYYY_MM, namespace, regex_diff (not count)
     # we want to have the new policy invocations in a given month, so export that or use the exported file from F1
     # going to have to write a separate script that goes through the regex_diff of a month and checks ILL status
 
@@ -307,6 +459,9 @@ if __name__ == "__main__":
     out_filepath = "{}/{}{}.tsv".format(args.output_dir,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
     master_regex_one_df.coalesce(1).write.csv(out_filepath,sep='\t',mode='append',header=True)
 
+
+    out_filepath = "{}/{}{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
+    print("Find the output here: {}".format(out_filepath))
 
     print("\n\n---Ending Spark Session and Context ---\n\n")
     spark.stop()
