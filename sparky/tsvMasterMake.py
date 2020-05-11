@@ -9,13 +9,11 @@ import pyspark.sql.functions as f
 from pyspark.sql.functions import lit
 from pyspark.sql import types
 import argparse
-import glob, os, re
+import glob, os
 import csv
-from pathlib import Path
 from datetime import datetime
 import time
 import collections 
-from deltas import segment_matcher, text_split
 
 start_time = time.time()
 
@@ -157,133 +155,64 @@ if __name__ == "__main__":
 
     ## regexes_diff_bool, core_diff_bool keep track of # of revisions that have a new regex / 0 for no new regex, 1 for diff
     ## we can sum this for the # of revisions with difference in regex / total number of revisions
-    ## regexes_diff, core_diff keep track of the actual additions (string)
-    ## regexes_diff_count, core_diff_count count the number of new policy invocations from core/regexes_diff (per revision)
 
     master_regex_one_df = master_regex_one_df.withColumn("regexes_diff_bool", f.when(master_regex_one_df.regexes == master_regex_one_df.regexes_prev, 0).otherwise(1))
     master_regex_one_df = master_regex_one_df.withColumn("core_diff_bool", f.when(master_regex_one_df.core_regexes == master_regex_one_df.core_prev, 0).otherwise(1))
 
     # initialize the columns we want to fill with diff and diff_counts
+    ## regexes_diff, core_diff keep track of the actual additions (string)
+    ## regexes_diff_count, core_diff_count count the number of new policy invocations from core/regexes_diff (per revision)
     master_regex_one_df.withColumn('regexes_diff', lit('{{EMPTYBABY}}').cast(types.StringType()))
     master_regex_one_df.withColumn('core_diff', lit('{{EMPTYBABY}}').cast(types.StringType()))
     master_regex_one_df.withColumn('regexes_diff_count', lit(0).cast(types.LongType()))
     master_regex_one_df.withColumn('core_diff_count', lit(0).cast(types.LongType()))
 
-    master_shrunken_df = master_regex_one_df.where('regexes_diff_bool == 1 or core_diff_bool == 1')
-    master_shrunken_df.orderBy(master_shrunken_df.articleid, master_shrunken_df.YYYY_MM.desc()).show(n=50)
-    print(master_shrunken_df.count())
-
     # Now that we have, by-revision:
     # articleid, namespace, YYYY_MM, date_time, regexes, regexes_prev, core_regex, core_prev
     ## regexes_diff_bool, core_diff_bool 
         # keep track of # of revision; that have a new regex / 0 for no new regex, 1 for diff
         ## we can sum this for the # of revisions with difference in regex / total number of revisions
 
-    # master 
+    # make the smaller version to be outputted
+    master_shrunken_df = master_regex_one_df.where('regexes_diff_bool == 1 or core_diff_bool == 1')
+
+
+    # MASTER 
+    master_regex_one_df.orderBy(master_regex_one_df.articleid.asc_nulls_first(), master_regex_one_df.YYYY_MM, master_regex_one_df.date_time).show(n=50)
+    
     out_filepath_master = "{}/{}_master_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
     #master_regex_one_df.coalesce(1).write.csv(out_filepath_master,sep='\t',mode='append',header=True)
-    #master_regex_one_df.orderBy(master_regex_one_df.articleid, master_regex_one_df.YYYY_MM.desc()).show(n=50)
 
-    # shrunken master
-    out_filepath_master_culled = "{}/{}_master_culled_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
-    #master_regex_one_df.coalesce(1).write.csv(out_filepath_master_culled,sep='\t',mode='append',header=True)
+    # MASTER - FILTERED ROWS
+    master_shrunken_df.orderBy(master_shrunken_df.articleid.asc_nulls_first(), master_shrunken_df.YYYY_MM, master_regex_one_df.date_time).show(n=50)
+    print(master_shrunken_df.count())
 
-    # monthly and namespace
+    out_filepath_master_filtered = "{}/{}_master_filtered_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
+    #master_regex_one_df.coalesce(1).write.csv(out_filepath_master_filtered,sep='\t',mode='append',header=True)
+
+    # MONTHLY + NAMESPACE
     mn_df = master_regex_one_df.repartition("YYYY_MM","namespace")
-    mn_df = mn_df.groupBy("YYYY_MM","namespace").agg(f.count("*").alias("num_revs"), f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff"))
+    mn_df = mn_df.groupBy("YYYY_MM","namespace").agg(f.count("*").alias("num_revs"), f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff")).orderBy(mn_df.YYYY_MM)
     mn_df.orderBy(mn_df.YYYY_MM.desc()).show(n=50)
 
     out_filepath_monthly_namespace = "{}/{}_monthly-namespace_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
     #mn_df.coalesce(1).write.csv(out_filepath_monthly_namespace,sep='\t',mode='append',header=True) 
 
-    # monthly
+    # MONTHLY
     m_df = master_regex_one_df.repartition("YYYY_MM")
-    m_df = m_df.groupBy("YYYY_MM").agg(f.count("*").alias("num_revs"), f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff"))
-
-    print("This is the one from regular master")
+    m_df = m_df.groupBy("YYYY_MM").agg(f.count("*").alias("num_revs"), f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff")).orderBy(m_df.YYYY_MM)
     m_df.orderBy(m_df.YYYY_MM.desc()).show(n=50)
-
-    print("This is the one from culled master")
-    master_shrunken_df.groupBy("YYYY_MM").agg(f.count("*").alias("num_revs"), f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff")).orderBy(m_df.YYYY_MM.desc()).show(n=50)
-
 
     out_filepath_monthly = "{}/{}_monthly_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
     #m_df.coalesce(1).write.csv(out_filepath_monthly,sep='\t',mode='append',header=True)
 
+    print("Find the output here: \nmaster:{}\filtered (row) master:{}\nmonthly:{}\nmonthly_namespace:{}".format(out_filepath_master, out_filepath_master_filtered, out_filepath_monthly,out_filepath_monthly_namespace))
 
-    # TODO IN THE NEXT SCRIPT
+    print("\n\n---Ending Spark Session and Context ---\n\n")
+    spark.stop()
+
+    # TO DO IN THE NEXT SCRIPT
     ## regexes_diff, core_diff 
         # keep track of the actual additions (string)
     ## regexes_diff_count, core_diff_count
         # count the number of new policy invocations from core/regexes_diff (per revision)
-
-
-    print("Find the output here: \nmaster:{}\nculled master:{}\nmonthly:{}\nmonthly_namespace:{}".format(out_filepath_master, out_filepath_master_culled, out_filepath_monthly,out_filepath_monthly_namespace))
-
-    print("\n\n---Ending Spark Session and Context ---\n\n")
-    spark.stop()
-
-    # Input that to calculate diffs
-    '''
-    master_regex_one_df.foreach(diff_find)
-    # we now have the diffs for each; we know this is BY ARTICLE because of the window thing we did earlier...
-
-    #master_regex_one_df.orderBy('articleid','YYYY_MM','date_time').show(n=100)
-
-    print("\n\n\n")
-
-    master_regex_one_df.select(master_regex_one_df.articleid,master_regex_one_df.YYYY_MM,master_regex_one_df.date_time,master_regex_one_df.regexes,master_regex_one_df.regexes_prev,master_regex_one_df.regexes_diff,master_regex_one_df.regexes_diff_count).orderBy('articleid','YYYY_MM','date_time').show(n=100)
-
-    print("Partitions right now: {}".format(master_regex_one_df.rdd.getNumPartitions()))
-
-    print("Now we're ready to process the data (MONTHLY SMOOSH)")
-
-    #print("Repartitioning articleid,YYYY_MM:")
-    #rp_df = master_regex_one_df.repartition("articleid","YYYY_MM")
-    #print(rp_df.rdd.getNumPartitions())
-
-    print("Time to process into monthly now, I guess...")
-    print("\n\n---Ending Spark Session and Context ---\n\n")
-
-    print("--- %s seconds ---" % (time.time() - start_time))
-    spark.stop()
-
-    # Now that we have, by-revision:
-    # articleid, namespace, YYYY_MM, date_time, regexes, regexes_prev, core_regex, core_prev
-    ## regexes_diff_bool, core_diff_bool 
-        # keep track of # of revision; that have a new regex / 0 for no new regex, 1 for diff
-        ## we can sum this for the # of revisions with difference in regex / total number of revisions
-    ## regexes_diff, core_diff 
-        # keep track of the actual additions (string)
-    ## regexes_diff_count, core_diff_count
-        # count the number of new policy invocations from core/regexes_diff (per revision)
-    
-    # Smooth into months
-    print("Repartitioning articleid,YYYY_MM:")
-    rp_df = master_regex_one_df.repartition("YYYY_MM","namespace")
-    # groupBy YYYY_MM ...
-    # sum up the regexes_diff_bool --> num_revs_with_regex_diff, core_diff_bool --> num_revs_with_core_diff
-    # concatenate all of the strings of regexes_diff and core_diff that are not empty --> regexes_diff_monthly, core_diff_monthly
-    # sum up the regexes_diff_count, core_diff_count --> regexes_diff_count_monthly, core_diff_count_monthly
-        # this is the number of new policy invocations in that month
-    # f.count(*) --? num_revs
-
-    rp_df = rp_df.groupBy("YYYY_MM","namespace").agg( f.count("*").alias("num_revs"), f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff"), f.sum("regexes_diff_count").alias("regexes_diff_count_monthly"), f.sum("core_diff_count").alias("core_diff_count_monthly"), f.concat_ws(", ", f.collect_list(rp_df.regexes_diff)).alias("regexes_diff_monthly"),  f.concat_ws(", ", f.collect_list(rp_df.core_diff)).alias("core_diff_monthly"))
-
-    #TODO concat_ws for regexes/core_diff_monthly CONDITIONAL --> WHEN NOT EMPTY
-    #TODO {{EMPTYBABY}} CONSISTENCY
-
-
-    rp_df = rp_df
-
-
-    #TODO FIGURE OUT WHAT FILES ARE TO BE OUTPUTTED. will probably have multiple dfs
-
-    out_filepath = "{}/{}{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
-    rp_df.coalesce(1).write.csv(out_filepath,sep='\t',mode='append',header=True)
-    
-    print("Find the output here: {}".format(out_filepath))
-
-    print("\n\n---Ending Spark Session and Context ---\n\n")
-    spark.stop()
-    '''
