@@ -44,10 +44,17 @@ def findCoreColumns(onlyRegexCols):
 
     return coreDFColumn
 
-def replace_wp_wikipedia(col_name):
-    df.col_name
+def replace_wp_wikipedia(col_name,temp):
+    regexp = "(WP|wp|Wikipedia|wikipedia|WIKIPEDIA|Wikipédia|wikipédia|WIKIPÉDIA)([^:])"
+    return regexp(col_name, regexp, temp)
 
-    return 
+def multi_replace_wps(col_names):
+    def inner(df):
+        for col_name in col_names:
+            temp = col_name
+            df = df.withColumn(col_name,replace_wp_wikipedia(col_name,temp))
+        return df
+    return inner
 
 def df_structurize(input_df, struct):
     #metaColumns = struct.fieldNames()
@@ -71,13 +78,15 @@ def df_structurize(input_df, struct):
     coreDFColumn = findCoreColumns(onlyRegexCols)
 
     test_df = regex_df.select("*")
-    for col_name in onlyRegexCols:
-        test_df = test_df.withColumn(col_name, f.regexp_replace(col_name, r'(WP|wp|Wikipedia|wikipedia|WIKIPEDIA|Wikipédia|wikipédia|WIKIPÉDIA)([^:])', lit(col_name)))
+    test_df = multi_replace_wps(onlyRegexCols)(test_df)
 
     print("TESTING REPLACE")
-    test_df.show(n=40)
+
+    test_df.select(regex_df.articleid, regex_df.namespace, regex_df.anon, regex_df.deleted, regex_df.revert, regex_df.reverteds, regex_df.revid, regex_df.date_time, f.concat_ws('_',f.year(regex_df.date_time),f.month(regex_df.date_time)).alias('YYYY_MM'),f.concat_ws(', ',*onlyRegexCols).alias('regexes'), f.concat_ws(', ',*coreDFColumn).alias('core_regexes')).show(n=40)
 
     regex_one_df = regex_df.select(regex_df.articleid, regex_df.namespace, regex_df.anon, regex_df.deleted, regex_df.revert, regex_df.reverteds, regex_df.revid, regex_df.date_time, f.concat_ws('_',f.year(regex_df.date_time),f.month(regex_df.date_time)).alias('YYYY_MM'),f.concat_ws(', ',*onlyRegexCols).alias('regexes'), f.concat_ws(', ',*coreDFColumn).alias('core_regexes'))
+
+    
 
     # make sure the empty ones are None/null
     regex_one_df = regex_one_df.na.replace('',None)
