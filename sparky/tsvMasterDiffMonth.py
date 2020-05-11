@@ -324,9 +324,9 @@ if __name__ == "__main__":
     master_regex_one_df = df_regex_make(glob.glob(directory))
 
     # Check number of partitions -- should be 1
-    print('Checking number of partitions - should be 1 b/c df.repartition(1) in df_regex_make')
-    print(master_regex_one_df.rdd.getNumPartitions())
+    print('Checking number of partitions - should be 1 b/c df.repartition(1)')
     master_regex_one_df = master_regex_one_df.repartition(args.num_partitions)
+    print(master_regex_one_df.rdd.getNumPartitions())
     # print(master_regex_one_df.rdd.getNumPartitions())
 
     print("--- %s seconds ---" % (time.time() - start_time))
@@ -356,6 +356,7 @@ if __name__ == "__main__":
     master_regex_one_df.withColumn('regexes_diff_count', lit(0).cast(types.LongType()))
     master_regex_one_df.withColumn('core_diff_count', lit(0).cast(types.LongType()))
     master_regex_one_df.foreach(diff_find)
+    # we now have the diffs for each; we know this is BY ARTICLE because of the window thing we did earlier...
 
     #master_regex_one_df.orderBy('articleid','YYYY_MM','date_time').show(n=100)
 
@@ -386,81 +387,31 @@ if __name__ == "__main__":
         # keep track of the actual additions (string)
     ## regexes_diff_count, core_diff_count
         # count the number of new policy invocations from core/regexes_diff (per revision)
-
-    # Smooth into months
-    #print("Repartitioning articleid,YYYY_MM:")
-    #rp_df = master_regex_one_df.repartition("YYYY_MM","namespace")
-    # groupBy YYYY_MM ...
-    # sum up the regexes_diff_bool as num_revs_with_regex_diff, core_diff_bool as num_revs_with_core_diff
-    # concatenate all of the strings of regexes_diff and core_diff that are not empty; regexes_diff_monthly, core_diff_monthly
-    # sum up the regexes_diff_count, core_diff_count; regexes_diff_count_monthly, core_diff_count_monthly
-        # this is the number of new policy invocations in that month
-
-
-    # 
-
-
-    
     '''
-    # now have articleid, namespace, YYYY_MM, date_time, regexes, prev_rev_regex, diff
-    # 2.2 - monthly smoosh, monthly_df
-        # want in monthly_df:
-        # YYYY_MM, namespace, regexes_start, regexes_end, not_count_diff(next_month_start-month_start)
-        # core_regexes_start, core_regexes_end, not_count_diff(next_month_start - month_start)
-        # count(revisions), count(revs_with_diff), count(revs_with_core_diff)
-    # forEachPartition:
-        # A. cumulatively cat diff, core_diff (# of policy invocations may be different from # rev with core_diff)
-        # B. end - start
-    #
+    # Smooth into months
+    print("Repartitioning articleid,YYYY_MM:")
+    rp_df = master_regex_one_df.repartition("YYYY_MM","namespace")
+    # groupBy YYYY_MM ...
+    # sum up the regexes_diff_bool --> num_revs_with_regex_diff, core_diff_bool --> num_revs_with_core_diff
+    # concatenate all of the strings of regexes_diff and core_diff that are not empty --> regexes_diff_monthly, core_diff_monthly
+    # sum up the regexes_diff_count, core_diff_count --> regexes_diff_count_monthly, core_diff_count_monthly
+        # this is the number of new policy invocations in that month
+    # f.count(*) --? num_revs
 
-    # 2.2 TODO ALTERNATIVE BY MONTH DIFF
-    # from the partitioned data
-    # get first and last of each month for each article
-    # so each articleid will have two rows for every month, that means 24/year, which means ~410 per article...
+    rp_df = rp_df.groupBy("YYYY_MM","namespace").agg( f.count("*").alias("num_revs"), f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff"), f.sum("regexes_diff_count").alias("regexes_diff_count_monthly"), f.sum("core_diff_count").alias("core_diff_count_monthly"), f.concat_ws(", ", f.collect_list(rp_df.regexes_diff)).alias("regexes_diff_monthly"),  f.concat_ws(", ", f.collect_list(rp_df.core_diff)).alias("core_diff_monthly"))
 
-    # new_df --> articleID, YYYY_MM, namespace, regex_start, regex_end, core_start, core_end
-    # one row per articleID + YYYY_MM combo
-    # in new_df: calculate the diff for each articleid, month (new column diff)
-    # diff is a COUNT. for YYYYMM would be YYYYMM+1(regex_start) - YYYYMM(regex_start)
-    # first month starts at 0; last month is regex_end - regex_start
-    # core_diff follows same logic, just for the core
-    print("\nGenerate new column of diff, core_diff")
-
-    # smoosh into year/month (no more articleid)
-    # and then we add up all the diffs (groupBy -->YYYY_MM, namespace. so YYYY_MM, diff)
-    # so a df that is: one row per YYYY_MM + namespace combo.
-    # smooth into just YYYY_MM, diff info (ignore namespace) in R
+    #TODO concat_ws for regexes/core_diff_monthly CONDITIONAL --> WHEN NOT EMPTY
+    #TODO {{EMPTYBABY}} CONSISTENCY
 
 
+    rp_df = rp_df
 
-
-    # 3 TODO F1. needs the by-rev
-    # YYYY_MM, namespace, regex_diff, core_diff, refex_diff_count, core_diff_count
-    # from the partitionBy(articleid, YYYY_MM) situation, we want to get:
-    # the count of revisions
-    # the count of revisions with policy invocation (there is a diff adding), or core policy invocation
-    # per month 
-    # active editor data is elsewhere.
-
-    # MONTHLY BASIC DATA. of revisions with policy invoked, how many had core policy invocations by-month and cumul
-    # count revisions with core policy invocation
-    # count revisions
-
-    # 4 TODO F4. YYYY_MM, namespace, regex_diff (not count)
-    # we want to have the new policy invocations in a given month, so export that or use the exported file from F1
-    # going to have to write a separate script that goes through the regex_diff of a month and checks ILL status
-
-
-    print("We have now built the columns with the diffs (current, prev).")
-    print("--- %s seconds ---" % (time.time() - start_time))
 
     #TODO FIGURE OUT WHAT FILES ARE TO BE OUTPUTTED. will probably have multiple dfs
-    #TODO double-check the output format based on the partitioning....
-    out_filepath = "{}/{}{}.tsv".format(args.output_dir,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
-    master_regex_one_df.coalesce(1).write.csv(out_filepath,sep='\t',mode='append',header=True)
-
 
     out_filepath = "{}/{}{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
+    rp_df.coalesce(1).write.csv(out_filepath,sep='\t',mode='append',header=True)
+    
     print("Find the output here: {}".format(out_filepath))
 
     print("\n\n---Ending Spark Session and Context ---\n\n")
