@@ -55,7 +55,7 @@ def multi_replace_wps(col_names):
         for col_name in col_names:
             print(col_name)
             temp = col_name
-            df = df.withColumn( col_name , f.when(col_name).isNotNull(replace_wp_wikipedia(col_name,temp)) )
+            df = df.withColumn( col_name , f.when(df.col_name.isNotNull(), replace_wp_wikipedia(col_name,temp)) )
         return df
     return inner
 
