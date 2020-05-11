@@ -173,26 +173,21 @@ if __name__ == "__main__":
         ## we can sum this for the # of revisions with difference in regex / total number of revisions
 
     # make the smaller version to be outputted
-    #master_regex_one_df.repartition(100)
+    master_regex_one_df.repartition(80)
     mid_time1 = time.time()
     print("Number of partitions of master_regex_one_df: {}".format(master_regex_one_df.rdd.getNumPartitions()))
     master_shrunken_df = master_regex_one_df.where('regexes_diff_bool == 1 or core_diff_bool == 1')
 
     print("--- %s seconds ---" % (time.time() - mid_time1))
 
-    master_regex_one_df.repartition(100)
-    mid_time2 = time.time()
-    print("Number of partitions of master_regex_one_df: {}".format(master_regex_one_df.rdd.getNumPartitions()))
-    master_shrunken_df = master_regex_one_df.where('regexes_diff_bool == 1 or core_diff_bool == 1')
+    print('these two should be these same, the summing of regexes_diff_bool and core_diff_bool:')
+    # TEST - these two should be the same (if not 0):
+    print("master:")
+    master_regex_one_df.groupBy("YYYY_MM").agg(f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff")).orderBy(master_regex_one_df.YYYY_MM).show(n=20)
+    print("filtered:")
+    master_shrunken_df.groupBy("YYYY_MM").agg(f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff")).orderBy(master_shrunken_df.YYYY_MM).show(n=20)
 
-    print("--- %s seconds ---" % (time.time() - mid_time2))
-
-    master_regex_one_df.repartition(80)
-    mid_time3 = time.time()
-    print("Number of partitions of master_regex_one_df: {}".format(master_regex_one_df.rdd.getNumPartitions()))
-    master_shrunken_df = master_regex_one_df.where('regexes_diff_bool == 1 or core_diff_bool == 1')
-
-    print("--- %s seconds ---" % (time.time() - mid_time3))
+    print('\n\n\n')
 
     '''
     # MASTER 
