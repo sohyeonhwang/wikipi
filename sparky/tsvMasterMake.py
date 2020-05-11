@@ -169,8 +169,9 @@ if __name__ == "__main__":
     master_regex_one_df.withColumn('regexes_diff_count', lit(0).cast(types.LongType()))
     master_regex_one_df.withColumn('core_diff_count', lit(0).cast(types.LongType()))
 
-    master_shrunken_df = master_regex_one_df.where(master_regex_one_df.regexes_diff_bool == 1)
+    master_shrunken_df = master_regex_one_df.where('regexes_diff_bool == 1 or core_diff_bool == 1')
     master_shrunken_df.orderBy(master_shrunken_df.articleid, master_shrunken_df.YYYY_MM.desc()).show(n=50)
+    print(master_shrunken_df.count())
 
     # Now that we have, by-revision:
     # articleid, namespace, YYYY_MM, date_time, regexes, regexes_prev, core_regex, core_prev
@@ -181,13 +182,11 @@ if __name__ == "__main__":
     # master 
     out_filepath_master = "{}/{}_master_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
     #master_regex_one_df.coalesce(1).write.csv(out_filepath_master,sep='\t',mode='append',header=True)
-
-    master_regex_one_df.orderBy(master_regex_one_df.articleid, master_regex_one_df.YYYY_MM.desc()).show(n=50)
+    #master_regex_one_df.orderBy(master_regex_one_df.articleid, master_regex_one_df.YYYY_MM.desc()).show(n=50)
 
     # shrunken master
     out_filepath_master_culled = "{}/{}_master_culled_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
     #master_regex_one_df.coalesce(1).write.csv(out_filepath_master_culled,sep='\t',mode='append',header=True)
-
 
     # monthly and namespace
     mn_df = master_regex_one_df.repartition("YYYY_MM","namespace")
@@ -200,7 +199,13 @@ if __name__ == "__main__":
     # monthly
     m_df = master_regex_one_df.repartition("YYYY_MM")
     m_df = m_df.groupBy("YYYY_MM").agg(f.count("*").alias("num_revs"), f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff"))
+
+    print("This is the one from regular master")
     m_df.orderBy(m_df.YYYY_MM.desc()).show(n=50)
+
+    print("This is the one from culled master")
+    master_shrunken_df.groupBy("YYYY_MM").agg(f.count("*").alias("num_revs"), f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff")).orderBy(m_df.YYYY_MM.desc()).show(n=50)
+
 
     out_filepath_monthly = "{}/{}_monthly_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
     #m_df.coalesce(1).write.csv(out_filepath_monthly,sep='\t',mode='append',header=True)
