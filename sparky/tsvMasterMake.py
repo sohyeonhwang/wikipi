@@ -83,11 +83,13 @@ def df_structurize(input_df, struct):
 
     print("TESTING REPLACE:")
 
-    test_df.select(regex_df.articleid, regex_df.namespace, regex_df.anon, regex_df.deleted, regex_df.revert, regex_df.reverteds, regex_df.revid, regex_df.date_time, f.concat_ws('_',f.year(regex_df.date_time),f.month(regex_df.date_time)).alias('YYYY_MM'),f.concat_ws(', ',*onlyRegexCols).alias('regexes'), f.concat_ws(', ',*coreDFColumn).alias('core_regexes')).show(n=50)
+    test_df.select(regex_df.revid, regex_df.date_time, f.concat_ws('_',f.year(regex_df.date_time),f.month(regex_df.date_time)).alias('YYYY_MM'),f.concat_ws(', ',*onlyRegexCols).alias('regexes'), f.concat_ws(', ',*coreDFColumn).alias('core_regexes')).show(n=50, vertical=True)
 
     print("If we didn't do the replace stuff:")
+    regex_df.select(regex_df.revid, regex_df.date_time, f.concat_ws('_',f.year(regex_df.date_time),f.month(regex_df.date_time)).alias('YYYY_MM'),f.concat_ws(', ',*onlyRegexCols).alias('regexes'), f.concat_ws(', ',*coreDFColumn).alias('core_regexes')).show(n=50, vertical=True)
+
     regex_one_df = regex_df.select(regex_df.articleid, regex_df.namespace, regex_df.anon, regex_df.deleted, regex_df.revert, regex_df.reverteds, regex_df.revid, regex_df.date_time, f.concat_ws('_',f.year(regex_df.date_time),f.month(regex_df.date_time)).alias('YYYY_MM'),f.concat_ws(', ',*onlyRegexCols).alias('regexes'), f.concat_ws(', ',*coreDFColumn).alias('core_regexes'))
-    regex_one_df.show(n=50)
+    
     
 
     # make sure the empty ones are None/null
@@ -253,6 +255,7 @@ if __name__ == "__main__":
 
     print("\n\n---Ending Spark Session and Context ---\n\n")
     spark.stop()
+    print("--- %s seconds ---" % (time.time() - start_time))
 
     # TO DO IN THE NEXT SCRIPT
     ## regexes_diff, core_diff 
