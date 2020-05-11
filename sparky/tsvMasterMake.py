@@ -188,7 +188,7 @@ if __name__ == "__main__":
     print(master_shrunken_df.count())
 
     out_filepath_master_filtered = "{}/{}_master_filtered_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
-    #master_regex_one_df.coalesce(1).write.csv(out_filepath_master_filtered,sep='\t',mode='append',header=True)
+    master_regex_one_df.coalesce(1).write.csv(out_filepath_master_filtered,sep='\t',mode='append',header=True)
 
     # MONTHLY + NAMESPACE
     mn_df = master_regex_one_df.repartition("YYYY_MM","namespace")
@@ -196,7 +196,7 @@ if __name__ == "__main__":
     mn_df.orderBy(mn_df.YYYY_MM.desc()).show(n=50)
 
     out_filepath_monthly_namespace = "{}/{}_monthly-namespace_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
-    #mn_df.coalesce(1).write.csv(out_filepath_monthly_namespace,sep='\t',mode='append',header=True) 
+    mn_df.coalesce(1).write.csv(out_filepath_monthly_namespace,sep='\t',mode='append',header=True) 
 
     # MONTHLY
     m_df = master_regex_one_df.repartition("YYYY_MM")
@@ -204,9 +204,9 @@ if __name__ == "__main__":
     m_df.orderBy(m_df.YYYY_MM.desc()).show(n=50)
 
     out_filepath_monthly = "{}/{}_monthly_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
-    #m_df.coalesce(1).write.csv(out_filepath_monthly,sep='\t',mode='append',header=True)
+    m_df.coalesce(1).write.csv(out_filepath_monthly,sep='\t',mode='append',header=True)
 
-    print("Find the output here: \nmaster:{}\filtered (row) master:{}\nmonthly:{}\nmonthly_namespace:{}".format(out_filepath_master, out_filepath_master_filtered, out_filepath_monthly,out_filepath_monthly_namespace))
+    print("Find the output here: \nmaster:{}\nfiltered (row) master:{}\nmonthly:{}\nmonthly_namespace:{}".format(out_filepath_master, out_filepath_master_filtered, out_filepath_monthly,out_filepath_monthly_namespace))
 
     print("\n\n---Ending Spark Session and Context ---\n\n")
     spark.stop()
