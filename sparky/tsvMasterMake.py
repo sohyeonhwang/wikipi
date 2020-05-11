@@ -78,19 +78,17 @@ def df_structurize(input_df, struct):
     onlyRegexCols = [c for c in regex_df.columns if c[0].isdigit()]
     coreDFColumn = findCoreColumns(onlyRegexCols)
 
-    test_df = regex_df.select("*")
-    test_df = multi_replace_wps(onlyRegexCols)(test_df)
+    #test_df = regex_df.select("*")
+    replaced_df = multi_replace_wps(onlyRegexCols)(regex_df)
 
-    print("TESTING REPLACE:")
+    #print("TESTING REPLACE:")
 
-    test_df.select(regex_df.revid, regex_df.date_time, f.concat_ws('_',f.year(regex_df.date_time),f.month(regex_df.date_time)).alias('YYYY_MM'),f.concat_ws(', ',*onlyRegexCols).alias('regexes'), f.concat_ws(', ',*coreDFColumn).alias('core_regexes')).show(n=50, truncate=200)
+    #test_df.select(regex_df.revid, regex_df.date_time, f.concat_ws('_',f.year(regex_df.date_time),f.month(regex_df.date_time)).alias('YYYY_MM'),f.concat_ws(', ',*onlyRegexCols).alias('regexes'), f.concat_ws(', ',*coreDFColumn).alias('core_regexes')).show(n=50, truncate=200)
 
-    print("If we didn't do the replace stuff:")
-    regex_df.select(regex_df.revid, regex_df.date_time, f.concat_ws('_',f.year(regex_df.date_time),f.month(regex_df.date_time)).alias('YYYY_MM'),f.concat_ws(', ',*onlyRegexCols).alias('regexes'), f.concat_ws(', ',*coreDFColumn).alias('core_regexes')).show(n=50, truncate =200)
+    #print("If we didn't do the replace stuff:")
+    #regex_df.select(regex_df.revid, regex_df.date_time, f.concat_ws('_',f.year(regex_df.date_time),f.month(regex_df.date_time)).alias('YYYY_MM'),f.concat_ws(', ',*onlyRegexCols).alias('regexes'), f.concat_ws(', ',*coreDFColumn).alias('core_regexes')).show(n=50, truncate =200)
 
-    regex_one_df = regex_df.select(regex_df.articleid, regex_df.namespace, regex_df.anon, regex_df.deleted, regex_df.revert, regex_df.reverteds, regex_df.revid, regex_df.date_time, f.concat_ws('_',f.year(regex_df.date_time),f.month(regex_df.date_time)).alias('YYYY_MM'),f.concat_ws(', ',*onlyRegexCols).alias('regexes'), f.concat_ws(', ',*coreDFColumn).alias('core_regexes'))
-    
-    
+    regex_one_df = replaced_df.select(regex_df.articleid, regex_df.namespace, regex_df.anon, regex_df.deleted, regex_df.revert, regex_df.reverteds, regex_df.revid, regex_df.date_time, f.concat_ws('_',f.year(regex_df.date_time),f.month(regex_df.date_time)).alias('YYYY_MM'),f.concat_ws(', ',*onlyRegexCols).alias('regexes'), f.concat_ws(', ',*coreDFColumn).alias('core_regexes'))
 
     # make sure the empty ones are None/null
     regex_one_df = regex_one_df.na.replace('',None)
