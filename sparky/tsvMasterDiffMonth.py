@@ -354,10 +354,20 @@ if __name__ == "__main__":
     master_regex_one_df = master_regex_one_df.withColumn("regexes_diff_bool", f.when(master_regex_one_df.regexes == master_regex_one_df.regexes_prev, 0).otherwise(1))
     master_regex_one_df = master_regex_one_df.withColumn("core_diff_bool", f.when(master_regex_one_df.core_regexes == master_regex_one_df.core_prev, 0).otherwise(1))
 
+    # initialize the columns we want to fill with diff and diff_counts
     master_regex_one_df.withColumn('regexes_diff', lit('{{EMPTYBABY}}').cast(types.StringType()))
     master_regex_one_df.withColumn('core_diff', lit('{{EMPTYBABY}}').cast(types.StringType()))
     master_regex_one_df.withColumn('regexes_diff_count', lit(0).cast(types.LongType()))
     master_regex_one_df.withColumn('core_diff_count', lit(0).cast(types.LongType()))
+
+    out_filepath = "{}/{}{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
+    master_regex_one_df.coalesce(1).write.csv(out_filepath,sep='\t',mode='append',header=True)
+    
+    print("Find the output here: {}".format(out_filepath))
+
+    print("\n\n---Ending Spark Session and Context ---\n\n")
+    spark.stop()
+    '''
     master_regex_one_df.foreach(diff_find)
     # we now have the diffs for each; we know this is BY ARTICLE because of the window thing we did earlier...
 
@@ -390,7 +400,7 @@ if __name__ == "__main__":
         # keep track of the actual additions (string)
     ## regexes_diff_count, core_diff_count
         # count the number of new policy invocations from core/regexes_diff (per revision)
-    '''
+    
     # Smooth into months
     print("Repartitioning articleid,YYYY_MM:")
     rp_df = master_regex_one_df.repartition("YYYY_MM","namespace")
