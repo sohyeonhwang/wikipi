@@ -266,7 +266,7 @@ if __name__ == "__main__":
     print(pd_df.columns)
 
     print("\n")
-    print(pd_df.head(25))
+    #print(pd_df.head(25))
 
     # Should be 28 cores on mox
     cores = cpu_count()
