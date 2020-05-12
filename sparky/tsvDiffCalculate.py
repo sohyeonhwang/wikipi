@@ -274,10 +274,10 @@ if __name__ == "__main__":
     pd_df.info(verbose=True)
     
     # TODO function should take in pd_df, do the apply(diff_find) and return the result
-    #processed_df = parallelize_dataframe(pd_df, pd_apply_diff_find, n_cores=4)
+    processed_df = parallelize_dataframe(pd_df, pd_apply_diff_find, cores)
 
     # TODO CHECK THE STATUS OF / Get rid of the {{EMPTYBABY}}
-    #processed_df.head(30)
+    processed_df.head(30)
     # PYSPARK: master_regex_one_df = master_regex_one_df.na.fill('{{EMPTYBABY}}')
 
     # Now that we have, by-revision:
