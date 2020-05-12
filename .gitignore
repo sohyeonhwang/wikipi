@@ -1,11 +1,8 @@
 sparky/OLD/
-sparky/cumulMonthlyRunning/
-sparky/cumulMonthlyOutputs/
-sparky/tsvCrunchOutput/
 sparky/errorSearchOutput/
 sparky/tsvCrunchInput/
-sparky/deltas/
 sparky/tsvDiffCalculateInput/
-deltas/
 sparky/tsvMasterDiffMonthOutput/
+sparky/deltas/
+deltas/
 tsvCrunchOutput/

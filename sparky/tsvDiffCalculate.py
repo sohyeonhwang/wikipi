@@ -17,8 +17,8 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Create a dataset.')
     parser.add_argument('-i', '--input', help='Filtered master_regex.tsv to input', required=True, type=str)
     parser.add_argument('--lang', help='Specify which language edition', default='es',type=str)
-    parser.add_argument('-o', '--output-directory', help='Output directory', default='./tsvCrunchOutput', type=str)
-    parser.add_argument('-ofn', '--output-filename', help='filename for the output file of tsv', default='testCrunch', type=str)
+    parser.add_argument('-o', '--output-directory', help='Output directory', default='./tsvDiffCalculateOutput', type=str)
+    parser.add_argument('-ofn', '--output-filename', help='filename for the output file of tsv', default='testDiff', type=str)
     args = parser.parse_args()
     return(args)
 
@@ -259,7 +259,7 @@ if __name__ == "__main__":
     pd.options.display.max_columns = None
     pd.options.display.max_rows = None
 
-    dtypes={'articleid':np.int64, 'namespace':np.int64, 'anon':np.bool, 'deleted':np.bool, 'revert':np.bool, 'reverteds':np.str,'revid':np.int64, 'date_time':np.str, 'year':np.int8, 'month':np.int8, 'regexes':np.str, 'core_regexes':np.str,'regexes_prev':np.str, 'core_prev':np.str, 'regexes_diff_bool':np.int8, 'core_diff_bool':np.int8}
+    dtypes={'articleid':np.int64, 'namespace':np.int64, 'anon':np.str, 'deleted':np.bool, 'revert':np.str, 'reverteds':np.str,'revid':np.int64, 'date_time':np.str, 'year':np.int8, 'month':np.int8, 'regexes':np.str, 'core_regexes':np.str,'regexes_prev':np.str, 'core_prev':np.str, 'regexes_diff_bool':np.int8, 'core_diff_bool':np.int8}
     parse_dates_in = ['date_time']
 
     pd_df = pd.read_csv(file_path, sep="\t", header=0, dtype=dtypes, parse_dates=parse_dates_in)
