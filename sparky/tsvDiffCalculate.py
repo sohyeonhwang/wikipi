@@ -257,7 +257,7 @@ if __name__ == "__main__":
     print(file_path)
 
     pd.options.display.max_columns = None
-    pd.options.display.max_rows = None
+    #pd.options.display.max_rows = None
 
     dtypes={'articleid':np.int64, 'namespace':np.int64, 'anon':np.str, 'deleted':np.bool, 'revert':np.str, 'reverteds':np.str,'revid':np.int64, 'date_time':np.str, 'year':np.int64, 'month':np.int64, 'regexes':np.str, 'core_regexes':np.str,'regexes_prev':np.str, 'core_prev':np.str, 'regexes_diff_bool':np.int64, 'core_diff_bool':np.int64}
     parse_dates_in = ['date_time']
@@ -272,12 +272,21 @@ if __name__ == "__main__":
     cores = cpu_count()
     
     pd_df.info(verbose=True)
-    
+
+    input("To start data processing, press enter.")
+
+    print("Begin data processing...")
+    start_time = time.time()
+    processed_df = pd_df.apply(diff_find,axis=1)
+    print("--- Without parallelization, this took: %s seconds ---" % (time.time() - start_time))
+
+    input("To start data processing, press enter.")
+
     # TODO function should take in pd_df, do the apply(diff_find) and return the result
-    processed_df = parallelize_dataframe(pd_df, pd_apply_diff_find, cores)
+    #processed_df = parallelize_dataframe(pd_df, pd_apply_diff_find, cores)
 
     # TODO CHECK THE STATUS OF / Get rid of the {{EMPTYBABY}}
-    processed_df.head(30)
+    #processed_df.head(30)
     # PYSPARK: master_regex_one_df = master_regex_one_df.na.fill('{{EMPTYBABY}}')
 
     # Now that we have, by-revision:
