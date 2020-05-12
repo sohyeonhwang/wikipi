@@ -259,15 +259,18 @@ if __name__ == "__main__":
     pd.options.display.max_columns = None
     pd.options.display.max_rows = None
 
-    pd_df = pd.read_csv(file_path, sep="\t", header=0, )
+    dtypes={'articleid':np.int64, 'namespace':np.int64, 'anon':np.bool, 'deleted':np.bool, 'revert':np.bool, 'reverteds':np.str,'revid':np.int64, 'date_time':np.str, 'year':np.int8, 'month':np.int8, 'regexes':np.str, 'core_regexes':np.str,'regexes_prev':np.str, 'core_prev':np.str, 'regexes_diff_bool':np.int8, 'core_diff_bool':np.int8}
+    parse_dates_in = ['date_time']
+
+    pd_df = pd.read_csv(file_path, sep="\t", header=0, dtype=dtypes, parse_dates=parse_dates_in)
     print(pd_df.columns)
 
     print("\n")
-    print(pd_df.head(10))
+    print(pd_df.head(25))
 
+    # Should be 28 cores on mox
     cores = cpu_count()
-    print("There are {} cores; should be 28".format(cores))
-
+    
     pd_df.info(verbose=True)
     
     # TODO function should take in pd_df, do the apply(diff_find) and return the result
