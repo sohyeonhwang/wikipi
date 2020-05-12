@@ -5,6 +5,7 @@ sparky/tsvCrunchOutput/
 sparky/errorSearchOutput/
 sparky/tsvCrunchInput/
 sparky/deltas/
+sparky/tsvDiffCalculateInput/
 deltas/
 sparky/tsvMasterDiffMonthOutput/
 tsvCrunchOutput/
