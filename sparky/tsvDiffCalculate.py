@@ -260,7 +260,6 @@ if __name__ == "__main__":
 
     cores = cpu_count()
     print("There are {} cores; should be 28".format(cores))
-
     
     # TODO function should take in pd_df, do the apply(diff_find) and return the result
     #processed_df = parallelize_dataframe(pd_df, pd_apply_diff_find, n_cores=4)
@@ -268,7 +267,6 @@ if __name__ == "__main__":
     # TODO CHECK THE STATUS OF / Get rid of the {{EMPTYBABY}}
     #processed_df.head(30)
     # PYSPARK: master_regex_one_df = master_regex_one_df.na.fill('{{EMPTYBABY}}')
-
 
     # Now that we have, by-revision:
     # articleid, namespace, YYYY_MM, date_time, regexes, regexes_prev, core_regex, core_prev
@@ -280,19 +278,26 @@ if __name__ == "__main__":
     ## regexes_diff_count, core_diff_count
         # count the number of new policy invocations from core/regexes_diff (per revision)
 
-    #TODO Let's make the MONTHLY SMOOTH files
-    # TODO groupBy YYYY_MM ...
-    # TODO sum up the regexes_diff_bool --> num_revs_with_regex_diff, core_diff_bool --> num_revs_with_core_diff
-    # TODO concatenate all of the strings of regexes_diff and core_diff that are not empty --> regexes_diff_monthly, core_diff_monthly
-    # TODO sum up the regexes_diff_count, core_diff_count --> regexes_diff_count_monthly, core_diff_count_monthly
+    #TODO Let's make the MONTHLY SMOOTH files ; groupBy YYYY_MM ...
+
+    # the regexes_diff_bool / regexes_diff_count --> also in the output of tsvMasterMake in the monthly files
+    # sum up the regexes_diff_bool --> num_revs_with_regex_diff, core_diff_bool --> num_revs_with_core_diff
+    # sum up the regexes_diff_count, core_diff_count --> regexes_diff_count_monthly, core_diff_count_monthly
         # this is the number of new policy invocations in that month
     # f.count(*) --> num_revs --> this can be found in the tsvMasterMakeOutput (monthly_namespace, monthly)
 
-    # PYSPARK: rp_df = rp_df.groupBy("YYYY_MM","namespace").agg( f.count("*").alias("num_revs"), f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff"), f.sum("regexes_diff_count").alias("regexes_diff_count_monthly"), f.sum("core_diff_count").alias("core_diff_count_monthly"), f.concat_ws(", ", f.collect_list(rp_df.regexes_diff)).alias("regexes_diff_monthly"),  f.concat_ws(", ", f.collect_list(rp_df.core_diff)).alias("core_diff_monthly"))
+    # TODO concatenate all of the strings of regexes_diff and core_diff that are not empty --> regexes_diff_monthly, core_diff_monthly
     # PYSPARK TODO concat_ws for regexes/core_diff_monthly CONDITIONAL --> WHEN NOT EMPTY
+
+    # ["regexes_diff_bool","core_diff_bool","regexes_diff_count","core_diff_count"]
+
+    #monthly_diff_df = processed_df.groupby(["year","month","namespace"]).agg({"regexes_diff_bool":['sum'], "core_diff_bool":['sum'], "regexes_diff_count":['sum'], "core_diff_count":['sum']})
+    #monthly_diff_df.columns = ["num_revs_with_regex_diff","num_revs_with_core_diff","regexes_diff_count_monthly","core_diff_count_monthly"]
+    #monthly_diff_df = monthly_diff_df.reset_index()
 
 
     # TODO CHECK THE STATUS OF / Get rid of the {{EMPTYBABY}}
+    #regex.replace("{{EMPTYBABY ")
 
     out_filepath = "{}/{}{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
     print("Find the output here: {}".format(out_filepath))

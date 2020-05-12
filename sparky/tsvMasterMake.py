@@ -178,7 +178,7 @@ if __name__ == "__main__":
     #master_regex_one_df = master_regex_one_df.na.replace('{{EMPTYBABY}}',None)
     master_regex_one_df = master_regex_one_df.na.fill('{{EMPTYBABY}}')
 
-    ## regexes_diff_bool, core_diff_bool keep track of # of revisions that have a new regex / 0 for no new regex, 1 for diff
+    ## regexes_diff_bool, core_diff_bool track of # of revisions that have a new regex / 0 for no new regex, 1 for diff
     ## we can sum this for the # of revisions with difference in regex / total number of revisions
 
     master_regex_one_df = master_regex_one_df.withColumn("regexes_diff_bool", f.when(master_regex_one_df.regexes == master_regex_one_df.regexes_prev, 0).otherwise(1))
