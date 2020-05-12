@@ -248,7 +248,7 @@ if __name__ == "__main__":
     print("O_DIR:\t{}".format(args.output_directory))
     print(" O_FN:\t{}".format(args.output_filename))
 
-    input_path = glob.glob(args.input)
+    input_path = glob.glob("{}/*.csv".format(args.input))
 
     for i in input_path:
         print(i)
