@@ -253,13 +253,22 @@ if __name__ == "__main__":
     for i in input_path:
         print(i)
 
-    file_path = input_path[i]
+    file_path = input_path[0]
+    print(file_path)
 
-    pd_df = pd.read_csv(file_path, sep="\t",header=0)
+    pd.options.display.max_columns = None
+    pd.options.display.max_rows = None
+
+    pd_df = pd.read_csv(file_path, sep="\t", header=0, )
     print(pd_df.columns)
+
+    print("\n")
+    print(pd_df.head(10))
 
     cores = cpu_count()
     print("There are {} cores; should be 28".format(cores))
+
+    pd_df.info(verbose=True)
     
     # TODO function should take in pd_df, do the apply(diff_find) and return the result
     #processed_df = parallelize_dataframe(pd_df, pd_apply_diff_find, n_cores=4)
