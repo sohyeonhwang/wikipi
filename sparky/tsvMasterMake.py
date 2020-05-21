@@ -236,13 +236,16 @@ if __name__ == "__main__":
 
     master_shrunken_df = master_regex_one_df.where('regexes_diff_bool == 1')
 
-    master_shrunken_df = master_shrunken_df.select(master_shrunken_df.articleid, master_shrunken_df.namespace, master_shrunken_df.anon, master_shrunken_df.revid, master_shrunken_df.date_time,master_shrunken_df.regexes,master_shrunken_df.regexes_prev)
+    master_shrunken_df = master_shrunken_df.select(master_shrunken_df.articleid, master_shrunken_df.revert, master_shrunken_df.reverteds, master_shrunken_df.namespace, master_shrunken_df.year, master_shrunken_df.month, master_shrunken_df.anon, master_shrunken_df.revid, master_shrunken_df.date_time,master_shrunken_df.regexes,master_shrunken_df.regexes_prev)
     master_shrunken_df = master_shrunken_df.orderBy(master_shrunken_df.articleid.asc_nulls_first(), master_shrunken_df.year, master_shrunken_df.month, master_regex_one_df.date_time)
 
+    print(master_shrunken_df["articleid"].nunique())
+'''
     out_filepath_master_filtered = "{}/{}_master_filtered_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
+    master_shrunken_df.write.partitionBy('articleid').csv(out_filepath_master_filtered,sep='\t',mode='append',header=True)
     #master_shrunken_df.coalesce(1).write.csv(out_filepath_master_filtered,sep='\t',mode='append',header=True)
 
-'''
+
     # MONTHLY + NAMESPACE
     print("Preview monthly + namespace df: ")
     mn_df = master_regex_one_df.repartition("year","month","namespace")
