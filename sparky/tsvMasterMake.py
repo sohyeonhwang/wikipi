@@ -175,6 +175,10 @@ if __name__ == "__main__":
     master_regex_one_df = master_regex_one_df.withColumn('regexes_prev', f.lag(master_regex_one_df.regexes).over(my_window))
     master_regex_one_df = master_regex_one_df.withColumn('core_prev', f.lag(master_regex_one_df.core_regexes).over(my_window))
 
+    # Check number of partitions -- should be 1
+    print('Checking number of partitions (window.partitionby):')
+    print(master_regex_one_df.rdd.getNumPartitions())
+
     #master_regex_one_df = master_regex_one_df.na.replace('{{EMPTYBABY}}',None)
     master_regex_one_df = master_regex_one_df.na.fill('{{EMPTYBABY}}')
 
@@ -199,7 +203,7 @@ if __name__ == "__main__":
         ## we can sum this for the # of revisions with difference in regex / total number of revisions
 
     # make the smaller version to be outputted
-    master_regex_one_df = master_regex_one_df.repartition(160)
+    #master_regex_one_df = master_regex_one_df.repartition(160)
     mid_time1 = time.time()
     print("Number of partitions of master_regex_one_df: {}".format(master_regex_one_df.rdd.getNumPartitions()))
     master_shrunken_df = master_regex_one_df.where('regexes_diff_bool == 1 or core_diff_bool == 1')
@@ -212,27 +216,33 @@ if __name__ == "__main__":
     master_regex_one_df.groupBy("year","month").agg(f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff")).orderBy(master_regex_one_df.year, master_regex_one_df.month).show(n=30)
     print("filtered:")
     master_shrunken_df.groupBy("year","month").agg(f.sum("regexes_diff_bool").alias("num_revs_with_regex_diff"), f.sum("core_diff_bool").alias("num_revs_with_core_diff")).orderBy(master_shrunken_df.year, master_shrunken_df.month).show(n=30)
-
     print('\n\n\n')
 
 
     # MASTER 
     #TODO See if we can export the master_regex_one_df file actually
-    print("Preview master_regex_one_df: ")
-    master_regex_one_df.orderBy(master_regex_one_df.articleid.asc_nulls_first(), master_regex_one_df.year, master_regex_one_df.month, master_regex_one_df.date_time).show(n=10)
+    #print("Preview master_regex_one_df: ")
+    #master_regex_one_df.orderBy(master_regex_one_df.articleid.asc_nulls_first(), master_regex_one_df.year, master_regex_one_df.month, master_regex_one_df.date_time).show(n=10)
     
-    out_filepath_master = "{}/{}_master_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
+    #out_filepath_master = "{}/{}_master_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
+    #master_regex_one_df = master_regex_one_df.orderBy(master_regex_one_df.articleid.asc_nulls_first(), master_regex_one_df.year, master_regex_one_df.month, master_regex_one_df.date_time)
     #master_regex_one_df.coalesce(1).write.csv(out_filepath_master,sep='\t',mode='append',header=True)
 
     # MASTER - FILTERED ROWS
     print("Preview FILTERED (ROWS) master_regex_one_df: ")
-    master_shrunken_df = master_shrunken_df.repartition(100)
+    #master_shrunken_df = master_shrunken_df.repartition(100)
     master_shrunken_df.orderBy(master_shrunken_df.articleid.asc_nulls_first(), master_shrunken_df.year, master_shrunken_df.month, master_regex_one_df.date_time).show(n=10)
     print("master_shrunken_df.count() --> {}".format(master_shrunken_df.count()))
 
-    out_filepath_master_filtered = "{}/{}_master_filtered_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
-    master_shrunken_df.coalesce(1).write.csv(out_filepath_master_filtered,sep='\t',mode='append',header=True)
+    master_shrunken_df = master_regex_one_df.where('regexes_diff_bool == 1')
 
+    master_shrunken_df = master_shrunken_df.select(master_shrunken_df.articleid, master_shrunken_df.namespace, master_shrunken_df.anon, master_shrunken_df.revid, master_shrunken_df.date_time,master_shrunken_df.regexes,master_shrunken_df.regexes_prev)
+    master_shrunken_df = master_shrunken_df.orderBy(master_shrunken_df.articleid.asc_nulls_first(), master_shrunken_df.year, master_shrunken_df.month, master_regex_one_df.date_time)
+
+    out_filepath_master_filtered = "{}/{}_master_filtered_{}.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
+    #master_shrunken_df.coalesce(1).write.csv(out_filepath_master_filtered,sep='\t',mode='append',header=True)
+
+'''
     # MONTHLY + NAMESPACE
     print("Preview monthly + namespace df: ")
     mn_df = master_regex_one_df.repartition("year","month","namespace")
@@ -262,3 +272,4 @@ if __name__ == "__main__":
         # keep track of the actual additions (string)
     ## regexes_diff_count, core_diff_count
         # count the number of new policy invocations from core/regexes_diff (per revision)
+'''
