@@ -7,5 +7,5 @@ sparky/deltas/
 deltas/
 tsvCrunchOutput/
 postspark_diffs/master_filtered/
-postspark_diffs/masterdiff_output/test/
+postspark_diffs/masterdiff_output/test_20200522
 postspark_diffs/master_filtered.tar.gz
