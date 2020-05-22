@@ -271,7 +271,7 @@ if __name__ == "__main__":
     parse_dates_in = ['date_time']
 
     # to chunk
-    pd_dfs = pd.read_csv(file_path, sep="\t", header=0, dtype=dtypes, parse_dates=parse_dates_in,chunksize=5)#1000000)
+    pd_dfs = pd.read_csv(file_path, sep="\t", header=0, dtype=dtypes, parse_dates=parse_dates_in,chunksize=1000000)
 
     input("There are {} cores. To start data processing, press enter.".format(cpu_count()))
     print("Begin data processing of chunks, each chunk parallelized...")
@@ -328,11 +328,14 @@ if __name__ == "__main__":
         adf = adf.groupby(['year','month','namespace']).agg({"regexes_diff_count":['sum'],"revid":['count']})
         adf.columns = ["monthly_regex_num_anon","monthly_regex_revs_anon"]
         adf = adf.reset_index()
-        #print(adf.head())
 
         # mndf + adf
-        temp = pd.merge(mndf,adf, on=['year','month','namespace'],how='outer')
+        if adf.empty:
+                temp = mndf
+        else:
+                temp = pd.merge(mndf,adf, on=['year','month','namespace'],how='outer')
         temp = temp.fillna(value=0)
+        #print(temp)
         temp['month'] = temp['month'].where(temp['month']>=10, '0'+temp['month'].astype(str))
         temp['YYYY-MM_NS'] = temp['year'].astype(str) + '-' + temp['month'].astype(str) + '_' + temp['namespace'].astype(str)
         temp.drop(['year','month','namespace'], axis=1, inplace=True)
@@ -369,7 +372,7 @@ if __name__ == "__main__":
                     mnstr_out_dict[key]['regexes_diff'] = mnstr_out_dict[key]['regexes_diff'] + ", " + str_dict[key]['regexes_diff']
 
         #print("***  mn_out_df after adding this chunk:")
-        #print(mnstr_out_dict)
+        #print(mn_out_df.head(5))
 
         print("\n> Wrangling diff-processed df into updating output data took: %s seconds" % (time.time() - mid_time))
         print("=========================================================================================")
@@ -379,17 +382,18 @@ if __name__ == "__main__":
 
     # mn_out_df is a dataframe. we want to output.
     mn_out_df = mn_out_df.reset_index()
-    print(mn_out_df.head())
+    mn_out_df[['monthly_regex_num_anon' , 'monthly_regex_revs_anon']] = mn_out_df[['monthly_regex_num_anon' , 'monthly_regex_revs_anon']].fillna(value=0)
+    print(mn_out_df.head(5))
 
-    out_filepath = "{}/{}{}_monthlyCounts.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
+    out_filepath = "{}/{}_{}wiki_counts_{}.tsv".format(args.output_directory,args.output_filename,args.lang,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
     mn_out_df.to_csv(out_filepath,sep='\t',header=True) 
-    print("Find the output here: {}\nDone.\n".format(out_filepath))
+    print("Find the output here: {}\n".format(out_filepath))
 
     # mnstr_out_dict is a dict... make into df and output.
     str_out_df = pd.DataFrame.from_dict(mnstr_out_dict,orient='index')
     str_out_df = str_out_df.reset_index()
-    print(str_out_df.head())
+    print(str_out_df.head(5))
 
-    out_filepath = "{}/{}{}_monthlyDiffStrings.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
+    out_filepath = "{}/{}_{}wiki_strings_{}.tsv".format(args.output_directory,args.output_filename,args.lang,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
     str_out_df.to_csv(out_filepath,sep='\t',header=True) 
     print("Find the output here: {}\nDone.\n".format(out_filepath))
