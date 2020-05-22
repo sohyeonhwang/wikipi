@@ -273,7 +273,7 @@ if __name__ == "__main__":
     # to chunk
     pd_dfs = pd.read_csv(file_path, sep="\t", header=0, dtype=dtypes, parse_dates=parse_dates_in,chunksize=5)#1000000)
 
-    input("To start data processing, press enter.")
+    input("There are {} cores. To start data processing, press enter.".format(cpu_count()))
     print("Begin data processing of chunks, each chunk parallelized...")
     print("=========================================================================================")
 
