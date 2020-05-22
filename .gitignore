@@ -8,3 +8,4 @@ deltas/
 tsvCrunchOutput/
 postspark_diffs/master_filtered/
 postspark_diffs/masterdiff_output/
+postspark_diffs/master_filtered.tar.gz
