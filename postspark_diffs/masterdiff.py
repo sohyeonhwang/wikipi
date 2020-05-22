@@ -22,24 +22,6 @@ def parse_args():
     args = parser.parse_args()
     return(args)
 
-def findCoreColumns(onlyRegexCols):
-    #CORE COLUMNS
-    #ENGLISH:
-    #SPANISH:	53_WIKIPEDIA:PUNTO_DE_VISTA_NEUTRAL, 69_WIKIPEDIA:WIKIPEDIA_NO_ES_UNA_FUENTE_PRIMARIA, 64_WIKIPEDIA:VERIFICABILIDAD
-    #FRENCH: 	26_WIKIPÉDIA:NEUTRALITÉ_DE_POINT_DE_VUE, 19_WIKIPÉDIA:TRAVAUX_INÉDITS, 21_WIKIPÉDIA:VÉRIFIABILITÉ
-    #GERMAN:
-    #JAPANESE:	14_WIKIPEDIA:中立的な観点,16_WIKIPEDIA:独自研究は載せない, 15_WIKIPEDIA:検証可能性
-    
-    if "53_WIKIPEDIA:PUNTO_DE_VISTA_NEUTRAL" in onlyRegexCols:
-        coreDFColumn = [c for c in onlyRegexCols if (c[:2]==str(53) or c[:2]==str(69) or c[:2]==str(64))]
-    elif "26_WIKIPÉDIA:NEUTRALITÉ_DE_POINT_DE_VUE" in onlyRegexCols:
-        coreDFColumn = [c for c in onlyRegexCols if (c[:2]==str(26) or c[:2]==str(19) or c[:2]==str(21))]
-    else:
-        coreDFColumn = [c for c in onlyRegexCols if (c[:2]==str(14) or c[:2]==str(15) or c[:2]==str(16))]
-
-    return coreDFColumn
-
-
 def tokenize_prep(regex_string):
     # we want to make Wikipedia:Droit de l'auteur --> Wikipedia_Droit_de_l'auteur
     regex_string = re.sub(r'\d' , '', regex_string)
@@ -396,16 +378,18 @@ if __name__ == "__main__":
     print("Finished going through chunk!")
 
     # mn_out_df is a dataframe. we want to output.
+    mn_out_df = mn_out_df.reset_index()
+    print(mn_out_df.head())
+
     out_filepath = "{}/{}{}_monthlyCounts.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
-    mn_out_df.coalesce(1).write.csv(out_filepath,sep='\t',mode='append',header=True) 
+    mn_out_df.to_csv(out_filepath,sep='\t',header=True) 
     print("Find the output here: {}\nDone.\n".format(out_filepath))
 
     # mnstr_out_dict is a dict... make into df and output.
-    str_out_df = pd.DataFrame.from_dict(mnstr_out_dict)
+    str_out_df = pd.DataFrame.from_dict(mnstr_out_dict,orient='index')
+    str_out_df = str_out_df.reset_index()
+    print(str_out_df.head())
 
     out_filepath = "{}/{}{}_monthlyDiffStrings.tsv".format(args.output_directory,args.output_filename,datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S"))
-    str_out_df.coalesce(1).write.csv(out_filepath,sep='\t',mode='append',header=True) 
+    str_out_df.to_csv(out_filepath,sep='\t',header=True) 
     print("Find the output here: {}\nDone.\n".format(out_filepath))
-
-    #UNCOMMENT WHEN DONE - OUTPUTS
-    #processed_df.to_csv(out_file_path, sep='\t',header=True)

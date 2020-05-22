@@ -19,9 +19,7 @@ def diff_find(row):
     #c_current = row['core_regexes']
     #c_prev = row['core_prev']
     #c_bool = row['core_diff_bool']
-
     
-
     r_diff = compare_rev_regexes(r_current,r_prev,r_bool,revert)
     #c_diff, c_diff_count = compare_rev_regexes(c_current,c_prev,c_bool,revert)
 

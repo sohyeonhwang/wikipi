@@ -6,3 +6,5 @@ sparky/tsvMasterDiffMonthOutput/
 sparky/deltas/
 deltas/
 tsvCrunchOutput/
+postspark_diffs/master_filtered/
+postspark_diffs/masterdiff_output/
