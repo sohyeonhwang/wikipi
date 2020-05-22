@@ -248,14 +248,16 @@ if __name__ == "__main__":
     print("O_DIR:\t{}".format(args.output_directory))
     print(" O_FN:\t{}".format(args.output_filename))
 
-    input_path = glob.glob("{}/*.csv".format(args.input))
+    input_path = glob.glob("{}/{}*.csv".format(args.input, args.lang))
 
     for i in input_path:
         print(i)
 
+
     file_path = input_path[0]
     print(file_path)
 
+'''
     pd.options.display.max_columns = None
     #pd.options.display.max_rows = None
 
@@ -265,22 +267,28 @@ if __name__ == "__main__":
     pd_df = pd.read_csv(file_path, sep="\t", header=0, dtype=dtypes, parse_dates=parse_dates_in)
     print(pd_df.columns)
 
+    print(pd_df.shape)
+
+    memory = pd_df.memory_usage().sum()
+    print('Total Current memory is-', memory,'Bytes.')
+    print(pd_df.memory_usage())
+
     print("\n")
     #print(pd_df.head(25))
 
     # Should be 28 cores on mox
     cores = cpu_count()
-    
+
     pd_df.info(verbose=True)
 
     input("To start data processing, press enter.")
 
     print("Begin data processing...")
     start_time = time.time()
-    processed_df = pd_df.apply(diff_find,axis=1)
-    print("--- Without parallelization, this took: %s seconds ---" % (time.time() - start_time))
+    #processed_df = pd_df.apply(diff_find,axis=1)
+    #print("--- Without parallelization, this took: %s seconds ---" % (time.time() - start_time))
 
-    input("To start data processing, press enter.")
+    #input("To start data processing, press enter.")
 
     # TODO function should take in pd_df, do the apply(diff_find) and return the result
     #processed_df = parallelize_dataframe(pd_df, pd_apply_diff_find, cores)
@@ -326,3 +334,4 @@ if __name__ == "__main__":
     #TODO OUTPUT FILE BUT PANDAS
     #processed_df.to_csv(out_file_path, sep='\t',header=True)
     
+'''
