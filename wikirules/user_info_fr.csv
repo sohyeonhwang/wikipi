@@ -1,0 +1,1304 @@
+,userid,name,editcount,registration,gender,abusefilter,checkuser,ipblock-exempt,autopatrolled,autoconfirmed,accountcreator,rollbacker,oversight,user,bureaucrat,transwiki,interface-admin,sysop
+0,550436,Nouill,165472,2009-02-16T16:35:40Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1,460796,Racconish,70616,2008-09-28T14:37:15Z,unknown,False,False,False,True,True,False,True,False,True,False,False,False,False
+2,517206,Azurfrog,148408,2008-12-27T19:47:13Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+3,13782,Apokrif,57652,,unknown,False,False,True,True,True,False,False,False,True,False,False,False,False
+4,621253,Lomita,506336,2009-06-15T11:45:47Z,unknown,True,False,False,True,True,False,False,True,True,False,False,False,True
+5,482698,NoFWDaddress,35064,2008-10-31T17:34:23Z,male,False,False,True,True,True,False,True,False,True,False,True,False,False
+6,875329,Berdea,163755,2010-07-24T15:20:51Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+7,103148,Daniel*D,81114,2006-05-03T18:01:19Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+8,4183,TigH,57091,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+9,124118,Kropotkine 113,56565,2006-06-28T21:30:28Z,unknown,True,False,False,True,True,False,False,True,True,False,False,False,True
+10,903634,Jules*,260442,2010-09-14T16:59:56Z,male,True,False,False,True,True,False,False,True,True,True,False,False,True
+11,1163433,FDo64,339511,2011-11-09T11:08:19Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+12,5090,Bibi Saint-Pol,126748,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+13,24358,Gribeco,68416,,unknown,True,False,False,True,True,False,False,False,True,False,False,False,True
+14,113601,Salix,105189,2006-05-28T22:26:41Z,unknown,False,False,False,True,True,False,True,False,True,False,False,False,False
+15,2301863,NicoScribe,33959,2015-08-08T17:28:38Z,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+16,168100,Pwet-pwet,18905,2006-10-29T15:36:36Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+17,355397,Dodoïste,17790,2008-02-12T00:07:40Z,unknown,False,False,True,True,True,False,False,False,True,False,False,False,False
+18,4970,FH,20811,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+19,6155,Hégésippe Cormier,177307,,male,True,False,False,True,True,False,False,False,True,False,False,True,True
+20,125151,Rémih,298466,2006-07-03T07:06:09Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+21,1740090,Thibaut120094,75328,2014-01-16T15:53:44Z,male,True,False,True,True,True,False,False,False,True,False,False,False,False
+22,15273,Teofilo,31712,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+23,44331,Jean-Christophe BENOIST,46477,,male,False,True,True,True,True,False,True,False,True,False,False,False,False
+24,26677,Lgd,54422,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+25,18624,Sherbrooke,51095,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+26,271994,Hercule,448635,2007-07-23T12:24:19Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+27,3240,Marc Mongenet,54059,,unknown,False,True,False,True,True,False,False,False,True,False,False,False,True
+28,69991,IP 84.5,20081,2006-02-02T12:21:18Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+29,122969,Brunodesacacias,56462,2006-06-25T10:28:42Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+30,251,Alvaro,32767,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+31,3086,Phe,161109,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+32,865133,O.Taris,14414,2010-07-04T21:24:36Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+33,8404,GL,30025,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+34,258627,Wanderer999,34480,2007-06-06T08:05:04Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+35,1375,R,17831,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+36,397995,Trizek,63229,2008-05-14T07:58:03Z,male,False,False,False,True,True,False,False,False,True,True,False,False,True
+37,6370,Touriste,32552,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+38,3,Anthere,22385,,female,False,False,False,True,True,False,False,False,True,True,False,False,True
+39,2377,Tieno,20588,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+40,1674,Cœur,17123,,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+41,25495,Zetud,144539,,male,True,False,False,True,True,False,False,False,True,False,False,False,True
+42,144425,Christophe Dioux,25565,2006-09-02T22:12:28Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+43,72067,MetalGearLiquid,30103,2006-02-09T11:24:47Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+44,502332,Cantons-de-l'Est,211703,2008-12-01T11:02:00Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+45,8840,Star Trek Man,5371,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+46,108951,Chaoborus,198517,2006-05-17T00:32:40Z,unknown,False,False,False,True,True,False,False,False,True,True,False,False,True
+47,14331,Leag,172305,,male,True,False,False,True,True,False,False,False,True,False,False,False,True
+48,38320,Litlok,175948,,unknown,False,False,False,True,True,False,False,False,True,True,False,False,True
+49,586843,*SM*,42102,2009-04-17T20:23:58Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+50,2,Aoineko,32937,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+51,22655,Wart Dark,12404,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+52,177792,Akeron,34309,2006-11-20T18:45:49Z,male,True,False,False,True,True,False,False,False,True,False,False,False,False
+53,202115,Nodulation,32906,2007-01-20T23:16:10Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+54,22107,DocteurCosmos,97505,,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+55,8325,Korrigan,63919,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+56,4064,Nnemo,27018,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+57,1969620,Do not follow,168649,2014-10-11T17:23:59Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+58,390290,JackPotte,30190,2008-04-25T20:30:48Z,male,True,False,False,True,True,False,True,False,True,False,False,True,False
+59,9564,Darkoneko,69260,,male,True,False,False,True,True,False,False,False,True,False,False,False,True
+60,26975,Dereckson,24861,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+61,757207,Salsero35,154944,2010-01-24T10:23:41Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+62,115990,Voxhominis,56019,2006-06-04T13:49:28Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+63,46434,Kirtap,52229,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+64,39429,Sammyday,120598,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+65,323030,Superjuju10,59363,2007-11-30T17:46:30Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+66,150072,Simon Villeneuve,127396,2006-09-18T03:01:30Z,male,False,False,True,True,True,True,False,False,True,False,False,False,False
+67,302986,Iluvalar,8496,2007-10-17T17:21:00Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+68,328,Looxix,24327,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+69,66875,Esprit Fugace,59447,2006-01-21T20:36:20Z,female,False,False,False,True,True,False,False,False,True,False,False,False,True
+70,2841177,Nemo Le Poisson,12024,2017-06-22T19:47:02Z,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+71,628189,Orlodrim,60174,2009-06-27T18:35:40Z,male,True,False,False,True,True,False,False,False,True,False,False,True,True
+72,322807,Geralix,68002,2007-11-30T08:57:20Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+73,316842,Chrono1084,19089,2007-11-17T16:48:13Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+74,2480038,Framawiki,46785,2016-03-09T12:26:01Z,unknown,True,False,False,True,True,False,True,False,True,False,False,False,False
+75,624,Céréales Killer,99652,,male,False,False,False,True,True,False,False,False,True,True,False,False,True
+76,51661,Markov,11608,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+77,274546,Jean-Jacques Georges,212451,2007-08-02T08:10:04Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+78,124039,Laurent Nguyen,55068,2006-06-28T16:39:42Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+79,875,Ske,13093,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+80,2859600,Baldurar,14583,2017-07-19T18:30:24Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+81,233398,Xic667,106997,2007-03-31T18:57:46Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+82,2400,Anakin,3389,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+83,656376,Gkml,35149,2009-08-21T10:01:00Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+84,83042,Michelet,21995,2006-03-12T07:34:32Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+85,1347469,Rome2,59780,2012-08-14T21:19:18Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+86,230322,Tabl-trai,23622,2007-03-23T23:07:58Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+87,107659,Grook Da Oger,44392,2006-05-14T08:02:10Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+88,419426,Warp3,38599,2008-06-29T15:30:01Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+89,53494,Hexasoft,56652,,male,False,True,False,True,True,False,False,False,True,False,False,False,True
+90,401050,Herr Satz,78601,2008-05-20T19:54:30Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+91,37211,Milegue,9984,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+92,3942,VIGNERON,60172,,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+93,815721,Sergio1006,93998,2010-04-18T08:42:17Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+94,25687,Boréal,33737,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+95,28903,TwoWings,92326,,male,False,False,True,True,True,False,False,False,True,False,False,False,False
+96,2987555,Bédévore,65850,2017-12-20T20:56:46Z,female,True,False,False,True,True,False,False,False,True,False,False,False,True
+97,97150,Kertraon,117114,2006-04-18T16:53:33Z,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+98,201177,Theoliane,88260,2007-01-18T11:01:21Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+99,60340,Erasoft24,23328,2005-12-26T13:47:29Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+100,38997,Moez,44619,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+101,2466,Archeos,39232,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+102,484648,Pic-Sou,23884,2008-11-03T14:13:32Z,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+103,1948914,Braaark,11917,2014-09-21T19:08:32Z,unknown,False,False,False,True,True,False,True,False,True,False,False,False,False
+104,1794,P-e,25115,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+105,137984,IAlex,38177,2006-08-15T18:32:28Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+106,168880,Irønie,32433,2006-10-31T12:04:52Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+107,2278876,Krosian2B,12971,2015-07-07T12:21:53Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+108,135224,Chtfn,10464,2006-08-06T23:57:09Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+109,32460,EDUCA33E,59849,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+110,19574,El Comandante,24263,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+111,18910,BrightRaven,41301,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+112,124082,Supertoff,110446,2006-06-28T18:51:40Z,unknown,True,False,False,True,True,False,False,False,True,False,False,False,True
+113,6148,Kõan,44801,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+114,12024,Pixeltoo,91478,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+115,22600,Korg,16214,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+116,77684,AntonyB,215111,2006-02-25T21:13:10Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+117,69319,Od1n,43157,2006-01-30T21:07:44Z,male,False,False,False,True,True,False,False,False,True,False,False,True,True
+118,316320,Skippy le Grand Gourou,14086,2007-11-16T13:31:29Z,unknown,False,False,True,True,True,False,False,False,True,False,False,False,False
+119,5473,Lachaume,20728,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+120,126990,Pj44300,258995,2006-07-09T22:41:05Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+121,178738,Speculos,352371,2006-11-22T20:07:21Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+122,632,Treanna,30906,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+123,351049,Maurilbert,50321,2008-02-03T03:15:54Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+124,61377,Ceedjee,23272,2005-12-31T10:43:06Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+125,4497,HB,30912,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+126,35266,Guillom,18035,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+127,263198,Udufruduhu,121367,2007-06-20T16:50:56Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+128,2035659,Blurby,11984,2014-12-07T09:26:06Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+129,791362,Habertix,36571,2010-03-12T16:41:39Z,unknown,True,False,False,True,True,False,False,False,True,False,False,False,True
+130,2844,Aurevilly,7770,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+131,9873,Bradipus,22191,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+132,180,Ryo,29073,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+133,15681,STyx,19789,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+134,19117,Padawane,148914,,male,False,False,False,True,True,False,False,False,True,False,False,True,True
+135,409647,Micthev,17162,2008-06-07T18:09:03Z,male,False,False,True,True,True,False,False,False,True,False,False,False,False
+136,1183429,Oliv0,28397,2011-12-10T20:10:44Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+137,217393,Shaddam 5,14141,2007-02-21T18:39:43Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+138,115365,En passant,26141,2006-06-02T14:35:26Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+139,13979,Popo le Chien,25049,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+140,1175,Fred.th,7927,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+141,8252,Artocarpus,1237,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+142,2033109,Antoniex,42365,2014-12-05T02:05:20Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+143,101819,NicoV,115332,2006-04-30T18:36:57Z,unknown,False,False,True,True,True,False,False,False,True,False,False,False,True
+144,2932858,Tomybrz,30245,2017-10-19T13:52:42Z,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+145,1183540,Titlutin,90499,2011-12-11T00:26:42Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+146,32077,Tavernier,16983,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+147,425227,Ryoga,9784,2008-07-14T11:45:18Z,unknown,False,False,True,True,True,False,False,False,True,False,False,False,False
+148,1830644,Arcyon37,137268,2014-05-22T17:49:40Z,male,False,False,False,True,True,False,False,True,True,False,False,False,True
+149,1438581,Housterdam,15468,2012-12-06T23:24:38Z,male,False,False,True,True,True,False,False,False,True,False,False,False,False
+150,253964,JLM,244274,2007-05-23T13:00:39Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+151,112929,Octave.H,45527,2006-05-27T08:33:53Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+152,2350,Jyp,14883,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+153,131885,Clem23,21681,2006-07-26T18:31:05Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+154,270309,Lilyu,27205,2007-07-17T07:28:13Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+155,24709,Ludo29,86474,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+156,1390074,Manacore,54913,2012-10-12T17:49:35Z,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+157,7363,Keriluamox,33223,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+158,64027,ᖷᖴ,29185,2006-01-11T13:53:49Z,unknown,True,False,False,True,True,False,False,False,True,False,False,False,False
+159,22550,Riba,30269,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+160,5622,~Pyb,38417,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+161,1756986,Arthur Crbz,23123,2014-02-06T19:19:54Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+162,67997,Barraki,19185,2006-01-25T19:52:54Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+163,1026637,Zebulon84,43246,2011-03-21T20:42:47Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+164,1190926,Mattho69,65657,2011-12-23T23:28:04Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+165,29706,Plyd,16254,,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+166,20077,Gdgourou,167437,,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+167,149314,Idéalités,19409,2006-09-16T03:27:57Z,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+168,7089,Notafish,7185,,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+169,271725,Michel421,37403,2007-07-22T11:39:28Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+170,118890,Elnon,104357,2006-06-12T19:15:18Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+171,29574,Solensean,7079,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+172,46116,Le gorille,20335,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+173,1306921,Juanes852,4222,2012-06-12T09:32:32Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+174,16840,Pseudomoi,38372,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+175,53998,08pb80,11190,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+176,270016,Kelam,61434,2007-07-16T05:55:50Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+177,318825,Rinaku,10049,2007-11-21T14:29:52Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+178,86978,GabrieL,27267,2006-03-22T16:38:53Z,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+179,9039,MaCRoEco,19180,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+180,35967,Jerome66,73927,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+181,66521,Grasyop,8324,2006-01-20T15:28:14Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+182,3809,Arorae,141792,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+183,125811,Hadrien,26528,2006-07-05T12:42:02Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+184,2816390,JohnNewton8,37195,2017-05-20T15:01:45Z,unknown,True,False,False,True,True,False,False,False,True,False,False,False,True
+185,111208,Grimlock,38186,2006-05-22T18:23:02Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+186,60336,Lebob,30392,2005-12-26T13:23:42Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+187,131,Yann,24098,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+188,316223,Cymbella,69249,2007-11-16T09:07:25Z,female,False,False,False,True,True,False,True,False,True,False,False,False,False
+189,23635,JKHST65RE23,9526,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+190,274668,Addacat,48005,2007-08-02T15:34:22Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+191,146348,Dfeldmann,81715,2006-09-08T06:15:35Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+192,2688976,Odilon Taris,453,2016-12-26T10:21:51Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+193,15602,Vega,7931,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+194,680500,Visite fortuitement prolongée,38775,2009-09-30T15:46:21Z,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+195,2787949,Lofhi,19137,2017-04-20T13:51:55Z,unknown,False,False,False,True,True,False,True,False,True,False,False,False,False
+196,164268,Seudo,15651,2006-10-20T19:07:14Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+197,257946,Kyro,68639,2007-06-04T06:19:46Z,male,True,False,False,True,True,False,False,False,True,False,False,False,True
+198,128121,Starus,59615,2006-07-13T17:14:07Z,male,True,False,False,True,True,False,False,False,True,False,False,False,True
+199,547358,Mafritzha,33808,2009-02-11T16:13:06Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+200,772371,Ediacara,59393,2010-02-14T09:45:34Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+201,10622,PieRRoMaN,27116,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+202,2400557,Tractopelle-jaune,38833,2015-12-09T09:28:12Z,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+203,15634,Eden2004,18123,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+204,774061,Kilith,53766,2010-02-16T15:30:15Z,unknown,False,False,True,True,True,False,False,False,True,False,False,False,False
+205,28116,A3nm,8705,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+206,1160699,Simonk,11587,2011-11-05T08:31:17Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+207,25450,Like tears in rain,146596,,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+208,1017,Alno,13415,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+209,179748,Vi..Cult...,7039,2006-11-24T21:44:26Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+210,277571,Benoît Prieur,147428,2007-08-14T13:09:53Z,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+211,982697,0x010C,45840,2011-01-18T16:09:08Z,male,True,True,False,True,True,False,False,False,True,False,False,True,True
+212,28835,Matpib,236572,,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+213,90352,Speculoos,13225,2006-03-31T08:52:28Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+214,1710522,Panam2014,143725,2013-12-08T10:05:45Z,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+215,6905,Romary,29833,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+216,303213,Sardur,113399,2007-10-18T08:53:09Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+217,556446,Schlum,83261,2009-02-26T08:04:54Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+218,44258,TED,101826,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+219,678,Kelson,67417,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+220,1966288,Nomen ad hoc,192538,2014-10-08T12:39:40Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+221,21,Hashar,14284,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+222,76213,Ahbon?,60027,2006-02-21T17:10:21Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+223,53684,Moulins,19151,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+224,1278279,Enrevseluj,300538,2012-05-02T09:11:13Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+225,10040,Dake,27312,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+226,58689,Mica,23911,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+227,210569,Lylvic,23885,2007-02-07T19:30:49Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+228,32857,Poppy,32038,,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+229,1324867,Alaspada,49019,2012-07-09T22:45:53Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+230,1631,Yohan,1480,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+231,2043647,Fugitron,61440,2014-12-14T00:05:23Z,male,True,False,False,True,True,False,False,False,True,False,False,False,True
+232,662398,On ne vit que deux fois,7608,2009-08-31T15:06:14Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+233,862133,Jolek,23417,2010-06-28T22:15:00Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+234,1386,Raph,4730,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+235,1169410,BonifaceFR,55804,2011-11-18T10:32:24Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+236,551,Traroth,12556,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+237,194451,Père Igor,144258,2007-01-03T17:00:02Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+238,141929,Sebleouf,468097,2006-08-27T10:01:03Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+239,9503,Yug,17851,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+240,35236,Tieum512,20471,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+241,28269,Calimo,8240,,male,False,False,True,True,True,False,False,False,True,False,False,False,False
+242,136188,Épiméthée,34978,2006-08-09T21:12:29Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+243,21273,Xfigpower,49512,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+244,1377350,YanikB,42403,2012-09-26T14:53:26Z,unknown,False,False,True,True,True,False,True,False,True,False,False,False,False
+245,2223,Caton,10622,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+246,321441,Aruspice,12426,2007-11-27T01:46:10Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+247,395992,Guy Courtois,22928,2008-05-09T14:54:28Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+248,72852,Ejph,5033,2006-02-11T22:52:50Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+249,1158838,Eowyn Cwper,35669,2011-11-02T13:22:25Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+250,5889,Markadet,39893,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+251,43722,Steff,28603,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+252,87136,Lacrymocéphale,44260,2006-03-23T00:03:16Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+253,339208,Xavxav,5271,2008-01-10T14:24:32Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+254,247766,Cépey,22917,2007-05-07T23:19:08Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+255,1146230,Éric Messel,167988,2011-10-13T14:56:25Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+256,191254,Critias,12818,2006-12-23T19:52:44Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+257,173004,Wikig,51994,2006-11-09T23:10:47Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+258,442280,Dr Brains,97175,2008-08-27T13:02:54Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+259,12,FvdP,4768,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+260,75086,Lamiot,88819,2006-02-18T16:06:20Z,unknown,False,False,False,True,True,True,False,False,True,False,False,False,False
+261,562,Ellisllk,7007,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+262,1560267,Fanchb29,13869,2013-05-12T14:41:01Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+263,194870,Chandres,16224,2007-01-04T15:59:04Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+264,1591710,Foudebassans,22986,2013-06-24T00:59:59Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+265,353959,GrandCelinien,45389,2008-02-08T19:41:47Z,male,False,False,True,True,True,False,False,False,True,False,False,True,True
+266,205425,Mandariine,51404,2007-01-28T12:31:17Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+267,1119,Cdang,58214,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+268,1732,Jd,12313,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+269,1667,Jusjih,1473,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+270,174952,GabHor,3846,2006-11-14T11:27:09Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+271,1783095,NB80,69981,2014-03-15T14:54:01Z,male,True,False,False,True,True,False,False,False,True,False,False,True,True
+272,12071,Ghoster,14851,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+273,807,Pontauxchats,10062,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+274,124820,Asram,39941,2006-07-01T15:37:07Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+275,8007,Moyogo,63725,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+276,1266212,Vatadoshu,18488,2012-04-14T20:12:54Z,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+277,4150,David.Monniaux,5123,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+278,1809527,VateGV,21238,2014-04-22T15:45:34Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+279,2739,Verdy p,91213,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+280,363502,Julien1978,151258,2008-02-28T16:59:02Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+281,299804,Heddryin,24316,2007-10-10T17:20:50Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+282,182917,Stef48,44358,2006-12-02T12:37:35Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+283,13,Tarquin~frwiki,2188,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+284,384430,Arroser,81877,2008-04-12T20:13:15Z,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+285,5635,Ollamh,82766,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+286,218389,ParaBenT,9463,2007-02-24T07:25:52Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+287,118963,Perfectionniste,1663,2006-06-13T02:26:12Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+288,71065,Perky,13647,2006-02-06T09:19:08Z,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+289,106796,Bibliorock,14493,2006-05-12T01:12:32Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+290,2606778,OT38,103877,2016-09-07T01:18:26Z,unknown,True,False,False,True,True,False,False,False,True,False,False,False,True
+291,183523,Fuucx,38911,2006-12-03T19:49:04Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+292,326,Nataraja,30617,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+293,121887,Sebk,31811,2006-06-21T18:46:51Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+294,8,Youssefsan,9506,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+295,163320,Kimdime,34071,2006-10-18T18:15:50Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+296,579237,Vincent.vaquin,15037,2009-04-04T18:07:05Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+297,1989239,Lotus 50,17509,2014-10-29T21:30:52Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+298,184,ArnoLagrange,3886,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+299,130587,Arkanosis,23927,2006-07-22T11:42:25Z,male,True,False,False,True,True,False,False,True,True,False,False,False,True
+300,1515845,Gratus,29612,2013-03-16T20:29:04Z,unknown,True,False,False,True,True,False,False,False,True,False,False,True,False
+301,506475,Archimatth,10019,2008-12-08T00:06:43Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+302,59311,Apollon,17743,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+303,1947707,ContributorQ,95301,2014-09-20T19:24:36Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+304,303929,Hatonjan,16160,2007-10-19T17:38:41Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+305,3750011,Golmore,6225,2020-03-13T06:36:09Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+306,1127194,6PO,28373,2011-09-12T18:19:37Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+307,380871,Elfix,24125,2008-04-04T17:18:22Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+308,189107,Yf,7158,2006-12-17T17:05:39Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+309,55249,Guil2027,42334,,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+310,402683,Géodigital,20624,2008-05-24T17:27:19Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+311,109512,Diti,4348,2006-05-18T10:58:21Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+312,533,Vincent Ramos,14766,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+313,32426,Palpalpalpal,4183,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+314,526953,Al Maghi,8142,2009-01-11T23:18:37Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+315,237710,Binabik,44596,2007-04-12T11:24:22Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+316,32485,Ash Crow,30256,,unknown,True,False,False,True,True,False,False,False,True,False,False,True,True
+317,991597,SenseiAC,105384,2011-01-30T13:57:07Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+318,1152427,Mathis B,18223,2011-10-23T15:58:47Z,male,False,False,True,True,True,False,False,False,True,False,False,False,False
+319,13561,Izwalito,1802,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+320,109432,Maloq,25350,2006-05-18T08:05:22Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+321,26807,ArséniureDeGallium,30234,,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+322,1144964,Shev123,55586,2011-10-11T16:16:40Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+323,1696060,Ariel Provost,87958,2013-11-19T17:44:04Z,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+324,4991,Psychoslave,3133,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+325,356703,Letartean,31630,2008-02-14T17:54:47Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+326,13110,Nicolas Ray,47864,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+327,990729,La fée Didier,9597,2011-01-29T07:43:37Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+328,275669,Place Clichy,30676,2007-08-06T20:34:14Z,unknown,False,False,True,True,True,False,False,False,True,False,False,False,False
+329,8762,Solveig,11334,,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+330,1876,Roby,7836,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+331,3756,Urhixidur,28090,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+332,1270051,SyntaxTerror,17248,2012-04-20T09:23:55Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+333,173284,Benoit Rochon,48528,2006-11-10T17:38:36Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+334,144962,Alchemica,53758,2006-09-04T13:12:44Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+335,39773,Alphabeta,167758,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+336,26481,David Berardan,60622,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+337,546254,Biem,7680,2009-02-09T21:44:00Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+338,138090,Jimmy,17093,2006-08-16T02:22:27Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+339,2536193,Gaétan Lui Même,2139,2016-05-20T22:39:53Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+340,434336,Nakor,21998,2008-08-06T20:49:15Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+341,30919,Necrid Master,112735,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+342,81843,Zapotek,8991,2006-03-08T20:42:58Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+343,28602,EyOne,17424,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+344,4155,Oblic,17095,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+345,15518,Neuceu,12216,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+346,57507,Puff,5957,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+347,236838,Ordifana75,41618,2007-04-10T08:05:51Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+348,9824,Fabos,6520,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+349,58157,Polmars,1099350,,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+350,759276,Rehtse,132510,2010-01-26T22:37:02Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+351,162203,Olivier Hammam,25896,2006-10-16T13:07:00Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+352,1090539,Pano38,50908,2011-07-07T17:02:09Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+353,2215,Manchot,19139,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+354,215446,Moyg,26674,2007-02-17T20:03:26Z,unknown,True,False,False,True,True,False,False,False,True,False,False,False,False
+355,452453,Moipaulochon,12130,2008-09-14T17:49:30Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+356,1033655,Utilisateur disparu,32683,2011-04-01T13:13:01Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+357,468977,JmCor,14401,2008-10-11T11:33:02Z,unknown,False,False,True,True,True,False,False,False,True,False,False,False,False
+358,1087542,Juste Juju,5106,2011-07-01T15:06:46Z,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+359,7920,The RedBurn,16157,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+360,422453,Kartouche,3311,2008-07-07T11:26:15Z,male,False,False,True,True,True,False,False,False,True,False,False,False,False
+361,1818,Symac,33038,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+362,100740,Superbenjamin,26827,2006-04-27T21:44:40Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+363,17683,Pabix,8321,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+364,11635,Gustave Graetzlin,21626,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+365,2978977,(Former user),0,2017-12-12T19:27:36Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+366,926212,Skouratov,192140,2010-10-20T22:08:22Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+367,746228,Lebrouillard,57124,2010-01-09T10:54:44Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+368,1198,Greudin,9373,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+369,27451,Lmaltier,12596,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+370,554213,Sg7438,60456,2009-02-22T18:48:00Z,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+371,137,Med,17370,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+372,56484,Mith,183037,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+373,1217013,Etiennekd,21101,2012-02-01T12:27:30Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+374,1012,(:Julien:),103727,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+375,79954,Delhovlyn,5901,2006-03-03T22:00:16Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+376,278764,Bloody-libu,80960,2007-08-18T17:26:37Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+377,600547,Chrismagnus,4206,2009-05-10T14:58:18Z,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+378,2316059,Ciseleur,5711,2015-08-27T17:59:38Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+379,196940,Bapti,61732,2007-01-09T13:26:23Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+380,474773,Anne Bauval,76181,2008-10-20T09:14:03Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+381,418936,Celette,320871,2008-06-28T08:23:04Z,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+382,2516299,Bertrand Labévue,38797,2016-04-25T17:40:33Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+383,2440,Amaury~frwiki,860,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+384,31154,Cæruleum,18593,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+385,419627,Denispir,3602,2008-06-30T04:06:59Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+386,28811,Cherry,9450,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+387,13273,Bayo,48050,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+388,776,Semnoz,83604,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+389,1854,Camion,2458,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+390,14,Athymik,929,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+391,93741,Hadrianus,39850,2006-04-09T15:39:58Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+392,40737,Schiste,11078,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+393,1138,Herman,3804,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+394,84729,Grondin,31594,2006-03-16T18:01:08Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+395,31590,Arria Belli,19153,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+396,4,Shaihulud,4796,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+397,839473,Hlm Z.,52169,2010-05-23T12:21:52Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+398,285394,SniperMaské,57180,2007-09-07T21:21:49Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+399,748302,Goodshort,22869,2010-01-12T07:46:22Z,unknown,False,False,False,True,True,False,True,False,True,False,False,False,False
+400,4458,Alphatwo,2330,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+401,533961,Touchatou,6302,2009-01-21T18:04:03Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+402,3087995,TuhQueur,8937,2018-04-06T08:31:13Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+403,2135103,HeyCat,16154,2015-02-28T16:56:46Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+404,786842,Kvardek du,20148,2010-03-06T13:27:23Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+405,778156,Michel Abada,43022,2010-02-22T11:03:16Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+406,946960,Daehan,96043,2010-11-22T13:05:42Z,male,False,False,False,True,True,True,True,False,True,False,False,False,False
+407,1372207,Nattes à chat,38054,2012-09-19T20:23:29Z,female,False,False,False,True,True,True,False,False,True,False,False,False,False
+408,185546,Nemoi,35527,2006-12-08T17:45:09Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+409,509090,Kasos fr,4829,2008-12-12T08:24:44Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+410,1302,Nojhan,5334,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+411,63026,Cédric Boissière,118714,2006-01-07T15:46:07Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+412,1209895,Okhjon,11563,2012-01-22T18:06:57Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+413,1506351,Olivier LPB,19273,2013-03-04T13:37:48Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+414,1662066,BerAnth,39215,2013-10-05T16:15:10Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+415,2553,Jerotito,7201,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+416,147566,PurpleHz,80101,2006-09-11T14:37:14Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+417,66135,Papa6,6054,2006-01-19T10:04:39Z,male,False,False,True,True,True,False,False,False,True,False,False,False,False
+418,58456,Pautard,579863,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+419,1176791,Jack Rabbit Slim's,53303,2011-11-29T23:15:01Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+420,1322311,Dawamne,4132,2012-07-05T17:21:49Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+421,92456,Proz,14440,2006-04-05T19:24:47Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+422,11386,Kyle the hacker,9675,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+423,270210,Ikmo-ned,106650,2007-07-16T18:56:35Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+424,311,Vargenau,74303,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+425,288712,GLec,80002,2007-09-16T11:45:34Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+426,36250,CaptainHaddock,44323,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+427,344857,Floflo62,59545,2008-01-21T17:23:22Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+428,1052821,Frenchinmorocco,36886,2011-05-03T11:41:39Z,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+429,66570,Vol de nuit,11887,2006-01-20T18:38:17Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+430,25950,Ælfgar,77429,,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+431,2001,FoeNyx,4985,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+432,16597,Xavier Combelle,8163,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+433,600410,Actarus Prince d'Euphor,9490,2009-05-10T10:40:58Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+434,46245,Lpele,5636,,male,False,False,True,True,True,False,False,False,True,False,False,False,False
+435,17012,Fourvin,25795,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+436,358107,Linedwell,17621,2008-02-17T19:30:17Z,male,True,True,False,True,True,False,False,False,True,False,False,False,True
+437,29319,Liquid 2003,7242,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+438,102250,Epok,64460,2006-05-01T17:44:16Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+439,4586,Louis-garden,122247,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+440,311731,Fanfwah,51166,2007-11-06T15:44:29Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+441,1005535,Pols12,2916,2011-02-19T11:09:50Z,male,False,False,True,True,True,False,False,False,True,False,False,False,False
+442,1121747,Jean Marcotte,15599,2011-09-03T03:52:06Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+443,15386,Mogador,41366,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+444,1596,Arnaudus,13187,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+445,50739,Shawn,30844,,male,True,False,False,True,True,False,False,False,True,False,False,False,True
+446,3839,Patrice Létourneau,1198,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+447,237146,Laddo,14723,2007-04-10T22:03:17Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+448,107603,Bourrichon,14054,2006-05-13T22:20:28Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+449,6313,Ci-gît le sage,3002,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+450,24659,Seb35,24643,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+451,69976,Dr.mbl,16843,2006-02-02T11:14:50Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+452,3222,Sebb,10838,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+453,2272,Sebjarod,59197,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+454,55180,BeatrixBelibaste,30012,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+455,791461,Ltrlg,45132,2010-03-12T19:18:50Z,male,False,False,False,True,True,False,False,False,True,False,False,True,True
+456,229015,Gz260,107292,2007-03-20T20:45:02Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+457,254328,Guise,56182,2007-05-24T12:02:49Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+458,739100,Frakir,23205,2009-12-29T13:36:31Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+459,97169,Rhadamante,124309,2006-04-18T17:25:24Z,unknown,True,False,False,True,True,False,False,False,True,False,False,False,True
+460,456,Hemmer,10984,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+461,1158343,Automatik,3939,2011-11-01T18:20:25Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+462,13091,Rama,9002,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+463,20675,Mirgolth,31691,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+464,3081333,Insane Stamina,7839,2018-03-29T20:31:01Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+465,202320,Ydecreux,21480,2007-01-21T15:18:46Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+466,491944,Copyleft,11622,2008-11-14T16:22:21Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+467,627605,J. N. Squire,24844,2009-06-26T15:32:53Z,male,False,False,False,True,True,True,False,False,True,False,False,False,False
+468,287957,Mielle gris,4406,2007-09-14T11:59:08Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+469,36008,B-noa,121825,,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+470,74925,ChoumX,23853,2006-02-18T07:00:01Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+471,6629,Azoee,26050,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+472,620962,Coyote du 57,117803,2009-06-14T19:02:28Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+473,250252,Rsalen,3372,2007-05-14T09:54:40Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+474,574170,Jack ma,54265,2009-03-27T07:12:04Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+475,20617,Rell Canis,5847,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+476,29802,Léna,16922,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+477,545191,Holder,331,2009-02-08T05:47:21Z,male,False,False,False,False,True,False,False,False,True,False,False,False,False
+478,142577,Rogojine,2004,2006-08-28T20:19:20Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+479,5242,Romainhk,21829,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+480,30693,Christophe cagé,20573,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+481,776671,EoWinn,18765,2010-02-20T06:35:59Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+482,1284439,Metamorforme42,13149,2012-05-10T19:24:30Z,male,False,False,True,True,True,False,False,False,True,False,False,False,False
+483,364598,PP Tom,19636,2008-03-02T08:52:46Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+484,2748088,Gustave67,11354,2017-03-06T13:06:31Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+485,2535234,Niridya,18734,2016-05-19T16:56:18Z,male,False,False,False,True,True,False,False,False,True,False,False,True,True
+486,41811,Bertrouf,10919,,male,False,False,True,True,True,False,False,False,True,False,False,False,False
+487,335458,Mro,73400,2008-01-02T19:07:41Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+488,1082847,Fred Regent,2043,2011-06-22T17:48:19Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+489,15,Curry,1800,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+490,556271,Bob Saint Clar,44510,2009-02-25T20:32:08Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+491,110232,TaraO,76849,2006-05-20T08:59:11Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+492,280837,Gilbertus,16100,2007-08-26T04:14:26Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+493,75831,Moumousse13,11616,2006-02-20T16:24:32Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+494,121352,Cyril-83,43964,2006-06-20T11:54:08Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+495,430749,Vyk,27275,2008-07-28T19:03:59Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+496,462835,Tsaag Valren,147880,2008-10-01T18:29:14Z,female,False,False,False,True,True,False,True,False,True,False,False,False,False
+497,191622,Borvan53,18233,2006-12-25T17:22:13Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+498,635743,Super Bazooka,36814,2009-07-12T16:38:32Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+499,337504,Eric-92,99676,2008-01-06T23:47:41Z,male,False,False,True,True,True,False,False,False,True,False,False,False,False
+500,30641,N'importe lequel,8814,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+501,133062,Manuguf,38947,2006-07-30T20:13:53Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+502,461331,Archimëa,162060,2008-09-29T11:18:31Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+503,350888,Kikuyu3,18920,2008-02-02T18:35:37Z,male,False,False,False,True,True,True,False,False,True,False,False,False,False
+504,4751,Natmaka,3835,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+505,67248,Olmec,20639,2006-01-23T12:15:26Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+506,74217,Epsilon0,19189,2006-02-16T09:34:08Z,unknown,False,False,True,True,True,False,False,False,True,False,False,False,False
+507,248263,Ambigraphe,13255,2007-05-09T07:37:33Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+508,189825,Alexander Doria,15786,2006-12-19T16:34:03Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+509,268672,Vlaam,1146820,2007-07-10T16:50:56Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+510,22826,Gede,23956,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+511,137675,TomT0m,8114,2006-08-14T17:56:50Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+512,192844,Vincent Lextrait,35944,2006-12-29T19:30:04Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+513,1598132,Zugmoy,86001,2013-07-04T12:08:43Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+514,10515,Nicnac25,6040,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+515,76103,Eric.LEWIN,4007,2006-02-21T12:16:30Z,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+516,114436,A2,54949,2006-05-31T06:55:15Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+517,1353222,Omnilaika02,7002,2012-08-23T17:31:08Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+518,2962,Nguyenld,65831,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+519,1526101,Bastenbas,28727,2013-03-30T10:17:23Z,male,True,False,False,True,True,False,False,False,True,False,False,False,True
+520,730699,Nguyen Patrick VH,8341,2009-12-14T17:18:12Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+521,49639,Mutatis mutandis,10325,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+522,349525,JP Chalvin,551,2008-01-30T20:50:06Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+523,3922,Neuromancien,4135,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+524,1282221,Barada-nikto,28256,2012-05-07T18:51:15Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+525,13772,Deansfa,51350,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+526,8866,Eskimo,5107,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+527,328613,Missourinez,4394,2007-12-14T05:00:20Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+528,115705,Piglop,3884,2006-06-03T16:11:31Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+529,294438,Bastien Sens-Méyé,9537,2007-09-28T20:48:19Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+530,282771,Musicaline,6927,2007-08-31T18:09:04Z,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+531,21394,Jpm2112,26970,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+532,132668,Zedh,9591,2006-07-29T12:12:29Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+533,600769,Omarcoz,611,2009-05-10T20:49:04Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+534,151612,Zouavman Le Zouave,18160,2006-09-21T16:48:50Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+535,9158,Jef-Infojef,63976,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+536,275153,Bub's,16036,2007-08-04T17:29:21Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+537,152965,Beeper,7450,2006-09-25T01:01:09Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+538,6825,Jean-no,29216,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+539,16830,Jmh2o,41195,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+540,187,Olivier,5112,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+541,19339,Chris93,92916,,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+542,169446,Jplm,12220,2006-11-01T16:25:59Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+543,895180,Bjung,50499,2010-08-30T18:09:31Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+544,422,David Latapie,5112,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+545,1015462,Paul.schrepfer,230755,2011-03-04T19:06:15Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+546,23774,ZeMeilleur,9303,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+547,1780773,MrButler,11274,2014-03-12T07:21:28Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+548,24326,Peter17,37813,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+549,13188,Petrusbarbygere,7493,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+550,2839,Jastrow,34232,,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+551,68154,Ben Siesta,8819,2006-01-26T14:15:47Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+552,523,Phido,13663,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+553,5553,Ethaniel,3362,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+554,507316,Jacques Ballieu,319288,2008-12-09T11:30:01Z,male,False,False,True,True,True,False,True,False,True,False,False,False,False
+555,10340,Chris a liege,268028,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+556,1010589,Lionel Scheepmans,4524,2011-02-26T14:04:58Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+557,235065,Lysosome,52786,2007-04-04T21:33:39Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+558,175537,Prométhée,33673,2006-11-15T15:58:39Z,male,False,False,False,True,True,False,False,False,True,False,False,True,True
+559,298946,Cgolds,12723,2007-10-08T20:35:46Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+560,1154986,Signimu,2260,2011-10-27T12:00:48Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+561,5901,Weft,5518,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+562,2229310,ManuRoquette,8775,2015-05-18T07:36:41Z,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+563,2563,Spedona,77207,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+564,42622,Gordjazz,4122,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+565,576727,AnneJea,12798,2009-03-31T11:53:31Z,unknown,False,False,False,True,True,True,False,False,True,False,False,False,False
+566,65664,Gonioul,64274,2006-01-17T17:39:51Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+567,341980,Suzelfe,29907,2008-01-15T23:24:22Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+568,3225,Goa103,1022,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+569,82473,Ten-is-10,106302,2006-03-10T16:53:53Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+570,198665,Ampon,30590,2007-01-12T21:25:23Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+571,33404,El pitareio,11284,,male,True,False,False,True,True,False,False,False,True,False,False,False,True
+572,254738,Thémistocle,8795,2007-05-25T15:48:57Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+573,273783,Tizeff,5692,2007-07-30T12:11:34Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+574,28216,Arnaud.Serander,152917,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+575,199860,Tognopop,4125,2007-01-15T13:11:25Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+576,87710,Gemini1980,314071,2006-03-24T14:52:06Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+577,755141,Lechevalier denis,39,2010-01-21T10:50:45Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+578,729857,Toto Azéro,24262,2009-12-13T13:04:28Z,male,True,False,False,True,True,False,False,False,True,False,False,False,False
+579,419712,Totodu74,104200,2008-06-30T10:09:27Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+580,13549,Vincnet,63083,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+581,40042,Trassiorf,5017,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+582,17536,Gagarine,1042,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+583,4966,Turb,41312,,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+584,2034,Emmanuel legrand,5341,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+585,49873,Van Kanzaki,4333,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+586,28849,Encolpe,45465,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+587,20813,Vincent Lefèvre,7925,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+588,1816387,Sigamix,34020,2014-05-02T17:08:41Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+589,1755263,Skimel,6273,2014-02-04T17:53:31Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+590,21514,Marsyas Panique,1166,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+591,9793,Ayin,1565,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+592,69293,Rpa,71234,2006-01-30T19:23:53Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+593,2078439,La femme de menage,11845,2015-01-12T03:40:20Z,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+594,2614,CRicard,380,,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+595,230,Didup,2990,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+596,27078,Roland45,179512,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+597,479081,XIIIfromTOKYO,41250,2008-10-26T13:42:03Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+598,1165,Howard Drake,14116,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+599,2299,Michel BUZE,44202,,male,False,False,True,True,True,False,False,False,True,False,False,False,False
+600,1109126,MerveillePédia,4667,2011-08-11T17:16:23Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+601,67555,Michel1961,21696,2006-01-24T11:08:54Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+602,96695,Bzh-99,25458,2006-04-17T15:12:16Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+603,250877,Punx,17068,2007-05-15T16:31:30Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+604,290787,Ickx6,19455,2007-09-20T21:48:12Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+605,3163015,Ideawipik,7808,2018-06-27T20:21:33Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+606,1526239,XoLm56,6432,2013-03-30T13:59:40Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+607,276120,ALDO CP,120248,2007-08-08T14:19:07Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+608,77156,Martin',29823,2006-02-24T12:05:31Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+609,23174,Aucassin,29393,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+610,6498,Gwalarn,8113,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+611,392064,Harmonia Amanda,33175,2008-04-30T08:10:16Z,female,False,False,False,True,True,False,False,False,True,False,False,False,True
+612,2644,Lucas thierry,21554,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+613,3544752,WikipSQ,5036,2019-08-13T13:52:38Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+614,66672,Astirmays,12741,2006-01-21T08:10:18Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+615,38274,Askywhale,17883,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+616,69980,Malost,60702,2006-02-02T11:27:56Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+617,1010434,Madelgarius,30627,2011-02-26T08:36:56Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+618,98059,Chico75,12573,2006-04-21T10:32:44Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+619,1760684,Marilouw,12225,2014-02-11T16:44:07Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+620,7247,Marianika,507,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+621,3022,Marc BERTIER,1304,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+622,323870,Budelberger,336,2007-12-02T17:19:11Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+623,12048,Miniwark,4980,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+624,37136,Channer,11440,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+625,113141,Marvoir,17146,2006-05-27T18:23:56Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+626,17885,Moumou82,178112,,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+627,72920,Malta,8327,2006-02-12T09:40:22Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+628,71277,Manu1400,9011,2006-02-06T20:53:20Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+629,57452,Louperivois,5155,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+630,80191,Mattaku,492,2006-03-04T15:48:40Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+631,17191,Muphin,1412,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+632,2962237,Msbbb,7730,2017-11-23T07:25:32Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+633,343666,Manoillon,58280,2008-01-19T10:30:24Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+634,2707649,Naivuon,2939,2017-01-18T09:22:00Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+635,152711,RM77,5688,2006-09-24T14:14:46Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+636,63792,Bounè rodzo,36610,2006-01-10T17:34:48Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+637,2635194,Tamita Secilliterelle,165,2016-10-15T19:20:20Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+638,269005,Albanoreau,1216,2007-07-11T19:00:33Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+639,744743,Albergrin007,14176,2010-01-07T09:26:08Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+640,32507,Triton,24621,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+641,230909,Tonymainaki,5078,2007-03-25T15:21:53Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+642,76784,Tibauk,12846,2006-02-23T09:17:33Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+643,6808,Tella,20420,,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+644,570609,Anaemaeth,30683,2009-03-21T15:27:34Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+645,21158,Boud,830,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+646,124750,Anne97432,19086,2006-07-01T11:20:02Z,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+647,1402311,Antimuonium,40472,2012-10-27T18:56:58Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+648,112799,Apc005,6840,2006-05-26T19:52:54Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+649,587171,Skull33,60259,2009-04-18T13:24:01Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+650,3060,Archibald,6391,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+651,32328,Sixsous,12262,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+652,4029,Alain Schneider,40314,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+653,57351,Akiry,25746,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+654,171045,Wikialine,47078,2006-11-05T14:10:36Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+655,994935,Across.land.and.time,1500,2011-02-03T23:15:34Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+656,1797581,Wikini,1144,2014-04-04T11:10:46Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+657,14586,Wku2m5rr,1922,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+658,6553,Woww,18913,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+659,954661,XDamx,2633,2010-12-04T17:19:14Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+660,616345,Xentyr,7118,2009-06-06T16:04:55Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+661,5440,ADM,128507,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+662,2864617,Ypirétis,28540,2017-07-26T06:52:11Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+663,5305,Yves1953,19526,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+664,1773394,3Jo7,15143,2014-03-01T13:51:24Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+665,33900,Zunkir,63337,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+666,40933,16@r,22168,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+667,312601,Égoïté,26487,2007-11-08T09:20:25Z,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+668,906875,Βερναρδ,1133,2010-09-20T13:05:05Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+669,945586,Sitanix,5516,2010-11-20T11:00:42Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+670,68025,Serein,22850,2006-01-25T22:28:28Z,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+671,273323,SerSpock,2651,2007-07-28T11:54:55Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+672,82599,Pso,2874,2006-03-10T22:48:37Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+673,25353,Bokken,11092,,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+674,873499,Noisetier,6485,2010-07-21T07:36:17Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+675,36779,Boeb'is,17074,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+676,140666,Nono64,101160,2006-08-23T16:19:29Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+677,37985,Noritaka666,15884,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+678,14737,Bob08,154554,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+679,7637,O. Morand,19193,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+680,247473,Olivier Tanguy,39803,2007-05-07T11:50:58Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+681,166102,Pamplelune,3893,2006-10-24T23:23:25Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+682,959057,Patrick.Delbecq,27236,2010-12-11T09:52:44Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+683,401586,Philgin,6400,2008-05-22T00:51:35Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+684,14751,Piku,114275,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+685,1101303,PolBr,26879,2011-07-28T08:22:03Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+686,2423455,Prométhée26,1975,2016-01-06T16:04:54Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+687,4244,Badowski,2359,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+688,2344175,Assassas77,7483,2015-10-03T06:50:38Z,male,False,False,False,True,True,True,False,False,True,False,False,False,False
+689,82241,Ptyx,29371,2006-03-09T23:02:15Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+690,2128,BTH,60095,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+691,376353,Pyb,15766,2008-03-26T11:40:43Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+692,484564,BTCK,1423,2008-11-03T12:37:37Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+693,91056,AzertyFab,1441,2006-04-02T08:04:31Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+694,1008887,Rigoureux,10375,2011-02-23T22:06:54Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+695,1264,Romanm,508,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+696,691146,AviaWiki,45520,2009-10-16T20:23:43Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+697,2323559,Rozmador,5201,2015-09-06T22:24:21Z,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+698,700515,Attenwag,3377,2009-10-30T16:08:22Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+699,180632,SalomonCeb,22131,2006-11-27T09:04:15Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+700,3763,Sam Hocevar,24350,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+701,3079,Sanao,32052,,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+702,36800,Sand,28772,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+703,44684,Chouchoupette,6246,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+704,72756,NicDumZ,4867,2006-02-11T16:48:32Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+705,427584,Kumkum,15801,2008-07-20T19:03:36Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+706,181659,LPLT,181633,2006-11-29T13:15:02Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+707,1800,Former user 1,7829,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+708,29820,Coyau,80364,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+709,311447,Howdoesitflee,653,2007-11-06T00:23:28Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+710,72558,Gilles Mairet,23325,2006-02-10T21:14:43Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+711,132064,Fm790,39667,2006-07-27T12:29:14Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+712,498140,Df,9407,2008-11-24T13:48:46Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+713,269771,Dhatier,142408,2007-07-14T19:28:24Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+714,114686,Givet,27622,2006-05-31T16:27:24Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+715,37867,Flo,3968,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+716,6951,Foxandpotatoes,3356,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+717,133006,El Caro,44758,2006-07-30T16:01:34Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+718,1042024,La carotte et le bâton,657,2011-04-15T12:05:23Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+719,1071159,La coince,14802,2011-06-02T15:07:08Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+720,59436,Harrieta171,192670,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+721,8156,HaguardDuNord,30889,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+722,37922,Ficelle,4693,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+723,255455,Felixggenest,2721,2007-05-27T17:59:18Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+724,20262,Laurent Jerry,27686,,male,False,False,False,True,True,True,True,False,True,False,False,False,False
+725,2740017,Hérisson grognon,2344,2017-02-25T17:41:44Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+726,1278,Kndiaye,5673,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+727,116998,Djo0012,1433,2006-06-07T04:59:52Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+728,971319,Frigory,704,2011-01-02T00:29:05Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+729,22270,Jodelet,4127,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+730,141380,DSCH,3403,2006-08-25T16:04:40Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+731,245718,Ju gatsu mikka,27923,2007-05-03T03:53:48Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+732,44103,Jybet,1664,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+733,256536,Cyrilb1881,50909,2007-05-30T16:47:44Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+734,290637,Jérémy-Günther-Heinz Jähnick,59292,2007-09-20T15:50:32Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+735,28025,Frédéric-FR,14871,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+736,13993,K!roman,7133,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+737,149563,Jbdepradines,14389,2006-09-16T17:52:46Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+738,230833,Ice Scream,13335,2007-03-25T12:25:54Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+739,57893,Freewol,15226,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+740,267924,Garfieldairlines,10374,2007-07-08T11:13:18Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+741,128353,DavidL,2038,2006-07-14T16:31:54Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+742,1329601,Elj wik,2152,2012-07-17T08:41:39Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+743,2786542,Csar62,38692,2017-04-19T07:57:24Z,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+744,227831,Ireilly,2406,2007-03-18T09:10:31Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+745,340480,Kintaro,11926,2008-01-13T04:57:49Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+746,10413,Kirham,14582,,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+747,27676,Le Lutin des Bois,45,,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+748,5251,Jmfayard,5058,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+749,805844,Gyrostat,19032,2010-04-02T19:23:10Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+750,1752,Libre,4784,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+751,3996,Guil,9613,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+752,38518,Erdrokan,17822,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+753,24686,GôTô,16668,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+754,1621457,GrandEscogriffe,4325,2013-08-10T22:54:00Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+755,818270,Llann Wé²,11696,2010-04-21T22:48:29Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+756,199915,Esurnir,156,2007-01-15T15:36:54Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+757,126171,Dunwich,2239,2006-07-06T17:32:21Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+758,932348,Euphonie,16399,2010-10-31T11:14:53Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+759,24386,Eusebius,4897,,unknown,False,False,True,True,True,False,False,False,True,False,False,False,False
+760,9912,Clio64,139340,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+761,470,Greatpatton,9169,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+762,14634,Erasmus,42394,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+763,2338865,Tpe.g5.stan,24575,2015-09-26T10:39:21Z,unknown,False,False,True,True,True,False,False,False,True,False,False,False,False
+764,278650,Pierregil83,73759,2007-08-18T09:33:35Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+765,232172,Sisyph,76155,2007-03-28T15:35:25Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+766,35,Dave~frwiki,33,,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+767,100594,JSDX,5464,2006-04-27T15:20:20Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+768,11173,Elwikipedista~frwiki,277,,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+769,1238471,Torvalu4,2582,2012-03-02T21:14:22Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+770,723986,Pierre5018,6703,2009-12-04T02:15:13Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+771,212242,H4stings,59499,2007-02-11T17:57:35Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+772,91898,Pierrot Lunaire,7713,2006-04-04T11:54:26Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+773,119044,Gpesenti,11120,2006-06-13T10:08:49Z,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+774,1128871,Basile Morin,727,2011-09-15T13:52:49Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+775,929230,JeSuisKatanga,2824,2010-10-25T23:48:05Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+776,1852,Tom~frwiki,1010,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+777,3165761,Speltdecca,6983,2018-07-01T12:40:34Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+778,126287,Deep silence,26734,2006-07-07T08:32:04Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+779,2541021,Titi Bastia,46998,2016-05-27T12:10:17Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+780,63477,Sprinteur,310,2006-01-09T10:33:55Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+781,1534270,Baguy,22187,2013-04-08T21:11:06Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+782,1078157,Pr Fox,1676,2011-06-14T17:26:33Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+783,194813,Priper,56619,2007-01-04T14:41:33Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+784,27972,Inisheer,32329,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+785,20854,Indif,32842,,male,False,False,True,True,True,False,False,False,True,False,False,False,False
+786,2241,Beatnick,619,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+787,3357183,Datsofelija,7499,2019-01-20T16:43:54Z,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+788,246939,Durifon,16068,2007-05-06T08:10:33Z,unknown,False,False,True,True,True,False,False,False,True,False,False,False,False
+789,139485,TiboF,32066,2006-08-20T14:18:31Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+790,141129,Jihaim,116326,2006-08-24T21:43:09Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+791,187752,Snipre,15541,2006-12-13T22:16:18Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+792,454805,Dark Attsios,9532,2008-09-18T16:10:53Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+793,7163,Valérie75,74909,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+794,35476,Alecs.y,12471,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+795,97048,Orgeat,97,2006-04-18T13:21:11Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+796,558388,Alex-F,18550,2009-03-01T13:42:34Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+797,407107,AlexJacq,23,2008-06-02T17:04:33Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+798,304676,Orphée,123245,2007-10-21T13:40:09Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+799,2297462,Un Fou,12395,2015-08-02T13:30:10Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+800,1393676,Oursmili,4294,2012-10-17T08:41:51Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+801,283493,Anymora,850,2007-09-02T21:49:16Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+802,1291105,Soboky,21478,2012-05-20T18:05:12Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+803,45672,PIerre.Lescanne,15556,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+804,56186,Jerome Charles Potts,5553,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+805,39019,PRA,6827,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+806,32941,Tvpm,3061,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+807,3581040,Pa2chant.bis,6522,2019-09-23T17:30:45Z,unknown,False,False,False,True,True,False,True,False,True,False,False,False,False
+808,18055,Emirix,3292,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+809,1175925,Pablo029,6181,2011-11-28T17:01:15Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+810,3730805,Emigré55,889,2020-02-22T08:32:10Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+811,606,Jeffdelonge,40434,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+812,176531,Pamputt,22010,2006-11-17T21:10:26Z,male,False,False,True,True,True,False,False,False,True,False,False,False,False
+813,207174,Jean-Louis Swiners,12060,2007-01-31T17:33:23Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+814,613,Papotages,754,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+815,91733,Sonusfaber,3673,2006-04-03T20:42:09Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+816,182144,Jean-Louis Lascoux,11800,2006-11-30T12:38:26Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+817,1551295,Apollinaire93,31380,2013-04-30T18:12:57Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+818,15305,Darkdadaah,1507,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+819,25071,Stanlekub,42239,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+820,38309,Purodha,975,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+821,1503923,Bad-Twin,551,2013-03-01T01:31:47Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+822,54008,Silex6,39227,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+823,1701,Stuart Little,4986,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+824,232769,Gonzolito,47732,2007-03-29T23:38:22Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+825,238140,SuperHeron,2718,2007-04-13T10:19:25Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+826,139646,Auxerroisdu68,25064,2006-08-20T21:01:16Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+827,216854,Roumpf,5581,2007-02-20T14:47:48Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+828,510579,Amqui,59135,2008-12-14T21:19:48Z,unknown,False,False,True,True,True,False,False,False,True,False,False,False,True
+829,247127,Havang(nl),35858,2007-05-06T14:51:18Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+830,1595477,Ruyblas13,77291,2013-06-30T06:25:46Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+831,270634,Amstramgrampikepikecolegram,17119,2007-07-18T09:44:16Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+832,808308,S0l0xal,17394,2010-04-06T18:04:11Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+833,129213,Anael Hagner,81591,2006-07-17T18:50:02Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+834,98009,Ektoplastor,9276,2006-04-21T08:32:44Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+835,59464,Sémhur,9680,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+836,657204,DocMuséo,18029,2009-08-22T21:12:04Z,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+837,104613,Sémaphore,106,2006-05-07T09:32:33Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+838,45287,Djiboun,4837,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+839,186886,Samsa,4851,2006-12-12T01:19:16Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+840,2450810,HaT59,17867,2016-02-04T15:45:51Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+841,1522601,Asterix757,10616,2013-03-25T15:53:12Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+842,7436,Saxon,3396,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+843,3491306,Sebicux,13382,2019-06-07T21:56:17Z,unknown,False,False,False,True,True,False,True,False,True,False,False,False,False
+844,35831,Sbi,1193,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+845,9669,Sbrunner,9583,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+846,46029,Sylveno,2813,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+847,46352,HDDTZUZDSQ,12790,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+848,97026,Sxilderik,5462,2006-04-18T12:29:32Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+849,6646,Schutz,4519,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+850,152481,AndréLegault,7549,2006-09-24T00:46:52Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+851,151723,Goku,32307,2006-09-21T21:24:12Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+852,1976086,ServB1,15354,2014-10-17T19:13:38Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+853,80537,Asabengurtza,7764,2006-03-05T14:31:44Z,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+854,251634,Strangeways,1993,2007-05-17T13:01:52Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+855,1116515,Huguespotter,31730,2011-08-24T21:49:51Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+856,582475,Elfast,13575,2009-04-10T11:12:48Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+857,69211,TiChou,7734,2006-01-30T14:40:30Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+858,2489177,Sijysuis,10581,2016-03-20T20:09:41Z,unknown,False,False,False,True,True,True,False,False,True,False,False,False,False
+859,268902,Pyerre,1328,2007-07-11T13:33:20Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+860,250884,Pymouss,69018,2007-05-15T16:53:25Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+861,2360,Denis Dordoigne,5801,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+862,857722,Thouny,5475,2010-06-20T22:11:16Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+863,3538,Gordjazzz,1763,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+864,316292,Quentinv57,15617,2007-11-16T12:25:57Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+865,36524,Quoique,151428,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+866,1844778,Héraclès,8905,2014-06-12T19:43:45Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+867,676,Hémant,1159,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+868,38729,Huster,294579,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+869,35756,Thierry Caro,600147,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+870,47901,DonCamillo,19286,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+871,294028,Alphos,16867,2007-09-28T03:02:40Z,unknown,True,False,False,True,True,False,False,False,True,False,False,False,False
+872,49086,Reelax,2976,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+873,645102,Anneyh,4134,2009-07-30T20:28:10Z,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+874,62766,DainDwarf,10562,2006-01-06T16:18:54Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+875,931944,Thepat,8178,2010-10-30T14:37:54Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+876,374202,Guillaume70,102395,2008-03-21T21:00:49Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+877,67870,Houloune,654,2006-01-25T12:56:38Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+878,668664,The Titou,40297,2009-09-11T13:07:05Z,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+879,3720812,Donc donc goose,253,2020-02-11T20:28:53Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+880,1875115,Hnvnc,1331,2014-07-29T07:30:29Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+881,20,Thbz,3607,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+882,1350255,Goombiis,27725,2012-08-19T11:37:24Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+883,354765,Hevydevy81,12735,2008-02-10T18:00:32Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+884,247922,Chphe,9699,2007-05-08T12:08:43Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+885,1355271,Eihel,7058,2012-08-26T23:04:20Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+886,197770,Jmex,57017,2007-01-11T10:39:18Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+887,17857,Caerbannog,735,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+888,990834,Fofofe,114,2011-01-29T11:46:57Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+889,706173,Florn88,51954,2009-11-07T16:03:40Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+890,359994,MicroCitron,15871,2008-02-21T13:21:33Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+891,767430,CONCACAF-Footballeur,64312,2010-02-07T13:44:33Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+892,38974,Mi Ga,77490,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+893,31076,ComputerHotline,8725,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+894,134142,Xiawi,7140,2006-08-03T11:39:45Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+895,2253514,Buzz,0,2015-06-09T23:05:48Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+896,4747,Meodudlye,15782,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+897,516425,Abracadabra,33066,2008-12-26T11:22:19Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+898,21749,Maximini1010,12146,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+899,214896,Xinpeijin,3824,2007-02-16T18:06:40Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+900,1536500,Canaricolbleu,10107,2013-04-11T12:33:03Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+901,2551859,Cocô53,20930,2016-06-11T18:50:43Z,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+902,288282,Milky2,14961,2007-09-15T08:24:01Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+903,14731,Mmenal,12787,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+904,526757,MathsPoetry,49468,2009-01-11T18:35:07Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+905,69494,Mwarf,41661,2006-01-31T15:20:46Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+906,52033,Croquant,70507,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+907,36822,Naevus,5801,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+908,192139,Wankh,19,2006-12-27T15:48:11Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+909,149157,Adrille,8006,2006-09-15T16:20:39Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+910,42404,Myst,7814,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+911,268758,François Melchior,2540,2007-07-10T22:36:37Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+912,1923100,WikiSyn,19181,2014-08-29T12:52:20Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+913,1928467,Kougbadi,35,2014-09-03T14:13:09Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+914,2592839,Kokonino,20030,2016-08-18T11:02:21Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+915,279300,Konstantinos,95432,2007-08-20T15:48:32Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+916,377006,Wikinade,15655,2008-03-27T15:35:18Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+917,2207006,Koreller,11037,2015-04-28T18:06:44Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+918,5098,Olivier Mengué,906,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+919,1051290,Woozz,20309,2011-04-30T22:06:02Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+920,1023707,Matou91,3233,2011-03-17T09:51:25Z,female,False,False,False,True,True,True,False,False,True,False,False,False,False
+921,66118,Xofc,27867,2006-01-19T08:32:18Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+922,319544,W7a,1638,2007-11-22T21:26:28Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+923,1012767,Éduarel,30677,2011-03-01T11:20:49Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+924,1501,Zubro,6465,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+925,447142,Mabifixem,9044,2008-09-05T12:56:21Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+926,193270,Cheep,138849,2006-12-31T10:13:02Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+927,1485217,Zythème,4655,2013-02-05T21:06:34Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+928,130187,Éclusette,9671,2006-07-20T23:14:40Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+929,874654,Les3corbiers,7502,2010-07-23T09:31:44Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+930,905229,Lewisiscrazy,16014,2010-09-17T13:17:59Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+931,2334891,Malicweb,1475,2015-09-21T07:53:52Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+932,1849026,12367b,2139,2014-06-19T21:26:02Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+933,57268,Chtit draco,4530,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+934,6876,Escaladix,11474,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+935,169883,Loudon dodd,13156,2006-11-02T16:40:34Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+936,7376,לערי ריינהארט,673,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+937,1981313,प्रजापति,1314,2014-10-22T15:28:36Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+938,1603924,Maldoror des Esseintes,1703,2013-07-13T23:48:06Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+939,2835290,3(MG)²,6780,2017-06-14T11:12:29Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,True
+940,38460,Felipeh,22239,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+941,589399,Cedalyon,18669,2009-04-22T08:05:57Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+942,28382,Yelkrokoyade,30565,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+943,740789,Fandecaisses,2614,2010-01-01T15:13:17Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+944,155220,Cbigorgne,101192,2006-09-30T13:02:34Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+945,216220,A455bcd9,6284,2007-02-19T10:11:40Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+946,27346,Marie-Candice,3147,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+947,19764,YolanC,5261,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+948,133,Marc Girod,1373,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+949,2356,ZeroJanvier,8952,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+950,500259,Le sourcier de la colline,13732,2008-11-27T18:22:12Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+951,21828,Epommate,3086,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+952,68077,Cedric31,494,2006-01-26T09:04:08Z,male,False,False,False,False,True,False,False,False,True,False,False,False,False
+953,73943,Fabienkhan,17230,2006-02-15T15:12:40Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+954,879,Fabien1309,4648,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+955,2178216,Fa suisse,3238,2015-04-08T09:22:22Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+956,39996,Crouchineki,6158,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+957,140622,Moumine,13124,2006-08-23T13:58:46Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+958,1427690,Kagaoua,102583,2012-11-24T17:58:10Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+959,6392,Kassus,10556,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+960,43531,Vriullop,685,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+961,117491,O2,7638,2006-06-08T14:15:18Z,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+962,1835505,DDupard,25016,2014-05-29T12:45:10Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+963,12154,Nevers,5472,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+964,52110,Aldine Esperluette,29807,,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+965,1740889,Agatino Catarella,59926,2014-01-17T15:22:42Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+966,63747,Noé,1769,2006-01-10T13:58:14Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+967,952919,FreCha,14015,2010-12-01T19:01:37Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+968,142720,Esby,4456,2006-08-29T10:00:18Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+969,1276449,Agota,2150,2012-04-29T23:47:46Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+970,390637,Varmin,17909,2008-04-26T18:21:42Z,unknown,False,False,False,True,True,True,False,False,True,False,False,False,True
+971,31082,DC2,6850,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+972,3054701,Enki Barthel,1603,2018-02-28T21:08:07Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+973,1080267,Bolatbek,5,2011-06-18T11:16:27Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+974,315183,Aidé Pici,4555,2007-11-13T20:41:14Z,unknown,False,False,True,True,True,False,False,False,True,False,False,False,False
+975,222936,Jymm,8589,2007-03-06T15:37:43Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+976,93225,Niladmirari,694,2006-04-08T01:40:06Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+977,23036,Kernitou,8434,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+978,49402,Frór,13836,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+979,350072,Froisois,540,2008-01-31T21:56:04Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+980,87355,Blinking Spirit,680,2006-03-23T15:49:58Z,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+981,36578,Néfermaât,35694,,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+982,1056714,Vanneau Asocial,20024,2011-05-09T16:02:26Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+983,64289,FrançoisD,2948,2006-01-12T18:09:24Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+984,761483,Bernard Botturi,49800,2010-01-30T06:57:45Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+985,2427,Okki,36004,,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+986,165,Cunciforme,66,,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+987,212521,Joeldl~frwiki,376,2007-02-12T04:40:39Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+988,59678,ObiWan Kenobi,2106,2005-12-22T12:48:47Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+989,55405,Dadu,14840,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+990,444294,Enherdhrin,1882,2008-08-31T10:29:19Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+991,9417,Vanished2012,6796,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+992,14992,Odejea,62877,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+993,110965,Bouchecl,51233,2006-05-22T05:58:57Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+994,21555,Švitrigaila,13845,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+995,173343,Yodaspirine,17170,2006-11-10T20:21:20Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+996,33414,Anniller wikipedia,16,,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+997,205625,Alain83,4420,2007-01-28T18:40:40Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+998,440133,Galdrad,13301,2008-08-22T19:22:02Z,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+999,1629939,YotaMoteuchi,4041,2013-08-24T16:24:47Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1000,59074,Antonov14,15031,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1001,122797,Treehill,95141,2006-06-24T15:53:12Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+1002,3069280,Triboulet sur une montagne,4196,2018-03-16T15:13:07Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1003,276138,Sosak fr,3347,2007-08-08T15:01:23Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1004,1043135,Antistrophe,724,2011-04-17T13:43:45Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1005,126404,Andromeda,16260,2006-07-07T14:43:23Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1006,225380,Félix Potuit,16794,2007-03-12T10:34:28Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1007,313639,Anagramme,57,2007-11-10T15:58:54Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1008,1586196,Synthwave.94,190429,2013-06-15T15:28:47Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1009,2426,AElfwine,1140,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1010,1605,Alexboom,11139,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1011,156318,Fabriced28,5587,2006-10-03T01:00:55Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1012,350,(ô ô),6,,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1013,268913,Gaetan Poix,3229,2007-07-11T13:53:06Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1014,31784,Alexandref,401,,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1015,1719539,Tyseria,106081,2013-12-19T17:29:19Z,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+1016,3222405,Evynrhud,7038,2018-09-05T16:25:34Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1017,511131,Ziron,11813,2008-12-15T19:57:30Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1018,752064,Zhuangzi,6251,2010-01-17T11:02:50Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1019,32716,Zete tous con,13,,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1020,4700,Ukulele,2464,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1021,888,Alexei756,113,,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1022,895554,Funkygonzo,14,2010-08-31T12:29:57Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1023,2450124,Sukkoria,21693,2016-02-03T18:45:35Z,unknown,False,False,True,True,True,True,False,False,True,False,False,False,False
+1024,25961,Vazkor,2886,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1025,412482,44Charles00,13975,2008-06-13T15:31:37Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1026,257966,Golfestro,8466,2007-06-04T08:30:00Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1027,1738007,Tsort142,945,2014-01-14T09:26:31Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1028,2982536,47dp,13216,2017-12-15T13:39:20Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1029,227548,Fabrice Dury,22200,2007-03-17T13:38:12Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1030,9163,Ste281,39230,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1031,50820,Ségolène,224,,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1032,438920,Tinm,4873,2008-08-19T16:31:17Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1033,462414,Galuel,634,2008-10-01T05:53:27Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1034,3013,Alkarex,1967,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1035,864425,Topeil,2929,2010-07-03T09:58:30Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1036,196117,Tooony,12960,2007-01-07T14:06:50Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1037,1472,Eon2004,697,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1038,278389,Thontep,30519,2007-08-17T12:05:27Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1039,2896418,Fourmis intelligentes,326,2017-09-05T11:27:37Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1040,1453,Gbog~frwiki,483,,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1041,787,Ggbb,1232,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1042,79139,Ton1,5327,2006-03-01T19:00:16Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1043,1581,WhisperToMe,12453,,unknown,False,False,True,True,True,False,False,False,True,False,False,False,False
+1044,2487327,Théo Vansteenkeste,5386,2016-03-18T10:57:07Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1045,168749,Francky Dicaprio,11235,2006-10-30T22:55:57Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1046,787415,WavesOfJoy,2697,2010-03-07T10:08:17Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1047,4471,Tomdesp,2812,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1048,15930,Thierry Dugnolle,908,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1049,14414,Gemme,5996,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1050,23621,TiboQorl,2920,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1051,82916,Genium,19436,2006-03-11T19:12:14Z,male,False,False,True,True,True,False,False,False,True,False,False,False,False
+1052,232613,Alphaval,416,2007-03-29T16:53:19Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1053,2734,Tieum,3988,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1054,1753279,Allez savoir,980,2014-02-02T08:00:09Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1055,2602,Geoffroy,334,,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1056,40,Almak,2456,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1057,3198268,Aeroceanaute,2981,2018-08-10T19:48:02Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1058,3748,Titi Sitria,6111,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1059,2566135,Tiger Chair,3199,2016-07-04T13:58:38Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1060,1073,Tim Starling,174,,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1061,254033,Fombelle,676,2007-05-23T15:02:55Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1062,262304,Torsade de Pointes,31703,2007-06-17T20:43:08Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1063,24120,Vibby,2375,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1064,592339,Touam,13696,2009-04-27T07:18:11Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1065,4305,Xmlizer,4993,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1066,531,Gnu thomas,393,,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1067,114610,TG 642,7851,2006-05-31T13:56:28Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1068,1334016,AlexiaChambertin,27,2012-07-24T10:41:19Z,female,False,False,False,False,True,False,False,False,True,False,False,False,False
+1069,269203,Glützenbaum,6039,2007-07-12T14:21:43Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1070,67251,Gloran,2700,2006-01-23T12:33:49Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1071,6428,Tarap,5213,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1072,1495,Alibaba,4542,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1073,3940,Tartempion,374,,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1074,3611079,Tascel,1230,2019-10-24T09:36:01Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1075,36074,Aliesin,10186,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1076,170902,Galufa43,2830,2006-11-05T08:04:19Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1077,49060,Glacier,2082,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1078,7071,Thewayforward~frwiki,2830,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1079,1272,Abrahami,27107,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1080,229939,Xbx,3815,2007-03-22T22:22:02Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1081,151161,Abu-Fool Danyal ibn Amir al-Mahkiri,11,2006-09-20T15:21:23Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1082,691124,ThF,18265,2009-10-16T19:45:30Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1083,178632,Xavoun,64177,2006-11-22T16:34:37Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1084,440772,Giovanni-P,10651,2008-08-24T14:22:33Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1085,15115,Enro,1642,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1086,59879,X-Javier,13702,2005-12-23T11:25:14Z,male,False,False,True,True,True,True,False,False,True,False,False,False,False
+1087,3836973,X Knower+,376,2020-06-04T11:59:39Z,male,False,False,False,False,True,False,False,False,True,False,False,False,False
+1088,135489,Thesupermat,20474,2006-08-07T21:10:14Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+1089,52886,Folken de Fanel~frwiki,2401,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1090,162324,VonTasha,64878,2006-10-16T17:42:23Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1091,964044,G de gonjasufi,9430,2010-12-19T17:19:55Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1092,57140,Axel364,16,,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1093,37310,SoCreate,8564,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1094,1556975,L2003A,3871,2013-05-08T08:42:53Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1095,420685,Cyberjey,821,2008-07-02T15:49:41Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1096,747488,Kenaron,163,2010-01-10T23:51:26Z,male,False,False,False,False,True,False,False,False,True,False,False,False,False
+1097,1455,Nezumi,2902,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1098,2534522,Keranplein,14391,2016-05-18T18:53:26Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1099,776082,Bosay,15950,2010-02-19T10:06:35Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1100,2972001,Keytar adams,5,2017-12-04T21:01:50Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1101,1255640,Nashjean,63307,2012-03-29T11:51:00Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1102,229045,Bouzinac,24423,2007-03-20T22:05:44Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1103,632021,Mélété,1825,2009-07-05T11:45:56Z,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+1104,36504,Myrabella,5725,,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+1105,3390773,Crataegus077,675,2019-02-23T12:16:09Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1106,1617833,Klymandre,1234,2013-08-05T11:21:55Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1107,21150,Muad,8417,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1108,47814,KoS,16812,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1109,3318909,Mr zamble,13,2018-12-10T07:49:28Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1110,3472971,Mpx123,13,2019-05-18T10:25:17Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1111,125121,Brejnev,16399,2006-07-03T00:41:08Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1112,8599,Brunok,4161,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1113,950594,Cramos,26369,2010-11-28T11:52:41Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1114,151175,Cqui,10661,2006-09-20T15:45:57Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1115,420154,Bublegun,3758,2008-07-01T11:25:16Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1116,283727,Mister BV,15761,2007-09-03T14:50:16Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1117,3516077,Cosmophilus,4085,2019-07-08T10:50:11Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1118,123191,Nicko,4773,2006-06-26T01:36:35Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1119,705640,Karim1999,744,2009-11-06T19:28:32Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1120,10783,Boly38,3420,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1121,5418,Bidouleroux,138,,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1122,193603,BenZed,68,2007-01-01T17:25:43Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1123,2532573,Oscorcone,76,2016-05-16T12:08:16Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1124,1666770,Os-max,1571,2013-10-11T14:53:22Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1125,1794965,Ornd,9148,2014-03-31T19:21:57Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1126,43781,BenduKiwi,5183,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1127,16924,Benjamin Pineau,3557,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1128,131632,Benji7065,151,2006-07-26T01:02:28Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1129,6104,BernardM,3750,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1130,243250,Olevy,42317,2007-04-26T15:12:23Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1131,155688,John C Mullen,108,2006-10-01T14:29:24Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1132,2540471,Obamette,1150,2016-05-26T15:51:26Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1133,3806732,Nicolas de Bourgoing,163,2020-05-05T20:22:44Z,male,False,False,False,False,True,False,False,False,True,False,False,False,False
+1134,815,Juju,41,,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1135,26726,Nykozoft,3515,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1136,1584470,Novatien,524,2013-06-12T22:09:05Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1137,569838,D0kkaebi,481,2009-03-20T08:23:33Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1138,3509491,Jurbop,3942,2019-06-30T08:44:35Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1139,458877,Bohdan80,390,2008-09-25T11:52:02Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1140,1477786,Noctemedia,9240,2013-01-27T17:56:50Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1141,910,Boism,3333,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1142,84094,Nmrk.n,244,2006-03-14T23:16:50Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1143,3459129,Nikpsy,41,2019-05-03T15:22:12Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1144,2099,Cornelis~frwiki,3940,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1145,381019,Mike Coppolano,78963,2008-04-05T05:07:09Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1146,473332,Sniff,4949,2008-10-17T23:20:01Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1147,91246,Mikani,50663,2006-04-02T16:06:59Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+1148,161200,Claude villetaneuse,43605,2006-10-14T07:05:14Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1149,3251,Mammique,787,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1150,559907,Mamiejeanjean,13964,2009-03-03T21:09:23Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1151,947439,Claude PIARD,46166,2010-11-23T07:17:33Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1152,3100661,Claude François France Gall,25,2018-04-19T18:57:48Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1153,52287,Malosse,23500,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1154,55650,Lechat,11680,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1155,164070,Legolas2,54,2006-10-20T12:40:53Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1156,1439820,Leodegar,23739,2012-12-08T14:43:03Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1157,105714,Macassar,24197,2006-05-09T15:19:37Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1158,3350920,MISS.PRESTIGE.HIPPODROME,11,2019-01-14T12:39:12Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1159,28367,Lerichard,2114,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1160,37221,Leridant,3732,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1161,7336,Lyondif02,1444,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1162,685088,Lyon-St-Clair,100515,2009-10-07T18:41:26Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1163,48505,Ludovic89,10269,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1164,90474,Lucio fr,31521,2006-03-31T14:29:33Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1165,1248808,Lubiesque,1081,2012-03-18T20:03:44Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1166,3783710,LsutoL,409,2020-04-15T08:55:45Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1167,557264,LittleTony87,19001,2009-02-27T13:23:22Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1168,179940,Loiseaulybre,3000,2006-11-25T14:43:18Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1169,516782,Loizbec,518,2008-12-26T23:17:03Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1170,378525,Lorangeo,174,2008-03-30T18:05:18Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1171,2203323,Managementformations,188,2015-04-26T09:03:21Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1172,1491706,Cedric tsan cantonais,2600,2013-02-13T20:18:45Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1173,785012,Maniacduhockey,23169,2010-03-04T02:21:37Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1174,496739,Carfois,3393,2008-11-22T05:17:18Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1175,3170549,LOGOS & ALOGOS,6105,2018-07-06T12:22:47Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1176,610791,C-alexis,5838,2009-05-27T20:02:06Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1177,995912,C.Salviani,3029,2011-02-05T15:32:06Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1178,35206,Michel Louis Lévy,17912,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1179,10044,La Cigale,5750,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1180,2182410,LaMèreVeille,8581,2015-04-11T18:41:58Z,female,False,False,True,True,True,False,False,False,True,False,False,False,False
+1181,130230,Calcineur,11022,2006-07-21T07:17:18Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1182,1559802,Cohomologique,192,2013-05-11T21:01:23Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1183,205611,Mats01,48016,2007-01-28T18:10:59Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1184,226864,Lagribouille,40111,2007-03-15T18:31:45Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1185,167088,Mathglot,622,2006-10-27T06:55:26Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1186,69455,Leafcat,233,2006-01-31T13:26:00Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1187,22403,Mason.Jones,861,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1188,7134,Cnb,301,,male,False,False,False,False,True,False,False,False,True,False,False,False,False
+1189,2545925,Larchmutz,1501,2016-06-03T05:47:07Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1190,280561,Carlassimo,18538,2007-08-24T19:15:19Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1191,217124,Marin M.,7580,2007-02-21T08:26:04Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1192,130539,Clodion,65796,2006-07-22T07:27:23Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1193,134946,Marianne Casamance,62222,2006-08-06T07:22:41Z,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+1194,2857808,Marco de Freitas,4060,2017-07-17T08:55:10Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1195,3749,LeDav777,443,,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1196,275481,LeMorvandiau,19589,2007-08-06T08:54:35Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1197,675122,PAC2,39889,2009-09-22T11:25:54Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1198,181238,PANDA 81,13080,2006-11-28T14:17:29Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1199,2938297,Pa2chant.,7254,2017-10-25T18:41:40Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1200,111928,Ben5,5848,2006-05-24T15:40:14Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1201,288856,HERMAPHRODITE,8490,2007-09-16T16:48:24Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1202,422502,San Kukai,2866,2008-07-07T12:56:57Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1203,501,Dirac,7992,,unknown,False,False,False,True,True,True,False,False,True,False,False,False,False
+1204,2763168,Hamza Alaoui,1578,2017-03-22T18:18:43Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1205,82151,Salle,4532,2006-03-09T18:18:52Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1206,2408578,Atonabel,1442,2015-12-19T08:35:32Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1207,1566139,SGlad,433,2013-05-19T23:10:57Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1208,2284237,Atón,5,2015-07-14T18:35:40Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1209,233943,Rédacteur Tibet,81425,2007-04-02T10:43:33Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1210,907059,Dimorphoteca,1461,2010-09-20T17:17:51Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1211,9284,Diligent,10303,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1212,57493,Rune Obash,13910,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1213,8489,Hbbk,11244,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1214,24901,Digging.holes,19901,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1215,16093,Hektor,46318,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1216,22675,Henry Salomé,21502,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1217,316642,Romanceor,3094,2007-11-17T07:22:13Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1218,609784,Awkiku,6209,2009-05-26T11:13:58Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1219,21183,Ripounet,3060,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1220,2250280,Lolitartine,559,2015-06-06T23:06:13Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1221,120483,Axou,245185,2006-06-17T16:28:06Z,male,False,False,False,True,True,False,False,False,True,False,False,False,True
+1222,224587,Rfortner,661,2007-03-10T12:53:29Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1223,393349,Rexcornot,20889,2008-05-03T10:29:10Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1224,2698384,Sanigarba701,7,2017-01-07T14:26:08Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1225,123974,Sarenne~frwiki,895,2006-06-28T13:42:36Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1226,66140,Scheigets,23,2006-01-19T10:25:41Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1227,2479886,Sidonie61,72110,2016-03-09T08:35:23Z,female,False,False,False,True,True,False,True,False,True,False,False,False,False
+1228,183811,Sneaky 013,7641,2006-12-04T15:23:07Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1229,141474,Efbé,16418,2006-08-25T21:35:57Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1230,2572404,Apristurus,1321,2016-07-15T01:41:33Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1231,64023,Démocrite,10249,2006-01-11T13:46:16Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1232,1598604,Sismarinho,47419,2013-07-05T07:53:24Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1233,58722,Sins We Can't Absolve,2063,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1234,68485,Dunderklumpen,11795,2006-01-27T18:41:24Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1235,2613405,Arflhn,39779,2016-09-15T19:55:36Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1236,336659,Grondilu,5432,2008-01-05T12:49:07Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1237,3100,Dujo,1381,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1238,295996,Droop,12472,2007-10-02T13:32:42Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1239,380568,Association triad,14,2008-04-03T22:48:43Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1240,2743386,Shadow-M-P,9982,2017-03-01T12:25:43Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1241,814248,Artvill,21442,2010-04-15T19:05:13Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1242,493053,Asavaa,9242,2008-11-16T13:21:57Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1243,1353,Serged,15282,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1244,19371,Guy Delsaut,20255,,male,False,False,False,True,True,False,True,False,True,False,False,False,False
+1245,1430140,Guy6631,6776,2012-11-27T13:53:34Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1246,73401,Asclepias,12248,2006-02-14T00:15:25Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1247,633008,GuyFournier,276,2009-07-07T09:41:02Z,male,False,False,False,False,True,False,False,False,True,False,False,False,False
+1248,9611,Sebcaen,25472,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1249,2737460,Schweiz41,6507,2017-02-22T17:04:01Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1250,1339,Deuxtroy,8771,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1251,290392,Redirectionneur Phou~frwiki,705,2007-09-20T00:08:03Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1252,200493,Red Castle,60775,2007-01-16T18:42:36Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1253,123435,Jatayou,19690,2006-06-26T19:28:35Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1254,23613,Barbe-sauvage,13658,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1255,3051209,Basileús,2921,2018-02-25T09:31:06Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1256,883720,Pilouloupil,15701,2010-08-09T20:42:15Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1257,398504,JRibaX,65075,2008-05-15T08:58:52Z,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+1258,69505,Piero 3000,104,2006-01-31T15:52:42Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1259,181732,Basilus,9268,2006-11-29T14:55:26Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1260,49437,Philippe Lebouc,1298,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1261,586889,Jaam,123,2009-04-17T21:46:10Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1262,148837,Jamcib,37474,2006-09-14T18:39:06Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1263,117835,Jarih,1360,2006-06-09T13:56:03Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1264,306634,Petro,191428,2007-10-25T15:22:55Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1265,19421,JF Lepage,9608,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1266,2821465,Penrec1,1051,2017-05-27T10:12:52Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1267,124864,Patrick.charpiat,5911,2006-07-01T19:38:37Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1268,21302,Jean-Frédéric,9803,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1269,102348,Patapiou,2782,2006-05-01T21:17:57Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1270,6431,Papy77,4768,,male,False,False,True,True,True,False,False,False,True,False,False,False,False
+1271,3519916,Jeanevan12,4,2019-07-13T07:01:23Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1272,930822,BelgoFoot,70759,2010-10-28T14:45:37Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1273,247145,Jeangagnon,74979,2007-05-06T15:32:14Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1274,1294,Pamoduckio,45,,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1275,59979,Ben2,5831,2005-12-23T19:12:48Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1276,58833,Pline,56336,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1277,328786,Pmpmpm,46601,2007-12-14T15:18:14Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1278,42189,Rebollo fr,549,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1279,21628,Badzil,12293,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1280,1327767,Ramzan,10605,2012-07-14T11:50:34Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1281,29892,QuoiNonne,1909,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1282,193233,QuatreCentQuatre,576,2006-12-31T06:55:26Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1283,27756,QuasarFr,4062,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1284,98133,ILJR,6331,2006-04-21T13:38:44Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1285,337,INyar,984,,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1286,786717,Denhetreil,620,2010-03-06T10:27:52Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1287,600709,Puceronpoilu,604,2009-05-10T19:14:30Z,female,False,False,False,True,True,False,False,False,True,False,False,False,False
+1288,2522074,Delarouvraie,478,2016-05-03T08:47:10Z,female,False,False,False,False,True,False,False,False,True,False,False,False,False
+1289,326014,Infofiltrage,2614,2007-12-07T17:43:14Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1290,1357196,Pronoia,13915,2012-08-29T18:30:00Z,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1291,10647,Poildoiseau,2016,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1292,558649,Io Herodotus,36171,2009-03-01T20:14:17Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1293,2248264,Pplc,354,2015-06-05T04:45:29Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1294,79682,Poss Jean-Louis,358,2006-03-03T10:39:22Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1295,505,Popolon,70183,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1296,27397,Baleer,2333,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1297,407746,Bambambigolo,1,2008-06-03T19:13:13Z,unknown,False,False,False,False,True,False,False,False,True,False,False,False,False
+1298,508089,Polofrfr,1962,2008-12-10T15:45:38Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False
+1299,34915,Itomi Bhaa,2247,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1300,10905,Poleta33,105669,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1301,25143,Ixnay,6964,,unknown,False,False,False,True,True,False,False,False,True,False,False,False,False
+1302,92157,Erkethan,3884,2006-04-05T06:59:22Z,male,False,False,False,True,True,False,False,False,True,False,False,False,False

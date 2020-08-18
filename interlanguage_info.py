@@ -54,7 +54,7 @@ this should result in one big network
 
 
 OUTLINKS
-we also do this network generation (separately) for OUTLINKS. each language edition will have it's own network, of course.
+we also do this network generation (separately) for OUTLINKS. each language edition will have it's own network.
 
 START WITH the rules on /FIVE PILLARS/
 
