@@ -12,5 +12,5 @@ postspark_diffs/master_filtered.tar.gz
 wikirules/user_end_*/
 wikirules/user_start_*/
 wikirules/user_start_revisions_*.tsv
-wikirules/output_rulepagerevs/2020-07-31/en_revisions.tsv filter=lfs diff=lfs merge=lfs -text
-wikirules/output_rulepagerevs/2020-07-31/en_revisions_talk.tsv filter=lfs diff=lfs merge=lfs -text
+wikirules/output_rulepagerevs/2020-07-31/en_revisions.tsv
+wikirules/output_rulepagerevs/2020-07-31/en_revisions_talk.tsv
