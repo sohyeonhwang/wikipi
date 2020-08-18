@@ -9,3 +9,6 @@ tsvCrunchOutput/
 postspark_diffs/master_filtered/
 postspark_diffs/masterdiff_output/
 postspark_diffs/master_filtered.tar.gz
+wikirules/user_end_*/
+wikirules/user_start_*/
+wikirules/user_start_revisions_*.tsv
