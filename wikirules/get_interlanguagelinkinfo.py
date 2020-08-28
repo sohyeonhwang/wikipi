@@ -2,7 +2,7 @@ import sys
 import pandas as pd
 import argparse
 import numpy as np
-import glob, os, re, requests 
+import glob, os, re, requests
 from pathlib import Path
 from datetime import datetime
 import time
@@ -14,18 +14,18 @@ import wikifunctions as wf
 def get_interlanguage_links(page_title, endpoint='en.wikipedia.org/w/api.php', redirects=1, multicore_dict=None):
     """The function accepts a page_title and returns a dictionary containing 
     the title of the page in its other languages
-       
+
     page_title - a string with the title of the page on Wikipedia
     endpoint - a string that points to the web address of the API.
         This defaults to the English Wikipedia endpoint: 'en.wikipedia.org/w/api.php'
         Changing the two letter language code will return a different language edition
         The Wikia endpoints are slightly different, e.g. 'starwars.wikia.com/api.php'
     redirects - 1 or 0 for whether to follow page redirects, defaults to 1
-       
+
     Returns:
     langlink_dict - a dictionary keyed by lang codes and page title as values
     """
-    
+
     #query_string = "https://{1}.wikipedia.org/w/api.php?action=query&format=json&prop=langlinks&formatversion=2&titles={0}&llprop=autonym|langname&lllimit=500".format(page_title,lang)
     query_url = "https://{0}".format(endpoint)
     query_params = {}
@@ -39,7 +39,7 @@ def get_interlanguage_links(page_title, endpoint='en.wikipedia.org/w/api.php', r
     query_params['formatversion'] = 2
     json_response = requests.get(url=query_url,params=query_params).json()
     #print(json_response)
-    
+
     interlanguage_link_dict = dict()
     start_lang = endpoint.split('.')[0]
     #print(json_response['query']['pages'][0])
@@ -57,7 +57,7 @@ def get_interlanguage_links(page_title, endpoint='en.wikipedia.org/w/api.php', r
             lang = d['lang']
             title = d['title']
             interlanguage_link_dict[lang] = title
-            
+
     if multicore_dict is None:
         return {final_title:interlanguage_link_dict}
     else:
@@ -86,17 +86,17 @@ def get_addedcontent(pagetitle,revid,lang):
     soup = BeautifulSoup(requests.get(url).text, "html.parser")
     revadds = soup.find_all("td", class_="diff-addedline")
     revadds = [ str(r) for r in revadds if "<div>" in str(r) ]
-    
+
     if len(revadds) != 0:
         cleaned_revadds = list()
-        
+
         for r in revadds:
             minisoup = BeautifulSoup(r,"html.parser")
             text = minisoup.get_text()
             #print(text)
             cleaned_revadds.append(text)
         return ' '.join(cleaned_revadds)
-    
+
     # else, there are no additions in this revision
     else:
         return None
@@ -151,8 +151,8 @@ def process_languagelinksdates(lang,langlinks_list,langlinks_dict):
                     # change _ills to a set of langs of interest
                     if f[2:4] in _ills:
                         if f[2:-2] not in ill_dates[page].keys():
-                            ill_dates[page][f[2:-2]] = timestamp
-                            found_langs.append(f[2:4])                            
+                            ill_dates[page][f[2:-2]] = timestamp.to_pydatetime().strftime('%Y-%m-%d %H:%M:%S %z')
+                            found_langs.append(f[2:4])
                         else:
                             continue
                     else:
