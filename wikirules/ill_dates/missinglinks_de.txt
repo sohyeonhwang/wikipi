@@ -1,0 +1,160 @@
+Portal:Bahn/Anforderungen an Bahnartikel
+	en:Wikipedia:WikiProject Trains/Style advice {{27 March 2013}} WIKIDATA
+	es:Wikiproyecto:Ferrocarriles/Convenciones y estilos {{27 March 2013}} WIKIDATA
+
+Wikipedia:Artikel illustrieren (added 10 March 2013)
+	ja:Help:画像などのファイルのアップロードと利用 {{31 July 2013}} WIKIDATA
+
+Wikipedia:Artikel über Schulen
+	en:Wikipedia:WikiProject Schools/Article advice {{23 April 2015}} WIKIDATA
+
+Wikipedia:Assoziative Verweise (added 6 June 2020) WIKIDATA
+	es:Wikipedia:Véase también (added 3 June 2014)
+
+Wikipedia:Bewahre immer einen kühlen Kopf (16 April 2013)
+	fr:Wikipédia:Gardez votre calme {{7 June 2013}} WIKIDATA
+
+Wikipedia:Diskussionsseiten (added 27 July 2013) WIKIDATA
+	ja:Wikipedia:ノートページのガイドライン (added 8 March 2013)
+
+Wikipedia:Eigentum an Artikeln (15 Feb 2013) {1 April 2008}
+	en:Wikipedia:Ownership of content (15 Feb 2013) {1 April 2008}
+	es:Wikipedia:Propiedad de los artículos (15 Feb 2013) {1 April 2008}
+	ja:Wikipedia:記事の所有権 (15 Feb 2013) {1 April 2008}
+
+Wikipedia:Formatierung (20 Feb 2013)
+	es:Wikipedia:Manual de estilo (20 Feb 2013)
+	fr:Wikipédia:Conventions de style (20 Feb 2013)
+	ja:Wikipedia:スタイルマニュアル (20 Feb 2013)
+
+Wikipedia:Formatvorlage Begriffsklärung (30 March 2013)
+	en:Wikipedia:Manual of Style/Disambiguation pages (30 March 2013) {{24 Jan 2006}}
+	es:Wikipedia:Manual de estilo/Páginas de desambiguación (30 March 2013) {{9 May 2010}}
+
+Wikipedia:Geh von guten Absichten aus (15 Feb 2013)
+	en:Wikipedia:Assume good faith (15 Feb 2013) {{29 July 2005}}
+
+Wikipedia:Geschützte Seiten (14 Feb 2013)
+	es:Wikipedia:Política de protección (14 Feb 2013)
+	fr:Wikipédia:Niveaux de protection (14 Feb 2013) 
+
+Wikipedia:Hauptseite/Schon gewusst/Teaser
+	en:Wikipedia:How to write the perfect "Did you know" hook {{20 Feb 2012}}
+
+Wikipedia:Interessenkonflikt (17 March 2013)
+	es:Wikipedia:Conflicto de interés (5 April 2013)
+	fr:Wikipédia:Conflit d'intérêts (17 March 2013)
+
+Wikipedia:Keine Diven füttern (7 July 2015)
+	en:Wikipedia:Don't be high-maintenance (28 June 2013)
+
+Wikipedia:Namenskonventionen/Arabisch (2 March 2014)
+	en:Wikipedia:Manual of Style/Arabic (2 March 2014) {{11 April 2006}}
+
+Wikipedia:Namenskonventionen/Chinesisch (30 July 2013)
+	fr:Wikipédia:Transcription du chinois (23 May 2015)
+
+Wikipedia:Namenskonventionen/Japanisch (29 Jul 2013)
+	es:Wikipedia:Manual de estilo/Artículos relacionados con Japón (29 Jul 2013) {{3 June 2006}}
+
+Wikipedia:Namenskonventionen/Schienenfahrzeuge (4 October 2014)
+	ja:Wikipedia:記事名の付け方/鉄道 (4 October 2014)
+
+Wikipedia:Neuigkeiten (12 May 2014)
+	en:Wikipedia:Recentism (9 July 2013)
+	es:Wikipedia:Recentismo (9 July 2013)
+	ja:Wikipedia:最新情報の反映 (30 July 2013)
+
+Wikipedia:Nichtdiskriminierung (25 February 2020)
+	en:Wikipedia:Non-discrimination policy (25 February 2020)
+	fr:Wikipédia:Politique de non discrimination (25 February 2020)
+
+Wikipedia:Rechtschreibung (7 June 2013)
+	es:Anexo:Diferencias de vocabulario estándar entre países hispanohablantes (7 June 2013)
+	fr:Aide:Orthographe (13 Nov 2015)
+    + fr:Wikipédia:Orthographe {6 Dec 2007}
+
+Wikipedia:Redaktion Medizin/Leitlinien (2 March 2014)
+	ja:Wikipedia:信頼できる情報源 (医学) (26 August 2015)
+
+Wikipedia:Redaktion Musik/Leitfaden Musikartikel (18 May 2013)
+	en:Wikipedia:Manual of Style/Music (15 September 2016)
+	es:Wikipedia:Manual de estilo/Música (15 September 2016)
+
+Wikipedia:Relevanzkriterien (15 feb 2013)
+	fr:Wikipédia:Notoriété (24 April 2013)
+    + Wikipédia:Critères d'admissibilité des articles (15 feb 2013) {26 sept 2005}
+	ja:Wikipedia:独立記事作成の目安 (15 feb 2013) {13 may 2008}
+
+Wikipedia:Richtlinien (15 February 2013)
+	fr:Wikipédia:Règles et recommandations (15 February 2013) {5 oct 2006}
+
+Wikipedia:Richtlinien Chemie ( 2 March 2014)
+	en:Wikipedia:Manual of Style/Chemistry ( 2 March 2014) {2 april 2008}
+
+Wikipedia:Richtlinien Comics (12 August 2015)
+	en:Wikipedia:Manual of Style/Comics (12 August 2015)
+
+Wikipedia:Richtlinien Computerspiele (12 August 2015)
+	en:Wikipedia:Manual of Style/Video games (29 July 2013)
+	es:Wikiproyecto:Videojuegos/Normas (9 April 2014)
+	fr:Projet:Jeu vidéo/Aide à la rédaction (31 July 2013)
+
+Wikipedia:Richtlinien Fiktives (12 August 2015)
+	en:Wikipedia:Manual of Style/Writing about fiction (7 June 2013) {17 March 2020}
+	es:Wikipedia:Ficción (17 April 2013)
+	fr:Wikipédia:Conventions sur les œuvres de fiction (7 June 2013) {9 May 2006}
+	ja:Wikipedia:スタイルマニュアル (フィクション関連) (7 June 2013) {4 April 2008}
+
+Wikipedia:Richtlinien Literarische Werke (4 July 2013)
+	en:Wikipedia:Manual of Style/Novels (4 July 2013)
+
+Wikipedia:Richtlinien bildende Kunst (17 July 2013)
+	en:Wikipedia:Manual of Style/Visual arts (12 August 2015)
+	es:Wikipedia:Convención sobre fuentes de relevancia para artistas plásticos contemporáneos (17 July 2013)
+
+Wikipedia:Schreibweise von Zahlen (28 February 2013)
+	en:Wikipedia:Manual of Style/Dates and numbers (28 February 2013) {2 June 2003}
+
+Wikipedia:Sei mutig (31 January 2013)
+	es:Wikipedia:Sé valiente al editar páginas (31 January 2013) (8 October 2004)
+
+Wikipedia:Verlinken (6 April 2019)
+	en:Wikipedia:Manual of Style/Linking (6 April 2019) 
+    + en:Wikipedia:Only make links that are relevant to the context {22 May 2006}
+	ja:Wikipedia:記事どうしをつなぐ (6 April 2019)
+    + Wikipedia:内容に関連するリンクだけを作成] {4 Jan 2008}
+
+Wikipedia:Vermeide hohle Phrasen (15 February 2013)
+	es:Wikipedia:Palabras a evitar (6 April 2013)
+	fr:Wikipédia:Termes à utiliser avec précaution (10 June 2016)
+
+Wikipedia:Weblinks (15 February 2013)
+	ja:Wikipedia:外部リンク (15 February 2013) {19 Dec 2007}
+
+Wikipedia:Wie gute Artikel aussehen (13 March 2014)
+	en:Wikipedia:The perfect article (7 April 2013) {19 July 2008}
+	es:Wikipedia:El artículo perfecto (7 April 2013) {19 July 2008}
+	fr:Wikipédia:L'article parfait (7 April 2013) {19 July 2008}
+	ja:Wikipedia:完璧な記事 (7 April 2013) {19 July 2008}
+
+Wikipedia:Wie schreibe ich gute Artikel (23 April 2013)
+	es:Ayuda:Cómo escribir mejores artículos (24 April 2015)
+    + Ayuda:Cómo redactar un buen artículo (3 August 2013)
+	fr:Aide:Comment rédiger un bon article (24 April 2015)
+
+Wikipedia:Wikijuristerei (15 April 2013)
+	fr:Wikipédia:Procédurite (15 April 2013)
+	ja:Wikipedia:法律家ごっこ (13 October 2014)
+
+Wikipedia:Wikipedia ist kein Wörterbuch (15 April 2013)
+	ja:Wikipedia:ウィキペディアは辞書ではありません (15 April 2013) {29 April 2005}
+
+Wikipedia:Wikiquette (20 March 2014)
+	fr:Wikipédia:Étiquette ( 22 January 2018 )
+
+Wikipedia:Zitate (21 October 2013)
+	en:Wikipedia:Quotations (29 March 2013)
+	fr:Wikipédia:Citation (29 March 2013)
+	ja:Wikipedia:著作権で保護されている文章等の引用に関する方針 (4 April 2013)
+

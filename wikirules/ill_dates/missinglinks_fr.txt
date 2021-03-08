@@ -1,0 +1,191 @@
+Wikipédia:Contributions rémunérées
+	en:Wikipedia:Paid-contribution disclosure
+	es:Wikipedia:Ediciones remuneradas
+	ja:Wikipedia:有償の寄稿の開示
+
+Wikipédia:AbuseFilter
+	de:Wikipedia:Bearbeitungsfilter
+	en:Wikipedia:Edit filter
+	es:Wikipedia:Filtro de ediciones
+	ja:Wikipedia:編集フィルター
+
+Wikipédia:Actions administratives (WMF)
+	de:Wikipedia:Office Action
+	en:Wikipedia:Office actions
+	ja:Wikipedia:事務局行動
+
+Wikipédia:Autobiographie
+	ja:Wikipedia:自分自身の記事
+
+Wikipédia:Blocage en écriture
+	de:Wikipedia:Benutzersperrung
+
+Wikipédia:Citation
+	de:Wikipedia:Zitate
+	ja:Wikipedia:著作権で保護されている文章等の引用に関する方針
+
+Wikipédia:Citez vos sources
+	de:Wikipedia:Zitierregeln
+
+Wikipédia:Conflit d'intérêts
+	en:Wikipedia:Conflict of interest
+	es:Wikipedia:Conflicto de interés
+
+Wikipédia:Contestation du statut d'administrateur
+	en:Wikipedia:Requests for de-adminship
+
+Wikipédia:Conventions bibliographiques
+	en:Help:Overview of referencing styles
+
+Wikipédia:Conventions concernant les nombres
+	en:Wikipedia:Manual of Style/Dates and numbers
+
+Wikipédia:Conventions de plan
+	de:Wikipedia:Formatvorlage/Musterartikel
+
+Wikipédia:Conventions de style
+	de:Wikipedia:Formatierung
+
+Wikipédia:Conventions filmographiques
+	en:Wikipedia:Manual of Style/Film
+	ja:プロジェクト:映画/映画作品スタイルガイド
+
+Wikipédia:Critères spécifiques de notoriété
+	en:Wikipedia:Subject-specific guidelines proposal
+
+Wikipédia:Discuter au lieu de voter
+	de:Wikipedia:Nimm nicht an Abstimmungen teil
+
+Wikipédia:Droit d'auteur
+	de:Wikipedia:Urheberrechte beachten
+
+Wikipédia:Exceptions au droit d'auteur
+	en:Wikipedia:Non-free content criteria
+	ja:Wikipedia:フリーでないコンテントの使用基準
+
+Wikipédia:Faux-nez
+	en:Wikipedia:Sockpuppetry
+
+Wikipédia:Harcèlement
+	en:Wikipedia:Harassment
+	es:Wikipedia:Acoso
+
+Wikipédia:Interprétation créative des règles
+	de:Wikipedia:Ignoriere alle Regeln
+	en:Wikipedia:Ignore all rules
+	es:Wikipedia:Ignora las normas
+
+Wikipédia:Jouer avec les principes, règles et recommandations de Wikipédia
+	ja:Wikipedia:規則の悪用
+
+Wikipédia:Liens externes
+	ja:Wikipedia:外部リンク
+
+Wikipédia:Liens internes
+	en:Wikipedia:Tutorial (historical)/Wikipedia links
+
+Wikipédia:Mise en forme des images
+	en:Wikipedia:Picture tutorial
+
+Wikipédia:Mobile
+	de:Wikipedia:Unterwegs
+	en:Help:Mobile access
+	ja:Help:携帯端末でのアクセス
+
+Wikipédia:N'hésitez pas !
+	es:Wikipedia:Sé valiente al editar páginas
+
+Wikipédia:Ne jouez pas au con !
+	en:Wikipedia:Don't be a jerk
+	es:Wikipedia:No seas estúpido
+
+Wikipédia:Nom d'utilisateur connu
+	de:Wikipedia:Benutzerverifizierung
+
+Wikipédia:Notoriété
+	de:Wikipedia:Relevanzkriterien
+	en:Wikipedia:Notability
+	es:Wikipedia:Artículos sin relevancia aparente
+	ja:Wikipedia:独立記事作成の目安
+
+Wikipédia:Notoriété dans le football
+	en:Wikipedia:WikiProject Football/Notability
+
+Wikipédia:Notoriété de la musique
+	es:Wikiproyecto:Wikipedia/Políticas/IdeasRelevancia/en música
+
+Wikipédia:Notoriété des jeux de société
+	en:Wikipedia:Notability (video games)
+
+Wikipédia:Notoriété des sportifs
+	de:Portal:Sport/Relevanzkriterien Mannschaftssport
+	en:Wikipedia:Notability (sports)
+	es:Wikiproyecto:Wikipedia/Políticas/IdeasRelevancia/en deportes
+
+Wikipédia:Notoriété des événements
+	en:Wikipedia:Notability (events)
+	ja:Wikipedia:特筆性 (事件)
+
+Wikipédia:Nouveau départ
+	en:Wikipedia:Clean start
+	ja:Wikipedia:再出発の方針
+
+Wikipédia:Pantin
+	en:Wikipedia:Sock puppetry#Meatpuppetry
+
+Wikipédia:Restriction thématique
+	en:Wikipedia:Banning policy#Topic ban
+
+Wikipédia:Règle des trois révocations
+	ja:Wikipedia:スリー・リバート・ルール
+
+Wikipédia:Révocateur
+	en:Wikipedia:Rollback
+	es:Wikipedia:Reversores
+	ja:Wikipedia:巻き戻し者
+
+Wikipédia:Sections anecdotiques
+	en:Wikipedia:Manual of Style/Trivia sections
+	es:Wikipedia:Manual de estilo/Secciones de curiosidades
+
+Wikipédia:Semi-protection
+	de:Wikipedia:Pressemitteilungen/FAQ Semi-protection policy
+	en:Wikipedia:Rough guide to semi-protection
+	es:Wikipedia:Semiprotección de páginas
+
+Wikipédia:Semi-protection étendue
+	en:Wikipedia:Rough guide to extended confirmed protection
+	ja:Wikipedia:拡張半保護の方針
+
+Wikipédia:Sources primaires, secondaires et tertiaires
+	en:Wikipedia:Identifying and using primary sources
+
+Wikipédia:Supposer la bonne foi
+	de:Wikipedia:Geh von guten Absichten aus
+	es:Wikipedia:Presume buena fe
+
+Wikipédia:Termes à utiliser avec précaution
+	de:Wikipedia:Vermeide hohle Phrasen
+	en:Wikipedia:Manual of Style/Words to watch
+	ja:Wikipedia:言葉を濁さない
+
+Wikipédia:Résumé de modification
+	de:Hilfe:Zusammenfassung und Quellen
+	en:Help:Edit summary
+	ja:Help:要約欄
+
+Wikipédia:Transcription du chinois
+	de:Wikipedia:Namenskonventionen/Chinesisch
+	en:Wikipedia:Naming conventions (Chinese)
+
+Wikipédia:Transcription du japonais
+	es:Wikipedia:Manual de estilo/Artículos relacionados con Japón
+
+Wikipédia:Wikipédia n'est pas un dictionnaire
+	ja:Wikipedia:ウィキペディアは辞書ではありません
+
+Wikipédia:Étiquette
+	de:Wikipedia:Wikiquette
+	es:Wikipedia:Etiqueta
+	ja:Wikipedia:エチケット
+

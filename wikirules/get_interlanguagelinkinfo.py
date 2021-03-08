@@ -123,7 +123,7 @@ def process_languagelinksdates(lang,langlinks_list,langlinks_dict):
         otherlangs.remove(lang)
 
         # ill subset should the subset of ills that this page has that are in the langs we care about
-        #_ills_full = ['{}:{}'.format(key,value) for (key,value) in langlinks_dict[lang][page].items()]
+        _ills_full = ['{}:{}'.format(key,value) for (key,value) in langlinks_dict[lang][page].items()]
         _ills_subset = ['{}:{}'.format(key,value) for (key,value) in langlinks_dict[lang][page].items() if key in otherlangs]
         _ills_subset = set(_ills_subset)
 

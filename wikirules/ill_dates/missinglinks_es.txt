@@ -1,0 +1,164 @@
+Wikipedia:Administradores de interfaz
+	de:Wikipedia:Benutzeroberflächenadministratoren
+	en:Wikipedia:Interface administrators
+	fr:Wikipédia:Administrateur d'interface
+	ja:Wikipedia:インターフェース管理者
+
+Wikipedia:Artículos sin relevancia aparente
+	fr:Wikipédia:Notoriété
+	ja:Wikipedia:独立記事作成の目安
+
+Wikipedia:Autobiografía
+	ja:Wikipedia:自分自身の記事
+
+Wikipedia:Candidaturas a bibliotecario
+	de:Wikipedia:Kandidaturen
+
+Wikipedia:Conflicto de interés
+	fr:Wikipédia:Conflit d'intérêts
+
+Wikipedia:Convención sobre fuentes de relevancia para artistas plásticos contemporáneos
+	de:Wikipedia:Richtlinien bildende Kunst
+	en:Wikipedia:Manual of Style/Visual arts
+
+Wikipedia:Creadores de cuentas
+	en:Wikipedia:Account creator
+	fr:Wikipédia:Créateur de comptes
+	ja:Wikipedia:アカウント作成者
+
+Wikipedia:Cuenta de propósito particular
+	fr:Wikipédia:Compte à objet unique
+
+Wikipedia:Derechos de autor
+	de:Wikipedia:Urheberrechte beachten
+
+Wikipedia:Documentación de las plantillas de mantenimiento
+	de:Hilfe:Vorlagendokumentation
+	en:Wikipedia:Template documentation
+	fr:Aide:Documentation de modèle
+	ja:Help:テンプレートの説明文
+
+Wikipedia:Encuestas
+	de:Wikipedia:Umfragen
+	en:Wikipedia:Survey
+	fr:Wikipédia:Sondage
+
+Wikipedia:Enlaces externos
+	ja:Wikipedia:外部リンク
+
+Wikipedia:Esbozo
+	de:Wikipedia:Lückenhaft
+
+Wikipedia:Estructura de un artículo
+	de:Wikipedia:Formatvorlage/Musterartikel
+
+Wikipedia:Etiqueta
+	fr:Wikipédia:Étiquette
+
+Wikipedia:Etiquetas de usuario
+	fr:Wikipédia:Boîte utilisateur
+
+Wikipedia:Manual de estilo
+	de:Wikipedia:Formatierung
+
+Wikipedia:Manual de estilo/Biografías
+	de:Wikipedia:Formatvorlage Biografie
+	en:Wikipedia:Manual of Style/Biography
+	fr:Projet:Biographie/Structure des articles
+	ja:Wikipedia:スタイルマニュアル (人物伝)
+
+Wikipedia:Manual de estilo/Marcas
+	en:Wikipedia:Manual of Style/Trademarks
+
+Wikipedia:Manual de estilo/Música
+	de:Wikipedia:Redaktion Musik/Leitfaden Musikartikel
+	en:Wikipedia:Manual of Style/Music
+
+Wikipedia:Manual de estilo/Secciones de curiosidades
+	ja:Wikipedia:雑多な内容を箇条書きした節を避ける
+
+Wikipedia:Plantillas de navegación
+	en:Wikipedia:Navigation template
+	fr:Aide:Palette de navigation
+	ja:Wikipedia:ナビゲーションテンプレート
+
+Wikipedia:Política de borrado
+	fr:Wikipédia:Pages à supprimer/Aide
+
+Wikipedia:Política de bots
+	en:Wikipedia:Bot policy
+
+Wikipedia:Política de protección
+	fr:Wikipédia:Niveaux de protection
+
+Wikipedia:Política de uso de imágenes
+	fr:Wikipédia:Conventions d'utilisation des images
+
+Wikipedia:Políticas y convenciones
+	fr:Wikipédia:Règles et recommandations
+
+Wikipedia:Por favor aclarar
+	en:Wikipedia:Please clarify
+	fr:Aide:Préciser un fait
+
+Wikipedia:Propiedad de los artículos
+	en:Wikipedia:Ownership of content
+
+Wikipedia:Proselitismo
+	ja:Wikipedia:勧誘行為
+
+Wikipedia:Páginas de discusión
+	de:Hilfe:Diskussionsseiten
+	en:Help:Talk pages
+	fr:Aide:Discussion
+
+Wikipedia:Qué es un artículo bueno
+	ja:Wikipedia:Good article criteria
+
+Wikipedia:Qué es un artículo destacado
+	fr:Wikipédia:Contenus de qualité/Règles
+	ja:Wikipedia:秀逸な記事/秀逸な記事の目安
+
+Wikipedia:Referencias
+	de:Wikipedia:Zitierregeln
+
+Wikipedia:Regla de las tres reversiones
+	ja:Wikipedia:スリー・リバート・ルール
+
+Wikipedia:Revalidación de bibliotecarios
+	en:Wikipedia:Requests for de-adminship
+
+Wikipedia:Reversores
+	fr:Wikipédia:Révocateur
+
+Wikipedia:Semiprotección de páginas
+	de:Wikipedia:Pressemitteilungen/FAQ Semi-protection policy
+	en:Wikipedia:Rough guide to semi-protection
+	fr:Wikipédia:Semi-protection
+
+Wikipedia:Topónimos de España
+	en:Wikipedia:Naming conventions (geographic names)
+
+Wikipedia:Transliteración y transcripción
+	en:Wikipedia:Romanization
+	fr:Wikipédia:Romanisation
+
+Wikipedia:Usa el sentido común
+	ja:Wikipedia:常識なんてない
+
+Wikipedia:Usuarios títeres
+	en:Wikipedia:Sockpuppetry
+
+Wikipedia:Verificadores
+	en:Wikipedia:New pages patrol/Reviewers
+
+Wikipedia:Votaciones
+	en:Wikipedia:Voting
+	ja:Wikipedia:投票
+
+Wikipedia:Véase también
+	de:Wikipedia:Assoziative Verweise
+
+Wikipedia:Wikipedia no es un diccionario
+	ja:Wikipedia:ウィキペディアは辞書ではありません
+

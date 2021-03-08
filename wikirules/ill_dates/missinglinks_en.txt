@@ -1,0 +1,304 @@
+Wikipedia:Accuracy dispute (1 March 2013)
+	ja:Wikipedia:正確性に疑問がある記事 (8 March 2013) {15 May 2004}
+
+Wikipedia:Appealing a block (21 May 2013)
+	ja:Wikipedia:投稿ブロックへの異議申し立て (21 May 2013) {1 June 2011}
+
+Wikipedia:Arbitration/Policy (14 February 2013)
+	de:Wikipedia:Schiedsgericht/Regeln (23 May 2018)
+	ja:Wikipedia:裁定の方針 (31 July 2013)
+
+***
+Wikipedia:Attack page (29 July 2013)
+	ja:Wikipedia:攻撃ページ (29 July 2013) {9 April 2012}
+
+Wikipedia:Autobiography
+	ja:Wikipedia:自分自身の記事 {15 April 2004}
+
+Wikipedia:Be bold
+	es:Wikipedia:Sé valiente al editar páginas {4 May 2003}
+
+Wikipedia:Blocking policy
+	de:Wikipedia:Benutzersperrung (30 September 2015)
+
+Wikipedia:Bot policy
+	es:Wikipedia:Política de bots (8 April 2013)
+    + es:Wikipedia:Bot (12 November 2004)
+
+Wikipedia:Canvassing
+	ja:Wikipedia:勧誘行為 (22 May 2013) {25 February 2008}
+
+Wikipedia:Changing username/Guidelines
+	ja:Wikipedia:利用者名変更の方針  (20 March 2015)
+
+Wikipedia:Child protection 
+	de:Wikipedia:Jungwikipedianer/Vorlage:IJWP (27 June 2017)
+
+Wikipedia:Citing sources
+	de:Wikipedia:Zitierregeln (23 March 2016)
+
+Wikipedia:Clean start
+	ja:Wikipedia:再出発の方針 (23 November 2013)
+
+Wikipedia:Conflict of interest
+	es:Wikipedia:Conflicto de interés (5 April 2013) {15 July 2009}
+
+Wikipedia:Content forking
+	fr:Wikipédia:Scission de contenu (14 April 2013)
+
+Wikipedia:Copyright violations
+	ja:Wikipedia:著作権侵害への対処 (5 February 2018)
+
+Wikipedia:Copyrights
+	de:Wikipedia:Urheberrechte beachten (29 April 2017)
+
+Wikipedia:Days of the year
+	ja:Wikipedia:各日のスタイルガイド (3 November 2013)
+
+Wikipedia:Deletion policy
+	fr:Wikipédia:Pages à supprimer/Aide (3 November 2015)
+
+Wikipedia:Disruptive editing 
+	es:Wikipedia:Ediciones disruptivas (7 July 2014)
+	fr:Wikipédia:Contributions perturbatrices (16 May 2016‎)
+	ja:Wikipedia:妨害的編集 (13 October 2014)
+
+Wikipedia:Do not create hoaxes
+	fr:Wikipédia:Ne créez pas de canulars (13 February 2017)
+
+Wikipedia:Edit filter
+	de:Wikipedia:Bearbeitungsfilter (28 January 2015)
+	fr:Wikipédia:AbuseFilter (17 November 2017)
+
+***
+Wikipedia:Etiquette
+	fr:Wikipédia:Étiquette ( 22 January 2018 )
+
+Wikipedia:External links
+	ja:Wikipedia:外部リンク (15 February 2013) {12 December 2007}
+
+Wikipedia:Fringe theories
+	es:Wikipedia:Teoría marginal (11 March 2019)
+	fr:Wikipédia:Théorie controversée (16 August 2013)
+
+Wikipedia:Gaming the system
+	fr:Wikipédia:Jouer avec les principes, règles et recommandations de Wikipédia
+	ja:Wikipedia:規則の悪用
+
+Wikipedia:IP block exemption
+	es:Wikipedia:Exentos de bloqueo a IP
+
+Wikipedia:Identifying reliable sources (medicine)
+	ja:Wikipedia:信頼できる情報源 (医学)
+
+Wikipedia:Image use policy
+	fr:Wikipédia:Conventions d'utilisation des images
+
+Wikipedia:Images
+	es:Wikipedia:Imágenes
+	fr:Aide:Images
+
+Wikipedia:Interface administrators
+	de:Wikipedia:Benutzeroberflächenadministratoren
+	es:Wikipedia:Administradores de interfaz
+	fr:Wikipédia:Administrateur d'interface
+	ja:Wikipedia:インターフェース管理者
+
+Wikipedia:Libel
+	fr:Wikipédia:Diffamation
+
+Wikipedia:Make technical articles understandable
+	ja:Wikipedia:専門的な記事も分かり易く
+
+Wikipedia:Manual of Style
+	de:Wikipedia:Formatierung
+
+Wikipedia:Manual of Style/Abbreviations
+	es:Wikipedia:Manual de estilo/Abreviaturas
+
+Wikipedia:Manual of Style/Accessibility
+	de:Hilfe:Textgestaltung/Barrierefreiheit
+
+Wikipedia:Manual of Style/Biography
+	es:Wikipedia:Manual de estilo/Biografías
+	fr:Projet:Biographie/Structure des articles
+
+Wikipedia:Manual of Style/Capital letters
+	fr:Usage des majuscules en français lorsque le spécifique est un adjectif
+
+Wikipedia:Manual of Style/Comics
+	de:Wikipedia:Richtlinien Comics
+
+Wikipedia:Manual of Style/Disambiguation pages
+	es:Wikipedia:Manual de estilo/Páginas de desambiguación
+
+Wikipedia:Manual of Style/Film
+	fr:Wikipédia:Conventions filmographiques
+	ja:プロジェクト:映画/映画作品スタイルガイド
+
+Wikipedia:Manual of Style/Icons
+	ja:Wikipedia:アイコン
+
+Wikipedia:Manual of Style/Japan-related articles
+	es:Wikipedia:Manual de estilo/Artículos relacionados con Japón
+
+Wikipedia:Manual of Style/Korea-related articles
+	es:Wikipedia:Manual de estilo/Artículos relacionados con Corea
+
+Wikipedia:Manual of Style/Layout
+	de:Wikipedia:Formatvorlage/Musterartikel
+
+Wikipedia:Manual of Style/Medicine-related articles
+	fr:Wikipédia:Conventions de style (articles sur des sujets medicaux)
+
+Wikipedia:Manual of Style/Music
+	de:Wikipedia:Redaktion Musik/Leitfaden Musikartikel
+	es:Wikipedia:Manual de estilo/Música
+
+Wikipedia:Manual of Style/Novels
+	de:Wikipedia:Richtlinien Literarische Werke
+
+Wikipedia:Manual of Style/Spelling
+	fr:Aide:Orthographe
+
+Wikipedia:Manual of Style/Tables
+	ja:Wikipedia:スタイルマニュアル (表)
+
+Wikipedia:Manual of Style/Trademarks
+	es:Wikipedia:Manual de estilo/Marcas
+
+Wikipedia:Manual of Style/Trivia sections
+	es:Wikipedia:Manual de estilo/Secciones de curiosidades
+
+Wikipedia:Manual of Style/Video games
+	de:Wikipedia:Richtlinien Computerspiele
+	es:Wikiproyecto:Videojuegos/Normas
+
+Wikipedia:Manual of Style/Visual arts
+	de:Wikipedia:Richtlinien bildende Kunst
+	es:Wikipedia:Convención sobre fuentes de relevancia para artistas plásticos contemporáneos
+
+Wikipedia:Manual of Style/Words to watch
+	de:Wikipedia:Vermeide hohle Phrasen
+	es:Wikipedia:Palabras a evitar
+	ja:Wikipedia:言葉を濁さない
+
+Wikipedia:Manual of Style/Writing about fiction
+	fr:Wikipédia:Conventions sur les œuvres de fiction
+	ja:Wikipedia:スタイルマニュアル (フィクション関連)
+
+Wikipedia:Naming conventions (Chinese)
+	fr:Wikipédia:Transcription du chinois
+
+Wikipedia:Naming conventions (Greek)
+	es:Wikipedia:Transliteración/Griego
+
+Wikipedia:Naming conventions (aircraft)
+	de:Portal:Luftfahrt/Namenskonventionen
+
+Wikipedia:Naming conventions (companies)
+	fr:Wikipédia:Conventions concernant les titres d'entreprises
+
+Wikipedia:Naming conventions (geographic names)
+	es:Wikipedia:Topónimos de España
+
+Wikipedia:Naming conventions (technical restrictions)
+	de:Hilfe:Seitenname
+
+Wikipedia:New pages patrol/Reviewers
+	es:Wikipedia:Verificadores
+
+Wikipedia:Non-U.S. copyrights
+	ja:Wikipedia:アメリカ合衆国以外の国と地域で公表された著作物の著作権について
+
+Wikipedia:Non-free content
+	es:Wikipedia:Sobre el uso legítimo
+
+Wikipedia:Notability
+	fr:Wikipédia:Notoriété
+	ja:Wikipedia:独立記事作成の目安
+
+Wikipedia:Notability (books)
+	ja:Wikipedia:特筆性 (書籍)
+
+Wikipedia:Notability (events)
+	fr:Wikipédia:Notoriété des événements
+	ja:Wikipedia:特筆性 (事件)
+
+Wikipedia:Notability (geographic features)
+	fr:Wikipédia:Notoriété des lieux géographiques
+
+Wikipedia:Notability (music)
+	es:Wikiproyecto:Wikipedia/Políticas/IdeasRelevancia/en música
+
+Wikipedia:Notability (sports)
+	de:Portal:Sport/Relevanzkriterien Mannschaftssport
+	es:Wikiproyecto:Wikipedia/Políticas/IdeasRelevancia/en deportes
+
+Wikipedia:Oversight
+	es:Wikipedia:Supresores
+
+Wikipedia:Ownership of content
+	fr:Wikipédia:Appropriation d'un article
+
+Wikipedia:Paid-contribution disclosure
+	es:Wikipedia:Ediciones remuneradas
+	fr:Wikipédia:Contributions rémunérées
+	ja:Wikipedia:有償の寄稿の開示
+
+Wikipedia:Plagiarism
+	ja:Wikipedia:剽窃
+
+Wikipedia:Policies and guidelines
+	fr:Wikipédia:Règles et recommandations
+
+Wikipedia:Protection policy
+	fr:Wikipédia:Niveaux de protection
+
+Wikipedia:Record charts
+	de:Wikipedia:Formatvorlage Charts
+	fr:Wikipédia:Classement musical
+
+Wikipedia:Red link
+	fr:Aide:Liens rouges
+
+Wikipedia:Redirect
+	fr:Wikipédia:Redirections
+
+Wikipedia:Reliable sources
+	fr:Wikipédia:Sources fiables
+
+Wikipedia:Responding to threats of harm
+	fr:Wikipédia:Que faire en cas d'urgence ?
+
+Wikipedia:Reusing Wikipedia content
+	ja:Wikipedia:ウィキペディアを二次利用する
+
+Wikipedia:Reviewing pending changes
+	de:Wikipedia:Gesichtete Versionen
+
+Wikipedia:Revision deletion
+	fr:Wikipédia:Demande de purge d'historique
+
+Wikipedia:Rollback
+	fr:Wikipédia:Révocateur
+
+Wikipedia:Soft redirect
+	es:Ayuda:Redirección suave
+
+Wikipedia:Stub
+	de:Wikipedia:Lückenhaft
+
+Wikipedia:Summary style
+	ja:Wikipedia:サマリースタイル
+
+Wikipedia:Talk page guidelines
+	de:Wikipedia:Diskussionsseiten
+	ja:Wikipedia:ノートページのガイドライン
+
+Wikipedia:Userboxes
+	fr:Wikipédia:Boîte utilisateur
+
+Wikipedia:Wikipedia is not a dictionary
+	ja:Wikipedia:ウィキペディアは辞書ではありません
+

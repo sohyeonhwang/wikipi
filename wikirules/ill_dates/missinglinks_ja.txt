@@ -1,0 +1,178 @@
+Wikipedia:IPブロック適用除外
+	en:Wikipedia:IP block exemption
+	es:Wikipedia:Exentos de bloqueo a IP
+
+Wikipedia:すぐに古くなる表現は使わない
+	fr:Aide:Quand
+
+Wikipedia:アイコン
+	en:Wikipedia:Manual of Style/Icons
+
+Wikipedia:アカウント作成者
+	en:Wikipedia:Account creator
+	es:Wikipedia:Creadores de cuentas
+	fr:Wikipédia:Créateur de comptes
+
+Wikipedia:インターフェース管理者
+	de:Wikipedia:Benutzeroberflächenadministratoren
+	en:Wikipedia:Interface administrators
+	es:Wikipedia:Administradores de interfaz
+	fr:Wikipédia:Administrateur d'interface
+
+Wikipedia:エチケット
+	fr:Wikipédia:Étiquette
+
+Wikipedia:オーバーサイトの方針
+	de:Wikipedia:Oversight
+	en:Wikipedia:Oversight
+	fr:Wikipédia:Masqueur de modifications
+
+Wikipedia:オーバーサイト依頼
+	de:Wikipedia:Oversight/Kontakt
+	en:Wikipedia:Requests for oversight
+
+Wikipedia:サマリースタイル
+	en:Wikipedia:Summary style
+
+Wikipedia:スタイルマニュアル
+	de:Wikipedia:Formatierung
+
+Wikipedia:スタイルマニュアル (フィクション関連)
+	de:Wikipedia:Richtlinien Fiktives
+	en:Wikipedia:Manual of Style/Writing about fiction
+	fr:Wikipédia:Conventions sur les œuvres de fiction
+
+Wikipedia:スタイルマニュアル (レイアウト)
+	de:Wikipedia:Formatvorlage/Musterartikel
+
+Wikipedia:スタイルマニュアル (人物伝)
+	en:Wikipedia:Manual of Style/Biography
+	es:Wikipedia:Manual de estilo/Biografías
+	fr:Projet:Biographie/Structure des articles
+
+Wikipedia:ハットノート
+	en:Wikipedia:Hatnote
+
+Wikipedia:ページの分割と統合
+	de:Hilfe:Artikel zusammenführen
+	es:Wikipedia:Fusiones
+
+Wikipedia:ページの編集は大胆に
+	es:Wikipedia:Sé valiente al editar páginas
+
+Wikipedia:リダイレクト
+	fr:Wikipédia:Redirections
+
+Wikipedia:五本の柱
+	es:Wikipedia:Los cinco pilares
+
+Wikipedia:保護の方針
+	es:Wikipedia:Política de protección
+	fr:Wikipédia:Niveaux de protection
+
+Wikipedia:児童・生徒の方々へ
+	en:Wikipedia:Guidance for younger editors
+	es:Wikipedia:Guía para los más pequeños
+
+Wikipedia:出典を明記する
+	de:Wikipedia:Zitierregeln
+
+Wikipedia:削除の方針
+	fr:Wikipédia:Pages à supprimer/Aide
+
+Wikipedia:削除者
+	es:Wikipedia:Propuesta de política sobre eliminadores
+
+Wikipedia:半保護の方針
+	de:Wikipedia:Pressemitteilungen/FAQ Semi-protection policy
+	en:Wikipedia:Rough guide to semi-protection
+	es:Wikipedia:Semiprotección de páginas
+	fr:Wikipédia:Semi-protection
+
+Wikipedia:各日のスタイルガイド
+	en:Wikipedia:Days of the year
+
+Wikipedia:外部リンク
+	de:Wikipedia:Weblinks
+	en:Wikipedia:External links
+
+Wikipedia:多重アカウント
+	en:Wikipedia:Sockpuppetry
+
+Wikipedia:巻き戻し者
+	es:Wikipedia:Reversores
+	fr:Wikipédia:Révocateur
+
+Wikipedia:影響が特に大きいテンプレート
+	en:Wikipedia:High-risk templates
+
+Wikipedia:復帰の方針
+	en:Wikipedia:Deletion policy#Deletion review
+
+Wikipedia:投稿ブロックの方針
+	de:Wikipedia:Benutzersperrung
+
+Wikipedia:拡張半保護の方針
+	en:Wikipedia:Rough guide to extended confirmed protection
+	fr:Wikipédia:Semi-protection étendue
+
+Wikipedia:方針とガイドライン
+	fr:Wikipédia:Règles et recommandations
+
+Wikipedia:有償の寄稿の開示
+	en:Wikipedia:Paid-contribution disclosure
+	es:Wikipedia:Ediciones remuneradas
+	fr:Wikipédia:Contributions rémunérées
+
+Wikipedia:法的な脅迫をしない
+	en:Wikipedia:No legal threats
+
+Wikipedia:特筆性 (音楽)
+	es:Wikiproyecto:Wikipedia/Políticas/IdeasRelevancia/en música
+
+Wikipedia:独立記事作成の目安
+	de:Wikipedia:Relevanzkriterien
+	fr:Wikipédia:Notoriété
+
+Wikipedia:画像利用の方針
+	fr:Wikipédia:Conventions d'utilisation des images
+
+Wikipedia:管理者の解任
+	en:Wikipedia:Removing administrator rights
+	fr:Wikipédia:Administrateur/Problème
+
+Wikipedia:翻訳のガイドライン
+	es:Wikipedia:Traducciones
+
+Wikipedia:腕ずくで解決しようとしない
+	en:Wikipedia:Do not disrupt Wikipedia to illustrate a point
+	fr:Wikipédia:Ne pas désorganiser Wikipédia pour une argumentation personnelle
+
+Wikipedia:自著作物の持ち込み
+	fr:Aide:Republication/Auteur
+
+Wikipedia:著作権
+	de:Wikipedia:Urheberrechte beachten
+
+Wikipedia:言葉を濁さない
+	es:Wikipedia:Palabras a evitar
+	fr:Wikipédia:Termes à utiliser avec précaution
+
+Wikipedia:記事どうしをつなぐ
+	de:Wikipedia:Verlinken
+
+Wikipedia:記事の所有権
+	en:Wikipedia:Ownership of content
+
+Wikipedia:記事名の付け方/鉄道
+	de:Wikipedia:Namenskonventionen/Schienenfahrzeuge
+
+Wikipedia:過剰なカテゴリ
+	en:Wikipedia:Overcategorization
+
+Wikipedia:過剰な内容の整理
+	en:Wikipedia:Handling trivia
+
+Wikipedia:雑多な内容を箇条書きした節を避ける
+	es:Wikipedia:Manual de estilo/Secciones de curiosidades
+
