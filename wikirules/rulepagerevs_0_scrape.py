@@ -13,7 +13,7 @@ These scripts invoke several non-standard libraries:
 * WikiTools - https://code.google.com/p/python-wikitools/
 * NetworkX - http://networkx.github.io/
 * Pandas - http://pandas.pydata.org/
- 
+
 This code was put together by Sohyeon Hwang (sohyeonhwang@u.northwestern.edu) in 2020.
 
 Inputs a list of rule pages (tsv)
@@ -99,10 +99,10 @@ if __name__ == "__main__":
     
     if not os.path.isdir("./{}".format(args.outdir)):
         os.mkdir("./{}".format(args.outdir))
-    if not os.path.isdir("./{}/{}_test3".format(args.outdir,timestamp)):
-        os.mkdir("./{}/{}_test3".format(args.outdir,timestamp))
+    if not os.path.isdir("./{}/{}".format(args.outdir,timestamp)):
+        os.mkdir("./{}/{}".format(args.outdir,timestamp))
 
-    outdir = "./{}/{}_test3".format(args.outdir,timestamp)
+    outdir = "./{}/{}".format(args.outdir,timestamp)
 
     rulepages = Path(os.getcwd()) / "{}wiki.tsv".format(args.lang)
     rulepages_df = pd.read_csv(rulepages,sep="\t",header=None)
@@ -122,12 +122,13 @@ if __name__ == "__main__":
     print("Getting rule page revisions...")
     temp = {}
     prev = ""
+    print(len(pagetitles))
     for p in sorted(pagetitles):
-        #print(p)
+        print(p)
         if p == prev:
             print("\n","Error! A repeat: ",p)
         prev = p
-    # get_all_page_revisions(page_title, endpoint='en.wikipedia.org/w/api.php', redirects=1, multicore_dict=None):
+        # get_all_page_revisions(page_title, endpoint='en.wikipedia.org/w/api.php', redirects=1, multicore_dict=None):
         try:
             temp.update(wf.get_all_page_revisions(p,endpoint=endpoint))
         except KeyboardInterrupt:
