@@ -60,7 +60,7 @@ Wikipedia:Deletion policy
 
 Wikipedia:Disruptive editing 
 	es:Wikipedia:Ediciones disruptivas (7 July 2014)
-	fr:Wikipédia:Contributions perturbatrices (16 May 2016‎)
+	fr:Wikipédia:Contributions perturbatrices (16 May 2016)
 	ja:Wikipedia:妨害的編集 (13 October 2014)
 
 Wikipedia:Do not create hoaxes
@@ -82,7 +82,7 @@ Wikipedia:Fringe theories
 	fr:Wikipédia:Théorie controversée (16 August 2013)
 
 Wikipedia:Gaming the system
-	fr:Wikipédia:Jouer avec les principes, règles et recommandations de Wikipédia
+	fr:Wikipédia:Jouer avec les principes, règles et recommandations de Wikipédia {24 July 2011}
 	ja:Wikipedia:規則の悪用
 
 Wikipedia:IP block exemption
