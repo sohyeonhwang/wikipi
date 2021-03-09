@@ -8,7 +8,6 @@ Wikipedia:Arbitration/Policy (14 February 2013)
 	de:Wikipedia:Schiedsgericht/Regeln (23 May 2018)
 	ja:Wikipedia:裁定の方針 (31 July 2013)
 
-***
 Wikipedia:Attack page (29 July 2013)
 	ja:Wikipedia:攻撃ページ (29 July 2013) {9 April 2012}
 
@@ -70,7 +69,6 @@ Wikipedia:Edit filter
 	de:Wikipedia:Bearbeitungsfilter (28 January 2015)
 	fr:Wikipédia:AbuseFilter (17 November 2017)
 
-***
 Wikipedia:Etiquette
 	fr:Wikipédia:Étiquette ( 22 January 2018 )
 
@@ -85,6 +83,7 @@ Wikipedia:Gaming the system
 	fr:Wikipédia:Jouer avec les principes, règles et recommandations de Wikipédia
 	ja:Wikipedia:規則の悪用
 
+***
 Wikipedia:IP block exemption
 	es:Wikipedia:Exentos de bloqueo a IP
 
