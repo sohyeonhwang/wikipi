@@ -81,161 +81,163 @@ Wikipedia:Fringe theories
 
 Wikipedia:Gaming the system
 	fr:Wikipédia:Jouer avec les principes, règles et recommandations de Wikipédia {24 July 2011}
-	ja:Wikipedia:規則の悪用
+	ja:Wikipedia:規則の悪用 (13 October 2014)
 
 ***
 Wikipedia:IP block exemption
-	es:Wikipedia:Exentos de bloqueo a IP
+	es:Wikipedia:Exentos de bloqueo a IP {26 May 2009}
 
 Wikipedia:Identifying reliable sources (medicine)
-	ja:Wikipedia:信頼できる情報源 (医学)
+	ja:Wikipedia:信頼できる情報源 (医学) (26 August 2015)
 
 Wikipedia:Image use policy
-	fr:Wikipédia:Conventions d'utilisation des images
+	fr:Wikipédia:Conventions d'utilisation des images {10 December 2003}
 
 Wikipedia:Images
-	es:Wikipedia:Imágenes
-	fr:Aide:Images
+	es:Wikipedia:Imágenes (13 May 2018)
+	fr:Aide:Images (10 August 2015)
 
 Wikipedia:Interface administrators
-	de:Wikipedia:Benutzeroberflächenadministratoren
-	es:Wikipedia:Administradores de interfaz
-	fr:Wikipédia:Administrateur d'interface
-	ja:Wikipedia:インターフェース管理者
+	de:Wikipedia:Benutzeroberflächenadministratoren (31 July 2018)
+	es:Wikipedia:Administradores de interfaz (3 August 2018)
+	fr:Wikipédia:Administrateur d'interface (30 July 2018)
+	ja:Wikipedia:インターフェース管理者 (5 May 2019)
 
 Wikipedia:Libel
-	fr:Wikipédia:Diffamation
+	fr:Wikipédia:Diffamation (20 May 2013)
 
-Wikipedia:Make technical articles understandable
-	ja:Wikipedia:専門的な記事も分かり易く
+Wikipedia:Make technical articles understandable 
+	ja:Wikipedia:専門的な記事も分かり易く (27 June 2015) 
 
 Wikipedia:Manual of Style
-	de:Wikipedia:Formatierung
+	de:Wikipedia:Formatierung [[no longer linked]]
+	+ de:Wikipedia:Formatvorlagen {19 September 2006}
 
 Wikipedia:Manual of Style/Abbreviations
-	es:Wikipedia:Manual de estilo/Abreviaturas
+	es:Wikipedia:Manual de estilo/Abreviaturas {10 July 2011}
 
 Wikipedia:Manual of Style/Accessibility
-	de:Hilfe:Textgestaltung/Barrierefreiheit
+	de:Hilfe:Textgestaltung/Barrierefreiheit [[no longer linked]]
+	+ de:Wikipedia:Barrierefreiheit {13 February 2007}
 
 Wikipedia:Manual of Style/Biography
-	es:Wikipedia:Manual de estilo/Biografías
-	fr:Projet:Biographie/Structure des articles
+	es:Wikipedia:Manual de estilo/Biografías (3 August 2015)
+	fr:Projet:Biographie/Structure des articles (22 June 2014)
 
 Wikipedia:Manual of Style/Capital letters
-	fr:Usage des majuscules en français lorsque le spécifique est un adjectif
+	fr:Usage des majuscules en français lorsque le spécifique est un adjectif (3 March 2015)
 
 Wikipedia:Manual of Style/Comics
-	de:Wikipedia:Richtlinien Comics
+	de:Wikipedia:Richtlinien Comics (12 August 2015)
 
 Wikipedia:Manual of Style/Disambiguation pages
-	es:Wikipedia:Manual de estilo/Páginas de desambiguación
+	es:Wikipedia:Manual de estilo/Páginas de desambiguación {31 March 2010}
 
 Wikipedia:Manual of Style/Film
-	fr:Wikipédia:Conventions filmographiques
-	ja:プロジェクト:映画/映画作品スタイルガイド
+	fr:Wikipédia:Conventions filmographiques (9 March 2018)
+	ja:プロジェクト:映画/映画作品スタイルガイド (31 July 2013)
 
 Wikipedia:Manual of Style/Icons
-	ja:Wikipedia:アイコン
+	ja:Wikipedia:アイコン (17 February 2018)
 
 Wikipedia:Manual of Style/Japan-related articles
-	es:Wikipedia:Manual de estilo/Artículos relacionados con Japón
+	es:Wikipedia:Manual de estilo/Artículos relacionados con Japón {25 May 2006}
 
 Wikipedia:Manual of Style/Korea-related articles
-	es:Wikipedia:Manual de estilo/Artículos relacionados con Corea
+	es:Wikipedia:Manual de estilo/Artículos relacionados con Corea (3 October 2017)
 
 Wikipedia:Manual of Style/Layout
-	de:Wikipedia:Formatvorlage/Musterartikel
+	de:Wikipedia:Formatvorlage/Musterartikel {5 April 2008}
 
 Wikipedia:Manual of Style/Medicine-related articles
-	fr:Wikipédia:Conventions de style (articles sur des sujets medicaux)
+	fr:Wikipédia:Conventions de style (articles sur des sujets medicaux) (8 March 2014)
 
 Wikipedia:Manual of Style/Music
-	de:Wikipedia:Redaktion Musik/Leitfaden Musikartikel
-	es:Wikipedia:Manual de estilo/Música
+	de:Wikipedia:Redaktion Musik/Leitfaden Musikartikel (18 May 2013)
+	es:Wikipedia:Manual de estilo/Música (15 September 2016)
 
 Wikipedia:Manual of Style/Novels
-	de:Wikipedia:Richtlinien Literarische Werke
+	de:Wikipedia:Richtlinien Literarische Werke {4 July 2013}
 
 Wikipedia:Manual of Style/Spelling
-	fr:Aide:Orthographe
+	fr:Aide:Orthographe (7 June 2013)
 
 Wikipedia:Manual of Style/Tables
-	ja:Wikipedia:スタイルマニュアル (表)
+	ja:Wikipedia:スタイルマニュアル (表) {1 December 2003}
 
 Wikipedia:Manual of Style/Trademarks
-	es:Wikipedia:Manual de estilo/Marcas
+	es:Wikipedia:Manual de estilo/Marcas (14 September 2014)
 
 Wikipedia:Manual of Style/Trivia sections
-	es:Wikipedia:Manual de estilo/Secciones de curiosidades
+	es:Wikipedia:Manual de estilo/Secciones de curiosidades {16 June 2008}
 
 Wikipedia:Manual of Style/Video games
-	de:Wikipedia:Richtlinien Computerspiele
-	es:Wikiproyecto:Videojuegos/Normas
+	de:Wikipedia:Richtlinien Computerspiele (12 August 2015)
+	es:Wikiproyecto:Videojuegos/Normas (9 April 2014)
 
 Wikipedia:Manual of Style/Visual arts
-	de:Wikipedia:Richtlinien bildende Kunst
-	es:Wikipedia:Convención sobre fuentes de relevancia para artistas plásticos contemporáneos
+	de:Wikipedia:Richtlinien bildende Kunst (17 July 2013)
+	es:Wikipedia:Convención sobre fuentes de relevancia para artistas plásticos contemporáneos (17 July 2013)
 
 Wikipedia:Manual of Style/Words to watch
-	de:Wikipedia:Vermeide hohle Phrasen
-	es:Wikipedia:Palabras a evitar
-	ja:Wikipedia:言葉を濁さない
+	de:Wikipedia:Vermeide hohle Phrasen (15 February 2013)
+	es:Wikipedia:Palabras a evitar {25 May 2010}
+	ja:Wikipedia:言葉を濁さない {25 May 2010}
 
 Wikipedia:Manual of Style/Writing about fiction
-	fr:Wikipédia:Conventions sur les œuvres de fiction
-	ja:Wikipedia:スタイルマニュアル (フィクション関連)
+	fr:Wikipédia:Conventions sur les œuvres de fiction {30 August 2008}
+	ja:Wikipedia:スタイルマニュアル (フィクション関連) {4 August 2009}
 
 Wikipedia:Naming conventions (Chinese)
-	fr:Wikipédia:Transcription du chinois
+	fr:Wikipédia:Transcription du chinois (23 May 2015)
 
 Wikipedia:Naming conventions (Greek)
-	es:Wikipedia:Transliteración/Griego
+	es:Wikipedia:Transliteración/Griego (27 August 2013)
 
 Wikipedia:Naming conventions (aircraft)
-	de:Portal:Luftfahrt/Namenskonventionen
+	de:Portal:Luftfahrt/Namenskonventionen {2 July 2010}
 
 Wikipedia:Naming conventions (companies)
-	fr:Wikipédia:Conventions concernant les titres d'entreprises
+	fr:Wikipédia:Conventions concernant les titres d'entreprises {3 January 2009}
 
 Wikipedia:Naming conventions (geographic names)
-	es:Wikipedia:Topónimos de España
+	es:Wikipedia:Topónimos de España (31 July 2013)
 
 Wikipedia:Naming conventions (technical restrictions)
-	de:Hilfe:Seitenname
+	de:Hilfe:Seitenname {3 August 2005}
 
 Wikipedia:New pages patrol/Reviewers
-	es:Wikipedia:Verificadores
+	es:Wikipedia:Verificadores (4 August 2020)
 
 Wikipedia:Non-U.S. copyrights
-	ja:Wikipedia:アメリカ合衆国以外の国と地域で公表された著作物の著作権について
+	ja:Wikipedia:アメリカ合衆国以外の国と地域で公表された著作物の著作権について (9 February 2016)
 
 Wikipedia:Non-free content
-	es:Wikipedia:Sobre el uso legítimo
+	es:Wikipedia:Sobre el uso legítimo (15 February 2013)
 
 Wikipedia:Notability
-	fr:Wikipédia:Notoriété
-	ja:Wikipedia:独立記事作成の目安
+	fr:Wikipédia:Notoriété {27 May 2012}
+	ja:Wikipedia:独立記事作成の目安 {27 May 2012}
 
 Wikipedia:Notability (books)
-	ja:Wikipedia:特筆性 (書籍)
+	ja:Wikipedia:特筆性 (書籍) (10 January 2015)
 
 Wikipedia:Notability (events)
-	fr:Wikipédia:Notoriété des événements
-	ja:Wikipedia:特筆性 (事件)
+	fr:Wikipédia:Notoriété des événements {6 January 2013}
+	ja:Wikipedia:特筆性 (事件) (1 June 2019)
 
 Wikipedia:Notability (geographic features)
-	fr:Wikipédia:Notoriété des lieux géographiques
+	fr:Wikipédia:Notoriété des lieux géographiques (8 December 2016)
 
 Wikipedia:Notability (music)
-	es:Wikiproyecto:Wikipedia/Políticas/IdeasRelevancia/en música
+	es:Wikiproyecto:Wikipedia/Políticas/IdeasRelevancia/en música (31 July 2013)
 
-Wikipedia:Notability (sports)
-	de:Portal:Sport/Relevanzkriterien Mannschaftssport
-	es:Wikiproyecto:Wikipedia/Políticas/IdeasRelevancia/en deportes
+Wikipedia:Notability (sports) 
+	de:Portal:Sport/Relevanzkriterien Mannschaftssport {27 October 2011}
+	es:Wikiproyecto:Wikipedia/Políticas/IdeasRelevancia/en deportes (31 July 2013)
 
 Wikipedia:Oversight
-	es:Wikipedia:Supresores
+	es:Wikipedia:Supresores {20 February 2009}
 
 Wikipedia:Ownership of content
 	fr:Wikipédia:Appropriation d'un article
