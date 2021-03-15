@@ -240,66 +240,66 @@ Wikipedia:Oversight
 	es:Wikipedia:Supresores {20 February 2009}
 
 Wikipedia:Ownership of content
-	fr:Wikipédia:Appropriation d'un article
+	fr:Wikipédia:Appropriation d'un article {29 August 2009}
 
 Wikipedia:Paid-contribution disclosure
-	es:Wikipedia:Ediciones remuneradas
-	fr:Wikipédia:Contributions rémunérées
-	ja:Wikipedia:有償の寄稿の開示
+	es:Wikipedia:Ediciones remuneradas (8 December 2016)
+	fr:Wikipédia:Contributions rémunérées (13 June 2016)
+	ja:Wikipedia:有償の寄稿の開示 (7 May 2017)
 
 Wikipedia:Plagiarism
-	ja:Wikipedia:剽窃
+	ja:Wikipedia:剽窃 (23 March 2013)
 
 Wikipedia:Policies and guidelines
-	fr:Wikipédia:Règles et recommandations
+	fr:Wikipédia:Règles et recommandations {26 February 2003}
 
 Wikipedia:Protection policy
-	fr:Wikipédia:Niveaux de protection
+	fr:Wikipédia:Niveaux de protection {7 December 2003}
 
 Wikipedia:Record charts
-	de:Wikipedia:Formatvorlage Charts
-	fr:Wikipédia:Classement musical
+	de:Wikipedia:Formatvorlage Charts (20 September 2015)
+	fr:Wikipédia:Classement musical (31 May 2019)
 
 Wikipedia:Red link
-	fr:Aide:Liens rouges
+	fr:Aide:Liens rouges (5 June 2013)
 
 Wikipedia:Redirect
-	fr:Wikipédia:Redirections
+	fr:Wikipédia:Redirections (5 January 2005)
 
 Wikipedia:Reliable sources
-	fr:Wikipédia:Sources fiables
+	fr:Wikipédia:Sources fiables {19 January 2009}
 
 Wikipedia:Responding to threats of harm
-	fr:Wikipédia:Que faire en cas d'urgence ?
+	fr:Wikipédia:Que faire en cas d'urgence ? (4 February 2014)
 
 Wikipedia:Reusing Wikipedia content
-	ja:Wikipedia:ウィキペディアを二次利用する
+	ja:Wikipedia:ウィキペディアを二次利用する (1 March 2014)
 
 Wikipedia:Reviewing pending changes
-	de:Wikipedia:Gesichtete Versionen
+	de:Wikipedia:Gesichtete Versionen (7 March 2014)
 
 Wikipedia:Revision deletion
-	fr:Wikipédia:Demande de purge d'historique
+	fr:Wikipédia:Demande de purge d'historique {1 August 2009}
 
 Wikipedia:Rollback
-	fr:Wikipédia:Révocateur
+	fr:Wikipédia:Révocateur (8 June 2015)
 
 Wikipedia:Soft redirect
-	es:Ayuda:Redirección suave
+	es:Ayuda:Redirección suave (22 January 2019)
 
 Wikipedia:Stub
-	de:Wikipedia:Lückenhaft
+	de:Wikipedia:Lückenhaft {25 June 2005}
 
 Wikipedia:Summary style
-	ja:Wikipedia:サマリースタイル
+	ja:Wikipedia:サマリースタイル (15 February 2013)
 
 Wikipedia:Talk page guidelines
-	de:Wikipedia:Diskussionsseiten
-	ja:Wikipedia:ノートページのガイドライン
+	de:Wikipedia:Diskussionsseiten (30 May 2013)
+	ja:Wikipedia:ノートページのガイドライン {17 December 2007}
 
 Wikipedia:Userboxes
-	fr:Wikipédia:Boîte utilisateur
+	fr:Wikipédia:Boîte utilisateur {11 December 2005}
 
 Wikipedia:Wikipedia is not a dictionary
-	ja:Wikipedia:ウィキペディアは辞書ではありません
+	ja:Wikipedia:ウィキペディアは辞書ではありません {18 October 2003}
 
