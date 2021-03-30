@@ -1,191 +1,191 @@
 Wikipédia:Contributions rémunérées
-	en:Wikipedia:Paid-contribution disclosure
-	es:Wikipedia:Ediciones remuneradas
-	ja:Wikipedia:有償の寄稿の開示
+	en:Wikipedia:Paid-contribution disclosure (23 August 2015)
+	es:Wikipedia:Ediciones remuneradas (12 February 2020)
+	ja:Wikipedia:有償の寄稿の開示 (7 May 2017)
 
 Wikipédia:AbuseFilter
-	de:Wikipedia:Bearbeitungsfilter
-	en:Wikipedia:Edit filter
-	es:Wikipedia:Filtro de ediciones
-	ja:Wikipedia:編集フィルター
+	de:Wikipedia:Bearbeitungsfilter {23 February 2010}
+	en:Wikipedia:Edit filter {23 February 2010}
+	es:Wikipedia:Filtro de ediciones (14 February 2013)
+	ja:Wikipedia:編集フィルター (14 February 2013)
 
 Wikipédia:Actions administratives (WMF)
-	de:Wikipedia:Office Action
-	en:Wikipedia:Office actions
-	ja:Wikipedia:事務局行動
+	de:Wikipedia:Office Action (15 April 2013)
+	en:Wikipedia:Office actions (15 April 2013)
+	ja:Wikipedia:事務局行動 (15 April 2013)
 
 Wikipédia:Autobiographie
-	ja:Wikipedia:自分自身の記事
+	ja:Wikipedia:自分自身の記事 {8 January 2007}
 
 Wikipédia:Blocage en écriture
-	de:Wikipedia:Benutzersperrung
+	de:Wikipedia:Benutzersperrung (30 September 2015)
 
 Wikipédia:Citation
-	de:Wikipedia:Zitate
-	ja:Wikipedia:著作権で保護されている文章等の引用に関する方針
+	de:Wikipedia:Zitate (21 October 2013)
+	ja:Wikipedia:著作権で保護されている文章等の引用に関する方針 {27 March 2012}
 
 Wikipédia:Citez vos sources
-	de:Wikipedia:Zitierregeln
+	de:Wikipedia:Zitierregeln {6 October 2005}
 
 Wikipédia:Conflit d'intérêts
-	en:Wikipedia:Conflict of interest
-	es:Wikipedia:Conflicto de interés
+	en:Wikipedia:Conflict of interest {6 December 2006}
+	es:Wikipedia:Conflicto de interés {3 October 2010}
 
 Wikipédia:Contestation du statut d'administrateur
-	en:Wikipedia:Requests for de-adminship
+	en:Wikipedia:Requests for de-adminship (29 October 2013)
 
 Wikipédia:Conventions bibliographiques
-	en:Help:Overview of referencing styles
+	en:Help:Overview of referencing styles (29 March 2013)
 
 Wikipédia:Conventions concernant les nombres
-	en:Wikipedia:Manual of Style/Dates and numbers
+	en:Wikipedia:Manual of Style/Dates and numbers {21 August 2006}
 
 Wikipédia:Conventions de plan
-	de:Wikipedia:Formatvorlage/Musterartikel
+	de:Wikipedia:Formatvorlage/Musterartikel {31 December 2010}
 
 Wikipédia:Conventions de style
-	de:Wikipedia:Formatierung
+	de:Wikipedia:Formatierung {19 September 2006}
 
 Wikipédia:Conventions filmographiques
-	en:Wikipedia:Manual of Style/Film
-	ja:プロジェクト:映画/映画作品スタイルガイド
+	en:Wikipedia:Manual of Style/Film (3 May 2013)
+	ja:プロジェクト:映画/映画作品スタイルガイド (31 July 2013)
 
 Wikipédia:Critères spécifiques de notoriété
-	en:Wikipedia:Subject-specific guidelines proposal
+	en:Wikipedia:Subject-specific guidelines proposal (15 October 2013)
 
 Wikipédia:Discuter au lieu de voter
-	de:Wikipedia:Nimm nicht an Abstimmungen teil
+	de:Wikipedia:Nimm nicht an Abstimmungen teil {2 January 2011}
 
 Wikipédia:Droit d'auteur
-	de:Wikipedia:Urheberrechte beachten
+	de:Wikipedia:Urheberrechte beachten {9 December 2003}
 
 Wikipédia:Exceptions au droit d'auteur
-	en:Wikipedia:Non-free content criteria
-	ja:Wikipedia:フリーでないコンテントの使用基準
+	en:Wikipedia:Non-free content criteria {10 March 2004}
+	ja:Wikipedia:フリーでないコンテントの使用基準 {4 March 2008}
 
 Wikipédia:Faux-nez
-	en:Wikipedia:Sockpuppetry
+	en:Wikipedia:Sockpuppetry {16 July 2004}
 
 Wikipédia:Harcèlement
-	en:Wikipedia:Harassment
-	es:Wikipedia:Acoso
+	en:Wikipedia:Harassment {13 March 2013}
+	es:Wikipedia:Acoso {13 March 2013}
 
 Wikipédia:Interprétation créative des règles
-	de:Wikipedia:Ignoriere alle Regeln
-	en:Wikipedia:Ignore all rules
-	es:Wikipedia:Ignora las normas
+	de:Wikipedia:Ignoriere alle Regeln {8 June 2006}
+	en:Wikipedia:Ignore all rules {8 June 2006}
+	es:Wikipedia:Ignora las normas {8 June 2006}
 
 Wikipédia:Jouer avec les principes, règles et recommandations de Wikipédia
-	ja:Wikipedia:規則の悪用
+	ja:Wikipedia:規則の悪用 {29 March 2004}
 
 Wikipédia:Liens externes
-	ja:Wikipedia:外部リンク
+	ja:Wikipedia:外部リンク {19 December 2007}
 
 Wikipédia:Liens internes
-	en:Wikipedia:Tutorial (historical)/Wikipedia links
+	en:Wikipedia:Tutorial (historical)/Wikipedia links {1 April 2009}
 
 Wikipédia:Mise en forme des images
-	en:Wikipedia:Picture tutorial
+	en:Wikipedia:Picture tutorial {19 June 2008}
 
 Wikipédia:Mobile
-	de:Wikipedia:Unterwegs
-	en:Help:Mobile access
-	ja:Help:携帯端末でのアクセス
+	de:Wikipedia:Unterwegs (24 April 203)
+	en:Help:Mobile access (17 April 2013)
+	ja:Help:携帯端末でのアクセス (20 November 2015)
 
 Wikipédia:N'hésitez pas !
-	es:Wikipedia:Sé valiente al editar páginas
+	es:Wikipedia:Sé valiente al editar páginas {11 August 2005}
 
 Wikipédia:Ne jouez pas au con !
-	en:Wikipedia:Don't be a jerk
-	es:Wikipedia:No seas estúpido
+	en:Wikipedia:Don't be a jerk (16 April 2013)
+	es:Wikipedia:No seas estúpido (16 April 2013)
 
 Wikipédia:Nom d'utilisateur connu
-	de:Wikipedia:Benutzerverifizierung
+	de:Wikipedia:Benutzerverifizierung (9 September 2019)
 
 Wikipédia:Notoriété
-	de:Wikipedia:Relevanzkriterien
-	en:Wikipedia:Notability
-	es:Wikipedia:Artículos sin relevancia aparente
-	ja:Wikipedia:独立記事作成の目安
+	de:Wikipedia:Relevanzkriterien (15 February 2013)
+	en:Wikipedia:Notability {13 August 2012}
+	es:Wikipedia:Artículos sin relevancia aparente (15 February 2013)
+	ja:Wikipedia:独立記事作成の目安 (15 February 2013)
 
 Wikipédia:Notoriété dans le football
-	en:Wikipedia:WikiProject Football/Notability
+	en:Wikipedia:WikiProject Football/Notability (19 May 2013)
 
 Wikipédia:Notoriété de la musique
-	es:Wikiproyecto:Wikipedia/Políticas/IdeasRelevancia/en música
+	es:Wikiproyecto:Wikipedia/Políticas/IdeasRelevancia/en música (30 July 2013)
 
 Wikipédia:Notoriété des jeux de société
-	en:Wikipedia:Notability (video games)
+	en:Wikipedia:Notability (video games) (7 June 2013)
 
 Wikipédia:Notoriété des sportifs
-	de:Portal:Sport/Relevanzkriterien Mannschaftssport
-	en:Wikipedia:Notability (sports)
-	es:Wikiproyecto:Wikipedia/Políticas/IdeasRelevancia/en deportes
+	de:Portal:Sport/Relevanzkriterien Mannschaftssport (30 July 2013)
+	en:Wikipedia:Notability (sports) (25 April 2013)
+	es:Wikiproyecto:Wikipedia/Políticas/IdeasRelevancia/en deportes (31 July 2013)
 
 Wikipédia:Notoriété des événements
-	en:Wikipedia:Notability (events)
-	ja:Wikipedia:特筆性 (事件)
+	en:Wikipedia:Notability (events) {4 January 2013}
+	ja:Wikipedia:特筆性 (事件) (1 June 2019)
 
 Wikipédia:Nouveau départ
-	en:Wikipedia:Clean start
-	ja:Wikipedia:再出発の方針
+	en:Wikipedia:Clean start {18 October 2012}
+	ja:Wikipedia:再出発の方針 (23 November 2013)
 
 Wikipédia:Pantin
-	en:Wikipedia:Sock puppetry#Meatpuppetry
+	en:Wikipedia:Sock puppetry#Meatpuppetry {4 March 2015}
 
 Wikipédia:Restriction thématique
-	en:Wikipedia:Banning policy#Topic ban
+	en:Wikipedia:Banning policy#Topic ban {29 December 2014}
 
 Wikipédia:Règle des trois révocations
-	ja:Wikipedia:スリー・リバート・ルール
+	ja:Wikipedia:スリー・リバート・ルール {25 May 2006}
 
 Wikipédia:Révocateur
-	en:Wikipedia:Rollback
-	es:Wikipedia:Reversores
-	ja:Wikipedia:巻き戻し者
+	en:Wikipedia:Rollback (23 February 2013)
+	es:Wikipedia:Reversores (23 February 2013)
+	ja:Wikipedia:巻き戻し者 (14 March 2013)
 
 Wikipédia:Sections anecdotiques
-	en:Wikipedia:Manual of Style/Trivia sections
-	es:Wikipedia:Manual de estilo/Secciones de curiosidades
+	en:Wikipedia:Manual of Style/Trivia sections {27 November 2008}
+	es:Wikipedia:Manual de estilo/Secciones de curiosidades {27 November 2008}
 
 Wikipédia:Semi-protection
-	de:Wikipedia:Pressemitteilungen/FAQ Semi-protection policy
-	en:Wikipedia:Rough guide to semi-protection
-	es:Wikipedia:Semiprotección de páginas
+	de:Wikipedia:Pressemitteilungen/FAQ Semi-protection policy (1 November 2017)
+	en:Wikipedia:Rough guide to semi-protection {26 December 2005}
+	es:Wikipedia:Semiprotección de páginas {26 December 2005}
 
 Wikipédia:Semi-protection étendue
-	en:Wikipedia:Rough guide to extended confirmed protection
-	ja:Wikipedia:拡張半保護の方針
+	en:Wikipedia:Rough guide to extended confirmed protection (1 November 2017)
+	ja:Wikipedia:拡張半保護の方針 (9 April 2020)
 
 Wikipédia:Sources primaires, secondaires et tertiaires
-	en:Wikipedia:Identifying and using primary sources
+	en:Wikipedia:Identifying and using primary sources {7 March 2013}
 
 Wikipédia:Supposer la bonne foi
-	de:Wikipedia:Geh von guten Absichten aus
-	es:Wikipedia:Presume buena fe
+	de:Wikipedia:Geh von guten Absichten aus {9 October 2006}
+	es:Wikipedia:Presume buena fe {9 October 2006}
 
 Wikipédia:Termes à utiliser avec précaution
-	de:Wikipedia:Vermeide hohle Phrasen
-	en:Wikipedia:Manual of Style/Words to watch
-	ja:Wikipedia:言葉を濁さない
+	de:Wikipedia:Vermeide hohle Phrasen {25 December 2005}
+	en:Wikipedia:Manual of Style/Words to watch {25 December 2005}
+	ja:Wikipedia:言葉を濁さない {4 March 2008}
 
 Wikipédia:Résumé de modification
 	de:Hilfe:Zusammenfassung und Quellen
-	en:Help:Edit summary
-	ja:Help:要約欄
+	en:Help:Edit summary (13 February 2013)
+	ja:Help:要約欄 (13 February 2013)
 
 Wikipédia:Transcription du chinois
-	de:Wikipedia:Namenskonventionen/Chinesisch
-	en:Wikipedia:Naming conventions (Chinese)
+	de:Wikipedia:Namenskonventionen/Chinesisch (30 July 2013)
+	en:Wikipedia:Naming conventions (Chinese) (15 February 2013)
 
 Wikipédia:Transcription du japonais
-	es:Wikipedia:Manual de estilo/Artículos relacionados con Japón
+	es:Wikipedia:Manual de estilo/Artículos relacionados con Japón {November 5 2010}
 
 Wikipédia:Wikipédia n'est pas un dictionnaire
-	ja:Wikipedia:ウィキペディアは辞書ではありません
+	ja:Wikipedia:ウィキペディアは辞書ではありません {13 January 2005}
 
 Wikipédia:Étiquette
-	de:Wikipedia:Wikiquette
-	es:Wikipedia:Etiqueta
-	ja:Wikipedia:エチケット
+	de:Wikipedia:Wikiquette (20 March 2014)
+	es:Wikipedia:Etiqueta (20 March 2014)
+	ja:Wikipedia:エチケット (20 March 2014)
 
