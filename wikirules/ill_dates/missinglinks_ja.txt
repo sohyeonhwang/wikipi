@@ -1,178 +1,178 @@
 Wikipedia:IPブロック適用除外
-	en:Wikipedia:IP block exemption
-	es:Wikipedia:Exentos de bloqueo a IP
+	en:Wikipedia:IP block exemption {8 May 2009}
+	es:Wikipedia:Exentos de bloqueo a IP {25 September 2009}
 
 Wikipedia:すぐに古くなる表現は使わない
-	fr:Aide:Quand
+	fr:Aide:Quand (16 April 2020)
 
 Wikipedia:アイコン
-	en:Wikipedia:Manual of Style/Icons
+	en:Wikipedia:Manual of Style/Icons (25 June 2013)
 
 Wikipedia:アカウント作成者
-	en:Wikipedia:Account creator
-	es:Wikipedia:Creadores de cuentas
-	fr:Wikipédia:Créateur de comptes
+	en:Wikipedia:Account creator (15 May 2013)
+	es:Wikipedia:Creadores de cuentas (1 October 2016)
+	fr:Wikipédia:Créateur de comptes (18 May 2013)
 
 Wikipedia:インターフェース管理者
-	de:Wikipedia:Benutzeroberflächenadministratoren
-	en:Wikipedia:Interface administrators
-	es:Wikipedia:Administradores de interfaz
-	fr:Wikipédia:Administrateur d'interface
+	de:Wikipedia:Benutzeroberflächenadministratoren (31 July 2018)
+	en:Wikipedia:Interface administrators (30 July 2018)
+	es:Wikipedia:Administradores de interfaz (3 August 2018)
+	fr:Wikipédia:Administrateur d'interface (30 July 2018)
 
 Wikipedia:エチケット
-	fr:Wikipédia:Étiquette
+	fr:Wikipédia:Étiquette {7 September 2004}
 
 Wikipedia:オーバーサイトの方針
-	de:Wikipedia:Oversight
-	en:Wikipedia:Oversight
-	fr:Wikipédia:Masqueur de modifications
+	de:Wikipedia:Oversight {27 March 2011}
+	en:Wikipedia:Oversight {27 March 2011}
+	fr:Wikipédia:Masqueur de modifications {27 March 2011}
 
 Wikipedia:オーバーサイト依頼
-	de:Wikipedia:Oversight/Kontakt
-	en:Wikipedia:Requests for oversight
+	de:Wikipedia:Oversight/Kontakt (15 August 2014)
+	en:Wikipedia:Requests for oversight {26 March 2011}
 
 Wikipedia:サマリースタイル
-	en:Wikipedia:Summary style
+	en:Wikipedia:Summary style {31 August 2012}
 
 Wikipedia:スタイルマニュアル
-	de:Wikipedia:Formatierung
+	de:Wikipedia:Formatierung (15 February 2013)
 
 Wikipedia:スタイルマニュアル (フィクション関連)
-	de:Wikipedia:Richtlinien Fiktives
-	en:Wikipedia:Manual of Style/Writing about fiction
-	fr:Wikipédia:Conventions sur les œuvres de fiction
+	de:Wikipedia:Richtlinien Fiktives (12 August 2015)
+	en:Wikipedia:Manual of Style/Writing about fiction (7 June 2013)
+	fr:Wikipédia:Conventions sur les œuvres de fiction {10 July 2009}
 
 Wikipedia:スタイルマニュアル (レイアウト)
-	de:Wikipedia:Formatvorlage/Musterartikel
+	de:Wikipedia:Formatvorlage/Musterartikel {5 April 2008}
 
 Wikipedia:スタイルマニュアル (人物伝)
-	en:Wikipedia:Manual of Style/Biography
-	es:Wikipedia:Manual de estilo/Biografías
-	fr:Projet:Biographie/Structure des articles
+	en:Wikipedia:Manual of Style/Biography {28 November 2003}
+	es:Wikipedia:Manual de estilo/Biografías (3 August 2015)
+	fr:Projet:Biographie/Structure des articles (22 June 2014)
 
 Wikipedia:ハットノート
-	en:Wikipedia:Hatnote
+	en:Wikipedia:Hatnote {3 February 2008}
 
 Wikipedia:ページの分割と統合
-	de:Hilfe:Artikel zusammenführen
-	es:Wikipedia:Fusiones
+	de:Hilfe:Artikel zusammenführen {29 October 2007}
+	es:Wikipedia:Fusiones {29 October 2007}
 
 Wikipedia:ページの編集は大胆に
-	es:Wikipedia:Sé valiente al editar páginas
+	es:Wikipedia:Sé valiente al editar páginas {23 March 2004}
 
 Wikipedia:リダイレクト
-	fr:Wikipédia:Redirections
+	fr:Wikipédia:Redirections {8 February 2005}
 
 Wikipedia:五本の柱
-	es:Wikipedia:Los cinco pilares
+	es:Wikipedia:Los cinco pilares {7 November 2006}
 
 Wikipedia:保護の方針
-	es:Wikipedia:Política de protección
-	fr:Wikipédia:Niveaux de protection
+	es:Wikipedia:Política de protección (14 February 2013)
+	fr:Wikipédia:Niveaux de protection {19 March 2004}
 
 Wikipedia:児童・生徒の方々へ
-	en:Wikipedia:Guidance for younger editors
-	es:Wikipedia:Guía para los más pequeños
+	en:Wikipedia:Guidance for younger editors {4 September 2011}
+	es:Wikipedia:Guía para los más pequeños (30 June 2013)
 
 Wikipedia:出典を明記する
-	de:Wikipedia:Zitierregeln
+	de:Wikipedia:Zitierregeln {20 January 2006}
 
 Wikipedia:削除の方針
-	fr:Wikipédia:Pages à supprimer/Aide
+	fr:Wikipédia:Pages à supprimer/Aide {3 November 2007}
 
 Wikipedia:削除者
-	es:Wikipedia:Propuesta de política sobre eliminadores
+	es:Wikipedia:Propuesta de política sobre eliminadores (12 April 2013)
 
 Wikipedia:半保護の方針
-	de:Wikipedia:Pressemitteilungen/FAQ Semi-protection policy
-	en:Wikipedia:Rough guide to semi-protection
-	es:Wikipedia:Semiprotección de páginas
-	fr:Wikipédia:Semi-protection
+	de:Wikipedia:Pressemitteilungen/FAQ Semi-protection policy (1 November 2017)
+	en:Wikipedia:Rough guide to semi-protection {28 December 2005}
+	es:Wikipedia:Semiprotección de páginas {28 December 2005}
+	fr:Wikipédia:Semi-protection {28 December 2005}
 
 Wikipedia:各日のスタイルガイド
-	en:Wikipedia:Days of the year
+	en:Wikipedia:Days of the year {4 April 2004}
 
 Wikipedia:外部リンク
-	de:Wikipedia:Weblinks
-	en:Wikipedia:External links
+	de:Wikipedia:Weblinks {24 November 2006}
+	en:Wikipedia:External links {24 November 2006}
 
 Wikipedia:多重アカウント
-	en:Wikipedia:Sockpuppetry
+	en:Wikipedia:Sockpuppetry {5 September 2004}
 
 Wikipedia:巻き戻し者
-	es:Wikipedia:Reversores
-	fr:Wikipédia:Révocateur
+	es:Wikipedia:Reversores {22 January 2012}
+	fr:Wikipédia:Révocateur (8 June 2015)
 
 Wikipedia:影響が特に大きいテンプレート
-	en:Wikipedia:High-risk templates
+	en:Wikipedia:High-risk templates {2 December 2007}
 
 Wikipedia:復帰の方針
-	en:Wikipedia:Deletion policy#Deletion review
+	en:Wikipedia:Deletion policy#Deletion review {14 March 2005}
 
 Wikipedia:投稿ブロックの方針
-	de:Wikipedia:Benutzersperrung
+	de:Wikipedia:Benutzersperrung (30 September 2015)
 
 Wikipedia:拡張半保護の方針
-	en:Wikipedia:Rough guide to extended confirmed protection
-	fr:Wikipédia:Semi-protection étendue
+	en:Wikipedia:Rough guide to extended confirmed protection (1 November 2017)
+	fr:Wikipédia:Semi-protection étendue (1 November 2017)
 
 Wikipedia:方針とガイドライン
-	fr:Wikipédia:Règles et recommandations
+	fr:Wikipédia:Règles et recommandations {22 June 2003}
 
 Wikipedia:有償の寄稿の開示
-	en:Wikipedia:Paid-contribution disclosure
-	es:Wikipedia:Ediciones remuneradas
-	fr:Wikipédia:Contributions rémunérées
+	en:Wikipedia:Paid-contribution disclosure (23 August 2015)
+	es:Wikipedia:Ediciones remuneradas (12 February 2020)
+	fr:Wikipédia:Contributions rémunérées (13 June 2016)
 
 Wikipedia:法的な脅迫をしない
-	en:Wikipedia:No legal threats
+	en:Wikipedia:No legal threats {15 April 2004}
 
 Wikipedia:特筆性 (音楽)
-	es:Wikiproyecto:Wikipedia/Políticas/IdeasRelevancia/en música
+	es:Wikiproyecto:Wikipedia/Políticas/IdeasRelevancia/en música (31 July 2013)
 
 Wikipedia:独立記事作成の目安
-	de:Wikipedia:Relevanzkriterien
-	fr:Wikipédia:Notoriété
+	de:Wikipedia:Relevanzkriterien {5 December 2006}
+	fr:Wikipédia:Notoriété {5 December 2006}
 
 Wikipedia:画像利用の方針
-	fr:Wikipédia:Conventions d'utilisation des images
+	fr:Wikipédia:Conventions d'utilisation des images {9 February 2005}
 
 Wikipedia:管理者の解任
-	en:Wikipedia:Removing administrator rights
-	fr:Wikipédia:Administrateur/Problème
+	en:Wikipedia:Removing administrator rights {8 December 2007}
+	fr:Wikipédia:Administrateur/Problème (5 May 2014)
 
 Wikipedia:翻訳のガイドライン
-	es:Wikipedia:Traducciones
+	es:Wikipedia:Traducciones {20 June 2012}
 
 Wikipedia:腕ずくで解決しようとしない
-	en:Wikipedia:Do not disrupt Wikipedia to illustrate a point
-	fr:Wikipédia:Ne pas désorganiser Wikipédia pour une argumentation personnelle
+	en:Wikipedia:Do not disrupt Wikipedia to illustrate a point {14 August 2007}
+	fr:Wikipédia:Ne pas désorganiser Wikipédia pour une argumentation personnelle {14 August 2007}
 
 Wikipedia:自著作物の持ち込み
-	fr:Aide:Republication/Auteur
+	fr:Aide:Republication/Auteur (4 July 2018)
 
 Wikipedia:著作権
-	de:Wikipedia:Urheberrechte beachten
+	de:Wikipedia:Urheberrechte beachten {13 July 2008}
 
 Wikipedia:言葉を濁さない
-	es:Wikipedia:Palabras a evitar
-	fr:Wikipédia:Termes à utiliser avec précaution
+	es:Wikipedia:Palabras a evitar (6 April 2013)
+	fr:Wikipédia:Termes à utiliser avec précaution {26 December 2005}
 
 Wikipedia:記事どうしをつなぐ
-	de:Wikipedia:Verlinken
+	de:Wikipedia:Verlinken (7 April 2019)
 
 Wikipedia:記事の所有権
-	en:Wikipedia:Ownership of content
+	en:Wikipedia:Ownership of content {12 April 2004}
 
 Wikipedia:記事名の付け方/鉄道
-	de:Wikipedia:Namenskonventionen/Schienenfahrzeuge
+	de:Wikipedia:Namenskonventionen/Schienenfahrzeuge (4 October 2014)
 
 Wikipedia:過剰なカテゴリ
-	en:Wikipedia:Overcategorization
+	en:Wikipedia:Overcategorization {6 February 2010}
 
 Wikipedia:過剰な内容の整理
-	en:Wikipedia:Handling trivia
+	en:Wikipedia:Handling trivia (31 January 2015)
 
 Wikipedia:雑多な内容を箇条書きした節を避ける
-	es:Wikipedia:Manual de estilo/Secciones de curiosidades
+	es:Wikipedia:Manual de estilo/Secciones de curiosidades {19 January 2009}
 
