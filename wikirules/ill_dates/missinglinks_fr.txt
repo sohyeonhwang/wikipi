@@ -88,7 +88,7 @@ Wikipédia:Mise en forme des images
 	en:Wikipedia:Picture tutorial {19 June 2008}
 
 Wikipédia:Mobile
-	de:Wikipedia:Unterwegs (24 April 203)
+	de:Wikipedia:Unterwegs (24 April 2013)
 	en:Help:Mobile access (17 April 2013)
 	ja:Help:携帯端末でのアクセス (20 November 2015)
 
@@ -170,7 +170,7 @@ Wikipédia:Termes à utiliser avec précaution
 	ja:Wikipedia:言葉を濁さない {4 March 2008}
 
 Wikipédia:Résumé de modification
-	de:Hilfe:Zusammenfassung und Quellen
+	de:Hilfe:Zusammenfassung und Quellen (12 March 2013)
 	en:Help:Edit summary (13 February 2013)
 	ja:Help:要約欄 (13 February 2013)
 
@@ -179,7 +179,7 @@ Wikipédia:Transcription du chinois
 	en:Wikipedia:Naming conventions (Chinese) (15 February 2013)
 
 Wikipédia:Transcription du japonais
-	es:Wikipedia:Manual de estilo/Artículos relacionados con Japón {November 5 2010}
+	es:Wikipedia:Manual de estilo/Artículos relacionados con Japón {5 November 2010}
 
 Wikipédia:Wikipédia n'est pas un dictionnaire
 	ja:Wikipedia:ウィキペディアは辞書ではありません {13 January 2005}
