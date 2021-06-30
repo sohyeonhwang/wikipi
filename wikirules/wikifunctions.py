@@ -261,7 +261,6 @@ def get_redirects_map(page_list, endpoint="en.wikipedia.org/w/api.php"):
             
     return redirects_d
         
-
 def resolve_redirects(page_list,endpoint="en.wikipedia.org/w/api.php"):
     resolved_page_list = []
     
@@ -473,7 +472,6 @@ def get_page_outlinks(page_title, endpoint='en.wikipedia.org/w/api.php', redirec
     else:
         multicore_dict[final_title] = links
     
-    
 def get_revision_outlinks(revid, endpoint='en.wikipedia.org/w/api.php', multicore_dict=None):
     """Takes a page title and returns a list of wiki-links on the page. The 
     list may contain duplicates and the position in the list is approximately 
@@ -682,7 +680,6 @@ def get_page_content(page_title, endpoint='en.wikipedia.org/w/api.php', redirect
     if 'parse' in json_response.keys():
         return parse_to_text(json_response,parsed_text)
     
-    
 def get_revision_content(revid,endpoint='en.wikipedia.org/w/api.php',parsed_text=1):
     """Takes a page_title and returns a (large) string of the content 
     of the revision.
@@ -715,7 +712,6 @@ def get_revision_content(revid,endpoint='en.wikipedia.org/w/api.php',parsed_text
     
     if 'parse' in json_response.keys():
         return parse_to_text(json_response,parsed_text)
-    
     
 def get_interlanguage_links(page_title, endpoint='en.wikipedia.org/w/api.php', redirects=1, multicore_dict=None):
     """The function accepts a page_title and returns a dictionary containing 
