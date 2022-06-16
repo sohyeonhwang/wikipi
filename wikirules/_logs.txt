@@ -1,4 +1,0 @@
-
-
-7 mar 2021
-[sohw] re-organized wikirules directory in repo

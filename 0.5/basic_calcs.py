@@ -10,7 +10,7 @@ import requests
 
 cwd = Path(os.getcwd())
 
-de_path = cwd / "de_rule_links.txt"
+de_path = cwd.parent / "de_rule_links.txt"
 es_path = cwd / "shortcuts_get" / "output" / "es_all_plus.tsv"
 fr_path = cwd / "shortcuts_get" / "output" / "fr_all_plus.tsv"
 en_path = cwd / "shortcuts_get" / "output" / "en_all_plus.tsv"
