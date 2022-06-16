@@ -9,3 +9,5 @@ This is the first full manuscript in the WIKIPI series of projects. It gives a h
 Note that this folder was re-arranged retroactively, so some of the file input/outputs may be broken (in particular, I've moved the list of rules to the parent folder, so that the list can be easily accessed for later iterations of projects). The replication materials are available on dataverse. 
 
 `_fiegan_replication` is a subfolder of some files that were used mostly when I first started this project and was trying to replicate some analyses in rule-making on English Wikipedia done by Keegan \& Fiesler (2017). Brian Keegan very generously shared code with me. The `wikifunctions.py` script is also from Brian.
+
+-- sohyeon (6/16/2022)
