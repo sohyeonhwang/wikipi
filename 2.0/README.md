@@ -5,16 +5,16 @@ This folder contains two main things:
 
 # Data collection
 
-For now, I'm looking at policy invocation in the five largest language editions. However, it would be good to extend this to the 10 largest language editions and then 
+For now, I'm looking at policy invocation in the five largest language editions. However, it would be good to extend this to the 10 largest language editions and then
 
 1. Download the wiki data dumps.
-2. Create the list of regular expressions we want to search for, from the list of rules and their relevant shorthands. 
+2. Create the list of regular expressions we want to search for, from the list of rules and their relevant shorthands.
 3. Generate the bash script task lists to process/slurm the data dumps with `wikiq`. Run in `hyak`.
-4. The raw outputs can be/should be retained to do more nuanced analysis. Otherwise, we can use `pyspark` to process the data, e.g. crunching to get monthly counts of invocations over time. 
+4. The raw outputs can be/should be retained to do more nuanced analysis. Otherwise, we can use `pyspark` to process the data, e.g. crunching to get monthly counts of invocations over time.
 
 ## Download dumps
 
-The dumps (en,es,fr,ja,de) are stored on `hyak`. To get more updated versions (or extend analysis to more language editions), you can download the complete revision histories by following instructions [here](https://meta.wikimedia.org/wiki/Data_dumps/Download_tools). The tldr is that on `hyak`, using `build_machine`, you run: 
+The dumps (en,es,fr,ja,de) are stored on `hyak`. To get more updated versions (or extend analysis to more language editions), you can download the complete revision histories by following instructions [here](https://meta.wikimedia.org/wiki/Data_dumps/Download_tools). The tldr is that on `hyak`, using `build_machine`, you run:
 
 ```
 wget --recursive --no-parent --no-directories --continue --accept 7z [URL]
@@ -60,7 +60,7 @@ We need (1) the dumps and (2) the regular expressions. We can find the dumps in 
 
 ## Generate the tasklists
 
-For each language edition, we want to process a dump exactly one time and look for all the relevant regular expressions. Each line in the task list should look like this: 
+For each language edition, we want to process a dump exactly one time and look for all the relevant regular expressions. Each line in the task list should look like this:
 
 ```
 python3 ./mediawiki_dump_tools/wikiq [input] -o ./output  -RPl [regex_label_here] -RP '[regex_goes_here]'
@@ -68,18 +68,19 @@ python3 ./mediawiki_dump_tools/wikiq [input] -o ./output  -RPl [regex_label_here
 
 Note that on hyak I'll running `wikiq` on the parent wikipi directory, NOT the repo (`~/wikipi`). So `make_taskslists.py` will output to `tasks`
 
-Early test runs with the `giant_regex' indicate that the construction of it is a little buggy, but the size of it makes it very inscrutable to identify the problem. As a result, instead, for searching for all policies with one regular expression, I create "wide" taskslists, basically the basic construction with regex-label pairs for every single rule of that language edition. 
+Early test runs with the `giant_regex' indicate that the construction of it is a little buggy, but the size of it makes it very inscrutable to identify the problem. As a result, instead, for searching for all policies with one regular expression, I create "wide" taskslists, basically the basic construction with regex-label pairs for every single rule of that language edition.
 
 This avoids the issue that comes with giant_regex's bugginess, but the downside is that this take a very long time to run the jobs (so far). It should help this time that we are doing a limited search of rules (just the most ILL'd ones).
 
 ## Running wikiq
 
 We make a modification to the local version of `wikiq` so that the regex will ignore case:
+
 ```
 self.pattern = re.compile(pattern,re.IGNORECASE)
 ```
 
 
-
 # Analysis of policy invocation
 
+We analyze policy invocation from: (1) processed data using spark that summarizes policy invocation use, and (2) the raw data of the instances.

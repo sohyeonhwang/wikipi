@@ -21,7 +21,7 @@ def get_all_pages_in_namespace(lang='en',apm=4):
     query_params['format'] = 'json'
     query_params['list'] = 'allpages'
     query_params['apnamespace'] = apm
-    query_params['apfilterlanglinks'] = 'withlanglinks'
+    #query_params['apfilterlanglinks'] = 'withlanglinks'
     query_params['aplimit'] = 500
     query_params['apdir'] = 'ascending'
     
