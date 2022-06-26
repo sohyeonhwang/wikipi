@@ -158,7 +158,7 @@ for i in range(0,len(list_pages)):
         #print(len(temp), ": {}...".format(temp[:5]))
         #print(" ")
     
-    # add  to guidelines file
+    # manually add to guidelines file
     if "guideline" in filename:
         cross_checked = ["https://en.wikipedia.org/wiki/Wikipedia:Scientific_citation_guidelines", 
                         "https://en.wikipedia.org/wiki/Wikipedia:Artist%27s_impressions_of_astronomical_objects",

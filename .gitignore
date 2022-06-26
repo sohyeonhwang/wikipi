@@ -8,4 +8,5 @@ postspark_diffs/master_filtered/
 postspark_diffs/masterdiff_output/
 postspark_diffs/master_filtered.tar.gz
 1.0/output_rulepagerevs/*
+*/brainstorm_*.md
 **/__pycache__

@@ -21,7 +21,7 @@ def get_all_pages_in_namespace(lang='en',apm=4):
     query_params['format'] = 'json'
     query_params['list'] = 'allpages'
     query_params['apnamespace'] = apm
-    #query_params['apfilterlanglinks'] = 'withlanglinks'
+    query_params['apfilterlanglinks'] = 'withlanglinks'
     query_params['aplimit'] = 500
     query_params['apdir'] = 'ascending'
     
@@ -83,19 +83,25 @@ def get_interlanguage_links(page_title, endpoint='en', redirects=1):
     
     interlanguage_link_dict = dict()
     start_lang = endpoint.split('.')[0]
-    if 'title' in json_response['query']['pages'][0]:
-        final_title = json_response['query']['pages'][0]['title']
-        interlanguage_link_dict[start_lang] = final_title
+
+    if 'pages' not in json_response['query']:
+        print(page_title)
+        print(json_response['query'])
+        input("continue?")
     else:
-        final_title = page_title
-        interlanguage_link_dict[start_lang] = final_title
+        if 'title' in json_response['query']['pages'][0]:
+            final_title = json_response['query']['pages'][0]['title']
+            interlanguage_link_dict[start_lang] = final_title
+        else:
+            final_title = page_title
+            interlanguage_link_dict[start_lang] = final_title
 
-    if 'langlinks' in json_response['query']['pages'][0]:
-        langlink_dict = json_response['query']['pages'][0]['langlinks']
+        if 'langlinks' in json_response['query']['pages'][0]:
+            langlink_dict = json_response['query']['pages'][0]['langlinks']
 
-        for d in langlink_dict:
-            lang = d['lang']
-            title = d['title']
-            interlanguage_link_dict[lang] = title
+            for d in langlink_dict:
+                lang = d['lang']
+                title = d['title']
+                interlanguage_link_dict[lang] = title
             
     return interlanguage_link_dict
