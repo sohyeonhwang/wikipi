@@ -151,3 +151,5 @@ while (my $line = <$data>) {
 
 close $data;
 close $output_data;
+
+## Make sure the fix the (?^u:(?:W --> (?:\b(?:W and (?^u:W --> (?:\bW
