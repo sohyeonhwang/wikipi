@@ -110,3 +110,4 @@ Wikipedia:記事名の付け方/日本の皇族	NA	(?:\bWikipedia:記事名の�
 Wikipedia:著作権/20080630迄	NA	(?:\bW(?:ikipedia:著作権/20080630迄|P:C)\b)
 Wikipedia:アカウント作成者	NA	(?:\bW(?:ikipedia:アカウント作成者|P:ACCRIGHT)\b)
 Wikipedia:IPブロック適用除外	NA	(?:\bW(?:ikipedia:IPブロック適用除外|P:IPE(?:XEMPT(?:CONDITIONS)?|C))\b)
+Wikipedia:ルールすべてを無視しなさい	NA	(?:\bW(?:ikipedia:ルールすべてを無視しなさい|P:IAR|P:IGNORE)\b)
