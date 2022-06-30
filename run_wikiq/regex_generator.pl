@@ -91,19 +91,19 @@ while (my $line = <$data>) {
             #print "$i\n";
             if ($letter eq '"')
             {
-                while ($i =~ m/((WP|Wikipedia|Wikipédia|w\.wiki)[^"]*)/g) 
+                while ($i =~ m/((WP|Wikipédia)[^"]*)/g) 
                 {
                     my $substring = $1;
-                    #print "$substring\n";
+                    print "$substring\n";
                     push @regexes, $substring;
                 }
             }
             else 
             {
-                while ($i =~ m/((WP|Wikipedia|Wikipédia|w\.wiki)[^']*)/g) 
+                while ($i =~ m/((WP|Wikipédia)[^']*)/g) 
                 {
                     my $substring = $1;
-                    #print "$substring\n";
+                    print "$substring\n";
                     push @regexes, $substring;
                 }
             }
