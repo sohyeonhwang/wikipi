@@ -19,13 +19,14 @@ open(my $output_data , '>:encoding(UTF-8)', $arg_out) or die "Couldn't open the 
 my $tsv = Text::CSV->new({
     sep_char        => "\t",
     eol             => "\n",
+    #encoding => "UTF-8",
     quote_space     => 0,
     quote_null      => 0,
 });
 
 my $regex_all_rules = Regexp::Assemble->new;
 
-open(my $data, '<', $arg) or die "Couldn't open the '$arg' for some reason, $!\n";
+open(my $data, '<:encoding(UTF-8)', $arg) or die "Couldn't open the '$arg' for some reason, $!\n";
 
 while (my $line = <$data>) {
     chomp $line;
@@ -141,10 +142,11 @@ while (my $line = <$data>) {
     my $formatted_expression = $clipped.$end;
     #print "EXPRESSED1: $formatted_expression\n\n\n\n";
 
-    #print $output_data "$lang\t$label\t$rule\t$shortcuts\t$formatted_expression\n";
+    #print "$lang\t$label\t$rule\n";
 
-    my @line = ($lang, $label, $rule, $shortcuts, $formatted_expression);
-    $tsv->print(\*$output_data, \@line);
+    my @row = ($lang, $label, $rule, $shortcuts, $formatted_expression);
+    $tsv->bind_columns (\(@row));
+    $tsv->print ($output_data, [ @row ]);
 }
 
 close $data;
