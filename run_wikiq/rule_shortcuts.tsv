@@ -1,4 +1,4 @@
-lang	label	rule	shortcuts	regex
+lang	label	rule	shortcuts
 de	R1	Wikipedia:Grundprinzipien	['Wikipedia:Grundprinzipien', 'Wikipedia:GP', 'WP:Grundprinzipien', 'WP:GP']	
 de	R2	Wikipedia:Ignoriere alle Regeln	['Wikipedia:Ignoriere alle Regeln', 'Wikipedia:IAR', 'WP:Ignoriere alle Regeln', 'WP:IAR']	
 de	R3	Wikipedia:Neutraler Standpunkt	['Wikipedia:Neutraler Standpunkt', 'Wikipedia:NPOV', 'Wikipedia:NNPOV', 'Wikipedia:N', 'WP:Neutraler Standpunkt', 'WP:NPOV', 'WP:NNPOV', 'WP:N']	

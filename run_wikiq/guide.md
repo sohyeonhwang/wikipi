@@ -15,14 +15,13 @@ You should test to make sure that the wikiq call you plan to make actually works
 I recommend having a directory set up like so:
 ```
 project_dir
---- /mediawiki_dump_tools # this contains wikiq as ~/mediawiki_dump_tools/wikiq
---- /raw_data #organize each language edition as a subfolder, like so
+--- /mediawiki_dump_tools # contains wikiq
+--- /raw_data # use softlinks to where data is stored
 ------ /enwiki # these contain the dump files
 ------ /frwiki
 ------ /jawiki
 --- /output # this is where your wikiq outputs will go. you can create a separate output_test folder if you like.
 ```
-
 There will be some other important files and scripts, but we will cover that in a bit. First, to testing.
 
 ### Test 1: One basic call
@@ -36,7 +35,7 @@ int_machine
 Now, you will see that the terminal shows that you are in a node in front of your working directory path (e.g. from `sohw@mox2:` to `sohw@n2347:`). Yay, we're in the node! Now try running just *one* call of `wikiq` with the parameters you desire from the project directory (in the file organization above, that's `project_dir`). For example, let's say I want to process a file in the `enwiki` subdirectory in `test_data` to find all instances of some regular expression. I would do the following (the square brackets are placeholders for some arbitrary task):
 
 ```
-# activate any venvs you have
+#activate any venvs you have
 cd ~/project_dir
 python3 ./mediawiki_dump_tools/wikiq -u -o ./output/test1 ./raw_data/[FILE_NAME].7z
 ```
@@ -145,8 +144,8 @@ AKA what Sohyeon ran.
 #SBATCH --ntasks-per-node=28
 #SBATCH
 #SBATCH --chdir /gscratch/comdata/users/sohw/wikipi
-#SBATCH --output=jobs/%A_%a.out
-#SBATCH --error=jobs/%A_%a.out
+#SBATCH --output=output/%A_%a.out
+#SBATCH --error=jobs/wide/%A_%a.out
 ##turn on e-mail notification
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=sohyeonhwang@u.northwestern.edu
