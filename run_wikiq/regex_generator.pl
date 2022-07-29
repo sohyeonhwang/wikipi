@@ -84,14 +84,14 @@ while (my $line = <$data>) {
     {
         foreach my $i (@spl) 
         {
+            print $i;
             my $letter = substr($i, 0, 1);
             if ($letter eq '['){
                 $letter = substr($i, 1, 1);
             }
-            #print "$i\n";
             if ($letter eq '"')
             {
-                while ($i =~ m/((WP|Wikipédia)[^"]*)/g) 
+                while ($i =~ m/((WP|Wikipdia:|Wikipédia)[^"]*)/g) 
                 {
                     my $substring = $1;
                     print "$substring\n";
@@ -100,7 +100,7 @@ while (my $line = <$data>) {
             }
             else 
             {
-                while ($i =~ m/((WP|Wikipédia)[^']*)/g) 
+                while ($i =~ m/((WP|Wikipdia:|Wikipédia)[^']*)/g) 
                 {
                     my $substring = $1;
                     print "$substring\n";
