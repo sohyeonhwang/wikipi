@@ -16,7 +16,7 @@ start_time = time.time()
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Create a dataset.')
-    parser.add_argument('-i', '--input', help='Path for directory of wikiq tsv outputs', required=True, type=str)
+    parser.add_argument('-i', '--input', help='Path for directory of wikiq tsv outputs', default='./../output', type=str)
     parser.add_argument('--lang', help='Specify which language edition', default='es',type=str)
     parser.add_argument('-o', '--output-directory', help='Output directory', default='./spark_2022-07_output_test', type=str)
     parser.add_argument('--num-partitions', help = "number of partitions to output",type=int, default=1)
@@ -29,9 +29,7 @@ if __name__ == "__main__":
     print("STARTING CODE TO PYSPARK THE WIKIQ OUTPUTS.")
 
     # checking args and retrieving inputs
-    print("\t INPUT:\t{}".format(args.input))
     print("\t  LANG:\t{}".format(args.lang))
-    print("\t O_DIR:\t{}".format(args.output_directory))
 
     if not os.path.isdir(args.output_directory):
         os.mkdir(args.output_directory)
@@ -40,6 +38,8 @@ if __name__ == "__main__":
     directory = "{}/{}wiki*".format(args.input, args.lang)
     files = glob.glob(directory)#[:10]
     print("# tsvs, {}wiki: {}\n".format(args.lang, len(files)))
+
+    input("?")
 
     # start the spark session and context
     conf = SparkConf().setAppName("Wiki Regex Spark")
