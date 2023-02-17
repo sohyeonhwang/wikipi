@@ -41,7 +41,6 @@ if __name__ == "__main__":
     files = glob.glob(directory)#[:10]
     print("# tsvs, {}wiki: {}\n".format(args.lang, len(files)))
 
-
     # start the spark session and context
     conf = SparkConf().setAppName("Wiki Regex Spark")
     spark = SparkSession.builder.getOrCreate()
@@ -52,8 +51,8 @@ if __name__ == "__main__":
     reader = spark.read
 
     # build a schema                                                                                                                                                                                               
-    struct = types.StructType().add("REGEX_WIDE",types.StringType(),True)
-    struct = struct.add("anon",types.StringType(),True)
+    struct = types.StructType().add('"REGEX_WIDE"',types.StringType(),True)
+    struct = struct.add("anon",types.BooleanType(),True)
     struct = struct.add("articleid",types.LongType(),True)
     struct = struct.add("date_time",types.TimestampType(), True)
     struct = struct.add("deleted",types.BooleanType(), True)
