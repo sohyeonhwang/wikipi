@@ -12,7 +12,11 @@ project_dir = Path.cwd().parent.parent
 print(project_dir)
 raw_data = project_dir / 'raw_data'
 
-regexes = pd.read_csv('rule_regex_generated_wide.tsv',sep='\t',header=0) #_wide
+selected_rules_list = ["R12", "R2", "R3"] #NPOV is R3. Notability is R12. IAR is R2
+selected_rule = "_".join(selected_rules_list)
+
+regexes = pd.read_csv('rule_regex_generated.tsv',sep='\t',header=0) #_wide
+regexes = regexes.loc[regexes.label.isin(selected_rules_list)]
 
 all_calls = []
 
@@ -32,13 +36,14 @@ for lang in langs:
     pattern_pairs = list(zip(lang_regexes.label,lang_regexes.regex))
     print(len(pattern_pairs))
     for p in pattern_pairs:
-        pattern = '-RP "{}" -RPl "{}"'.format(p[1].replace(' ','\s'),p[0]) 
+        pattern = '-RP "{}" -RPl "{}" '.format(p[1].replace(' ','\s'),p[0]) 
         regex_statement = '{} {}'.format(regex_statement,pattern)
     print(regex_statement)
 
     # for each dump
     for dump in dumps:
-        call = '-u -o /gscratch/comdata/raw_data/sohw_wikiq_outputs_202207 {}{}'.format(
+        call = '-u -o /gscratch/comdata/raw_data/sohw_wikiq_outputs_202302/{} -n 1 {}{}'.format(
+            selected_rule,
             dump,
             regex_statement
         )
@@ -47,10 +52,11 @@ for lang in langs:
         all_calls.append(call)
     
     # make the lang-specific task list
-    with open("tasklist_{}.sh".format(lang),"w") as f:
+    with open("tasklist_{}_{}.sh".format(selected_rule,lang),"w") as f:
         for c in calls:
             f.write("{}\n".format(c))
 
-    with open('task_list.sh'.format(lang),'w') as f:
-        for c in all_calls:
-            f.write('{}\n'.format(c))
+# make the overall task list
+with open('tasklist_{}.sh'.format(selected_rule),'w') as f:
+    for c in all_calls:
+        f.write('{}\n'.format(c))
