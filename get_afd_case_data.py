@@ -74,22 +74,22 @@ cases_df = pd.read_csv('afd_cases_women.tsv',header=0,sep='\t')
 
 df = cases_df.copy()
 
-print("> Getting some metrics for revisions to AfD pages.")
+print("> Getting some metrics for revisions to {} AfD pages.".format(len(df)))
 # get some numbers for summary stats and whatever
 df[['num_revs', 'num_unique_users', 'user_contri_counter']] = df.apply(get_page_numbers, axis=1, result_type="expand")
 df[['discussed_page_link', 'discussed_page_title', 'discussed_page_exists']] = df.apply(get_afd_discussion_content, axis=1, result_type="expand")
 df.to_csv('afd_cases_women_afdpage_data.tsv',sep='\t',header=True,index=False)
 
-print("> Getting some metrics for the pages that survived the AfD pages; note that some are merged, so it's technically a different page.")
 # get some data for pages that still exist
 discussed_pages_df = df.loc[df.discussed_page_exists==True].copy()
+print("> Getting some metrics for the {} discussed pages that still exist; note that some are merged, so it's technically a different page.".format(len(discussed_pages_df)))
 if len(discussed_pages_df) > 0:
     discussed_pages_df[['returned_name','num_revs', 'num_unique_users', 'user_contri_counter', 'cats_class', 'cats_import']] = discussed_pages_df.apply(get_discussed_page_data, axis=1, result_type="expand")
     discussed_pages_df.to_csv('afd_cases_women_discussedpage_data.tsv',sep='\t',header=True,index=False)
 
-print("> Getting and saving all revisions for all of the afd pages.")
 # collect all the revisions for each of the afd pages
 cases = cases_df.name.values.tolist()
+print("> Getting and saving all revisions for all of the {} afd pages.".format(len(cases)))
 afd_revisions_df = get_revisions_of_all_in_list(cases, False)
 afd_revisions_df.to_csv('afd_cases_women_afdpage_revisions_data.tsv',sep='\t',header=True,index=False)
 
