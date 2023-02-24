@@ -1,44 +1,119 @@
-#!/usr/bin/env python3
-"""
-This inputs wikiq outputs to filter down only to revisions that have detected rule invocations.
-"""
-
-import sys, os
-import pandas as pd
-import numpy as np
+import sys
+from pyspark import SparkConf
+from pyspark.sql import SparkSession, SQLContext
+from pyspark.sql import Window
+import pyspark.sql.functions as f
+from pyspark.sql.functions import lit
+from pyspark.sql import types
 import argparse
-from pathlib import Path
+import glob, os
+import csv
 from datetime import datetime
-from multiprocessing import Pool, cpu_count
+import time
+import collections 
+import numpy as np
+import traceback
+
+start_time = time.time()
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Create a dataset.')
-    #parser.add_argument('-i', '--input', help='wikiq output file to input', required=True, type=str)
-    parser.add_argument('--lang', help='Specify which language edition', default='en',type=str)
-    parser.add_argument('-o', '--output-directory', help='Output directory', default='./../output_filter_rule_invocations', type=str)
+    parser.add_argument('-i', '--input', help='Path for directory of wikiq tsv outputs', default='/gscratch/comdata/raw_data/sohw_wikiq_outputs_202302/R12_R2_R3', type=str)
+    parser.add_argument('--lang', help='Specify which language edition', default='es',type=str)
+    parser.add_argument('-o', '--output-directory', help='Output directory', default='./../output_spark_202302', type=str)
+    parser.add_argument('--num-partitions', help = "number of partitions to output",type=int, default=1)
+    parser.add_argument('-c','--chunks', help = "number of partitions to output",type=int, default=1)
+    parser.add_argument('-r','--rules', help='Specify the rule column name', default="R12_R2_R3",type=str)
     args = parser.parse_args()
     return(args)
 
 if __name__ == "__main__":
+    ts = datetime.now().strftime("%m-%d-%Y_%H-%M-%S")
     args = parse_args()
-    cores = cpu_count()
+
+    print("STARTING CODE TO PYSPARK THE WIKIQ OUTPUTS TO FILTER OUT REV ROWS WITHOUT ANY REGEXES DETECTED.")
 
     # checking args and retrieving inputs
-    #print("\t   INPUT:\t{}".format(args.input))
-    print("\t    LANG:\t{}".format(args.lang))
-    print("\t OUT_DIR:\t{}".format(args.output_directory))
+    print("\t  LANG:\t{}".format(args.lang))
 
     if not os.path.isdir(args.output_directory):
-        print("> Output directory does not exist, making now.")
         os.mkdir(args.output_directory)
 
-    f = Path(os.getcwd()).parent / "output" / args.input
-    print(f)
-    input("?")
+    output_timestamp_subdirectory = "{}/{}".format(args.output_directory, ts)
+    if not os.path.isdir(output_timestamp_subdirectory):
+        os.mkdir(output_timestamp_subdirectory)
+    print(output_timestamp_subdirectory)
+    input("? delete this print statement if it looks OK")
 
-    # read input file
-    dtypes = {'"REGEX_WIDE"':np.str, 'anon':np.bool, 'articleid':np.int64,'date_time':np.str,'deleted':np.bool,'editor':np.str,'editorid':np.int64,'minor':np.bool,'namespace':np.int16,'revert':np.bool,'reverteds':np.str,'revid':np.int64,'sha1':np.str,'text_chars':np.int16,'title':np.str}
-    parse_dates_in = ['date_time']
-    dfs = pd.read_csv(f ,sep="\t", header=0, dtype=dtypes, parse_dates=parse_dates_in, chunksize=100000)
-    dfs.rename(columns={'"REGEX_WIDE"':'detected_regexes'},inplace=True)
+    # input files in the directory variable
+    directory = "{}/{}wiki*".format(args.input, args.lang)
+    files = glob.glob(directory)#[:10]
+    print("# tsvs, {}wiki: {}\n".format(args.lang, len(files)))
+    # chunk the files (default is 1)
+    files_chunked = np.array_split(files, args.chunks)
+    print("> Split the file list into {} chunks.".format(len(files_chunked)))
 
+    #specify rule as string
+    rule_columns = args.rules.split("_")
+    print("> Handling {} rules".format(len(rule_columns)))
+
+    # start the spark session and context
+    conf = SparkConf().setAppName("Wiki Regex Spark")
+    spark = SparkSession.builder.getOrCreate()
+    reader = spark.read
+    print("> Started the Spark session...")
+
+    # setting up spark reader and build a schema
+    reader = spark.read
+    for rule_column in rule_columns:
+        struct = types.StructType().add(rule_column,types.StringType(),True)
+    struct = struct.add("anon",types.BooleanType(),True)
+    struct = struct.add("articleid",types.LongType(),True)
+    struct = struct.add("date_time",types.TimestampType(), True)
+    struct = struct.add("deleted",types.BooleanType(), True)
+    struct = struct.add("editor",types.StringType(),True)
+    struct = struct.add("editor_id",types.LongType(), True)
+    struct = struct.add("minor", types.BooleanType(), True)
+    struct = struct.add("namespace", types.LongType(), True)
+    struct = struct.add("revert", types.BooleanType(), True)
+    struct = struct.add("reverteds", types.StringType(), True)
+    struct = struct.add("revid", types.LongType(), True)
+    struct = struct.add("sha1", types.StringType(), True)
+    struct = struct.add("text_chars", types.LongType(), True)
+    struct = struct.add("title",types.StringType(), True)
+
+    n_out = 1
+    try:
+        for chunk in files_chunked:
+            chunk = chunk.tolist()
+            print("> Reading the files...")
+            df = reader.csv(chunk,
+                            sep='\t',
+                            inferSchema=False,
+                            header=True,
+                            mode="PERMISSIVE",
+                            schema = struct)
+
+            #df = df.withColumnRenamed(rule_column,"detected_regexes")
+            # if we want to check the columns and types
+            #for col in df.dtypes:
+            #    print(col[0]+" , "+col[1])
+
+            df = df.withColumn('month',f.month(df.date_time))
+            df = df.withColumn('year',f.year(df.date_time))
+            df = df.na.replace({'None': None},subset=rule_columns)
+            df = df.na.replace({'': None},subset=rule_columns)
+
+            print("> We're dealing with {} rows of data...".format(df.count()))
+            print("> Using {} partitions...".format(df.rdd.getNumPartitions()))
+
+            _temp = df.na.drop(how="any",subset=rule_columns) 
+            print(_temp.show(n=3, vertical=True))
+            print("> Filtered for only invocation revisions is {} rows of data...".format(_temp.count()))
+
+            _temp.coalesce(1).write.csv("{}/{}wiki_filtered_for_rule_invocations_{}_{}_of_{}.tsv".format(output_timestamp_subdirectory,args.lang,args.rules,n_out,len(files_chunked)),sep='\t',mode='append',header=True)
+            n_out += 1
+        spark.stop()
+    except Exception:
+        traceback.print_exc()
+        spark.stop()

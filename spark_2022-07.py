@@ -23,7 +23,7 @@ def parse_args():
     parser.add_argument('-o', '--output-directory', help='Output directory', default='./../output_spark_202302', type=str)
     parser.add_argument('--num-partitions', help = "number of partitions to output",type=int, default=1)
     parser.add_argument('-c','--chunks', help = "number of partitions to output",type=int, default=1)
-    parser.add_argument('-r','--rule', help='Specify the rule column name', default="R12_R2_R3",type=str)
+    parser.add_argument('-r','--rules', help='Specify the rule column name', default="R12_R2_R3",type=str)
     args = parser.parse_args()
     return(args)
 
@@ -47,7 +47,7 @@ if __name__ == "__main__":
     print("> Split the file list into {} chunks.".format(len(files_chunked)))
 
     #specify rule as string
-    rule_columns = args.rule.split("_")
+    rule_columns = args.rules.split("_")
     print("> Handling {} rules".format(len(rule_columns)))
 
     # start the spark session and context
@@ -104,7 +104,7 @@ if __name__ == "__main__":
             print(_temp.show(n=3, vertical=True))
             print("> Filtered for only invocation revisions is {} rows of data...".format(_temp.count()))
 
-            _temp.coalesce(1).write.csv("{}/{}wiki_filtered_for_rule_invocations_{}.tsv".format(args.output_directory,args.lang,n_out),sep='\t',mode='append',header=True)
+            _temp.coalesce(1).write.csv("{}/{}wiki_filtered_for_rule_invocations_{}_{}_of_{}.tsv".format(args.output_directory,args.lang,args.rules,n_out,len(files_chunked)),sep='\t',mode='append',header=True)
             n_out += 1
         spark.stop()
     except Exception:
