@@ -63,14 +63,16 @@ def get_revisions_of_all_in_list(list_of_pages, is_talk):
     for p in list_of_pages:
         if is_talk == True:
             p = "Talk:{}".format(p)
+        print("\t{}".format(p))
         _temp = wf.get_all_page_revisions(p)
         dfs.append(_temp)
-    return pd.concat([dfs])
+    return pd.concat(dfs)
 
 # afd_cases_women.tsv is generated on afd.ipynb
 cases_df = pd.read_csv('afd_cases_women.tsv',header=0,sep='\t')
 # Comment out .head(..) when running actual thing
-df = cases_df.head(10).copy()
+
+df = cases_df.copy()
 
 print("> Getting some metrics for revisions to AfD pages.")
 # get some numbers for summary stats and whatever
@@ -81,8 +83,9 @@ df.to_csv('afd_cases_women_afdpage_data.tsv',sep='\t',header=True,index=False)
 print("> Getting some metrics for the pages that survived the AfD pages; note that some are merged, so it's technically a different page.")
 # get some data for pages that still exist
 discussed_pages_df = df.loc[df.discussed_page_exists==True].copy()
-discussed_pages_df[['returned_name','num_revs', 'num_unique_users', 'user_contri_counter', 'cats_class', 'cats_import']] = discussed_pages_df.apply(get_discussed_page_data, axis=1, result_type="expand")
-discussed_pages_df.to_csv('afd_cases_women_discussedpage_data.tsv',sep='\t',header=True,index=False)
+if len(discussed_pages_df) > 0:
+    discussed_pages_df[['returned_name','num_revs', 'num_unique_users', 'user_contri_counter', 'cats_class', 'cats_import']] = discussed_pages_df.apply(get_discussed_page_data, axis=1, result_type="expand")
+    discussed_pages_df.to_csv('afd_cases_women_discussedpage_data.tsv',sep='\t',header=True,index=False)
 
 print("> Getting and saving all revisions for all of the afd pages.")
 # collect all the revisions for each of the afd pages
@@ -99,5 +102,3 @@ print("> Getting and saving all revisions for TALK pages of all of the pages dis
 # collect all the revisions for the afd surviving pages
 discussed_pages_revisions_talk_df = get_revisions_of_all_in_list(list(set(discussed_pages_df.returned_name.values.tolist())), True)
 discussed_pages_revisions_talk_df.to_csv('afd_cases_women_discussedpage_revisions_talk_data.tsv',sep='\t',header=True,index=False)
-
-
