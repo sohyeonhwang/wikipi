@@ -1,4 +1,6 @@
 # Policy Invocation on Wikipedia
+*** Please note that this repo is deprecated. It probably doesn't work anymore. ***
+
 This repo contains the code/information and files used to process/parse wiki dump files and extract policy invocations on hyak. Everything should be accessible and executable via hyak (running the the task list _must_ be done on hyak), though code development/writing was primarily done on my local machine, tested, and then pushed. 
 
 ## Contents
